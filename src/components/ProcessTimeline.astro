@@ -1,0 +1,129 @@
+---
+// Process Timeline component showing YongAI methodology
+import FlowDiagram from './FlowDiagram.astro';
+
+const phases = [
+  {
+    id: "discovery",
+    title: "Discovery",
+    description: "We map out how your team works and find the biggest time-savers.",
+    icon: "🔍",
+    color: "yong-green"
+  },
+  {
+    id: "assessment",
+    title: "Assessment", 
+    description: "We dig into your processes and build a ranked list of what to automate first, with expected savings.",
+    icon: "📊",
+    color: "purple-500"
+  },
+  {
+    id: "implementation",
+    title: "Implementation",
+    description: "We build custom AI tools, test them thoroughly, and connect them to what you already use.",
+    icon: "⚙️",
+    color: "blue-500"
+  },
+  {
+    id: "optimization",
+    title: "Optimization",
+    description: "We keep watching, tweaking, and improving to make sure things keep working well.",
+    icon: "📈",
+    color: "purple-400"
+  }
+];
+
+const detailedPhases = [
+  {
+    number: 1,
+    title: "Discovery",
+    duration: "1 week",
+    description: "We map out how your team works and find the biggest time-savers.",
+    deliverable: "Clear report showing where AI fits best",
+    color: "yong-green"
+  },
+  {
+    number: 2,
+    title: "Assessment", 
+    duration: "2 weeks",
+    description: "We dig into your processes and build a ranked list of what to automate first, with expected savings.",
+    deliverable: "Step-by-step plan with expected savings",
+    color: "purple-500"
+  },
+  {
+    number: 3,
+    title: "Implementation",
+    duration: "3-4 weeks", 
+    description: "We build custom AI tools, test them thoroughly, and connect them to what you already use.",
+    deliverable: "Working AI solution, tested and ready to go",
+    color: "blue-500"
+  },
+  {
+    number: 4,
+    title: "Optimization",
+    duration: "Ongoing",
+    description: "We keep watching, tweaking, and improving to make sure things keep working well.",
+    deliverable: "Monthly report showing results",
+    color: "purple-400"
+  }
+];
+---
+
+<div class="relative max-w-6xl mx-auto">
+  <!-- SVG Flow Diagram -->
+  <FlowDiagram steps={phases} orientation="horizontal" />
+  
+  <!-- Detailed Phase Cards -->
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-16">
+    {detailedPhases.map((phase, index) => (
+      <div class="reveal stagger-card" style={`transition-delay: ${index * 0.1 + 1}s`}>
+        <!-- Card -->
+        <div class={`glassmorphism rounded-2xl p-6 h-full transition-all duration-300 hover:scale-[1.02] hover:border-${phase.color}/30 relative overflow-hidden`}>
+          <!-- Top border accent -->
+          <div class={`absolute top-0 left-0 right-0 h-1 bg-${phase.color} rounded-t-2xl`}></div>
+          
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Phase {phase.number}: {phase.title}</h3>
+              <span class={`text-xs font-mono font-semibold bg-${phase.color}/10 text-${phase.color} px-3 py-1 rounded-full uppercase tracking-wider`}>
+                {phase.duration}
+              </span>
+            </div>
+            
+            <p class="text-text-muted mb-6 leading-relaxed">
+              {phase.description}
+            </p>
+            
+            <div class={`bg-${phase.color}/5 border border-${phase.color}/20 rounded-lg p-4 border-l-4 border-l-${phase.color}`}>
+              <div class="text-sm">
+                <span class={`text-${phase.color} font-semibold`}>Key Deliverable:</span>
+                <span class="text-text-muted ml-1">{phase.deliverable}</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Background decoration -->
+          <div class={`absolute -top-20 -right-20 w-32 h-32 bg-${phase.color}/5 rounded-full blur-2xl`}></div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Ensure gradient colors work with Tailwind */
+  .border-yong-green { border-color: var(--color-yong-green); }
+  .border-purple-500 { border-color: #8b5cf6; }
+  .border-blue-500 { border-color: #3b82f6; }
+  .border-purple-400 { border-color: #a78bfa; }
+  
+  .bg-yong-green { background-color: var(--color-yong-green); }
+  .bg-purple-500 { background-color: #8b5cf6; }
+  .bg-blue-500 { background-color: #3b82f6; }
+  .bg-purple-400 { background-color: #a78bfa; }
+  
+  .text-yong-green { color: var(--color-yong-green); }
+  .text-purple-500 { color: #8b5cf6; }
+  .text-blue-500 { color: #3b82f6; }
+  .text-purple-400 { color: #a78bfa; }
+</style>

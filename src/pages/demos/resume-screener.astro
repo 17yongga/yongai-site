@@ -1,0 +1,617 @@
+---
+import DemoLayout from '../../layouts/DemoLayout.astro';
+
+const title = "AI Resume Screener Platform Demo — YongAI";
+const description = "Experience YongAI's enterprise AI recruiting platform. AI screening saves 10+ hours per open role — average cost per hire is $4,700 (SHRM, 2023).";
+---
+
+<DemoLayout title={title} description={description} demoType="resume-screener">
+  <!-- Stats Bar -->
+  <div class="py-4 bg-bg-raised border-b border-white/6 mt-18">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-warning">7 sec</span>
+          <div class="text-sm text-text-muted">Initial Resume Scan (Ladders Inc., 2018)</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-success">10+ hrs</span>
+          <div class="text-sm text-text-muted">Saved per Open Role</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-info">$4,700</span>
+          <div class="text-sm text-text-muted">Average Cost per Hire (SHRM, 2023)</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-purple-400">2 hrs</span>
+          <div class="text-sm text-text-muted">AI vs 5 Days Manual</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
+        <div class="pulse-dot w-2 h-2 bg-success rounded-full"></div>
+        Enterprise Demo Platform
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
+        AI Recruiting Platform
+      </h1>
+      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
+        See how our AI recruiting system speeds up candidate screening and finds better matches — AI saves recruiters 10+ hours per open job while handling more applicants without needing extra staff.
+      </p>
+    </div>
+  </section>
+
+  <!-- Job Input Section -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="glassmorphism rounded-3xl p-8 lg:p-12">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Step 1: Define Your Requirements</h2>
+          <p class="text-lg text-text-muted">Paste your job description to see how AI finds candidates that match what you're looking for</p>
+        </div>
+        
+        <textarea 
+          class="w-full h-48 bg-bg-raised border border-border-light rounded-xl p-6 text-text-primary placeholder:text-text-faint focus:border-success focus:ring-2 focus:ring-success/20 focus:outline-none resize-vertical font-mono text-sm"
+          id="job-description"
+          placeholder="Paste your job description here...
+
+We are seeking a Senior Software Engineer with 5+ years of experience in full-stack development. Must have strong expertise in React, Node.js, and cloud platforms (AWS/Azure). Experience with microservices architecture and team leadership preferred. Bachelor's degree in Computer Science or equivalent experience required."
+        ></textarea>
+        
+        <div class="flex flex-wrap gap-3 mt-6 mb-8">
+          <button class="px-4 py-2 bg-bg-raised border border-border-light rounded-lg text-sm text-text-muted hover:text-text-primary hover:border-success transition-all duration-200" onclick="loadSampleJob('software')">
+            Software Engineer
+          </button>
+          <button class="px-4 py-2 bg-bg-raised border border-border-light rounded-lg text-sm text-text-muted hover:text-text-primary hover:border-success transition-all duration-200" onclick="loadSampleJob('marketing')">
+            Marketing Manager
+          </button>
+          <button class="px-4 py-2 bg-bg-raised border border-border-light rounded-lg text-sm text-text-muted hover:text-text-primary hover:border-success transition-all duration-200" onclick="loadSampleJob('sales')">
+            Sales Director
+          </button>
+        </div>
+        
+        <div class="text-center">
+          <button 
+            class="bg-gradient-to-r from-success to-yong-green text-white px-12 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-success/25"
+            onclick="analyzeJob()"
+          >
+            Analyze Candidates
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Candidates Section -->
+  <section class="py-24 bg-bg-raised border-t border-white/6" id="candidates-section" style="display: none;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">AI-Ranked Candidate Pipeline</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto">
+          Our AI automatically scores and ranks candidates based on how well they match your job needs. Click any candidate to see detailed breakdown.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8 mb-12" id="candidates-grid">
+        <!-- Candidates will be populated here -->
+      </div>
+      
+      <!-- Detailed Analysis Panel -->
+      <div class="hidden grid lg:grid-cols-2 gap-12 mt-12 slide-in-up" id="detailed-analysis">
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 text-xl font-bold mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-success">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            Skills & Experience Analysis
+          </div>
+          <div class="space-y-4" id="skills-detailed">
+            <!-- Skills will be populated here -->
+          </div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 text-xl font-bold mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-info">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            Cultural Fit & Soft Skills
+          </div>
+          <div class="space-y-4" id="cultural-fit">
+            <!-- Cultural fit metrics will be populated here -->
+          </div>
+          
+          <div class="bg-success/10 border border-success/20 rounded-xl p-6 mt-8 text-center">
+            <div class="text-3xl mb-3">✓</div>
+            <div class="font-semibold text-success mb-2">Bias-Free Analysis</div>
+            <div class="text-sm text-text-muted">AI removes unconscious bias based on names, schools, or demographics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Calculate Your ROI</h2>
+        <p class="text-xl text-text-muted">See how much your agency could save with AI screening</p>
+      </div>
+      
+      <div class="glassmorphism rounded-3xl p-8 lg:p-12">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold mb-4">ROI Calculator</h3>
+          <p class="text-text-muted">Input your current numbers to see projected savings</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <label class="block text-sm font-semibold text-text-muted mb-2">Resumes per Month</label>
+            <input type="number" class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-success focus:ring-2 focus:ring-success/20 focus:outline-none" id="resumes-month" value="800" oninput="calculateROI()">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-text-muted mb-2">Avg. Recruiter Hourly Rate ($)</label>
+            <input type="number" class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-success focus:ring-2 focus:ring-success/20 focus:outline-none" id="hourly-rate" value="35" oninput="calculateROI()">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-text-muted mb-2">Minutes per Resume (Current)</label>
+            <input type="number" class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-success focus:ring-2 focus:ring-success/20 focus:outline-none" id="time-per-resume" value="15" oninput="calculateROI()">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-text-muted mb-2">Team Size</label>
+            <input type="number" class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-success focus:ring-2 focus:ring-success/20 focus:outline-none" id="team-size" value="8" oninput="calculateROI()">
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="glassmorphism rounded-xl p-6 text-center">
+            <div class="text-3xl font-black text-success mb-2" id="monthly-savings">$9,000</div>
+            <div class="text-text-muted">Monthly Savings</div>
+          </div>
+          <div class="glassmorphism rounded-xl p-6 text-center">
+            <div class="text-3xl font-black text-info mb-2" id="annual-savings">$108,000</div>
+            <div class="text-text-muted">Annual Savings</div>
+          </div>
+          <div class="glassmorphism rounded-xl p-6 text-center">
+            <div class="text-3xl font-black text-warning mb-2" id="payback-period">2.1</div>
+            <div class="text-text-muted">Payback (Months)</div>
+          </div>
+        </div>
+        
+        <div class="bg-info/5 border border-info/20 rounded-xl p-6 text-center">
+          <p class="font-semibold">Projections based on SHRM and industry research.</p>
+          <p class="text-text-muted">Actual results vary by implementation. Typical time savings: 10+ hours per open role.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATS Integration -->
+  <section class="py-24 bg-bg-raised border-t border-white/6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Seamless ATS Integration</h2>
+        <p class="text-xl text-text-muted">Connects to your current recruiting software - Bullhorn, Greenhouse, Lever, JobDiva, and more</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto glassmorphism rounded-2xl overflow-hidden">
+        <div class="flex items-center justify-between p-6 border-b border-white/6 bg-bg-raised">
+          <div class="flex items-center gap-3">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-success">
+              <rect x="3" y="3" width="7" height="9"></rect>
+              <rect x="14" y="3" width="7" height="5"></rect>
+              <rect x="14" y="12" width="7" height="9"></rect>
+              <rect x="3" y="16" width="7" height="5"></rect>
+            </svg>
+            <span class="font-semibold">Bullhorn Integration</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-success">
+            <div class="w-2 h-2 bg-success rounded-full"></div>
+            Connected
+          </div>
+        </div>
+        
+        <div class="p-8">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-success/10 flex items-center justify-center text-success text-2xl mx-auto mb-4">•</div>
+              <h3 class="font-semibold mb-2">Auto-Sync</h3>
+              <p class="text-sm text-text-muted">New candidates automatically pulled from your recruiting system</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-info/10 flex items-center justify-center text-info text-2xl mx-auto mb-4">•</div>
+              <h3 class="font-semibold mb-2">AI Analysis</h3>
+              <p class="text-sm text-text-muted">Resume analyzed & scored in under 30 seconds</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-warning/10 flex items-center justify-center text-warning text-2xl mx-auto mb-4">•</div>
+              <h3 class="font-semibold mb-2">Smart Ranking</h3>
+              <p class="text-sm text-text-muted">Candidates ranked by fit score with insights</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-purple-400/10 flex items-center justify-center text-purple-400 text-2xl mx-auto mb-4">•</div>
+              <h3 class="font-semibold mb-2">Push Back</h3>
+              <p class="text-sm text-text-muted">Results & notes synced back to your recruiting system</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Transform Your Workflow</h2>
+        <p class="text-xl text-text-muted">See the dramatic difference AI makes to your screening process</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-danger">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 bg-danger/20 text-danger text-sm font-semibold rounded-full uppercase tracking-wider">Before</span>
+            <h3 class="text-2xl font-bold">Manual Screening</h3>
+          </div>
+          <p class="text-text-muted mb-6">The old way of doing things</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-danger text-white flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <div class="font-semibold">Download & Read Resume</div>
+                <div class="text-sm text-text-muted">3-4 minutes per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-danger text-white flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <div class="font-semibold">Manual Skill Extraction</div>
+                <div class="text-sm text-text-muted">5-7 minutes per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-danger text-white flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <div class="font-semibold">Compare Against Job Requirements</div>
+                <div class="text-sm text-text-muted">3-5 minutes per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-danger text-white flex items-center justify-center font-bold text-sm">4</div>
+              <div>
+                <div class="font-semibold">Write Notes & Score</div>
+                <div class="text-sm text-text-muted">2-3 minutes per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-danger text-white flex items-center justify-center font-bold text-sm">5</div>
+              <div>
+                <div class="font-semibold">Prepare Interview Questions</div>
+                <div class="text-sm text-text-muted">5-8 minutes per candidate</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8 pt-6 border-t border-white/6">
+            <div class="text-4xl font-black text-danger mb-2">15-20 min</div>
+            <div class="text-text-muted">per resume</div>
+          </div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-success">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 bg-success/20 text-success text-sm font-semibold rounded-full uppercase tracking-wider">After</span>
+            <h3 class="text-2xl font-bold">AI-Powered Screening</h3>
+          </div>
+          <p class="text-text-muted mb-6">The YongAI way</p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-success text-white flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <div class="font-semibold">Automatic Resume Parsing</div>
+                <div class="text-sm text-text-muted">5 seconds per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-success text-white flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <div class="font-semibold">AI Skill & Experience Extraction</div>
+                <div class="text-sm text-text-muted">10 seconds per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-success text-white flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <div class="font-semibold">Intelligent Job Matching</div>
+                <div class="text-sm text-text-muted">5 seconds per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-success text-white flex items-center justify-center font-bold text-sm">4</div>
+              <div>
+                <div class="font-semibold">Automated Scoring & Notes</div>
+                <div class="text-sm text-text-muted">5 seconds per resume</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-bg-raised rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-success text-white flex items-center justify-center font-bold text-sm">5</div>
+              <div>
+                <div class="font-semibold">Custom Interview Question Generation</div>
+                <div class="text-sm text-text-muted">5 seconds per candidate</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8 pt-6 border-t border-white/6">
+            <div class="text-4xl font-black text-success mb-2">30 sec</div>
+            <div class="text-text-muted">per resume</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DemoLayout>
+
+<script>
+  // Sample job descriptions
+  const sampleJobs = {
+    software: `Senior Software Engineer - Full Stack
+
+We are seeking a Senior Software Engineer with 5+ years of experience in full-stack development. Must have strong expertise in React, Node.js, and cloud platforms (AWS/Azure). Experience with microservices architecture and team leadership preferred.
+
+Key Requirements:
+• 5+ years full-stack development experience
+• Expert-level React and Node.js skills
+• AWS/Azure cloud platform experience  
+• Experience with microservices architecture
+• Team leadership and mentoring experience
+• Bachelor's degree in Computer Science or equivalent
+
+Preferred Qualifications:
+• Docker/Kubernetes experience
+• CI/CD pipeline implementation
+• Database optimization experience
+• Agile development methodology`,
+
+    marketing: `Digital Marketing Manager
+
+Looking for an experienced Digital Marketing Manager to lead our marketing campaigns and drive growth. Must have 3+ years in digital marketing with proven ROI track record.
+
+Key Requirements:  
+• 3+ years digital marketing experience
+• Google Ads and Facebook Ads expertise
+• SEO/SEM strategy and implementation
+• Marketing automation platforms (HubSpot, Marketo)
+• Analytics and data-driven decision making
+• Content marketing and social media management
+
+Preferred Qualifications:
+• MBA or Marketing degree
+• B2B SaaS marketing experience
+• Growth hacking experience
+• Team management experience`,
+
+    sales: `Sales Director - Enterprise
+
+Seeking an Enterprise Sales Director to build and lead our enterprise sales team. Must have 7+ years in B2B software sales with $1M+ quota achievement.
+
+Key Requirements:
+• 7+ years enterprise B2B software sales
+• Consistent $1M+ quota achievement  
+• Team building and leadership experience
+• CRM management (Salesforce preferred)
+• Solution selling methodology
+• C-level relationship building
+
+Preferred Qualifications:
+• Previous sales management role
+• SaaS/cloud software experience
+• Large enterprise deal experience ($100K+)
+• MBA or business degree`
+  };
+
+  // Sample candidates data
+  const candidatesData = [
+    {
+      rank: 1,
+      name: "Sarah Johnson",
+      title: "Senior Software Engineer",
+      score: 94,
+      scoreClass: "text-success",
+      highlights: [
+        "8+ years full-stack experience",
+        "React & Node.js expert",
+        "AWS certified architect", 
+        "Team leadership at scale"
+      ],
+      skills: [
+        { name: "React", experience: "5+ years", confidence: 95 },
+        { name: "Node.js", experience: "6+ years", confidence: 92 },
+        { name: "AWS", experience: "4+ years", confidence: 88 },
+        { name: "Team Leadership", experience: "3+ years", confidence: 85 },
+        { name: "Microservices", experience: "4+ years", confidence: 90 },
+        { name: "Docker", experience: "3+ years", confidence: 82 }
+      ],
+      culturalFit: [
+        { name: "Team Collaboration", score: 92 },
+        { name: "Problem Solving", score: 89 },
+        { name: "Communication", score: 91 },
+        { name: "Adaptability", score: 88 }
+      ]
+    },
+    {
+      rank: 2,
+      name: "Michael Chen",
+      title: "Full Stack Developer",
+      score: 87,
+      scoreClass: "text-success",
+      highlights: [
+        "6 years full-stack development",
+        "Strong React & Python skills",
+        "Cloud deployment experience",
+        "Open source contributor"
+      ],
+      skills: [
+        { name: "React", experience: "4+ years", confidence: 90 },
+        { name: "Python", experience: "6+ years", confidence: 94 },
+        { name: "AWS", experience: "2+ years", confidence: 76 },
+        { name: "Docker", experience: "3+ years", confidence: 85 },
+        { name: "PostgreSQL", experience: "5+ years", confidence: 88 },
+        { name: "Git", experience: "6+ years", confidence: 92 }
+      ],
+      culturalFit: [
+        { name: "Team Collaboration", score: 85 },
+        { name: "Problem Solving", score: 94 },
+        { name: "Communication", score: 82 },
+        { name: "Adaptability", score: 89 }
+      ]
+    },
+    {
+      rank: 3,
+      name: "Emily Rodriguez",
+      title: "Frontend Engineer",
+      score: 78,
+      scoreClass: "text-warning",
+      highlights: [
+        "4 years frontend specialization",
+        "React expertise",
+        "UI/UX design background",
+        "Agile team experience"
+      ],
+      skills: [
+        { name: "React", experience: "4+ years", confidence: 93 },
+        { name: "JavaScript", experience: "5+ years", confidence: 89 },
+        { name: "CSS/SASS", experience: "5+ years", confidence: 91 },
+        { name: "Node.js", experience: "1+ year", confidence: 65 },
+        { name: "AWS", experience: "Limited", confidence: 45 },
+        { name: "TypeScript", experience: "2+ years", confidence: 78 }
+      ],
+      culturalFit: [
+        { name: "Team Collaboration", score: 93 },
+        { name: "Problem Solving", score: 82 },
+        { name: "Communication", score: 89 },
+        { name: "Adaptability", score: 85 }
+      ]
+    }
+  ];
+
+  function loadSampleJob(type) {
+    const textarea = document.getElementById('job-description');
+    textarea.value = sampleJobs[type];
+  }
+
+  function analyzeJob() {
+    const jobDesc = document.getElementById('job-description').value;
+    if (!jobDesc.trim()) {
+      alert('Please enter a job description first.');
+      return;
+    }
+
+    // Show candidates section
+    document.getElementById('candidates-section').style.display = 'block';
+    document.getElementById('candidates-section').scrollIntoView({ behavior: 'smooth' });
+
+    // Populate candidates
+    populateCandidates();
+  }
+
+  function populateCandidates() {
+    const grid = document.getElementById('candidates-grid');
+    grid.innerHTML = candidatesData.map((candidate, index) => `
+      <div class="glassmorphism rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:border-success/30 candidate-card" onclick="showDetailedAnalysis(${index})">
+        <div class="absolute -top-3 left-6 px-4 py-1 bg-gradient-to-r from-success to-yong-green text-white text-sm font-bold rounded-full">
+          #${candidate.rank}
+        </div>
+        
+        <div class="mt-4 mb-6">
+          <h3 class="text-xl font-bold mb-1">${candidate.name}</h3>
+          <p class="text-text-muted">${candidate.title}</p>
+        </div>
+        
+        <div class="flex items-center justify-between mb-6 p-4 bg-bg-raised rounded-xl">
+          <span class="font-semibold text-text-muted">Match Score</span>
+          <span class="text-2xl font-black ${candidate.scoreClass}">${candidate.score}%</span>
+        </div>
+        
+        <div class="space-y-3">
+          ${candidate.highlights.map(highlight => `
+            <div class="flex items-center gap-3 text-sm">
+              <span class="text-success">✓</span>
+              <span class="text-text-muted">${highlight}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function showDetailedAnalysis(index) {
+    const candidate = candidatesData[index];
+    
+    // Show detailed analysis panel
+    const panel = document.getElementById('detailed-analysis');
+    panel.classList.remove('hidden');
+    panel.scrollIntoView({ behavior: 'smooth' });
+    
+    // Populate skills
+    const skillsContainer = document.getElementById('skills-detailed');
+    skillsContainer.innerHTML = candidate.skills.map(skill => `
+      <div class="flex items-center justify-between p-4 bg-bg-raised rounded-xl border-l-4 border-l-success">
+        <div class="flex-1">
+          <div class="font-semibold mb-1">${skill.name}</div>
+          <div class="text-sm text-text-muted">${skill.experience}</div>
+        </div>
+        <div class="text-success font-semibold font-mono">${skill.confidence}%</div>
+      </div>
+    `).join('');
+    
+    // Populate cultural fit
+    const culturalContainer = document.getElementById('cultural-fit');
+    culturalContainer.innerHTML = candidate.culturalFit.map(metric => `
+      <div class="flex items-center justify-between p-4 bg-bg-raised rounded-xl">
+        <span class="font-medium">${metric.name}</span>
+        <div class="flex items-center gap-3">
+          <span class="font-mono font-semibold text-info">${metric.score}%</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function calculateROI() {
+    const resumes = parseInt(document.getElementById('resumes-month').value) || 0;
+    const hourlyRate = parseInt(document.getElementById('hourly-rate').value) || 0;
+    const timePerResume = parseInt(document.getElementById('time-per-resume').value) || 0;
+    const teamSize = parseInt(document.getElementById('team-size').value) || 0;
+    
+    // Calculate savings (assuming 80% time reduction)
+    const timeReduction = 0.8;
+    const timeSavedPerResume = (timePerResume * timeReduction) / 60; // Convert to hours
+    const monthlySavings = resumes * timeSavedPerResume * hourlyRate;
+    const annualSavings = monthlySavings * 12;
+    const implementationCost = 10000; // Estimated
+    const paybackPeriod = implementationCost / monthlySavings;
+    
+    document.getElementById('monthly-savings').textContent = '$' + monthlySavings.toLocaleString();
+    document.getElementById('annual-savings').textContent = '$' + annualSavings.toLocaleString();
+    document.getElementById('payback-period').textContent = paybackPeriod.toFixed(1);
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', function() {
+    calculateROI();
+  });
+</script>
+
+<style>
+  .candidate-card {
+    position: relative;
+  }
+</style>

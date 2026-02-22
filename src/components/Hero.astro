@@ -1,0 +1,341 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  showBadge?: boolean;
+  showButtons?: boolean;
+  showStats?: boolean;
+  badgeText?: string;
+  customContent?: boolean;
+}
+
+const { 
+  title = "Stop paying people to do what AI can do better.",
+  subtitle = "AI automation for law firms and recruiting agencies. Cut costs, eliminate bottlenecks, and scale what actually works.",
+  showBadge = true,
+  showButtons = true,
+  showStats = true,
+  badgeText = "Now accepting Q1 2026 clients",
+  customContent = false
+} = Astro.props;
+---
+
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-18 hero-bg" id="hero">
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0" style="
+        background-image: 
+          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
+      "></div>
+    </div>
+    
+    <!-- Animated Neural Network SVG Background -->
+    <svg class="hero-network-svg absolute inset-0 w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="nodeGlow1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#3fb950" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nodeGlow2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nodeGlow3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3fb950" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#3fb950" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#3fb950" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="heroGlow">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      
+      <!-- Connection lines between nodes -->
+      <g class="hero-connections" opacity="0.4">
+        <line x1="120" y1="180" x2="350" y2="280" stroke="url(#lineGrad1)" stroke-width="1" class="hero-line hero-line-1"/>
+        <line x1="350" y1="280" x2="620" y2="200" stroke="url(#lineGrad2)" stroke-width="1" class="hero-line hero-line-2"/>
+        <line x1="620" y1="200" x2="900" y2="320" stroke="url(#lineGrad1)" stroke-width="1" class="hero-line hero-line-3"/>
+        <line x1="900" y1="320" x2="1150" y2="220" stroke="url(#lineGrad2)" stroke-width="1" class="hero-line hero-line-4"/>
+        <line x1="1150" y1="220" x2="1350" y2="350" stroke="url(#lineGrad1)" stroke-width="1" class="hero-line hero-line-5"/>
+        
+        <line x1="200" y1="500" x2="450" y2="420" stroke="url(#lineGrad2)" stroke-width="1" class="hero-line hero-line-6"/>
+        <line x1="450" y1="420" x2="720" y2="520" stroke="url(#lineGrad1)" stroke-width="1" class="hero-line hero-line-7"/>
+        <line x1="720" y1="520" x2="1000" y2="450" stroke="url(#lineGrad2)" stroke-width="1" class="hero-line hero-line-8"/>
+        <line x1="1000" y1="450" x2="1280" y2="550" stroke="url(#lineGrad1)" stroke-width="1" class="hero-line hero-line-9"/>
+        
+        <!-- Cross connections -->
+        <line x1="350" y1="280" x2="450" y2="420" stroke="url(#lineGrad1)" stroke-width="0.5" class="hero-line hero-line-10"/>
+        <line x1="620" y1="200" x2="720" y2="520" stroke="url(#lineGrad2)" stroke-width="0.5" class="hero-line hero-line-11"/>
+        <line x1="900" y1="320" x2="1000" y2="450" stroke="url(#lineGrad1)" stroke-width="0.5" class="hero-line hero-line-12"/>
+        <line x1="1150" y1="220" x2="1280" y2="550" stroke="url(#lineGrad2)" stroke-width="0.5" class="hero-line hero-line-13"/>
+        
+        <!-- Additional depth lines -->
+        <line x1="80" y1="650" x2="350" y2="700" stroke="url(#lineGrad1)" stroke-width="0.5" class="hero-line hero-line-14"/>
+        <line x1="350" y1="700" x2="620" y2="650" stroke="url(#lineGrad2)" stroke-width="0.5" class="hero-line hero-line-15"/>
+        <line x1="900" y1="680" x2="1200" y2="720" stroke="url(#lineGrad1)" stroke-width="0.5" class="hero-line hero-line-16"/>
+      </g>
+      
+      <!-- Network nodes - green -->
+      <g filter="url(#heroGlow)">
+        <circle cx="120" cy="180" r="20" fill="url(#nodeGlow1)" class="hero-node hero-node-float-1"/>
+        <circle cx="120" cy="180" r="4" fill="#3fb950" opacity="0.8" class="hero-node hero-node-float-1"/>
+        
+        <circle cx="620" cy="200" r="24" fill="url(#nodeGlow1)" class="hero-node hero-node-float-2"/>
+        <circle cx="620" cy="200" r="5" fill="#3fb950" opacity="0.9" class="hero-node hero-node-float-2"/>
+        
+        <circle cx="1000" cy="450" r="18" fill="url(#nodeGlow1)" class="hero-node hero-node-float-3"/>
+        <circle cx="1000" cy="450" r="3.5" fill="#3fb950" opacity="0.7" class="hero-node hero-node-float-3"/>
+        
+        <circle cx="350" cy="700" r="16" fill="url(#nodeGlow1)" class="hero-node hero-node-float-1"/>
+        <circle cx="350" cy="700" r="3" fill="#3fb950" opacity="0.6" class="hero-node hero-node-float-1"/>
+      </g>
+      
+      <!-- Network nodes - purple -->
+      <g filter="url(#heroGlow)">
+        <circle cx="350" cy="280" r="22" fill="url(#nodeGlow2)" class="hero-node hero-node-float-2"/>
+        <circle cx="350" cy="280" r="4.5" fill="#8b5cf6" opacity="0.85" class="hero-node hero-node-float-2"/>
+        
+        <circle cx="1150" cy="220" r="20" fill="url(#nodeGlow2)" class="hero-node hero-node-float-1"/>
+        <circle cx="1150" cy="220" r="4" fill="#8b5cf6" opacity="0.8" class="hero-node hero-node-float-1"/>
+        
+        <circle cx="450" cy="420" r="18" fill="url(#nodeGlow2)" class="hero-node hero-node-float-3"/>
+        <circle cx="450" cy="420" r="3.5" fill="#8b5cf6" opacity="0.7" class="hero-node hero-node-float-3"/>
+        
+        <circle cx="1200" cy="720" r="14" fill="url(#nodeGlow2)" class="hero-node hero-node-float-2"/>
+        <circle cx="1200" cy="720" r="3" fill="#8b5cf6" opacity="0.5" class="hero-node hero-node-float-2"/>
+      </g>
+      
+      <!-- Network nodes - blue -->
+      <g filter="url(#heroGlow)">
+        <circle cx="900" cy="320" r="26" fill="url(#nodeGlow3)" class="hero-node hero-node-float-3"/>
+        <circle cx="900" cy="320" r="5" fill="#3b82f6" opacity="0.9" class="hero-node hero-node-float-3"/>
+        
+        <circle cx="200" cy="500" r="16" fill="url(#nodeGlow3)" class="hero-node hero-node-float-1"/>
+        <circle cx="200" cy="500" r="3" fill="#3b82f6" opacity="0.7" class="hero-node hero-node-float-1"/>
+        
+        <circle cx="720" cy="520" r="20" fill="url(#nodeGlow3)" class="hero-node hero-node-float-2"/>
+        <circle cx="720" cy="520" r="4" fill="#3b82f6" opacity="0.8" class="hero-node hero-node-float-2"/>
+        
+        <circle cx="1350" cy="350" r="18" fill="url(#nodeGlow3)" class="hero-node hero-node-float-1"/>
+        <circle cx="1350" cy="350" r="3.5" fill="#3b82f6" opacity="0.7" class="hero-node hero-node-float-1"/>
+        
+        <circle cx="80" cy="650" r="14" fill="url(#nodeGlow3)" class="hero-node hero-node-float-3"/>
+        <circle cx="80" cy="650" r="2.5" fill="#3b82f6" opacity="0.5" class="hero-node hero-node-float-3"/>
+        
+        <circle cx="620" cy="650" r="12" fill="url(#nodeGlow3)" class="hero-node hero-node-float-2"/>
+        <circle cx="620" cy="650" r="2.5" fill="#3b82f6" opacity="0.5" class="hero-node hero-node-float-2"/>
+        
+        <circle cx="900" cy="680" r="16" fill="url(#nodeGlow3)" class="hero-node hero-node-float-1"/>
+        <circle cx="900" cy="680" r="3" fill="#3b82f6" opacity="0.6" class="hero-node hero-node-float-1"/>
+        
+        <circle cx="1280" cy="550" r="18" fill="url(#nodeGlow1)" class="hero-node hero-node-float-3"/>
+        <circle cx="1280" cy="550" r="3.5" fill="#3fb950" opacity="0.7" class="hero-node hero-node-float-3"/>
+      </g>
+      
+      <!-- Traveling data pulses along lines -->
+      <circle r="2" fill="#3fb950" opacity="0.9" class="hero-pulse-dot">
+        <animateMotion dur="4s" repeatCount="indefinite" path="M120,180 L350,280 L620,200 L900,320"/>
+      </circle>
+      <circle r="2" fill="#8b5cf6" opacity="0.9" class="hero-pulse-dot">
+        <animateMotion dur="5s" repeatCount="indefinite" path="M200,500 L450,420 L720,520 L1000,450 L1280,550" begin="1s"/>
+      </circle>
+      <circle r="1.5" fill="#3b82f6" opacity="0.8" class="hero-pulse-dot">
+        <animateMotion dur="6s" repeatCount="indefinite" path="M900,320 L1150,220 L1350,350" begin="2s"/>
+      </circle>
+    </svg>
+    
+    <!-- Glowing orbs -->
+    <div class="absolute w-96 h-96 -top-20 left-1/4 bg-yong-green/20 rounded-full filter blur-3xl opacity-40 float-element"></div>
+    <div class="absolute w-80 h-80 bottom-0 right-1/4 bg-purple-500/15 rounded-full filter blur-3xl opacity-30 float-element" style="animation-delay: -1.5s;"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    {customContent ? (
+      <slot />
+    ) : (
+      <>
+        {showBadge && (
+          <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 mb-8 reveal">
+            <div class="w-2 h-2 bg-yong-green rounded-full pulse-dot"></div>
+            <span class="text-yong-green-light text-sm font-mono font-medium">{badgeText}</span>
+          </div>
+        )}
+        
+        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-none mb-8 reveal">
+          <span class="block">{title.split(' ').slice(0, 3).join(' ')}</span>
+          <br class="hidden sm:block">
+          <span class="block">{title.split(' ').slice(3, 7).join(' ')}</span> <span class="accent-gradient">{title.split(' ').slice(7).join(' ')}</span>
+        </h1>
+        
+        <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed reveal">
+          {subtitle}
+        </p>
+        
+        {showButtons && (
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 reveal">
+            <button 
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+              class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/25 btn-animate inline-flex items-center gap-3"
+            >
+              Book a Free Strategy Call
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            
+            <a 
+              href="/demos/resume-screener" 
+              class="glassmorphism text-text-primary px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:border-yong-green/30 btn-animate inline-flex items-center gap-3"
+            >
+              Try Live Demo
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </a>
+            
+            <a 
+              href="#services" 
+              class="text-text-muted hover:text-text-primary px-10 py-5 font-bold text-lg transition-colors duration-300"
+            >
+              See Pricing
+            </a>
+          </div>
+        )}
+        
+        {showStats && (
+          <div class="flex flex-col sm:flex-row gap-8 justify-center items-center text-center reveal">
+            <div class="flex items-center gap-4">
+              <span class="text-4xl lg:text-5xl font-black text-text-primary font-mono" data-counter="6">0</span>
+              <span class="text-lg text-yong-green font-bold">+</span>
+              <div class="text-left">
+                <div class="text-sm text-text-muted leading-tight">Years Enterprise</div>
+                <div class="text-sm text-text-muted leading-tight">Consulting</div>
+              </div>
+            </div>
+            
+            <div class="w-px h-12 bg-border-light hidden sm:block"></div>
+            
+            <div class="flex items-center gap-4">
+              <span class="text-4xl lg:text-5xl font-black text-text-primary font-mono" data-counter="30">0</span>
+              <span class="text-lg text-yong-green font-bold">+</span>
+              <div class="text-left">
+                <div class="text-sm text-text-muted leading-tight">Enterprise</div>
+                <div class="text-sm text-text-muted leading-tight">Workshops Led</div>
+              </div>
+            </div>
+            
+            <div class="w-px h-12 bg-border-light hidden sm:block"></div>
+            
+            <div class="flex items-center gap-4">
+              <span class="text-4xl lg:text-5xl font-black text-text-primary font-mono" data-counter="2">0</span>
+              <span class="text-lg text-yong-green font-bold"> wk</span>
+              <div class="text-left">
+                <div class="text-sm text-text-muted leading-tight">From Kickoff</div>
+                <div class="text-sm text-text-muted leading-tight">to First Results</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    )}
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 reveal">
+    <div class="w-px h-12 bg-gradient-to-b from-yong-green to-transparent animate-bounce"></div>
+  </div>
+</header>
+
+<style>
+  .hero-bg {
+    background: 
+      linear-gradient(135deg, rgba(63, 185, 80, 0.08) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%),
+      radial-gradient(ellipse at center, rgba(63, 185, 80, 0.05) 0%, transparent 70%);
+  }
+
+  .hero-network-svg {
+    opacity: 0.6;
+  }
+
+  /* Floating animation for nodes */
+  .hero-node-float-1 {
+    animation: heroFloat1 8s ease-in-out infinite;
+  }
+  .hero-node-float-2 {
+    animation: heroFloat2 10s ease-in-out infinite;
+  }
+  .hero-node-float-3 {
+    animation: heroFloat3 12s ease-in-out infinite;
+  }
+
+  @keyframes heroFloat1 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(5px, -8px); }
+    66% { transform: translate(-3px, 4px); }
+  }
+  @keyframes heroFloat2 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-6px, 5px); }
+    50% { transform: translate(4px, -6px); }
+    75% { transform: translate(-2px, 3px); }
+  }
+  @keyframes heroFloat3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(7px, -5px); }
+  }
+
+  /* Pulsing lines */
+  .hero-line {
+    stroke-dasharray: 8 4;
+    animation: heroLineDash 3s linear infinite;
+  }
+  .hero-line-1 { animation-delay: 0s; }
+  .hero-line-2 { animation-delay: 0.3s; }
+  .hero-line-3 { animation-delay: 0.6s; }
+  .hero-line-4 { animation-delay: 0.9s; }
+  .hero-line-5 { animation-delay: 1.2s; }
+  .hero-line-6 { animation-delay: 0.15s; }
+  .hero-line-7 { animation-delay: 0.45s; }
+  .hero-line-8 { animation-delay: 0.75s; }
+  .hero-line-9 { animation-delay: 1.05s; }
+  .hero-line-10 { animation-delay: 0.2s; }
+  .hero-line-11 { animation-delay: 0.5s; }
+  .hero-line-12 { animation-delay: 0.8s; }
+  .hero-line-13 { animation-delay: 1.1s; }
+  .hero-line-14 { animation-delay: 0.35s; }
+  .hero-line-15 { animation-delay: 0.65s; }
+  .hero-line-16 { animation-delay: 0.95s; }
+
+  @keyframes heroLineDash {
+    to { stroke-dashoffset: -24; }
+  }
+
+  /* Pulse dots traveling along paths */
+  .hero-pulse-dot {
+    filter: url(#heroGlow);
+  }
+
+  /* Mobile: reduce visual complexity */
+  @media (max-width: 768px) {
+    .hero-network-svg {
+      opacity: 0.3;
+    }
+  }
+</style>

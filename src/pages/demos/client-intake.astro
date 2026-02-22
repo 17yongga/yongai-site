@@ -1,0 +1,606 @@
+---
+import DemoLayout from '../../layouts/DemoLayout.astro';
+
+const title = "AI Client Intake Bot Demo — YongAI";
+const description = "Experience YongAI's AI-powered client intake system for law firms. See how we automate consultations, route cases, and capture leads 24/7.";
+---
+
+<DemoLayout title={title} description={description} demoType="client-intake">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-block px-4 py-2 bg-info/10 text-info text-sm font-mono font-semibold rounded-full mb-6">
+        LIVE DEMO
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
+        AI Client Intake Bot for <span class="accent-gradient">Law Firms</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
+        See how AI can handle client consultations, connect people to the right attorneys, and capture potential clients 24/7 — making your intake process seamless.
+      </p>
+      <div class="inline-block px-6 py-3 glassmorphism rounded-xl text-text-muted font-medium">
+        Try the bot below
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-12 items-start">
+        <!-- Chat Interface -->
+        <div class="lg:col-span-2">
+          <div class="glassmorphism rounded-3xl overflow-hidden">
+            <!-- Chat Header -->
+            <div class="flex items-center gap-4 p-6 border-b border-white/6 bg-gradient-to-r from-bg-raised to-bg-card">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-lg">
+                AI
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Hartfield Family Law - AI Intake</h3>
+                <div class="flex items-center gap-2 text-sm text-success">
+                  <div class="w-2 h-2 bg-success rounded-full pulse-dot"></div>
+                  Online • Responds in under 5 seconds
+                </div>
+              </div>
+            </div>
+            
+            <!-- Messages Container -->
+            <div class="h-96 lg:h-[500px] overflow-y-auto p-6 bg-gradient-to-b from-bg-primary to-bg-raised" id="chatMessages">
+              <!-- Messages will be populated by JavaScript -->
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="p-6 border-t border-white/6 bg-bg-raised">
+              <div class="flex gap-3">
+                <input 
+                  type="text" 
+                  class="flex-1 px-4 py-3 bg-bg-primary border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-info focus:ring-2 focus:ring-info/20 focus:outline-none disabled:opacity-50" 
+                  placeholder="Type your message..."
+                  id="chatInput" 
+                  disabled
+                />
+                <button 
+                  type="button" 
+                  class="bg-gradient-to-r from-info to-info-light text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100" 
+                  id="sendBtn" 
+                  disabled
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo Information -->
+        <div class="space-y-6">
+          <div class="glassmorphism rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6">What You're Seeing</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Smart routing to the right practice area</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Checks how urgent your case is</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Instant conflict checking</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Matches you with the right attorney & books meetings</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Guides you through document upload</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-success text-sm">✨</span>
+                </div>
+                <span class="text-text-muted">Qualifies leads and saves to your client database</span>
+              </li>
+            </ul>
+
+            <button 
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+              class="w-full mt-8 bg-gradient-to-r from-yong-green to-yong-green-light text-white py-4 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-yong-green/25"
+            >
+              Automate Your Client Intake
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Dashboard -->
+  <section class="py-24 bg-bg-raised border-t border-white/6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
+          PERFORMANCE METRICS
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Real Impact, Measurable Results</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto mb-4">
+          See how AI-powered intake transforms your firm's efficiency and growth.
+        </p>
+        <p class="text-text-faint italic">
+          Projected improvements based on industry research. Actual results depend on implementation and firm size.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-success mb-4">5s</div>
+          <div class="text-xl font-semibold mb-2">Average Response Time</div>
+          <div class="text-text-muted">24/7 availability — no after-hours gaps</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-info mb-4">24/7</div>
+          <div class="text-xl font-semibold mb-2">Availability</div>
+          <div class="text-text-muted">Capture after-hours inquiries (30-40% of total)</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-warning mb-4">90%</div>
+          <div class="text-xl font-semibold mb-2">Questions Auto-Resolved</div>
+          <div class="text-text-muted">Reduced staff time on routine intake</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-purple-400 mb-4">3x</div>
+          <div class="text-xl font-semibold mb-2">More Consultations</div>
+          <div class="text-text-muted">Faster response times improve conversion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-warning/10 text-warning text-sm font-mono font-semibold rounded-full mb-6">
+          TRANSFORMATION
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Before vs After AI Implementation</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto">
+          The stark difference between manual and AI-powered client intake.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-danger relative">
+          <div class="absolute top-6 right-6 text-4xl opacity-20">×</div>
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-danger/20 text-danger flex items-center justify-center">×</span>
+            Manual Process
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>Receptionist overwhelmed with 30+ calls daily</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>40% of after-hours leads go unresponded</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>24-48 hour response time average</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>Inconsistent information collection</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>Manual scheduling creates conflicts</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>No conflict checking until consultation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>Limited practice area expertise</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">✗</span>
+              <span>Paper forms and manual data entry</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-success relative">
+          <div class="absolute top-6 right-6 text-4xl opacity-20">AI</div>
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-success/20 text-success flex items-center justify-center">AI</span>
+            AI-Powered System
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>AI handles unlimited simultaneous intakes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Respond to every inquiry, day and night</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Near-instant response times</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Consistent, complete information gathering</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Connects to your calendar automatically</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Instant conflict checking</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Routes clients to the right specialized attorney</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span>Digital forms that save to your client database</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Statistics -->
+  <section class="py-24 bg-gradient-to-br from-yong-green/10 to-success/5 border-t border-white/6">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-12">The Cost of Slow Response Times</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div>
+          <div class="text-6xl font-black text-yong-green mb-4">35%</div>
+          <div class="text-xl text-text-primary">of clients choose the first firm that responds</div>
+        </div>
+        <div>
+          <div class="text-6xl font-black text-warning mb-4">30-40%</div>
+          <div class="text-xl text-text-primary">of all inquiries happen after hours</div>
+        </div>
+        <div>
+          <div class="text-6xl font-black text-info mb-4">80%</div>
+          <div class="text-xl text-text-primary">of routine intake questions can be automated</div>
+        </div>
+      </div>
+      <p class="text-xl text-text-muted">
+        AI responds in under 5 seconds, 24/7. Every minute matters in client acquisition.
+      </p>
+    </div>
+  </section>
+</DemoLayout>
+
+<script>
+  // Chat functionality
+  let currentStep = 0;
+  let clientData = {};
+  
+  const chatFlow = [
+    {
+      type: 'bot',
+      message: "Hi! I'm the AI intake assistant for Hartfield Family Law. I'm here to help you get connected with the right attorney for your legal needs. What brings you here today?",
+      options: [
+        "Family law matter",
+        "Real estate issue", 
+        "Immigration question",
+        "Business legal needs",
+        "Not sure - need guidance"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "I understand you have a family law matter. To connect you with the best attorney, could you tell me more about your specific situation?",
+      options: [
+        "Divorce/separation",
+        "Child custody",
+        "Adoption",
+        "Domestic violence",
+        "Property division"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Thank you for that information. How would you rate the urgency of your situation?",
+      options: [
+        "Emergency - need help immediately",
+        "Urgent - within a few days",
+        "Important - within 1-2 weeks", 
+        "General inquiry - flexible timing"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "I'd like to collect some basic information to ensure we can serve you effectively. What's your preferred name?",
+      input: true,
+      field: 'name'
+    },
+    {
+      type: 'bot',
+      message: "And the best phone number to reach you?",
+      input: true,
+      field: 'phone'
+    },
+    {
+      type: 'bot',
+      message: "Perfect! I'm running a quick conflict check to ensure we can represent you... ✓ No conflicts found. Based on your family law needs, I'm matching you with our available attorneys.",
+      delay: 2000
+    },
+    {
+      type: 'attorney_match',
+      message: "Great news! I've found the perfect match for your case:",
+      attorney: {
+        name: "Sarah Chen",
+        title: "Senior Family Law Partner",
+        experience: "12 years specializing in high-conflict custody cases",
+        availability: "Available for consultation this week"
+      }
+    },
+    {
+      type: 'bot',
+      message: "Would you like to schedule a consultation with Sarah? I can book you in for a 30-minute initial consultation.",
+      options: [
+        "Yes, schedule consultation",
+        "I have more questions first",
+        "I need to think about it"
+      ]
+    },
+    {
+      type: 'scheduling',
+      message: "Perfect! Here are Sarah's available consultation times:",
+      times: [
+        "Tomorrow at 2:00 PM",
+        "Friday at 10:00 AM", 
+        "Monday at 3:30 PM"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Excellent! Your consultation is booked for tomorrow at 2:00 PM with Sarah Chen. You'll receive a confirmation email with:\n\n• Meeting details and location\n• What to bring to your consultation\n• Intake forms to complete beforehand\n\nIs there anything else I can help you with today?",
+      options: [
+        "What should I prepare?",
+        "Can I upload documents now?",
+        "No, that's everything"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Perfect! Here's what to prepare for your consultation:\n\n**Documents to bring:**\n• Any relevant court papers\n• Financial documents\n• Communication records\n\n**What to expect:**\n• 30-minute initial consultation\n• Case assessment and strategy discussion\n• Clear next steps and fee structure\n\nWe're here 24/7 if you have any questions before your meeting. Have a great day!",
+      final: true
+    }
+  ];
+
+  function initializeChat() {
+    const messagesContainer = document.getElementById('chatMessages');
+    showTypingIndicator();
+    
+    setTimeout(() => {
+      hideTypingIndicator();
+      addMessage(chatFlow[currentStep]);
+      currentStep++;
+    }, 1500);
+  }
+
+  function addMessage(step) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `mb-6 flex gap-3 ${step.type === 'user' ? 'justify-end' : ''} fade-in`;
+
+    if (step.type === 'attorney_match') {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="mb-4">${step.message}</p>
+          <div class="bg-success/10 border border-success/20 rounded-xl p-4">
+            <div class="font-semibold text-success mb-2">${step.attorney.name}</div>
+            <div class="text-sm text-text-muted mb-1">${step.attorney.title}</div>
+            <div class="text-sm text-text-muted mb-1">${step.attorney.experience}</div>
+            <div class="text-sm text-success">✓ ${step.attorney.availability}</div>
+          </div>
+        </div>
+      `;
+    } else if (step.type === 'scheduling') {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="mb-4">${step.message}</p>
+          <div class="space-y-2">
+            ${step.times.map(time => `
+              <button class="w-full text-left px-4 py-3 bg-info/10 hover:bg-info/20 border border-info/20 hover:border-info/40 rounded-xl text-info transition-all duration-200" onclick="selectSchedule('${time}')">
+                ${time}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else if (step.type === 'user') {
+      messageDiv.innerHTML = `
+        <div class="max-w-sm glassmorphism rounded-2xl p-4 bg-info text-white">
+          ${step.message}
+        </div>
+        <div class="w-10 h-10 rounded-full bg-text-muted text-bg-primary font-bold flex items-center justify-center text-sm flex-shrink-0">
+          U
+        </div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="whitespace-pre-line">${step.message}</p>
+          ${step.options ? `
+            <div class="grid grid-cols-1 gap-2 mt-4">
+              ${step.options.map(option => `
+                <button class="text-left px-4 py-3 bg-yong-green/10 hover:bg-yong-green/20 border border-yong-green/20 hover:border-yong-green/40 rounded-xl text-yong-green transition-all duration-200" onclick="selectOption('${option}')">
+                  ${option}
+                </button>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    if (step.input) {
+      enableInput(step.field);
+    }
+
+    if (step.final) {
+      document.getElementById('chatInput').placeholder = "Chat completed - Thank you!";
+    }
+  }
+
+  function selectOption(option) {
+    addUserMessage(option);
+    
+    if (currentStep < chatFlow.length) {
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        hideTypingIndicator();
+        addMessage(chatFlow[currentStep]);
+        currentStep++;
+      }, 1200);
+    }
+  }
+
+  function selectSchedule(time) {
+    addUserMessage(time);
+    
+    if (currentStep < chatFlow.length) {
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        hideTypingIndicator();
+        addMessage(chatFlow[currentStep]);
+        currentStep++;
+      }, 1500);
+    }
+  }
+
+  function addUserMessage(message) {
+    addMessage({ type: 'user', message });
+  }
+
+  function enableInput(field) {
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+    
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+    input.placeholder = field === 'name' ? 'Enter your name...' : 'Enter your phone number...';
+    
+    // Set up enter key handler
+    input.onkeypress = function(e) {
+      if (e.key === 'Enter') {
+        sendMessage(field);
+      }
+    };
+    
+    // Update send button click handler
+    sendBtn.onclick = () => sendMessage(field);
+  }
+
+  function sendMessage(field) {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    if (message) {
+      clientData[field] = message;
+      addUserMessage(message);
+      
+      input.value = '';
+      input.disabled = true;
+      document.getElementById('sendBtn').disabled = true;
+      
+      if (currentStep < chatFlow.length) {
+        showTypingIndicator();
+        
+        setTimeout(() => {
+          hideTypingIndicator();
+          addMessage(chatFlow[currentStep]);
+          currentStep++;
+        }, 1200);
+      }
+    }
+  }
+
+  function showTypingIndicator() {
+    const messagesContainer = document.getElementById('chatMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'mb-6 flex gap-3';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+        AI
+      </div>
+      <div class="glassmorphism rounded-2xl p-4">
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    `;
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  function hideTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  // Initialize the chat when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeChat, 1000);
+  });
+</script>
+
+<style>
+  .info-light {
+    color: #60A5FA;
+  }
+  
+  .bg-info-light {
+    background-color: #60A5FA;
+  }
+</style>

@@ -1,0 +1,797 @@
+---
+import DemoLayout from '../../layouts/DemoLayout.astro';
+
+const title = "Candidate Outreach Methodology Demo — YongAI";
+const description = "Experience YongAI's proven methodology for candidate outreach personalization. See how our systematic approach improves response rates based on LinkedIn research. Consulting for recruiting agencies.";
+---
+
+<DemoLayout title={title} description={description} demoType="candidate-outreach">
+  <!-- Stats Bar -->
+  <div class="py-4 bg-bg-raised border-b border-white/6 mt-18">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-success">15%+</span>
+          <div class="text-sm text-text-muted">Better than bulk (LinkedIn)</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-warning">81%</span>
+          <div class="text-sm text-text-muted">More likely to respond</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-info">30.5%</span>
+          <div class="text-sm text-text-muted">Personalized subject boost</div>
+        </div>
+        <div>
+          <span class="text-2xl lg:text-3xl font-black text-purple-400">46%</span>
+          <div class="text-sm text-text-muted">Higher with referrals</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
+        <div class="pulse-dot w-2 h-2 bg-success rounded-full"></div>
+        Outreach Methodology Demo
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
+        Candidate Outreach
+        <span class="accent-gradient">Methodology</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
+        Transform your recruiting with highly personalized outreach that converts passive candidates. 
+        Boost response rates with personalization — LinkedIn data shows 15%+ improvement over bulk templates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Demo -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Experience the Methodology</h2>
+        <p class="text-xl text-text-muted">See how our systematic approach to personalization improves candidate engagement</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-5 gap-8">
+        <!-- Controls Panel -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Candidate Profile -->
+          <div class="glassmorphism rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-success">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Candidate Profile
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">LinkedIn Profile or Resume</label>
+                <textarea 
+                  class="w-full h-32 bg-bg-raised border border-border-light rounded-xl p-4 text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none resize-vertical text-sm"
+                  id="candidateProfile" 
+                  placeholder="Paste LinkedIn profile URL or resume text..."
+                ></textarea>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <button class="px-3 py-1 bg-bg-raised border border-border-light rounded-lg text-xs text-text-muted hover:text-text-primary hover:border-yong-green transition-all duration-200 preset-btn" data-profile="senior-engineer">Senior Engineer</button>
+                  <button class="px-3 py-1 bg-bg-raised border border-border-light rounded-lg text-xs text-text-muted hover:text-text-primary hover:border-yong-green transition-all duration-200 preset-btn" data-profile="marketing-director">Marketing Director</button>
+                  <button class="px-3 py-1 bg-bg-raised border border-border-light rounded-lg text-xs text-text-muted hover:text-text-primary hover:border-yong-green transition-all duration-200 preset-btn" data-profile="product-manager">Product Manager</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job Context -->
+          <div class="glassmorphism rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-info">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Job Context
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">Position</label>
+                <select class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none" id="jobPosition">
+                  <option value="">Select a role...</option>
+                  <option value="senior-fullstack-developer">Senior Full-Stack Developer</option>
+                  <option value="marketing-manager">Marketing Manager</option>
+                  <option value="product-lead">Product Lead</option>
+                  <option value="data-scientist">Data Scientist</option>
+                  <option value="engineering-manager">Engineering Manager</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">Company & Culture</label>
+                <input type="text" class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none" id="companyInfo" placeholder="e.g., Fast-growing fintech startup, remote-first culture">
+              </div>
+              
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">Key Selling Points</label>
+                <textarea 
+                  class="w-full h-20 bg-bg-raised border border-border-light rounded-xl p-4 text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none resize-vertical text-sm"
+                  id="sellingPoints" 
+                  placeholder="e.g., Equity package, latest tech stack, mentorship opportunities..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Message Settings -->
+          <div class="glassmorphism rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-warning">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Message Settings
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">Tone</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <button class="tone-btn px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-sm font-medium transition-all duration-200 hover:border-yong-green active" data-tone="professional">Professional</button>
+                  <button class="tone-btn px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-sm font-medium transition-all duration-200 hover:border-yong-green" data-tone="casual">Casual</button>
+                  <button class="tone-btn px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-sm font-medium transition-all duration-200 hover:border-yong-green" data-tone="executive">Executive</button>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-semibold text-text-muted mb-2">Channel</label>
+                <select class="w-full px-4 py-3 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none" id="messageChannel">
+                  <option value="linkedin">LinkedIn InMail</option>
+                  <option value="email">Email</option>
+                  <option value="both">Both (Optimized)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <button 
+            class="w-full bg-gradient-to-r from-success to-yong-green text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-success/25"
+            id="generateBtn"
+          >
+            Generate Personalized Messages
+          </button>
+        </div>
+        
+        <!-- Results Panel -->
+        <div class="lg:col-span-3">
+          <div class="glassmorphism rounded-2xl overflow-hidden" id="resultsPanel">
+            <div class="flex items-center justify-between p-6 border-b border-white/6 bg-bg-raised">
+              <div class="text-xl font-bold">Generated Messages</div>
+              <div class="px-4 py-2 bg-success/10 text-success rounded-full text-sm font-semibold" id="responseRate">Predicted: 24% response rate</div>
+            </div>
+            
+            <div class="p-8" id="messageVariants">
+              <div class="flex items-center justify-center py-16 text-text-muted">
+                <div class="text-center">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="mx-auto mb-4 text-text-faint">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <p>Click "Generate Personalized Messages" to see the tool in action...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="py-24 bg-bg-raised border-t border-white/6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Generic Templates vs AI Personalization</h2>
+        <p class="text-xl text-text-muted">See the difference that true personalization makes</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Before: Generic Template -->
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-danger">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 bg-danger/20 text-danger text-sm font-semibold rounded-full uppercase tracking-wider">Before</span>
+            <h3 class="text-2xl font-bold">Generic Template</h3>
+          </div>
+          <p class="text-text-muted mb-6">The old way of doing things</p>
+          
+          <div class="bg-bg-raised border border-border-light rounded-xl p-6 mb-6">
+            <div class="text-sm font-semibold text-text-primary mb-3">Subject: Exciting Opportunity - Senior Developer Position</div>
+            <div class="text-text-muted text-sm leading-relaxed space-y-3">
+              <p>Hi [Name],</p>
+              <p>I hope this message finds you well. I wanted to reach out regarding an exciting opportunity that would be perfect for someone with your background.</p>
+              <p>We have a Senior Developer position available at a growing tech company. The role offers competitive compensation and great benefits.</p>
+              <p>Would you be interested in learning more? I'd love to schedule a quick call to discuss.</p>
+              <p>Best regards,<br>[Recruiter Name]</p>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-4xl font-black text-danger mb-2">8%</div>
+            <div class="text-text-muted">Response Rate</div>
+          </div>
+        </div>
+        
+        <!-- After: AI Personalized -->
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-success">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="px-3 py-1 bg-success/20 text-success text-sm font-semibold rounded-full uppercase tracking-wider">After</span>
+            <h3 class="text-2xl font-bold">AI Personalized</h3>
+          </div>
+          <p class="text-text-muted mb-6">The YongAI way</p>
+          
+          <div class="bg-bg-raised border border-border-light rounded-xl p-6 mb-6">
+            <div class="text-sm font-semibold text-text-primary mb-3">Subject: Your React optimization work at TechCorp caught our attention</div>
+            <div class="text-text-muted text-sm leading-relaxed space-y-3">
+              <p>Hi Sarah,</p>
+              <p>I saw your recent LinkedIn post about reducing bundle sizes by 40% at TechCorp - really impressive optimization work! That kind of performance focus is exactly what we're looking for.</p>
+              <p>I'm reaching out because Fintech Innovations is building their next-gen trading platform and needs a Senior React Developer who understands both performance and scalability. Given your experience with high-traffic applications and your passion for clean architecture (loved your Medium article on component patterns), this could be a perfect next step.</p>
+              <p>The role offers equity in a fast-growing fintech, fully remote flexibility, and a chance to work with the latest tech stack including React 18, TypeScript, and GraphQL.</p>
+              <p>Worth a quick 15-minute conversation? I think you'd find the technical challenges really interesting.</p>
+              <p>Best,<br>Mike Chen</p>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <div class="text-4xl font-black text-success mb-2">22%+</div>
+            <div class="text-text-muted">Response Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Calculate Your ROI</h2>
+        <p class="text-xl text-text-muted">See how much time and money your agency could save</p>
+      </div>
+      
+      <div class="glassmorphism rounded-3xl p-8 lg:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <span class="text-4xl lg:text-5xl font-black text-success">2h</span>
+            <div class="text-text-muted mt-2">Daily outreach time<br>per recruiter</div>
+          </div>
+          <div class="text-center">
+            <span class="text-4xl lg:text-5xl font-black text-info">5min</span>
+            <div class="text-text-muted mt-2">Time with AI<br>generation</div>
+          </div>
+          <div class="text-center">
+            <span class="text-4xl lg:text-5xl font-black text-warning">15%+</span>
+            <div class="text-text-muted mt-2">Better response rates<br>(LinkedIn data)</div>
+          </div>
+          <div class="text-center">
+            <span class="text-4xl lg:text-5xl font-black text-purple-400">Hours</span>
+            <div class="text-text-muted mt-2">Significant time savings<br>per recruiter</div>
+          </div>
+        </div>
+        
+        <p class="text-text-muted text-center mt-8 text-sm">
+          Based on LinkedIn Talent Blog data and published research. Actual results depend on industry, role, and execution quality.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Dashboard -->
+  <section class="py-24 bg-bg-raised border-t border-white/6">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Real-Time Performance Analytics</h2>
+        <p class="text-xl text-text-muted">Track engagement, optimize messaging, and measure ROI across your entire pipeline</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-success to-yong-green flex items-center justify-center text-white font-bold">01</div>
+            <div class="text-lg font-bold">Open Rates</div>
+          </div>
+          <div class="text-3xl font-black text-success mb-2">68%</div>
+          <div class="text-success font-semibold text-sm mb-4">+14% vs template</div>
+          <div class="w-full h-2 bg-bg-raised rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-success to-yong-green rounded-full" style="width: 68%"></div>
+          </div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-info to-blue-400 flex items-center justify-center text-white font-bold">02</div>
+            <div class="text-lg font-bold">Response Rate</div>
+          </div>
+          <div class="text-3xl font-black text-info mb-2">22%</div>
+          <div class="text-success font-semibold text-sm mb-4">+175% improvement</div>
+          <div class="w-full h-2 bg-bg-raised rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-info to-blue-400 rounded-full" style="width: 22%"></div>
+          </div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-warning to-yellow-400 flex items-center justify-center text-white font-bold">03</div>
+            <div class="text-lg font-bold">Time Saved</div>
+          </div>
+          <div class="text-3xl font-black text-warning mb-2">2.3h</div>
+          <div class="text-text-muted text-sm mb-2">Per recruiter, per day</div>
+          <div class="text-success font-semibold text-sm">$1,840 monthly savings</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-purple-400 flex items-center justify-center text-white font-bold">04</div>
+            <div class="text-lg font-bold">Conversion Funnel</div>
+          </div>
+          <div class="text-sm text-text-muted space-y-2">
+            <div class="flex justify-between">
+              <span>Messages Sent</span>
+              <span class="font-mono">1,000</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Opened</span>
+              <span class="font-mono">680</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Responded</span>
+              <span class="font-mono">220</span>
+            </div>
+            <div class="flex justify-between font-semibold text-success">
+              <span>Phone Calls</span>
+              <span class="font-mono">89</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DemoLayout>
+
+<script>
+  // Sample candidate profiles
+  const candidateProfiles = {
+    'senior-engineer': `Sarah Chen - Senior Full Stack Developer at TechCorp
+      
+• 7+ years experience building scalable web applications
+• Expert in React, Node.js, TypeScript, PostgreSQL
+• Led migration to microservices architecture, reduced load times by 40%
+• Recent accomplishments: Built real-time analytics dashboard, optimized database queries
+• Education: Computer Science degree from University of Toronto
+• Interests: Performance optimization, clean architecture, open source contributing
+• Recently posted about React 18 features and bundle size optimization techniques
+• Active in Toronto tech meetups and mentoring junior developers`,
+
+    'marketing-director': `Alex Rodriguez - Marketing Director at GrowthCo
+      
+• 8+ years in digital marketing and growth strategy
+• Specialized in B2B SaaS marketing, demand generation, content strategy
+• Grew MQLs by 300% year-over-year, $2M ARR impact
+• Expert in HubSpot, Salesforce, Google Analytics, marketing automation
+• Recent wins: Launched successful account-based marketing program, improved conversion rates
+• MBA from Rotman School of Management
+• Passionate about data-driven marketing and customer journey optimization
+• Recently spoke at MarTech Toronto about personalization strategies
+• Side project: Marketing newsletter with 5,000 subscribers`,
+
+    'product-manager': `David Kim - Senior Product Manager at InnovateTech
+      
+• 6+ years in product management for B2B and consumer products
+• Experience with agile development, user research, data analytics
+• Launched 3 major product features, increased user engagement by 45%
+• Skills: Product strategy, roadmapping, stakeholder management, A/B testing
+• Tools: Jira, Figma, Mixpanel, user interview platforms
+• Education: Engineering background + Product Management certification
+• Recent achievements: Led successful product pivot, improved retention metrics
+• Interested in AI/ML applications in product development
+• Active on Product Hunt and product management communities`
+  };
+
+  // Sample job descriptions and contexts
+  const jobContexts = {
+    'senior-fullstack-developer': {
+      position: 'Senior Full-Stack Developer',
+      company: 'Fintech Innovations - Series B startup building next-gen trading platform',
+      sellingPoints: 'Equity package (0.1-0.2%), latest tech stack (React 18, Node.js, GraphQL), fully remote, $120-140k salary, stock options, mentorship from ex-FAANG engineers'
+    },
+    'marketing-manager': {
+      position: 'Growth Marketing Manager',
+      company: 'HealthTech Solutions - Fast-growing healthcare SaaS company',
+      sellingPoints: 'Lead a team of 3, $90-110k + equity, unlimited PTO, health benefits, conference budget, opportunity to shape marketing strategy from ground up'
+    },
+    'product-lead': {
+      position: 'Senior Product Manager',
+      company: 'EduTech Platform - Revolutionizing online learning for professionals',
+      sellingPoints: 'Own product roadmap for 100k+ users, $110-130k + equity, flexible work arrangements, learning stipend, work directly with founders'
+    }
+  };
+
+  // Message templates
+  const messageVariants = {
+    professional: {
+      subject: "Your {specific_work} at {current_company} caught our attention",
+      hook: "I noticed your recent work on {specific_project} - particularly impressed by {specific_achievement}. That kind of {relevant_skill} expertise is exactly what we're looking for.",
+      body: "I'm reaching out because {company_name} is {company_description} and we need a {position} who understands {relevant_domain}. Given your experience with {relevant_experience} and your {specific_interest}, this could be an excellent next step in your career.\n\nThe role offers {key_benefits} and a chance to {growth_opportunity}.\n\nWorth a quick 15-minute conversation? I think you'd find the {appeal_factor} really interesting.",
+      closing: "Best regards,\n{recruiter_name}"
+    },
+    casual: {
+      subject: "Quick question about your {expertise_area} work",
+      hook: "Hey {first_name}! Saw your {recent_activity} and had to reach out. Your work on {specific_project} is exactly the kind of {skill_focus} we're looking for.",
+      body: "I'm working with {company_name}, a {company_type} that's {company_mission}. They need someone who gets {domain_knowledge} and can {key_responsibility}.\n\nThought of you because of your {relevant_background} and {personal_interest}. Plus, they offer {compelling_benefit} which seems right up your alley.\n\nInterested in a quick chat? No pressure, just thought it might be worth exploring.",
+      closing: "Cheers,\n{recruiter_name}"
+    },
+    executive: {
+      subject: "Strategic opportunity aligned with your {leadership_area} expertise",
+      hook: "I've been following your leadership in {domain_area}, particularly your work on {strategic_initiative}. Your approach to {leadership_skill} aligns perfectly with an opportunity I'm working on.",
+      body: "I'm partnering with {company_name}, a {company_stage} {company_type} that's {strategic_mission}. They're seeking a {senior_position} to {strategic_responsibility} and {business_impact}.\n\nGiven your track record in {relevant_leadership_area} and your vision for {industry_trend}, I believe this role would provide the strategic challenges and impact you're looking for.\n\nThe opportunity includes {executive_benefits} and the chance to {strategic_opportunity}.\n\nWould you be open to a confidential discussion about how this might align with your career aspirations?",
+      closing: "Best,\n{recruiter_name}\n{title} at {agency_name}"
+    }
+  };
+
+  // DOM elements
+  let candidateProfileTextarea: HTMLTextAreaElement;
+  let jobPositionSelect: HTMLSelectElement;
+  let companyInfoInput: HTMLInputElement;
+  let sellingPointsTextarea: HTMLTextAreaElement;
+  let messageChannelSelect: HTMLSelectElement;
+  let generateBtn: HTMLButtonElement;
+  let messageVariantsDiv: HTMLDivElement;
+  let responseRateDiv: HTMLDivElement;
+
+  let currentTone = 'professional';
+
+  // Initialize when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    candidateProfileTextarea = document.getElementById('candidateProfile') as HTMLTextAreaElement;
+    jobPositionSelect = document.getElementById('jobPosition') as HTMLSelectElement;
+    companyInfoInput = document.getElementById('companyInfo') as HTMLInputElement;
+    sellingPointsTextarea = document.getElementById('sellingPoints') as HTMLTextAreaElement;
+    messageChannelSelect = document.getElementById('messageChannel') as HTMLSelectElement;
+    generateBtn = document.getElementById('generateBtn') as HTMLButtonElement;
+    messageVariantsDiv = document.getElementById('messageVariants') as HTMLDivElement;
+    responseRateDiv = document.getElementById('responseRate') as HTMLDivElement;
+
+    // Preset candidate profile buttons
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const profileType = (this as HTMLButtonElement).dataset.profile!;
+        candidateProfileTextarea.value = candidateProfiles[profileType];
+        
+        // Visual feedback
+        this.style.background = 'var(--color-success)';
+        this.style.color = 'white';
+        setTimeout(() => {
+          this.style.background = '';
+          this.style.color = '';
+        }, 200);
+      });
+    });
+
+    // Tone selector
+    document.querySelectorAll('.tone-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tone-btn').forEach(b => {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        currentTone = (this as HTMLButtonElement).dataset.tone!;
+      });
+    });
+
+    // Job position select auto-fill
+    jobPositionSelect.addEventListener('change', function() {
+      const selectedJob = jobContexts[this.value];
+      if (selectedJob) {
+        companyInfoInput.value = selectedJob.company;
+        sellingPointsTextarea.value = selectedJob.sellingPoints;
+      }
+    });
+
+    // Generate button
+    generateBtn.addEventListener('click', generateMessages);
+  });
+
+  function generateMessages() {
+    const profile = candidateProfileTextarea.value.trim();
+    const position = jobPositionSelect.value;
+    const company = companyInfoInput.value.trim();
+    const sellingPoints = sellingPointsTextarea.value.trim();
+
+    if (!profile || !company) {
+      alert('Please fill in at least the candidate profile and company information.');
+      return;
+    }
+
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = `
+      <svg class="animate-spin h-5 w-5 inline mr-2" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      Generating...
+    `;
+
+    // Show loading state
+    messageVariantsDiv.innerHTML = `
+      <div class="flex items-center justify-center py-16 text-text-muted">
+        <div class="text-center">
+          <svg class="animate-spin h-8 w-8 mx-auto mb-4" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <p>Analyzing the candidate profile and creating personalized messages...</p>
+        </div>
+      </div>
+    `;
+
+    // Simulate AI generation with realistic delay
+    setTimeout(() => {
+      displayGeneratedMessages(profile, position, company, sellingPoints);
+      generateBtn.disabled = false;
+      generateBtn.innerHTML = 'Generate Personalized Messages';
+    }, 3000);
+  }
+
+  function displayGeneratedMessages(profile: string, position: string, company: string, sellingPoints: string) {
+    // Parse candidate info (simplified)
+    const candidateName = extractName(profile);
+    const candidateSkills = extractSkills(profile);
+    const candidateAchievements = extractAchievements(profile);
+    
+    // Calculate predicted response rate
+    const personalizationScore = calculatePersonalizationScore(profile, company, sellingPoints);
+    
+    responseRateDiv.innerHTML = `Personalized outreach: higher engagement expected`;
+
+    // Generate three variants
+    const variants = [
+      generateVariant('Career Growth', candidateName, candidateSkills, candidateAchievements, company, sellingPoints, currentTone),
+      generateVariant('Technical Challenge', candidateName, candidateSkills, candidateAchievements, company, sellingPoints, currentTone),
+      generateVariant('Company Culture', candidateName, candidateSkills, candidateAchievements, company, sellingPoints, currentTone)
+    ];
+
+    messageVariantsDiv.innerHTML = variants.map(variant => `
+      <div class="glassmorphism rounded-xl p-6 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-success text-sm font-semibold uppercase tracking-wider">${variant.angle}</div>
+          <div class="flex items-center gap-4 text-xs text-text-muted">
+            <span>Response: ${variant.responseRate}%</span>
+            <span>Personalization: ${variant.personalization}%</span>
+            <span>Channel: ${messageChannelSelect.value}</span>
+          </div>
+        </div>
+        <div class="bg-bg-raised border border-border-light rounded-lg p-4 font-mono text-sm leading-relaxed whitespace-pre-wrap">${variant.message}</div>
+      </div>
+    `).join('');
+
+    // Add follow-up sequence
+    messageVariantsDiv.innerHTML += generateFollowUpSequence(candidateName, company);
+  }
+
+  function generateVariant(angle: string, name: string, skills: string[], achievements: string[], company: string, sellingPoints: string, tone: string) {
+    const firstName = name.split(' ')[0];
+    
+    let message = '';
+    let responseRate = 0;
+    
+    switch (angle) {
+      case 'Career Growth':
+        responseRate = 15;
+        message = `Subject: Your ${achievements[0]} caught our attention, ${firstName}
+
+Hi ${firstName},
+
+I noticed your recent work on ${achievements[0]} - particularly impressed by ${achievements[1]}. That kind of ${skills[0]} expertise is exactly what we're looking for.
+
+I'm reaching out because ${company.split('-')[0]} is ${company.split('-')[1]} and we need someone who understands both technical excellence and business impact. Given your experience with ${skills.slice(0,2).join(' and ')} and your passion for ${skills[2] || 'innovation'}, this could be an excellent next step in your career.
+
+The role offers ${sellingPoints.split(',')[0]} and a chance to ${sellingPoints.split(',')[1] || 'make a significant impact'}. You'd be working on challenging problems that directly impact our growth trajectory.
+
+Worth a quick 15-minute conversation? I think you'd find the technical challenges and growth opportunity really interesting.
+
+Best regards,
+Mike Chen
+Senior Technical Recruiter`;
+        break;
+
+      case 'Technical Challenge':
+        responseRate = 18;
+        message = `Subject: Challenging technical opportunity - ${skills[0]} focus
+
+Hey ${firstName},
+
+Saw your work on ${achievements[0]} and had to reach out. Your approach to ${skills[1] || skills[0]} is exactly what our engineering team needs.
+
+${company.split('-')[0]} is tackling some serious technical challenges - think ${skills[0]} at scale, ${skills[1] || 'system'} optimization, and building systems that handle massive growth. We need someone who gets excited about solving complex problems and isn't afraid to dive deep.
+
+The tech stack includes ${sellingPoints.includes('React') ? 'React 18, TypeScript' : 'latest technologies'}, and you'd be working alongside engineers from ${sellingPoints.includes('FAANG') ? 'FAANG companies' : 'top tech companies'}.
+
+Interested in hearing about the specific technical challenges? I think you'd find them right up your alley.
+
+Cheers,
+Mike Chen`;
+        break;
+
+      case 'Company Culture':
+        responseRate = 12;
+        message = `Subject: Culture-first company that values ${skills[0]} excellence
+
+Hi ${firstName},
+
+Your background in ${skills[0]} and ${skills[1] || 'leadership'} caught my attention, but what really stood out was your ${achievements[0]} - shows you care about impact, not just code.
+
+${company.split('-')[0]} is different. We're ${company.split('-')[1] || 'a growing company'} with a culture that actually matches our values: ${sellingPoints.includes('remote') ? 'fully remote with flexible hours' : 'work-life balance'}, ${sellingPoints.includes('unlimited') ? 'unlimited PTO that people actually use' : 'comprehensive benefits'}, and a team that celebrates both technical wins and personal growth.
+
+The role offers ${sellingPoints.split(',')[0]} plus the chance to ${sellingPoints.split(',')[2] || 'make a real impact'}. No bureaucracy, no politics - just smart people solving interesting problems.
+
+Think this might be a fit? Would love to chat about what we're building and see if it aligns with what you're looking for.
+
+Best,
+Mike Chen
+Senior Technical Recruiter`;
+        break;
+    }
+
+    return {
+      angle,
+      message,
+      responseRate,
+      personalization: 87 + Math.floor(Math.random() * 10)
+    };
+  }
+
+  function generateFollowUpSequence(name: string, company: string) {
+    const firstName = name.split(' ')[0];
+    
+    return `
+      <div class="glassmorphism rounded-xl p-6 mt-8 border-t-4 border-t-info">
+        <h4 class="text-lg font-bold mb-6 flex items-center gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-info">
+            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8a9 9 0 0 1-9 9c-5 0-9-4-9-9z"></path>
+            <path d="M12 7v5l4 2"></path>
+          </svg>
+          Automated Follow-up Sequence
+        </h4>
+        
+        <div class="space-y-4">
+          <div class="bg-bg-raised rounded-lg p-4">
+            <div class="flex items-center gap-2 text-sm text-text-muted mb-2">
+              <span class="w-2 h-2 bg-info rounded-full"></span>
+              <span>Day 3: If no response</span>
+            </div>
+            <div class="font-semibold text-text-primary mb-1">Quick follow-up - ${company.split('-')[0]} opportunity</div>
+            <div class="text-sm text-text-muted">
+              Hi ${firstName}, wanted to circle back on the ${company.split('-')[0]} opportunity. I know you're probably busy, but this role might be worth a quick look. The team is moving fast and would love to chat with someone with your background. Any interest in a brief call this week?
+            </div>
+          </div>
+          
+          <div class="bg-bg-raised rounded-lg p-4">
+            <div class="flex items-center gap-2 text-sm text-text-muted mb-2">
+              <span class="w-2 h-2 bg-warning rounded-full"></span>
+              <span>Day 7: Value-add approach</span>
+            </div>
+            <div class="font-semibold text-text-primary mb-1">Thought you'd find this interesting - ${company.split('-')[0]} tech blog</div>
+            <div class="text-sm text-text-muted">
+              Hi ${firstName}, came across this technical article from our engineering team about scaling challenges and thought you might find it interesting given your background. No pressure on the opportunity I mentioned earlier, but if you're curious about what we're building, this gives a good sense of the technical depth. [Link to tech blog]
+            </div>
+          </div>
+          
+          <div class="bg-bg-raised rounded-lg p-4">
+            <div class="flex items-center gap-2 text-sm text-text-muted mb-2">
+              <span class="w-2 h-2 bg-danger rounded-full"></span>
+              <span>Day 14: Final touchpoint</span>
+            </div>
+            <div class="font-semibold text-text-primary mb-1">Keeping you in the loop - ${firstName}</div>
+            <div class="text-sm text-text-muted">
+              Hi ${firstName}, this will be my last message about the ${company.split('-')[0]} opportunity. We're moving forward with interviews and I wanted to give you one more chance to consider it. If timing isn't right now, no worries - I'll keep you in mind for future opportunities that match your interests.
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Utility functions
+  function extractName(profile: string): string {
+    const lines = profile.split('\n');
+    for (const line of lines) {
+      if (line.includes('-') && (line.includes('Developer') || line.includes('Manager') || line.includes('Director'))) {
+        return line.split('-')[0].trim();
+      }
+    }
+    return 'Alex Johnson'; // Fallback
+  }
+
+  function extractSkills(profile: string): string[] {
+    const skills = [];
+    if (profile.includes('React')) skills.push('React');
+    if (profile.includes('Node.js')) skills.push('Node.js');
+    if (profile.includes('TypeScript')) skills.push('TypeScript');
+    if (profile.includes('marketing')) skills.push('digital marketing');
+    if (profile.includes('Product')) skills.push('product strategy');
+    if (profile.includes('analytics')) skills.push('data analytics');
+    if (profile.includes('optimization')) skills.push('performance optimization');
+    
+    return skills.length > 0 ? skills : ['technical expertise', 'leadership', 'innovation'];
+  }
+
+  function extractAchievements(profile: string): string[] {
+    const achievements = [];
+    const lines = profile.split('\n');
+    
+    for (const line of lines) {
+      if (line.includes('•') && (line.includes('Led') || line.includes('Built') || line.includes('Grew') || line.includes('improved'))) {
+        achievements.push(line.replace('•', '').trim());
+      }
+    }
+    
+    return achievements.length > 0 ? achievements : [
+      'recent technical contributions',
+      'significant performance improvements'
+    ];
+  }
+
+  function calculatePersonalizationScore(profile: string, company: string, sellingPoints: string): number {
+    let score = 0;
+    
+    // Base score for having profile
+    if (profile.length > 100) score += 20;
+    
+    // Specific achievements mentioned
+    if (profile.includes('•')) score += 15;
+    
+    // Recent activities/posts
+    if (profile.includes('Recent') || profile.includes('recently')) score += 15;
+    
+    // Specific skills match
+    if (profile.includes('React') || profile.includes('Node') || profile.includes('marketing')) score += 10;
+    
+    // Company context provided
+    if (company.length > 20) score += 15;
+    
+    // Detailed selling points
+    if (sellingPoints.length > 50) score += 15;
+    
+    // Industry/domain alignment
+    if (profile.includes('fintech') || profile.includes('SaaS') || profile.includes('startup')) score += 10;
+    
+    return Math.min(score, 100);
+  }
+</script>
+
+<style>
+  .tone-btn.active {
+    background: var(--color-yong-green);
+    color: white;
+    border-color: var(--color-yong-green);
+  }
+
+  .pulse-dot {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+
+  .preset-btn:hover {
+    border-color: var(--color-yong-green);
+    color: var(--color-text-primary);
+  }
+</style>

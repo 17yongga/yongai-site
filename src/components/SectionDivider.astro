@@ -1,0 +1,124 @@
+---
+// Decorative SVG section dividers
+export interface Props {
+  variant?: 'circuit' | 'wave' | 'nodes' | 'diagonal';
+  flip?: boolean;
+}
+
+const { variant = 'circuit', flip = false } = Astro.props;
+---
+
+<div class={`section-divider pointer-events-none select-none ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
+  {variant === 'circuit' && (
+    <svg class="w-full h-12 md:h-16" viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none">
+      <line x1="0" y1="30" x2="200" y2="30" stroke="#3fb950" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="200" cy="30" r="3" fill="#3fb950" opacity="0.2"/>
+      <line x1="200" y1="30" x2="350" y2="15" stroke="#8b5cf6" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="350" cy="15" r="2" fill="#8b5cf6" opacity="0.15"/>
+      <line x1="350" y1="15" x2="500" y2="30" stroke="#3b82f6" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="500" cy="30" r="3" fill="#3b82f6" opacity="0.2"/>
+      <line x1="500" y1="30" x2="720" y2="30" stroke="#3fb950" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="720" cy="30" r="4" fill="#3fb950" opacity="0.12"/>
+      <circle cx="720" cy="30" r="4" fill="none" stroke="#3fb950" stroke-width="0.5" opacity="0.2"/>
+      <line x1="720" y1="30" x2="900" y2="45" stroke="#8b5cf6" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="900" cy="45" r="2" fill="#8b5cf6" opacity="0.15"/>
+      <line x1="900" y1="45" x2="1100" y2="30" stroke="#3b82f6" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="1100" cy="30" r="3" fill="#3b82f6" opacity="0.2"/>
+      <line x1="1100" y1="30" x2="1250" y2="20" stroke="#3fb950" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="1250" cy="20" r="2" fill="#3fb950" opacity="0.15"/>
+      <line x1="1250" y1="20" x2="1440" y2="30" stroke="#8b5cf6" stroke-width="0.5" opacity="0.15"/>
+      
+      <!-- Small decorative dots -->
+      <circle cx="100" cy="30" r="1" fill="#3fb950" opacity="0.1"/>
+      <circle cx="600" cy="25" r="1" fill="#8b5cf6" opacity="0.1"/>
+      <circle cx="800" cy="35" r="1" fill="#3b82f6" opacity="0.1"/>
+      <circle cx="1000" cy="30" r="1" fill="#3fb950" opacity="0.1"/>
+      <circle cx="1350" cy="25" r="1" fill="#8b5cf6" opacity="0.1"/>
+    </svg>
+  )}
+
+  {variant === 'wave' && (
+    <svg class="w-full h-10 md:h-14" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none">
+      <path 
+        d="M 0 25 Q 120 10, 240 25 T 480 25 T 720 25 T 960 25 T 1200 25 T 1440 25" 
+        stroke="url(#waveDivGrad)" 
+        stroke-width="1" 
+        fill="none"
+        opacity="0.2"
+      />
+      <path 
+        d="M 0 30 Q 180 45, 360 30 T 720 30 T 1080 30 T 1440 30" 
+        stroke="url(#waveDivGrad)" 
+        stroke-width="0.5" 
+        fill="none"
+        opacity="0.1"
+      />
+      <defs>
+        <linearGradient id="waveDivGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3fb950" stop-opacity="0"/>
+          <stop offset="20%" stop-color="#3fb950"/>
+          <stop offset="50%" stop-color="#8b5cf6"/>
+          <stop offset="80%" stop-color="#3b82f6"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  )}
+
+  {variant === 'nodes' && (
+    <svg class="w-full h-8 md:h-12" viewBox="0 0 1440 40" preserveAspectRatio="none" fill="none">
+      <!-- Scattered floating nodes -->
+      <circle cx="120" cy="20" r="2" fill="#3fb950" opacity="0.15" class="divider-float-1"/>
+      <circle cx="280" cy="12" r="1.5" fill="#8b5cf6" opacity="0.12" class="divider-float-2"/>
+      <circle cx="440" cy="28" r="2.5" fill="#3b82f6" opacity="0.15" class="divider-float-3"/>
+      <circle cx="600" cy="18" r="1.5" fill="#3fb950" opacity="0.1" class="divider-float-1"/>
+      <circle cx="720" cy="22" r="3" fill="#8b5cf6" opacity="0.1" class="divider-float-2"/>
+      <circle cx="840" cy="14" r="1.5" fill="#3b82f6" opacity="0.12" class="divider-float-3"/>
+      <circle cx="960" cy="30" r="2" fill="#3fb950" opacity="0.15" class="divider-float-1"/>
+      <circle cx="1100" cy="16" r="2" fill="#8b5cf6" opacity="0.12" class="divider-float-2"/>
+      <circle cx="1260" cy="24" r="1.5" fill="#3b82f6" opacity="0.1" class="divider-float-3"/>
+      <circle cx="1380" cy="20" r="2" fill="#3fb950" opacity="0.12" class="divider-float-1"/>
+      
+      <!-- Faint connecting lines -->
+      <line x1="120" y1="20" x2="280" y2="12" stroke="#3fb950" stroke-width="0.3" opacity="0.08"/>
+      <line x1="440" y1="28" x2="600" y2="18" stroke="#8b5cf6" stroke-width="0.3" opacity="0.08"/>
+      <line x1="720" y1="22" x2="840" y2="14" stroke="#3b82f6" stroke-width="0.3" opacity="0.08"/>
+      <line x1="960" y1="30" x2="1100" y2="16" stroke="#3fb950" stroke-width="0.3" opacity="0.08"/>
+      <line x1="1260" y1="24" x2="1380" y2="20" stroke="#8b5cf6" stroke-width="0.3" opacity="0.08"/>
+    </svg>
+  )}
+  
+  {variant === 'diagonal' && (
+    <svg class="w-full h-6 md:h-10" viewBox="0 0 1440 30" preserveAspectRatio="none" fill="none">
+      <line x1="0" y1="30" x2="1440" y2="0" stroke="url(#diagGrad)" stroke-width="0.5" opacity="0.15"/>
+      <line x1="0" y1="30" x2="1440" y2="5" stroke="url(#diagGrad)" stroke-width="0.3" opacity="0.08"/>
+      <defs>
+        <linearGradient id="diagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3fb950" stop-opacity="0"/>
+          <stop offset="30%" stop-color="#3fb950"/>
+          <stop offset="70%" stop-color="#8b5cf6"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  )}
+</div>
+
+<style>
+  .divider-float-1 { animation: divFloat1 6s ease-in-out infinite; }
+  .divider-float-2 { animation: divFloat2 8s ease-in-out infinite; }
+  .divider-float-3 { animation: divFloat3 7s ease-in-out infinite; }
+  
+  @keyframes divFloat1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  @keyframes divFloat2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+  @keyframes divFloat3 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+  }
+</style>

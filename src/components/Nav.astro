@@ -1,0 +1,155 @@
+---
+export interface Props {
+  isDemoPage?: boolean;
+}
+
+const { isDemoPage = false } = Astro.props;
+---
+
+<nav class="fixed top-0 left-0 right-0 h-18 z-50 navbar transition-all duration-300" id="nav">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between h-full">
+      <!-- Logo -->
+      <a href={isDemoPage ? "/" : "#"} class="flex items-center gap-3 font-bold text-xl group">
+        <span class="text-2xl">⚡</span>
+        <span class="text-text-primary">Yong<span class="text-yong-green">AI</span></span>
+      </a>
+      
+      <!-- Navigation Links (Desktop) -->
+      <ul class="hidden md:flex items-center gap-8">
+        {isDemoPage ? (
+          <>
+            <li><a href="/#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Services</a></li>
+            <li><a href="/#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">About</a></li>
+            <li><a href="/#contact" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Contact</a></li>
+          </>
+        ) : (
+          <>
+            <li><a href="#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Services</a></li>
+            <li><a href="/demos/resume-screener" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Live Demo</a></li>
+            <li><a href="#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">About</a></li>
+            <li><a href="#testimonials" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Research</a></li>
+          </>
+        )}
+        <li>
+          <button 
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+            class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yong-green/25 btn-animate"
+          >
+            Get Started
+          </button>
+        </li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        class="md:hidden flex flex-col gap-1 p-2 cursor-pointer" 
+        id="burger" 
+        aria-label="Toggle menu"
+      >
+        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden absolute top-full left-0 right-0 glassmorphism border-t border-white/6 p-6" id="mobileMenu">
+      <ul class="flex flex-col gap-4">
+        {isDemoPage ? (
+          <>
+            <li><a href="/#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Services</a></li>
+            <li><a href="/#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">About</a></li>
+            <li><a href="/#contact" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Contact</a></li>
+          </>
+        ) : (
+          <>
+            <li><a href="#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Services</a></li>
+            <li><a href="/demos/resume-screener" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Live Demo</a></li>
+            <li><a href="#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">About</a></li>
+            <li><a href="#testimonials" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Research</a></li>
+          </>
+        )}
+        <li>
+          <button 
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+            class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-6 py-3 rounded-lg font-semibold text-sm w-full"
+          >
+            Get Started
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle functionality
+  function initMobileMenu() {
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const nav = document.getElementById('nav');
+    
+    if (!burger || !mobileMenu || !nav) return;
+    
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Animate hamburger to X
+      const spans = burger.querySelectorAll('span');
+      if (mobileMenu.classList.contains('hidden')) {
+        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
+      } else {
+        spans[0].style.transform = 'rotate(45deg) translateY(6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+      }
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target as Node)) {
+        mobileMenu.classList.add('hidden');
+        const spans = burger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
+      }
+    });
+
+    // Add scrolled class to nav on scroll
+    let scrolled = false;
+    window.addEventListener('scroll', () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        scrolled = isScrolled;
+        nav.classList.toggle('scrolled', isScrolled);
+        if (isScrolled) {
+          nav.style.background = 'linear-gradient(135deg, rgba(7, 8, 12, 0.8), rgba(13, 15, 20, 0.85))';
+          nav.style.backdropFilter = 'blur(20px)';
+          nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
+          nav.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.1)';
+        } else {
+          nav.style.background = 'transparent';
+          nav.style.backdropFilter = 'none';
+          nav.style.borderBottom = 'none';
+          nav.style.boxShadow = 'none';
+        }
+      }
+    });
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  
+  // Reinitialize on navigation (for SPAs)
+  document.addEventListener('astro:page-load', initMobileMenu);
+</script>
+
+<style>
+  .navbar {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+</style>
