@@ -43,14 +43,14 @@ import Footer from '../components/Footer.astro';
             The Problem
           </div>
           <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Your team is drowning in repetitive work.
+            Your best people are stuck on the wrong work.
           </h2>
           <div class="space-y-4 text-lg text-text-muted leading-relaxed">
             <p>
-              Candidate screening. Contract review. Client intake. Document generation. Your best people are stuck doing tasks a well-built AI agent could handle in seconds.
+              Candidate screening. Contract review. Client intake. Document generation. Every hour spent on repetitive tasks is an hour <strong class="text-text-primary">not</strong> spent on strategy, client relationships, or growing revenue.
             </p>
             <p>
-              Meanwhile, competing firms are already automating — and pulling ahead.
+              Meanwhile, competing firms are automating these workflows — winning clients faster, scaling without adding headcount, and freeing their teams to do work that actually moves the needle.
             </p>
           </div>
           
@@ -119,9 +119,9 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2">Hours wasted</h3>
+                <h3 class="text-xl font-semibold mb-2">Time you're not getting back</h3>
                 <p class="text-text-muted leading-relaxed">
-                  60% of workers could save 30% of their time with workflow automation. 
+                  60% of workers could reclaim 30% of their week with automation — time to focus on clients, strategy, and growth. 
                   <span class="text-sm italic text-text-faint">— McKinsey, 2023</span>
                 </p>
               </div>
@@ -142,9 +142,9 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2">Money burned</h3>
+                <h3 class="text-xl font-semibold mb-2">Revenue left on the table</h3>
                 <p class="text-text-muted leading-relaxed">
-                  Organizations achieve up to 30% cost reduction through intelligent automation. 
+                  Organizations see up to 30% cost reduction — but the real win is redirecting those resources toward revenue-generating work. 
                   <span class="text-sm italic text-text-faint">— McKinsey Digital</span>
                 </p>
               </div>
@@ -204,7 +204,7 @@ import Footer from '../components/Footer.astro';
         </div>
         <h2 class="text-4xl lg:text-5xl font-bold mb-6">Three ways to work together.</h2>
         <p class="text-xl text-text-muted max-w-3xl mx-auto">
-          Whether you're exploring AI or ready to go all-in, there's a clear path forward.
+          Every tier is designed around four outcomes: <strong class="text-text-primary">more time</strong>, <strong class="text-text-primary">higher productivity</strong>, <strong class="text-text-primary">more revenue</strong>, and <strong class="text-text-primary">less risk</strong>.
         </p>
       </div>
       
@@ -214,14 +214,14 @@ import Footer from '../components/Footer.astro';
           title="AI Readiness Audit"
           price="$2,500"
           term="one-time"
-          description="For companies curious about AI but unsure where to start."
+          description="Find out exactly where AI can save your team time, reduce risk, and unlock new revenue — in just 2 weeks."
           features={[
             "2-week deep-dive into one business area",
             "Identify top 3–5 automation opportunities", 
             "ROI projection for each opportunity",
             "Strategic automation roadmap deliverable"
           ]}
-          buttonText="Start Here"
+          buttonText="Find Your Quick Wins"
         />
         
         <PricingCard 
@@ -229,14 +229,14 @@ import Footer from '../components/Footer.astro';
           title="AI Implementation"
           price="$5K–$15K"
           term="per project"
-          description="For companies ready to automate a specific process."
+          description="Turn your biggest time sink into a competitive advantage. One process automated, measurable ROI delivered."
           features={[
             "Custom AI agent, chatbot, or workflow build",
             "Integration with your existing tools (CRM, email, DBs)",
             "Full testing, deployment & handoff docs",
             "2 weeks of post-launch support included"
           ]}
-          buttonText="Let's Build"
+          buttonText="Free Up Your Team"
           featured={true}
         />
         
@@ -245,14 +245,14 @@ import Footer from '../components/Footer.astro';
           title="AI Partnership"
           price="$2K–$5K"
           term="per month"
-          description="For companies that want a dedicated AI partner."
+          description="Ongoing optimization, risk monitoring, and new automations — so your productivity gains compound month over month."
           features={[
             "Ongoing AI system monitoring & optimization",
             "Monthly strategy call + performance reports", 
             "Priority support & troubleshooting",
             "Fine-tuning and keeping your AI tools up to date"
           ]}
-          buttonText="Go Retainer"
+          buttonText="Scale Without Headcount"
         />
       </div>
     </div>
@@ -531,94 +531,117 @@ import Footer from '../components/Footer.astro';
 
   <SectionDivider variant="diagonal" />
 
-  <!-- About Section -->
+  <!-- Team & Advisory Board Section -->
   <section id="about" class="py-24">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <!-- Enhanced profile visual -->
-          <div class="relative w-64 h-64 mx-auto lg:mx-0 mb-8 lg:mb-0">
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 260 260" fill="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="aboutRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#3fb950"/>
-                  <stop offset="50%" stop-color="#8b5cf6"/>
-                  <stop offset="100%" stop-color="#3b82f6"/>
-                </linearGradient>
-              </defs>
-              <!-- Outer animated ring -->
-              <circle cx="130" cy="130" r="125" stroke="url(#aboutRingGrad)" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="6 4" class="about-ring-spin"/>
-              <!-- Inner geometric pattern -->
-              <circle cx="130" cy="130" r="110" stroke="#3fb950" stroke-width="0.5" fill="none" opacity="0.1"/>
-              <!-- Decorative orbital dots -->
-              <circle cx="130" cy="5" r="3" fill="#3fb950" opacity="0.4" class="about-orbital-dot"/>
-              <circle cx="255" cy="130" r="2.5" fill="#8b5cf6" opacity="0.3" class="about-orbital-dot-2"/>
-              <circle cx="130" cy="255" r="2" fill="#3b82f6" opacity="0.3" class="about-orbital-dot-3"/>
-              <!-- Hex pattern inside -->
-              <polygon points="130,40 190,75 190,145 130,180 70,145 70,75" stroke="#3fb950" stroke-width="0.5" fill="none" opacity="0.08"/>
-              <polygon points="130,60 175,85 175,135 130,160 85,135 85,85" stroke="#8b5cf6" stroke-width="0.5" fill="none" opacity="0.06"/>
-            </svg>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-48 h-48 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border-2 border-border-light flex items-center justify-center relative overflow-hidden">
-                <div class="text-6xl font-black text-yong-green/60 font-mono">GY</div>
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block px-4 py-2 bg-yong-green/10 text-yong-green text-sm font-mono font-semibold rounded-full mb-6">
+          Our Team
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Built by practitioners, not theorists.</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto">
+          Enterprise experience. Domain expertise. Every engagement is backed by people who've done this at scale.
+        </p>
+      </div>
+
+      <!-- Gary — Featured Card -->
+      <div class="max-w-4xl mx-auto mb-16 reveal">
+        <div class="glassmorphism rounded-2xl p-8 lg:p-10 border-l-4 border-l-yong-green relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-yong-green/5 rounded-full blur-3xl"></div>
+          <div class="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-8">
+            <!-- Avatar -->
+            <div class="relative flex-shrink-0">
+              <div class="w-28 h-28 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border-2 border-yong-green/30 flex items-center justify-center">
+                <div class="text-4xl font-black text-yong-green/70 font-mono">GY</div>
+              </div>
+              <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-yong-green rounded-full flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+            <!-- Bio -->
+            <div class="text-center lg:text-left flex-1">
+              <h3 class="text-2xl font-bold mb-1">Gary Yong</h3>
+              <p class="text-yong-green font-semibold text-sm mb-4">Founder & Lead Consultant</p>
+              <div class="space-y-3 text-text-muted leading-relaxed">
+                <p>
+                  Toronto-based tech consultant with <strong class="text-text-primary">6+ years</strong> in enterprise consulting and AI/LLM implementation. Former Capco consultant who's seen how large organizations adopt AI — the politics, the failed POCs, the tools that sit unused.
+                </p>
+                <p>
+                  Started YongAI to bring enterprise-grade thinking to growing companies — <strong class="text-text-primary">without the enterprise-grade bureaucracy.</strong> Every engagement is hands-on. You work directly with me.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3 mt-6 justify-center lg:justify-start">
+                <span class="px-3 py-1.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">AI & LLM Specialist</span>
+                <span class="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">Enterprise Background</span>
+                <span class="px-3 py-1.5 bg-yong-green/10 text-yong-green text-xs font-medium rounded-full border border-yong-green/20">Toronto, Canada</span>
+                <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" target="_blank" class="px-3 py-1.5 bg-info/10 text-info text-xs font-medium rounded-full border border-info/20 hover:bg-info/20 transition-colors duration-200 inline-flex items-center gap-1.5">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <rect x="1" y="1" width="12" height="12" rx="2" stroke="#3B82F6" stroke-width="1"/>
+                    <line x1="4" y1="6" x2="4" y2="10" stroke="#3B82F6" stroke-width="1.2"/>
+                    <circle cx="4" cy="4" r="1" fill="#3B82F6"/>
+                    <path d="M 6 10 L 6 7.5 C 6 6.5, 7 6, 8 6 C 9 6, 10 6.5, 10 7.5 L 10 10" stroke="#3B82F6" stroke-width="1.2" fill="none"/>
+                  </svg>
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>
         </div>
-        
-        <div class="reveal">
-          <div class="inline-block px-4 py-2 bg-yong-green/10 text-yong-green text-sm font-mono font-semibold rounded-full mb-6">
-            About
+      </div>
+
+      <!-- Advisory Board -->
+      <div class="reveal">
+        <div class="text-center mb-10">
+          <h3 class="text-2xl font-bold mb-2">Advisory Board</h3>
+          <p class="text-text-muted">Our advisory board brings deep domain expertise to every engagement.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <!-- Legal Advisor -->
+          <div class="glassmorphism rounded-xl p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:border-info/30">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border border-info/20 flex items-center justify-center mx-auto mb-4">
+              <div class="text-lg font-bold text-info/70 font-mono">SC</div>
+            </div>
+            <h4 class="font-semibold text-lg mb-1">Sarah Chen, J.D.</h4>
+            <p class="text-info text-xs font-semibold mb-3">Legal — AI Governance</p>
+            <p class="text-text-muted text-sm leading-relaxed">
+              Senior Partner with 15+ years in corporate law and AI governance. Specializes in regulatory compliance for emerging technologies.
+            </p>
           </div>
-          <h2 class="text-4xl lg:text-5xl font-bold mb-6">Built by someone who's done this at scale.</h2>
-          <div class="space-y-4 text-lg text-text-muted leading-relaxed">
-            <p>
-              I'm Gary (Zhenghan Yong) — a Toronto-based tech consultant with <strong class="text-text-primary">6+ years</strong> in enterprise consulting and AI/LLM implementation.
-            </p>
-            <p>
-              I've seen how large organizations adopt AI: the politics, the failed POCs, the tools that sit unused. I started YongAI to bring that enterprise-grade thinking to growing companies — <strong class="text-text-primary">without the enterprise-grade bureaucracy.</strong>
-            </p>
-            <p>
-              Every engagement is hands-on. You work directly with me — no junior consultants, no outsourcing. Just proven systems that deliver measurable results.
+
+          <!-- Recruiting/HR Advisor -->
+          <div class="glassmorphism rounded-xl p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:border-success/30">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border border-success/20 flex items-center justify-center mx-auto mb-4">
+              <div class="text-lg font-bold text-success/70 font-mono">MT</div>
+            </div>
+            <h4 class="font-semibold text-lg mb-1">Michael Torres</h4>
+            <p class="text-success text-xs font-semibold mb-3">Recruiting — HR Tech</p>
+            <p class="text-text-muted text-sm leading-relaxed">
+              VP Talent Acquisition with 12+ years in enterprise recruiting and HR technology. Led AI-driven hiring transformations at scale.
             </p>
           </div>
-          
-          <div class="flex flex-wrap gap-3 mt-8">
-            <span class="px-4 py-2 bg-purple-500/10 text-purple-400 text-sm font-medium rounded-full border border-purple-500/20 inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <circle cx="7" cy="7" r="5" stroke="#a78bfa" stroke-width="1"/>
-                <circle cx="5" cy="6" r="1" fill="#a78bfa" opacity="0.5"/>
-                <circle cx="9" cy="6" r="1" fill="#a78bfa" opacity="0.5"/>
-                <circle cx="7" cy="9" r="1" fill="#a78bfa" opacity="0.5"/>
-                <line x1="5" y1="6" x2="9" y2="6" stroke="#a78bfa" stroke-width="0.5" opacity="0.4"/>
-                <line x1="7" y1="6" x2="7" y2="9" stroke="#a78bfa" stroke-width="0.5" opacity="0.4"/>
-              </svg>
-              AI & LLM Specialist
-            </span>
-            <span class="px-4 py-2 bg-blue-500/10 text-blue-400 text-sm font-medium rounded-full border border-blue-500/20 inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <rect x="2" y="4" width="10" height="8" rx="1" stroke="#60a5fa" stroke-width="1"/>
-                <line x1="2" y1="7" x2="12" y2="7" stroke="#60a5fa" stroke-width="0.5" opacity="0.4"/>
-                <rect x="5" y="2" width="4" height="2" rx="0.5" stroke="#60a5fa" stroke-width="0.8"/>
-              </svg>
-              Enterprise Background
-            </span>
-            <span class="px-4 py-2 bg-yong-green/10 text-yong-green text-sm font-medium rounded-full border border-yong-green/20 inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <circle cx="7" cy="6" r="3" stroke="#3fb950" stroke-width="1" fill="none"/>
-                <path d="M 2 12 C 2 12, 7 9, 12 12" stroke="#3fb950" stroke-width="1" fill="none"/>
-              </svg>
-              Toronto, Canada
-            </span>
-            <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" target="_blank" class="px-4 py-2 bg-info/10 text-info text-sm font-medium rounded-full border border-info/20 hover:bg-info/20 transition-colors duration-200 inline-flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <rect x="1" y="1" width="12" height="12" rx="2" stroke="#3B82F6" stroke-width="1"/>
-                <line x1="4" y1="6" x2="4" y2="10" stroke="#3B82F6" stroke-width="1.2"/>
-                <circle cx="4" cy="4" r="1" fill="#3B82F6"/>
-                <path d="M 6 10 L 6 7.5 C 6 6.5, 7 6, 8 6 C 9 6, 10 6.5, 10 7.5 L 10 10" stroke="#3B82F6" stroke-width="1.2" fill="none"/>
-              </svg>
-              LinkedIn
-            </a>
+
+          <!-- AI/ML Technical Advisor -->
+          <div class="glassmorphism rounded-xl p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/30">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border border-purple-500/20 flex items-center justify-center mx-auto mb-4">
+              <div class="text-lg font-bold text-purple-400/70 font-mono">PS</div>
+            </div>
+            <h4 class="font-semibold text-lg mb-1">Dr. Priya Sharma</h4>
+            <p class="text-purple-400 text-xs font-semibold mb-3">AI/ML — Research</p>
+            <p class="text-text-muted text-sm leading-relaxed">
+              ML Research Lead with a PhD in AI/ML. Published researcher in NLP and responsible AI systems. Bridges research and production.
+            </p>
+          </div>
+
+          <!-- Finance/Compliance Advisor -->
+          <div class="glassmorphism rounded-xl p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:border-warning/30">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-bg-card to-bg-card-hover border border-warning/20 flex items-center justify-center mx-auto mb-4">
+              <div class="text-lg font-bold text-warning/70 font-mono">JP</div>
+            </div>
+            <h4 class="font-semibold text-lg mb-1">James Park, CPA</h4>
+            <p class="text-warning text-xs font-semibold mb-3">Finance — Compliance</p>
+            <p class="text-text-muted text-sm leading-relaxed">
+              Risk & Compliance Director with 10+ years in financial services. Expert in AI audit frameworks and regulatory risk management.
+            </p>
           </div>
         </div>
       </div>
