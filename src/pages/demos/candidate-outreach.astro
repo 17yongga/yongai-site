@@ -45,6 +45,15 @@ const description = "Experience YongAI's proven methodology for candidate outrea
         Transform your recruiting with highly personalized outreach that converts passive candidates. 
         Boost response rates with personalization — LinkedIn data shows 15%+ improvement over bulk templates.
       </p>
+      <!-- Hero Illustration -->
+      <div class="max-w-3xl mx-auto mt-8 px-4">
+        <img
+          src="/illustrations/hero-candidate-outreach.jpg"
+          alt="Candidate Outreach illustration"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
 
@@ -287,7 +296,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   </section>
 
   <!-- Analytics Dashboard -->
-  <section class="py-24 bg-bg-raised border-t border-white/6">
+  <section class="py-24 bg-bg-raised border-t border-white/6" style="background-image: radial-gradient(circle, rgba(139,92,246,0.05) 1px, transparent 1px); background-size: 26px 26px;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-4xl lg:text-5xl font-bold mb-6">Real-Time Performance Analytics</h2>
@@ -354,6 +363,43 @@ const description = "Experience YongAI's proven methodology for candidate outrea
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-yong-green/10 to-purple-500/5 border-t border-white/6" style="background-image: radial-gradient(circle, rgba(63,185,80,0.06) 1px, transparent 1px); background-size: 26px 26px;">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">SCALE YOUR OUTREACH</div>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Turn passive candidates into <span class="text-yong-green">active conversations</span></h2>
+      <p class="text-xl text-text-muted mb-10">Stop sending generic InMails. AI-personalized outreach gets 81% better response rates. Let us build your outreach engine.</p>
+      <!-- Network accent SVG -->
+      <div class="flex justify-center mb-10">
+        <svg aria-hidden="true" viewBox="0 0 280 60" class="w-64 opacity-55">
+          <!-- Hub -->
+          <circle cx="50" cy="30" r="14" fill="none" stroke="#3fb950" stroke-width="2"/>
+          <circle cx="50" cy="30" r="5" fill="#3fb950"/>
+          <!-- Spokes -->
+          <line x1="64" y1="30" x2="100" y2="15" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="64" y1="30" x2="100" y2="30" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="64" y1="30" x2="100" y2="45" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="108" cy="15" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+          <circle cx="108" cy="30" r="8" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+          <circle cx="108" cy="45" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+          <text x="108" y="19" text-anchor="middle" fill="#3fb950" font-size="7">✓</text>
+          <text x="108" y="49" text-anchor="middle" fill="#3fb950" font-size="7">✓</text>
+          <!-- Arrow up -->
+          <line x1="175" y1="50" x2="175" y2="12" stroke="#3fb950" stroke-width="2"/>
+          <polyline points="168,20 175,12 182,20" stroke="#3fb950" stroke-width="2" fill="none"/>
+          <text x="175" y="58" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace">+81%</text>
+          <line x1="140" y1="50" x2="260" y2="50" stroke="#3fb950" stroke-width="1" opacity="0.3"/>
+        </svg>
+      </div>
+      <button 
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+        class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/30"
+      >
+        Build My Outreach System
+      </button>
     </div>
   </section>
 </DemoLayout>

@@ -30,7 +30,16 @@ const description = "See how AI assists contract review — catching missed clau
       <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
         See how AI assists contract review — catching missed clauses, assessing risk, and helping lawyers save an average of 4 hours per week.
       </p>
-      
+      <!-- Hero Illustration -->
+      <div class="max-w-3xl mx-auto mt-8 px-4">
+        <img
+          src="/illustrations/hero-contract-reviewer.jpg"
+          alt="Contract Reviewer illustration"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          loading="eager"
+        />
+      </div>
+
       <!-- Stats Bar -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto glassmorphism rounded-2xl p-8">
         <div class="text-center">
@@ -54,7 +63,7 @@ const description = "See how AI assists contract review — catching missed clau
   </section>
 
   <!-- Demo Section -->
-  <section class="py-24">
+  <section class="py-24" style="background-image: radial-gradient(circle, rgba(59,130,246,0.05) 1px, transparent 1px); background-size: 26px 26px;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-4xl lg:text-5xl font-bold mb-6">Interactive Contract Analysis</h2>
@@ -231,6 +240,41 @@ const description = "See how AI assists contract review — catching missed clau
           <p class="text-lg text-text-muted mt-8 max-w-2xl mx-auto">
             AI processes the entire contract in seconds, highlighting risks that might take hours to find manually. ~$100K in additional billable time annually per lawyer.
           </p>
+          <!-- Decorative scanning accent -->
+          <div class="flex justify-center mt-12">
+            <svg aria-hidden="true" viewBox="0 0 320 72" class="w-72 opacity-55">
+              <!-- Doc outline -->
+              <rect x="10" y="8" width="64" height="56" rx="5" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+              <line x1="18" y1="22" x2="66" y2="22" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+              <line x1="18" y1="30" x2="60" y2="30" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+              <rect x="18" y="38" width="48" height="8" rx="2" fill="#ef4444" opacity="0.3"/>
+              <line x1="18" y1="52" x2="62" y2="52" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+              <!-- Arrow right -->
+              <line x1="80" y1="36" x2="110" y2="36" stroke="#3b82f6" stroke-width="2"/>
+              <polyline points="103,29 110,36 103,43" stroke="#3b82f6" stroke-width="2" fill="none"/>
+              <!-- AI Node -->
+              <circle cx="135" cy="36" r="16" fill="none" stroke="#3b82f6" stroke-width="2"/>
+              <text x="135" y="40" text-anchor="middle" fill="#3b82f6" font-size="10" font-family="monospace" font-weight="700">AI</text>
+              <!-- Arrow right -->
+              <line x1="151" y1="36" x2="181" y2="36" stroke="#3b82f6" stroke-width="2"/>
+              <polyline points="174,29 181,36 174,43" stroke="#3b82f6" stroke-width="2" fill="none"/>
+              <!-- Result flags -->
+              <rect x="186" y="18" width="50" height="14" rx="4" fill="#ef4444" opacity="0.3" stroke="#ef4444" stroke-width="1"/>
+              <text x="211" y="28" text-anchor="middle" fill="#ef4444" font-size="8" font-family="monospace">⚠ Risk</text>
+              <rect x="186" y="38" width="50" height="14" rx="4" fill="#3fb950" opacity="0.2" stroke="#3fb950" stroke-width="1"/>
+              <text x="211" y="48" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace">✓ OK</text>
+              <rect x="244" y="28" width="60" height="14" rx="4" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+              <text x="274" y="38" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="monospace">? Review</text>
+            </svg>
+          </div>
+          <div class="mt-10">
+            <button 
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+              class="bg-gradient-to-r from-info to-blue-400 text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-info/30"
+            >
+              Add AI Review to Your Practice
+            </button>
+          </div>
         </div>
       </div>
     </div>

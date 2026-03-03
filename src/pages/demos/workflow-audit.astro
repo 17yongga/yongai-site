@@ -46,18 +46,20 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
           Book a Consultation
         </button>
       </div>
-      
-      <!-- Geometric Illustration -->
-      <div class="relative w-80 h-80 mx-auto opacity-10">
-        <div class="absolute inset-0 border border-yong-green rounded-full animate-spin" style="animation-duration: 20s;"></div>
-        <div class="absolute top-5 left-10 w-16 h-16 border border-yong-green rounded-lg"></div>
-        <div class="absolute bottom-8 right-12 w-20 h-20 border border-yong-green rounded-full"></div>
+      <!-- Hero Illustration -->
+      <div class="max-w-3xl mx-auto mt-8 px-4">
+        <img
+          src="/illustrations/hero-workflow-audit.jpg"
+          alt="Workflow Audit illustration"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          loading="eager"
+        />
       </div>
     </div>
   </section>
 
   <!-- Our Approach Section -->
-  <section id="approach" class="py-24 bg-bg-raised border-t border-white/6">
+  <section id="approach" class="py-24 bg-bg-raised border-t border-white/6" style="background-image: radial-gradient(circle, rgba(63,185,80,0.06) 1px, transparent 1px); background-size: 28px 28px; background-position: 0 0;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
         <div class="inline-block px-4 py-2 bg-purple-500/10 text-purple-400 text-sm font-mono font-semibold rounded-full mb-6">
@@ -111,7 +113,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
   </section>
 
   <!-- Interactive Industry Analysis -->
-  <section id="analysis" class="py-24">
+  <section id="analysis" class="py-24" style="background-image: radial-gradient(circle, rgba(139,92,246,0.05) 1px, transparent 1px); background-size: 28px 28px;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
         <div class="inline-block px-4 py-2 bg-warning/10 text-warning text-sm font-mono font-semibold rounded-full mb-6">
@@ -1287,18 +1289,22 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
       <!-- Stats Dashboard -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-yong-green" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
           <div class="text-4xl font-black text-yong-green mb-2" id="annual-savings" data-counter="100">$0K</div>
           <div class="text-text-muted">Annual Savings</div>
         </div>
         <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-info" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <div class="text-4xl font-black text-info mb-2" id="time-reduction" data-counter="20">0%</div>
           <div class="text-text-muted">Time Reduction</div>
         </div>
         <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-warning" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           <div class="text-4xl font-black text-warning mb-2" id="months-to-roi" data-counter="12">0</div>
           <div class="text-text-muted">Months to ROI</div>
         </div>
         <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-purple-400" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <div class="text-4xl font-black text-purple-400 mb-2" id="quick-wins" data-counter="3">0</div>
           <div class="text-text-muted">Quick Wins</div>
         </div>
@@ -1359,9 +1365,30 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
         WHO WE ARE
       </div>
       <h2 class="text-4xl lg:text-5xl font-bold mb-6">Expertise you can trust</h2>
-      <p class="text-xl text-text-muted leading-relaxed">
+      <p class="text-xl text-text-muted leading-relaxed mb-12">
         YongAI is led by Gary Yong, a technology consultant with 6+ years of experience across 6 enterprise digital transformation engagements in banking, wealth management, and financial services at Capco. He combines deep process analysis and workshop facilitation skills with hands-on AI implementation capability.
       </p>
+      <!-- Decorative CTA accent SVG -->
+      <div class="relative flex justify-center mb-10">
+        <svg aria-hidden="true" viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-sm opacity-60">
+          <line x1="0" y1="40" x2="130" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4"/>
+          <circle cx="140" cy="40" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+          <circle cx="140" cy="40" r="3" fill="#3fb950"/>
+          <polygon points="140,10 148,26 156,10 164,40 172,10 180,40" fill="none" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="180" cy="40" r="3" fill="#3fb950"/>
+          <line x1="180" y1="40" x2="220" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4"/>
+          <!-- Arrow up -->
+          <line x1="220" y1="40" x2="220" y2="12" stroke="#3fb950" stroke-width="2"/>
+          <polyline points="213,20 220,12 227,20" stroke="#3fb950" stroke-width="2" fill="none"/>
+          <line x1="220" y1="40" x2="360" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+        </svg>
+      </div>
+      <button 
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+        class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/30"
+      >
+        Book a Free Discovery Session
+      </button>
     </div>
   </section>
 </DemoLayout>
