@@ -7,7 +7,7 @@ const description = "Experience YongAI's enterprise AI recruiting platform. AI s
 
 <DemoLayout title={title} description={description} demoType="resume-screener">
   <!-- Stats Bar -->
-  <div class="py-4 bg-bg-raised border-b border-white/6 mt-18">
+  <div class="py-4 bg-bg-raised border-b border-[rgba(0,0,0,0.06)] mt-18">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         <div>
@@ -33,22 +33,20 @@ const description = "Experience YongAI's enterprise AI recruiting platform. AI s
   <!-- Hero Section -->
   <section class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
-        <div class="pulse-dot w-2 h-2 bg-success rounded-full"></div>
-        Enterprise Demo Platform
-      </div>
-      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
-        AI Recruiting Platform
+      <p class="section-label mb-4">CANDIDATE SCREENING</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        Your team spends 10 hours <br class="hidden lg:block"/>screening resumes per open role.
       </h1>
-      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
-        See how our AI recruiting system speeds up candidate screening and finds better matches — AI saves recruiters 10+ hours per open job while handling more applicants without needing extra staff.
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+        Most of that time is wasted on candidates who don't qualify. AI reads every resume, scores each one against your requirements, and hands you a ranked shortlist in 2 hours instead of 5 days.
       </p>
+      <p class="text-base text-text-faint mb-8 font-medium">↓ Paste a job description below to see it screen candidates</p>
       <!-- Hero Illustration -->
       <div class="max-w-3xl mx-auto mt-8 px-4">
         <img
-          src="/illustrations/hero-resume-screener.jpg"
+          src="/illustrations/hero-resume-screener.svg"
           alt="Resume Screener illustration"
-          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
           loading="eager"
         />
       </div>
@@ -60,7 +58,7 @@ const description = "Experience YongAI's enterprise AI recruiting platform. AI s
     <div class="max-w-4xl mx-auto px-6">
       <div class="glassmorphism rounded-3xl p-8 lg:p-12">
         <div class="text-center mb-8">
-          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Step 1: Define Your Requirements</h2>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-[#1C1C1E]">Step 1: What are you hiring for?</h2>
           <p class="text-lg text-text-muted">Paste your job description to see how AI finds candidates that match what you're looking for</p>
         </div>
         
@@ -97,10 +95,11 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   </section>
 
   <!-- Candidates Section -->
-  <section class="py-24 bg-bg-raised border-t border-white/6" id="candidates-section" style="display: none; background-image: radial-gradient(circle, rgba(63,185,80,0.05) 1px, transparent 1px); background-size: 24px 24px;">
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]" id="candidates-section" style="display: none;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">AI-Ranked Candidate Pipeline</h2>
+        <p class="section-label mb-4 text-center">YOUR SHORTLIST</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Here are your top candidates — ranked and explained.</h2>
         <p class="text-xl text-text-muted max-w-3xl mx-auto">
           Our AI automatically scores and ranks candidates based on how well they match your job needs. Click any candidate to see detailed breakdown.
         </p>
@@ -111,7 +110,7 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
       </div>
       
       <!-- Detailed Analysis Panel -->
-      <div class="hidden grid lg:grid-cols-2 gap-12 mt-12 slide-in-up" id="detailed-analysis">
+      <div class="hidden lg:grid-cols-2 gap-12 mt-12 slide-in-up" id="detailed-analysis" style="display: none;">
         <div class="glassmorphism rounded-2xl p-8">
           <div class="flex items-center gap-3 text-xl font-bold mb-6">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-success">
@@ -149,8 +148,9 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Calculate Your ROI</h2>
-        <p class="text-xl text-text-muted">See how much your agency could save with AI screening</p>
+        <p class="section-label mb-4">THE ECONOMICS</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-[#1C1C1E]">What does 10 hours per role actually cost you?</h2>
+        <p class="text-xl text-text-muted">Put in your numbers. The calculator uses your real volume.</p>
       </div>
       
       <div class="glassmorphism rounded-3xl p-8 lg:p-12">
@@ -202,15 +202,16 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   </section>
 
   <!-- ATS Integration -->
-  <section class="py-24 bg-bg-raised border-t border-white/6">
+  <section class="py-24 bg-bg-raised border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Seamless ATS Integration</h2>
-        <p class="text-xl text-text-muted">Connects to your current recruiting software - Bullhorn, Greenhouse, Lever, JobDiva, and more</p>
+        <p class="section-label mb-4">FITS YOUR EXISTING STACK</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-[#1C1C1E]">Ranked shortlist goes straight into your ATS.</h2>
+        <p class="text-xl text-text-muted max-w-2xl mx-auto">No new system to learn. AI screens in the background and pushes the ranked shortlist to Bullhorn, Greenhouse, Lever, or wherever you already work.</p>
       </div>
       
       <div class="max-w-4xl mx-auto glassmorphism rounded-2xl overflow-hidden">
-        <div class="flex items-center justify-between p-6 border-b border-white/6 bg-bg-raised">
+        <div class="flex items-center justify-between p-6 border-b border-[rgba(0,0,0,0.06)] bg-bg-raised">
           <div class="flex items-center gap-3">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-success">
               <rect x="3" y="3" width="7" height="9"></rect>
@@ -258,7 +259,8 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Transform Your Workflow</h2>
+        <p class="section-label mb-4 text-center">BEFORE VS. AFTER</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">5 days of manual screening vs. 2 hours with AI.</h2>
         <p class="text-xl text-text-muted">See the dramatic difference AI makes to your screening process</p>
       </div>
       
@@ -308,7 +310,7 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
             </div>
           </div>
           
-          <div class="text-center mt-8 pt-6 border-t border-white/6">
+          <div class="text-center mt-8 pt-6 border-t border-[rgba(0,0,0,0.06)]">
             <div class="text-4xl font-black text-danger mb-2">15-20 min</div>
             <div class="text-text-muted">per resume</div>
           </div>
@@ -359,7 +361,7 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
             </div>
           </div>
           
-          <div class="text-center mt-8 pt-6 border-t border-white/6">
+          <div class="text-center mt-8 pt-6 border-t border-[rgba(0,0,0,0.06)]">
             <div class="text-4xl font-black text-success mb-2">30 sec</div>
             <div class="text-text-muted">per resume</div>
           </div>
@@ -369,23 +371,23 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   </section>
 
   <!-- CTA Section -->
-  <section class="py-24 bg-gradient-to-br from-yong-green/10 to-transparent border-t border-white/6" style="background-image: radial-gradient(circle, rgba(63,185,80,0.07) 1px, transparent 1px); background-size: 24px 24px;">
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">READY TO TRANSFORM YOUR HIRING?</div>
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Cut screening time by 80%</h2>
+      <p class="section-label mb-4">READY TO START</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Get your next shortlist in 2 hours, not 5 days.</h2>
       <p class="text-xl text-text-muted mb-10">Stop spending 10+ hours per role on manual resume review. Let AI rank your candidates so your team focuses on conversations, not paperwork.</p>
       <!-- Decorative bar-chart accent -->
       <div class="flex justify-center mb-10">
         <svg aria-hidden="true" viewBox="0 0 200 56" class="w-48 opacity-60">
-          <rect x="10" y="36" width="18" height="16" rx="3" fill="#3fb950" opacity="0.5"/>
-          <rect x="36" y="22" width="18" height="30" rx="3" fill="#3fb950" opacity="0.7"/>
-          <rect x="62" y="10" width="18" height="42" rx="3" fill="#3fb950" opacity="0.9"/>
-          <rect x="88" y="28" width="18" height="24" rx="3" fill="#3fb950" opacity="0.6"/>
-          <rect x="114" y="18" width="18" height="34" rx="3" fill="#3fb950" opacity="0.8"/>
+          <rect x="10" y="36" width="18" height="16" rx="3" fill="#C2410C" opacity="0.5"/>
+          <rect x="36" y="22" width="18" height="30" rx="3" fill="#C2410C" opacity="0.7"/>
+          <rect x="62" y="10" width="18" height="42" rx="3" fill="#C2410C" opacity="0.9"/>
+          <rect x="88" y="28" width="18" height="24" rx="3" fill="#C2410C" opacity="0.6"/>
+          <rect x="114" y="18" width="18" height="34" rx="3" fill="#C2410C" opacity="0.8"/>
           <!-- Arrow up -->
-          <line x1="152" y1="46" x2="152" y2="10" stroke="#3fb950" stroke-width="2"/>
-          <polyline points="145,18 152,10 159,18" stroke="#3fb950" stroke-width="2" fill="none"/>
-          <line x1="140" y1="46" x2="190" y2="46" stroke="#3fb950" stroke-width="1.5" opacity="0.4"/>
+          <line x1="152" y1="46" x2="152" y2="10" stroke="#C2410C" stroke-width="2"/>
+          <polyline points="145,18 152,10 159,18" stroke="#C2410C" stroke-width="2" fill="none"/>
+          <line x1="140" y1="46" x2="190" y2="46" stroke="#C2410C" stroke-width="1.5" opacity="0.4"/>
         </svg>
       </div>
       <button 
@@ -398,7 +400,7 @@ We are seeking a Senior Software Engineer with 5+ years of experience in full-st
   </section>
 </DemoLayout>
 
-<script>
+<script is:inline>
   // Sample job descriptions
   const sampleJobs = {
     software: `Senior Software Engineer - Full Stack
@@ -597,6 +599,7 @@ Preferred Qualifications:
     // Show detailed analysis panel
     const panel = document.getElementById('detailed-analysis');
     panel.classList.remove('hidden');
+    panel.style.display = 'grid';
     panel.scrollIntoView({ behavior: 'smooth' });
     
     // Populate skills

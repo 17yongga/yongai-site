@@ -8,50 +8,33 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
 
 <DemoLayout title={title} description={description}>
   <!-- Hero Section -->
-  <section class="pt-32 pb-16 bg-gradient-to-br from-yong-green/10 via-info/5 to-transparent relative overflow-hidden">
-    <!-- Animated background -->
-    <div class="absolute inset-0 opacity-30">
-      <div class="absolute inset-0" style="
-        background-image: 
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(63, 185, 80, 0.02) 2px,
-            rgba(63, 185, 80, 0.02) 4px
-          );
-        animation: float 20s linear infinite;
-      "></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-      <div class="inline-block px-4 py-2 bg-yong-green/10 text-yong-green text-sm font-mono font-semibold rounded-full mb-6">
-        AI WORKFLOW CONSULTING
-      </div>
-      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
-        Transform your operations with <span class="accent-gradient">targeted AI automation</span>
+  <section class="pt-32 pb-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="section-label mb-4">AI WORKFLOW CONSULTING</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        Your best people are stuck <br class="hidden lg:block"/>doing work that should be automated.
       </h1>
-      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
-        We look at how your team works today and find where AI can save the most time and money — backed by real industry data and hands-on experience building solutions.
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-12 leading-relaxed">
+        We map your team's processes, find the biggest time and money leaks, and build you a prioritized automation roadmap — backed by real industry benchmarks.
       </p>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-        <a href="#analysis" class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/25">
-          Explore the Analysis
+        <a href="#analysis" class="btn-primary text-lg px-10 py-4">
+          See What's Possible
         </a>
         <button 
           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
-          class="glassmorphism text-text-primary px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:border-yong-green/30"
+          class="btn-secondary text-lg px-10 py-4"
         >
-          Book a Consultation
+          Book a Discovery Session
         </button>
       </div>
       <!-- Hero Illustration -->
       <div class="max-w-3xl mx-auto mt-8 px-4">
         <img
-          src="/illustrations/hero-workflow-audit.jpg"
+          src="/illustrations/hero-workflow-audit.svg"
           alt="Workflow Audit illustration"
-          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
           loading="eager"
         />
       </div>
@@ -59,13 +42,12 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
   </section>
 
   <!-- Our Approach Section -->
-  <section id="approach" class="py-24 bg-bg-raised border-t border-white/6" style="background-image: radial-gradient(circle, rgba(63,185,80,0.06) 1px, transparent 1px); background-size: 28px 28px; background-position: 0 0;">
+  <section id="approach" class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <div class="inline-block px-4 py-2 bg-purple-500/10 text-purple-400 text-sm font-mono font-semibold rounded-full mb-6">
-          OUR METHODOLOGY
-        </div>
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">A systematic approach to AI transformation</h2>
+        <p class="section-label mb-4">THE METHODOLOGY</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">We don't start with AI. We start with a map.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Most AI projects fail not because the technology doesn't work — but because they automate the wrong things first. Before recommending anything, we need to understand how your team actually works.</p>
       </div>
       
       <!-- Process Flow Diagram -->
@@ -113,32 +95,31 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
   </section>
 
   <!-- Interactive Industry Analysis -->
-  <section id="analysis" class="py-24" style="background-image: radial-gradient(circle, rgba(139,92,246,0.05) 1px, transparent 1px); background-size: 28px 28px;">
+  <section id="analysis" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <div class="inline-block px-4 py-2 bg-warning/10 text-warning text-sm font-mono font-semibold rounded-full mb-6">
-          INTERACTIVE ANALYSIS
-        </div>
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">See what AI can do for your industry</h2>
+        <p class="section-label mb-4">INDUSTRY BENCHMARKS</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Here's what your competitors are already automating.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Select your industry to see the specific workflows where AI creates the biggest impact — with real data on time saved, cost reduced, and ROI timeline.</p>
       </div>
       
       <!-- Industry Tabs -->
-      <div class="flex justify-center mb-12">
-        <div class="glassmorphism rounded-2xl p-2 inline-flex gap-2">
+      <div class="flex justify-center mb-12 px-4">
+        <div class="glassmorphism rounded-2xl p-2 flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
           <button 
-            class="industry-tab active px-8 py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            class="industry-tab active px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
             data-industry="legal"
           >
             Legal Services
           </button>
           <button 
-            class="industry-tab px-8 py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            class="industry-tab px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
             data-industry="recruiting"
           >
             Recruiting
           </button>
           <button 
-            class="industry-tab px-8 py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            class="industry-tab px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
             data-industry="financial"
           >
             Financial Services
@@ -160,18 +141,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-info">4 hrs/wk</div>
                   <div class="text-sm text-text-muted">Avg. Time Saved with AI</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -187,7 +168,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -234,18 +215,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-info">32.5 days</div>
                   <div class="text-sm text-text-muted">Annual Days Saved per Lawyer</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -261,7 +242,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -308,18 +289,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-info">1-5 hrs</div>
                   <div class="text-sm text-text-muted">Weekly Time Saved per Lawyer</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -335,7 +316,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -382,18 +363,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-info">~$100K</div>
                   <div class="text-sm text-text-muted">Annual Value per Lawyer (AI-enabled)</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -409,7 +390,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -456,18 +437,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-info">15%</div>
                   <div class="text-sm text-text-muted">Revenue Typically Lost to Underbilling</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -483,7 +464,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -535,18 +516,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-success">10+</div>
                   <div class="text-sm text-text-muted">Hours Saved per Open Role</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -562,7 +543,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -609,18 +590,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-success">$4,700</div>
                   <div class="text-sm text-text-muted">Avg. Cost per Hire (SHRM, 2023)</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -636,7 +617,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -683,18 +664,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-success">AI-Assisted</div>
                   <div class="text-sm text-text-muted">Evaluation & Grading</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -710,7 +691,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -757,18 +738,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-success">15%</div>
                   <div class="text-sm text-text-muted">Personalized InMail Advantage (LinkedIn)</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -784,7 +765,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -831,18 +812,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-success">95%</div>
                   <div class="text-sm text-text-muted">Target Offer Acceptance</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -858,7 +839,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -913,18 +894,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-warning">75%</div>
                   <div class="text-sm text-text-muted">Time Reduction Potential</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -940,7 +921,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -987,18 +968,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-warning">99.8%</div>
                   <div class="text-sm text-text-muted">Fraud Detection Rate</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -1014,7 +995,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -1061,18 +1042,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-warning">24/7</div>
                   <div class="text-sm text-text-muted">Portfolio Monitoring</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -1088,7 +1069,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -1135,18 +1116,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-warning">85%</div>
                   <div class="text-sm text-text-muted">Reporting Automation</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -1162,7 +1143,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -1209,18 +1190,18 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="text-right">
+                <div class="text-right hidden sm:block">
                   <div class="text-2xl font-bold text-warning">75%</div>
                   <div class="text-sm text-text-muted">Query Resolution Rate</div>
                 </div>
                 <div class="step-expand text-text-muted">▼</div>
               </div>
             </div>
-            <div class="step-content hidden p-6 pt-0 border-t border-white/6">
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
               <div class="grid lg:grid-cols-2 gap-8">
                 <div>
                   <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
-                    ⚠️ Current State
+                    Where time is being lost
                   </h4>
                   <div class="space-y-4">
                     <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
@@ -1236,7 +1217,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
                 </div>
                 <div>
                   <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
-                    🤖 Recommended Solutions
+                    Where AI creates the most value
                   </h4>
                   <div class="space-y-4">
                     <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
@@ -1277,13 +1258,13 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
   </section>
 
   <!-- Impact Dashboard -->
-  <section id="impact" class="py-24 bg-bg-raised border-t border-white/6">
+  <section id="impact" class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
         <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
           PROJECTED IMPACT
         </div>
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Projected Impact Based on Industry Research</h2>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">What this looks like for your bottom line.</h2>
       </div>
       
       <!-- Stats Dashboard -->
@@ -1304,8 +1285,8 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
           <div class="text-text-muted">Months to ROI</div>
         </div>
         <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
-          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-purple-400" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <div class="text-4xl font-black text-purple-400 mb-2" id="quick-wins" data-counter="3">0</div>
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="text-4xl font-black text-[#2563EB] mb-2" id="quick-wins" data-counter="3">0</div>
           <div class="text-text-muted">Quick Wins</div>
         </div>
       </div>
@@ -1327,73 +1308,75 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <div class="inline-block px-4 py-2 bg-purple-500/10 text-purple-400 text-sm font-mono font-semibold rounded-full mb-6">
-          OUR ENGAGEMENT
+        <div class="inline-block px-4 py-2 bg-[rgba(194,65,12,0.08)] text-[#C2410C] text-sm font-mono font-semibold rounded-full mb-6">
+          WHAT YOU GET
         </div>
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">What a discovery session includes</h2>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">A 4-week engagement. A permanent roadmap.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Not a deck of recommendations you'll never act on. A working plan, vetted against your actual systems, with a clear sequence for implementation.</p>
       </div>
       
       <div class="grid lg:grid-cols-2 gap-8">
         <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-yong-green/30">
-          <div class="w-16 h-16 rounded-2xl bg-yong-green/10 flex items-center justify-center text-yong-green text-2xl font-bold mb-6">1</div>
-          <h3 class="text-2xl font-bold mb-4">Workflow Mapping</h3>
-          <p class="text-text-muted leading-relaxed">We map your end-to-end processes to identify every touchpoint</p>
+          <div class="w-12 h-12 rounded-xl bg-yong-green/10 flex items-center justify-center text-yong-green text-lg font-bold mb-6">01</div>
+          <h3 class="text-2xl font-bold mb-3">Current-State Process Map</h3>
+          <p class="text-text-muted leading-relaxed">A visual map of how work actually moves through your organization — where information flows, where decisions get made, and where things quietly break down. Built from observation and interviews, not assumptions.</p>
         </div>
-        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/30">
-          <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-500 text-2xl font-bold mb-6">2</div>
-          <h3 class="text-2xl font-bold mb-4">Stakeholder Interviews</h3>
-          <p class="text-text-muted leading-relaxed">We talk to your team to uncover hidden bottlenecks</p>
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-[rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-xl bg-[rgba(37,99,235,0.08)] flex items-center justify-center text-[#2563EB] text-lg font-bold mb-6">02</div>
+          <h3 class="text-2xl font-bold mb-3">Stakeholder Interviews (5–8 sessions)</h3>
+          <p class="text-text-muted leading-relaxed">The friction that causes the most waste rarely shows up in documentation. We run structured interviews with the people doing the work — not just leadership — to surface what's really slowing things down.</p>
         </div>
-        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-blue-500/30">
-          <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 text-2xl font-bold mb-6">3</div>
-          <h3 class="text-2xl font-bold mb-4">Implementation Roadmap</h3>
-          <p class="text-text-muted leading-relaxed">Step-by-step plan with expected savings for each project</p>
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-[rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-xl bg-[rgba(37,99,235,0.08)] flex items-center justify-center text-[#2563EB] text-lg font-bold mb-6">03</div>
+          <h3 class="text-2xl font-bold mb-3">Prioritized Automation Roadmap</h3>
+          <p class="text-text-muted leading-relaxed">A sequenced plan of 8–15 automation opportunities, ranked by implementation effort and expected ROI. Each includes a time-savings estimate, rough cost, and realistic timeline — so you know exactly what to build first and what to defer.</p>
         </div>
         <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-info/30">
-          <div class="w-16 h-16 rounded-2xl bg-info/10 flex items-center justify-center text-info text-2xl font-bold mb-6">4</div>
-          <h3 class="text-2xl font-bold mb-4">Hands-on Support</h3>
-          <p class="text-text-muted leading-relaxed">We don't just advise — we help implement</p>
+          <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info text-lg font-bold mb-6">04</div>
+          <h3 class="text-2xl font-bold mb-3">Implementation Partnership (optional)</h3>
+          <p class="text-text-muted leading-relaxed">If you want to go further than the roadmap, we stay involved — helping spec requirements, evaluate vendors, and build the automations directly. No handoff to a team that wasn't in the room when the decisions were made.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="py-24 bg-bg-raised border-t border-white/6">
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-block px-4 py-2 bg-warning/10 text-warning text-sm font-mono font-semibold rounded-full mb-6">
-        WHO WE ARE
-      </div>
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Expertise you can trust</h2>
+      <p class="section-label mb-4">WHO DOES THIS WORK</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">This work comes from six years inside the problem.</h2>
+      <p class="text-xl text-text-muted leading-relaxed mb-6">
+        Gary Yong spent six years as a technology consultant at Capco, running digital transformation engagements for tier-1 banks and wealth management firms. He's facilitated 30+ stakeholder workshops, built process maps for some of Canada's largest financial institutions, and automated reconciliation workflows that saved over 5,000 hours annually.
+      </p>
       <p class="text-xl text-text-muted leading-relaxed mb-12">
-        YongAI is led by Gary Yong, a technology consultant with 6+ years of experience across 6 enterprise digital transformation engagements in banking, wealth management, and financial services at Capco. He combines deep process analysis and workshop facilitation skills with hands-on AI implementation capability.
+        That experience — knowing what process analysis actually looks like at scale, what makes stakeholders resistant, and what separates useful AI from expensive experiments — is what YongAI brings to every engagement. Not AI for its own sake. Process thinking, with AI as the tool.
       </p>
       <!-- Decorative CTA accent SVG -->
       <div class="relative flex justify-center mb-10">
         <svg aria-hidden="true" viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-sm opacity-60">
-          <line x1="0" y1="40" x2="130" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4"/>
-          <circle cx="140" cy="40" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
-          <circle cx="140" cy="40" r="3" fill="#3fb950"/>
-          <polygon points="140,10 148,26 156,10 164,40 172,10 180,40" fill="none" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
-          <circle cx="180" cy="40" r="3" fill="#3fb950"/>
-          <line x1="180" y1="40" x2="220" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="0" y1="40" x2="130" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4"/>
+          <circle cx="140" cy="40" r="8" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <circle cx="140" cy="40" r="3" fill="#C2410C"/>
+          <polygon points="140,10 148,26 156,10 164,40 172,10 180,40" fill="none" stroke="#C2410C" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="180" cy="40" r="3" fill="#C2410C"/>
+          <line x1="180" y1="40" x2="220" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4"/>
           <!-- Arrow up -->
-          <line x1="220" y1="40" x2="220" y2="12" stroke="#3fb950" stroke-width="2"/>
-          <polyline points="213,20 220,12 227,20" stroke="#3fb950" stroke-width="2" fill="none"/>
-          <line x1="220" y1="40" x2="360" y2="40" stroke="#3fb950" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+          <line x1="220" y1="40" x2="220" y2="12" stroke="#C2410C" stroke-width="2"/>
+          <polyline points="213,20 220,12 227,20" stroke="#C2410C" stroke-width="2" fill="none"/>
+          <line x1="220" y1="40" x2="360" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
         </svg>
       </div>
       <button 
         onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
         class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/30"
       >
-        Book a Free Discovery Session
+        Talk to Gary — Free Discovery Session
       </button>
     </div>
   </section>
 </DemoLayout>
 
-<script>
+<script is:inline>
   // Industry workflow data
   const workflowData = {
     legal: {
@@ -1446,7 +1429,7 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
         tab.style.background = 'linear-gradient(135deg, var(--color-yong-green), var(--color-yong-green-light))';
         tab.style.color = 'white';
         tab.style.transform = 'translateY(-2px)';
-        tab.style.boxShadow = '0 4px 16px rgba(63, 185, 80, 0.4)';
+        tab.style.boxShadow = '0 4px 16px rgba(194, 65, 12, 0.4)';
       } else {
         tab.style.background = 'transparent';
         tab.style.color = 'var(--color-text-muted)';
@@ -1610,11 +1593,11 @@ const description = "Interactive workflow audit demo across Legal, Recruiting, a
     background: linear-gradient(135deg, var(--color-yong-green), var(--color-yong-green-light));
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(63, 185, 80, 0.4);
+    box-shadow: 0 4px 16px rgba(194, 65, 12, 0.4);
   }
 
   .industry-tab:hover:not(.active) {
-    background: rgba(63, 185, 80, 0.1);
+    background: rgba(194, 65, 12, 0.1);
     color: var(--color-text-primary);
     transform: translateY(-1px);
   }

@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="shadow-sm" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadow-md" x="-6%" y="-6%" width="112%" height="118%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+    <filter id="shadow-lg" x="-8%" y="-8%" width="116%" height="124%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#059669" flood-opacity="0.5"/>
+    </filter>
+    <linearGradient id="night-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="building-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="badge-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Section: Night scene with law firm building -->
+  <g id="left-scene">
+    <!-- Night sky background -->
+    <rect x="30" y="30" width="220" height="360" rx="16" fill="url(#night-sky)"/>
+
+    <!-- Stars -->
+    <circle cx="55" cy="55" r="1.5" fill="#E2E8F0" opacity="0.8"/>
+    <circle cx="110" cy="48" r="1" fill="#E2E8F0" opacity="0.6"/>
+    <circle cx="165" cy="62" r="1.5" fill="#E2E8F0" opacity="0.9"/>
+    <circle cx="200" cy="45" r="1" fill="#E2E8F0" opacity="0.5"/>
+    <circle cx="78" cy="75" r="1" fill="#E2E8F0" opacity="0.7"/>
+    <circle cx="145" cy="80" r="1.2" fill="#E2E8F0" opacity="0.6"/>
+    <circle cx="220" cy="70" r="1" fill="#E2E8F0" opacity="0.4"/>
+    <circle cx="88" cy="52" r="0.8" fill="#E2E8F0" opacity="0.5"/>
+    <circle cx="185" cy="55" r="0.8" fill="#E2E8F0" opacity="0.7"/>
+
+    <!-- Crescent moon -->
+    <circle cx="215" cy="58" r="12" fill="#FDE68A" opacity="0.9"/>
+    <circle cx="220" cy="54" r="10" fill="#0F172A"/>
+
+    <!-- Building -->
+    <rect x="80" y="105" width="120" height="260" rx="4" fill="url(#building-grad)" stroke="#475569" stroke-width="0.5"/>
+
+    <!-- Building top detail -->
+    <rect x="75" y="100" width="130" height="12" rx="3" fill="#475569"/>
+    <rect x="125" y="88" width="30" height="14" rx="2" fill="#475569"/>
+
+    <!-- Window grid (dark windows, some with faint warm glow) -->
+    <!-- Row 1 -->
+    <rect x="96" y="125" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="122" y="125" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="148" y="125" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="174" y="125" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <!-- Row 2 -->
+    <rect x="96" y="158" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="122" y="158" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="148" y="158" width="18" height="22" rx="2" fill="#FDE68A" opacity="0.15" stroke="#475569" stroke-width="0.5"/>
+    <rect x="174" y="158" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <!-- Row 3 -->
+    <rect x="96" y="191" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="122" y="191" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="148" y="191" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="174" y="191" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <!-- Row 4 -->
+    <rect x="96" y="224" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="122" y="224" width="18" height="22" rx="2" fill="#FDE68A" opacity="0.12" stroke="#475569" stroke-width="0.5"/>
+    <rect x="148" y="224" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="174" y="224" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <!-- Row 5 -->
+    <rect x="96" y="257" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="122" y="257" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="148" y="257" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+    <rect x="174" y="257" width="18" height="22" rx="2" fill="#0F172A" stroke="#475569" stroke-width="0.5"/>
+
+    <!-- Building entrance -->
+    <rect x="120" y="330" width="40" height="35" rx="3" fill="#1E293B" stroke="#475569" stroke-width="0.5"/>
+    <rect x="138" y="330" width="4" height="35" fill="#475569" opacity="0.5"/>
+
+    <!-- "LAW FIRM" sign -->
+    <rect x="108" y="316" width="64" height="14" rx="3" fill="#1E293B" stroke="#475569" stroke-width="0.5"/>
+    <text x="140" y="327" text-anchor="middle" fill="#94A3B8" font-size="7" font-family="system-ui, sans-serif" font-weight="600" letter-spacing="1.5">LAW FIRM</text>
+
+    <!-- Clock -->
+    <g transform="translate(140, 78)">
+      <circle cx="0" cy="0" r="18" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <circle cx="0" cy="0" r="16" fill="#0F172A"/>
+      <!-- Clock face marks -->
+      <line x1="0" y1="-13" x2="0" y2="-11" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <line x1="11.3" y1="6.5" x2="9.5" y2="5.5" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <line x1="-11.3" y1="6.5" x2="-9.5" y2="5.5" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <line x1="0" y1="13" x2="0" y2="11" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <line x1="13" y1="0" x2="11" y2="0" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <line x1="-13" y1="0" x2="-11" y2="0" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+      <!-- Hour hand pointing to ~11 -->
+      <line x1="0" y1="0" x2="-4" y2="-8" stroke="#E2E8F0" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Minute hand pointing to ~6 (30 min) -->
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#E2E8F0" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Center dot -->
+      <circle cx="0" cy="0" r="1.5" fill="#C2410C"/>
+    </g>
+
+    <!-- "11:30 PM" label -->
+    <rect x="110" y="99" width="60" height="16" rx="8" fill="#C2410C" opacity="0.9"/>
+    <text x="140" y="110" text-anchor="middle" fill="#FFFFFF" font-size="8" font-family="system-ui, sans-serif" font-weight="600">11:30 PM</text>
+  </g>
+
+  <!-- Center Section: Chat interface -->
+  <g id="chat-interface" filter="url(#shadow-lg)">
+    <!-- Chat window frame -->
+    <rect x="280" y="30" width="340" height="360" rx="16" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+    <!-- Chat header -->
+    <rect x="280" y="30" width="340" height="52" rx="16" fill="#FFFFFF"/>
+    <rect x="280" y="66" width="340" height="16" fill="#FFFFFF"/>
+    <line x1="280" y1="82" x2="620" y2="82" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+
+    <!-- Bot avatar -->
+    <circle cx="310" cy="56" r="16" fill="#FFF7ED"/>
+    <rect x="300" y="48" width="20" height="16" rx="4" fill="#C2410C" opacity="0.15"/>
+    <!-- Bot icon (simple robot face) -->
+    <rect x="303" y="50" width="14" height="11" rx="3" fill="#C2410C"/>
+    <rect x="306" y="53" width="3" height="3" rx="1" fill="#FFFFFF"/>
+    <rect x="311" y="53" width="3" height="3" rx="1" fill="#FFFFFF"/>
+    <rect x="307" y="58" width="6" height="1.5" rx="0.75" fill="#FFFFFF"/>
+
+    <!-- Bot name and status -->
+    <text x="334" y="52" fill="#1C1C1E" font-size="12" font-family="system-ui, sans-serif" font-weight="600">AI Intake Bot</text>
+    <circle cx="338" cy="62" r="3.5" fill="#059669" filter="url(#glow-green)"/>
+    <text x="346" y="66" fill="#059669" font-size="9" font-family="system-ui, sans-serif" font-weight="500">Online 24/7</text>
+
+    <!-- Window controls (decorative) -->
+    <circle cx="593" cy="48" r="4" fill="#E2E8F0"/>
+    <circle cx="605" cy="48" r="4" fill="#E2E8F0"/>
+
+    <!-- Chat messages -->
+    <!-- Client message 1 -->
+    <g transform="translate(0, 0)">
+      <rect x="350" y="98" width="248" height="50" rx="12" fill="#2563EB"/>
+      <rect x="350" y="98" width="248" height="50" rx="12" fill="#2563EB"/>
+      <text x="364" y="116" fill="#FFFFFF" font-size="10.5" font-family="system-ui, sans-serif">Hi, I was in a car accident last week.</text>
+      <text x="364" y="132" fill="#FFFFFF" font-size="10.5" font-family="system-ui, sans-serif" opacity="0.9">I need to speak with an attorney.</text>
+      <!-- Timestamp -->
+      <text x="578" y="158" fill="#94A3B8" font-size="8" font-family="system-ui, sans-serif" text-anchor="end">11:32 PM</text>
+    </g>
+
+    <!-- Bot response -->
+    <g transform="translate(0, 0)">
+      <rect x="298" y="168" width="270" height="72" rx="12" fill="#FFFFFF" stroke="#C2410C" stroke-width="1.5"/>
+      <text x="314" y="188" fill="#1C1C1E" font-size="10.5" font-family="system-ui, sans-serif" font-weight="500">I'm sorry to hear that. I can help you</text>
+      <text x="314" y="203" fill="#1C1C1E" font-size="10.5" font-family="system-ui, sans-serif" font-weight="500">get started right away. Could you share</text>
+      <text x="314" y="218" fill="#1C1C1E" font-size="10.5" font-family="system-ui, sans-serif" font-weight="500">a few details about the incident?</text>
+      <text x="314" y="250" fill="#94A3B8" font-size="8" font-family="system-ui, sans-serif">11:32 PM</text>
+      <!-- Orange bot indicator dot -->
+      <circle cx="290" cy="200" r="5" fill="#C2410C" opacity="0.15"/>
+      <circle cx="290" cy="200" r="3" fill="#C2410C"/>
+    </g>
+
+    <!-- Client message 2 -->
+    <g transform="translate(0, 0)">
+      <rect x="330" y="262" width="268" height="50" rx="12" fill="#2563EB"/>
+      <text x="344" y="280" fill="#FFFFFF" font-size="10.5" font-family="system-ui, sans-serif">Sure — rear-ended at a red light on</text>
+      <text x="344" y="296" fill="#FFFFFF" font-size="10.5" font-family="system-ui, sans-serif" opacity="0.9">March 8th. Other driver was at fault.</text>
+      <text x="578" y="322" fill="#94A3B8" font-size="8" font-family="system-ui, sans-serif" text-anchor="end">11:33 PM</text>
+    </g>
+
+    <!-- Typing indicator -->
+    <g transform="translate(298, 336)">
+      <rect x="0" y="0" width="70" height="30" rx="12" fill="#F8FAFC" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <circle cx="20" cy="15" r="3" fill="#C2410C" opacity="0.4"/>
+      <circle cx="34" cy="15" r="3" fill="#C2410C" opacity="0.6"/>
+      <circle cx="48" cy="15" r="3" fill="#C2410C" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Right Section: Outcome cards -->
+  <g id="outcome-cards">
+
+    <!-- Card 1: Case Qualified -->
+    <g filter="url(#shadow-md)">
+      <rect x="650" y="50" width="220" height="72" rx="12" fill="#FFFFFF" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Left accent bar -->
+      <rect x="650" y="50" width="4" height="72" rx="2" fill="#059669"/>
+      <!-- Checkmark circle -->
+      <circle cx="680" cy="86" r="14" fill="#ECFDF5"/>
+      <path d="M673 86 L678 91 L688 81" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Text -->
+      <text x="702" y="80" fill="#1C1C1E" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Case Qualified</text>
+      <text x="702" y="96" fill="#64748B" font-size="9" font-family="system-ui, sans-serif">Personal Injury — Auto</text>
+      <!-- Status pill -->
+      <rect x="808" y="70" width="50" height="18" rx="9" fill="#ECFDF5"/>
+      <text x="833" y="83" text-anchor="middle" fill="#059669" font-size="8" font-family="system-ui, sans-serif" font-weight="600">DONE</text>
+    </g>
+
+    <!-- Card 2: Attorney Assigned -->
+    <g filter="url(#shadow-md)">
+      <rect x="650" y="142" width="220" height="72" rx="12" fill="#FFFFFF" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Left accent bar -->
+      <rect x="650" y="142" width="4" height="72" rx="2" fill="#059669"/>
+      <!-- Checkmark circle -->
+      <circle cx="680" cy="178" r="14" fill="#ECFDF5"/>
+      <path d="M673 178 L678 183 L688 173" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Text -->
+      <text x="702" y="172" fill="#1C1C1E" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Attorney Assigned</text>
+      <text x="702" y="188" fill="#64748B" font-size="9" font-family="system-ui, sans-serif">Sarah Chen — Partner</text>
+      <!-- Status pill -->
+      <rect x="808" y="162" width="50" height="18" rx="9" fill="#ECFDF5"/>
+      <text x="833" y="175" text-anchor="middle" fill="#059669" font-size="8" font-family="system-ui, sans-serif" font-weight="600">DONE</text>
+    </g>
+
+    <!-- Card 3: Meeting Booked -->
+    <g filter="url(#shadow-md)">
+      <rect x="650" y="234" width="220" height="72" rx="12" fill="#FFFFFF" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+      <!-- Left accent bar -->
+      <rect x="650" y="234" width="4" height="72" rx="2" fill="#059669"/>
+      <!-- Checkmark circle -->
+      <circle cx="680" cy="270" r="14" fill="#ECFDF5"/>
+      <path d="M673 270 L678 275 L688 265" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Text -->
+      <text x="702" y="264" fill="#1C1C1E" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Meeting Booked</text>
+      <text x="702" y="280" fill="#64748B" font-size="9" font-family="system-ui, sans-serif">Tomorrow 9:00 AM EST</text>
+      <!-- Status pill -->
+      <rect x="808" y="254" width="50" height="18" rx="9" fill="#ECFDF5"/>
+      <text x="833" y="267" text-anchor="middle" fill="#059669" font-size="8" font-family="system-ui, sans-serif" font-weight="600">DONE</text>
+    </g>
+
+    <!-- Connection line between chat and cards -->
+    <g opacity="0.3">
+      <line x1="628" y1="150" x2="648" y2="86" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="628" y1="200" x2="648" y2="178" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="628" y1="280" x2="648" y2="270" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </g>
+
+    <!-- Floating "+1 Lead Captured" badge -->
+    <g filter="url(#shadow-md)">
+      <rect x="680" y="330" width="160" height="40" rx="20" fill="url(#badge-grad)"/>
+      <!-- Pulse ring -->
+      <circle cx="702" cy="350" r="10" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.3"/>
+      <!-- Icon -->
+      <circle cx="702" cy="350" r="7" fill="#FFFFFF" opacity="0.2"/>
+      <text x="702" y="354" text-anchor="middle" fill="#FFFFFF" font-size="10" font-family="system-ui, sans-serif" font-weight="700">+1</text>
+      <!-- Text -->
+      <text x="720" y="354" fill="#FFFFFF" font-size="11" font-family="system-ui, sans-serif" font-weight="600">Lead Captured</text>
+    </g>
+  </g>
+
+  <!-- Subtle connection arrow from building to chat -->
+  <g opacity="0.2">
+    <path d="M250 210 C265 210, 268 210, 278 210" fill="none" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <polygon points="278,206 286,210 278,214" fill="#64748B"/>
+  </g>
+</svg>

@@ -7,7 +7,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
 
 <DemoLayout title={title} description={description} demoType="candidate-outreach">
   <!-- Stats Bar -->
-  <div class="py-4 bg-bg-raised border-b border-white/6 mt-18">
+  <div class="py-4 bg-bg-raised border-b border-[rgba(0,0,0,0.06)] mt-18">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         <div>
@@ -33,24 +33,20 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   <!-- Hero Section -->
   <section class="pt-20 pb-16">
     <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
-        <div class="pulse-dot w-2 h-2 bg-success rounded-full"></div>
-        Outreach Methodology Demo
-      </div>
-      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none">
-        Candidate Outreach
-        <span class="accent-gradient">Methodology</span>
+      <p class="section-label mb-4">CANDIDATE OUTREACH</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        Your outreach templates <br class="hidden lg:block"/>are getting <span class="text-[#C2410C]">ignored.</span>
       </h1>
-      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
-        Transform your recruiting with highly personalized outreach that converts passive candidates. 
-        Boost response rates with personalization — LinkedIn data shows 15%+ improvement over bulk templates.
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+        Passive candidates don't respond to generic InMails. LinkedIn data shows personalized messages get 81% more replies. This demo shows exactly how to personalize at scale — the same approach YongAI uses with recruiting clients.
       </p>
+      <p class="text-base text-text-faint mb-8 font-medium">↓ Try the message generator below</p>
       <!-- Hero Illustration -->
       <div class="max-w-3xl mx-auto mt-8 px-4">
         <img
-          src="/illustrations/hero-candidate-outreach.jpg"
+          src="/illustrations/hero-candidate-outreach.svg"
           alt="Candidate Outreach illustration"
-          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
           loading="eager"
         />
       </div>
@@ -61,8 +57,9 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Experience the Methodology</h2>
-        <p class="text-xl text-text-muted">See how our systematic approach to personalization improves candidate engagement</p>
+        <p class="section-label mb-4 text-center">BUILD A MESSAGE</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">See what a message that actually gets a reply looks like.</h2>
+        <p class="text-xl text-text-muted max-w-2xl mx-auto">Personalization without measurement is just intuition. These are the metrics that tell you whether your outreach is working — and what to adjust when it isn't.</p>
       </div>
       
       <div class="grid lg:grid-cols-5 gap-8">
@@ -176,7 +173,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
         <!-- Results Panel -->
         <div class="lg:col-span-3">
           <div class="glassmorphism rounded-2xl overflow-hidden" id="resultsPanel">
-            <div class="flex items-center justify-between p-6 border-b border-white/6 bg-bg-raised">
+            <div class="flex items-center justify-between p-6 border-b border-[rgba(0,0,0,0.06)] bg-bg-raised">
               <div class="text-xl font-bold">Generated Messages</div>
               <div class="px-4 py-2 bg-success/10 text-success rounded-full text-sm font-semibold" id="responseRate">Predicted: 24% response rate</div>
             </div>
@@ -198,11 +195,12 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   </section>
 
   <!-- Before/After Comparison -->
-  <section class="py-24 bg-bg-raised border-t border-white/6">
+  <section class="py-24 bg-bg-raised border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Generic Templates vs AI Personalization</h2>
-        <p class="text-xl text-text-muted">See the difference that true personalization makes</p>
+        <p class="section-label mb-4 text-center">THE DIFFERENCE</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">The gap between deleted and replied to.</h2>
+        <p class="text-xl text-text-muted max-w-2xl mx-auto">The generic template on the left isn't obviously bad — that's the point. It's what everyone sends. The one on the right references something the candidate actually did. That specificity is what drives a reply.</p>
       </div>
       
       <div class="grid lg:grid-cols-2 gap-12">
@@ -212,7 +210,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
             <span class="px-3 py-1 bg-danger/20 text-danger text-sm font-semibold rounded-full uppercase tracking-wider">Before</span>
             <h3 class="text-2xl font-bold">Generic Template</h3>
           </div>
-          <p class="text-text-muted mb-6">The old way of doing things</p>
+          <p class="text-text-muted mb-6 text-sm">Written in 2 minutes. Sent to 200 people. No research required — and it shows.</p>
           
           <div class="bg-bg-raised border border-border-light rounded-xl p-6 mb-6">
             <div class="text-sm font-semibold text-text-primary mb-3">Subject: Exciting Opportunity - Senior Developer Position</div>
@@ -237,7 +235,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
             <span class="px-3 py-1 bg-success/20 text-success text-sm font-semibold rounded-full uppercase tracking-wider">After</span>
             <h3 class="text-2xl font-bold">AI Personalized</h3>
           </div>
-          <p class="text-text-muted mb-6">The YongAI way</p>
+          <p class="text-text-muted mb-6 text-sm">References a real project, a real post, a real achievement. AI does the research. You review and send. Takes 5 minutes per message, not 30.</p>
           
           <div class="bg-bg-raised border border-border-light rounded-xl p-6 mb-6">
             <div class="text-sm font-semibold text-text-primary mb-3">Subject: Your React optimization work at TechCorp caught our attention</div>
@@ -264,8 +262,9 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Calculate Your ROI</h2>
-        <p class="text-xl text-text-muted">See how much time and money your agency could save</p>
+        <p class="section-label mb-4">THE TIME MATH</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-[#1C1C1E]">How much of your day goes into outreach that gets ignored?</h2>
+        <p class="text-xl text-text-muted max-w-2xl mx-auto">If a recruiter spends 2 hours on outreach daily and most of it doesn't convert, that time compounds fast. Here's what changes.</p>
       </div>
       
       <div class="glassmorphism rounded-3xl p-8 lg:p-12">
@@ -296,11 +295,12 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   </section>
 
   <!-- Analytics Dashboard -->
-  <section class="py-24 bg-bg-raised border-t border-white/6" style="background-image: radial-gradient(circle, rgba(139,92,246,0.05) 1px, transparent 1px); background-size: 26px 26px;">
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Real-Time Performance Analytics</h2>
-        <p class="text-xl text-text-muted">Track engagement, optimize messaging, and measure ROI across your entire pipeline</p>
+        <p class="section-label mb-4 text-center">WHAT TO TRACK</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">The numbers that tell you if it's working.</h2>
+        <p class="text-xl text-text-muted max-w-2xl mx-auto">Open rate, reply rate, and conversion to interview. If personalization is working, these three numbers move together. If they don't, the message or the targeting needs adjusting.</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -367,31 +367,32 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   </section>
 
   <!-- CTA Section -->
-  <section class="py-24 bg-gradient-to-br from-yong-green/10 to-purple-500/5 border-t border-white/6" style="background-image: radial-gradient(circle, rgba(63,185,80,0.06) 1px, transparent 1px); background-size: 26px 26px;">
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">SCALE YOUR OUTREACH</div>
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6">Turn passive candidates into <span class="text-yong-green">active conversations</span></h2>
-      <p class="text-xl text-text-muted mb-10">Stop sending generic InMails. AI-personalized outreach gets 81% better response rates. Let us build your outreach engine.</p>
+      <p class="section-label mb-4">READY TO START</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Let's build you an outreach process that actually works.</h2>
+      <p class="text-xl text-text-muted mb-4">YongAI builds the personalization system — the templates, the research workflow, the AI layer, the sequencing logic. Your team sends. The replies come in.</p>
+      <p class="text-base text-text-faint mb-10 italic">Discovery call is 30 minutes. No pitch deck, no follow-up sequence.</p>
       <!-- Network accent SVG -->
       <div class="flex justify-center mb-10">
         <svg aria-hidden="true" viewBox="0 0 280 60" class="w-64 opacity-55">
           <!-- Hub -->
-          <circle cx="50" cy="30" r="14" fill="none" stroke="#3fb950" stroke-width="2"/>
-          <circle cx="50" cy="30" r="5" fill="#3fb950"/>
+          <circle cx="50" cy="30" r="14" fill="none" stroke="#C2410C" stroke-width="2"/>
+          <circle cx="50" cy="30" r="5" fill="#C2410C"/>
           <!-- Spokes -->
-          <line x1="64" y1="30" x2="100" y2="15" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
-          <line x1="64" y1="30" x2="100" y2="30" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
-          <line x1="64" y1="30" x2="100" y2="45" stroke="#3fb950" stroke-width="1" stroke-dasharray="3 2"/>
-          <circle cx="108" cy="15" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
+          <line x1="64" y1="30" x2="100" y2="15" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="64" y1="30" x2="100" y2="30" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="64" y1="30" x2="100" y2="45" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="108" cy="15" r="8" fill="none" stroke="#C2410C" stroke-width="1.5"/>
           <circle cx="108" cy="30" r="8" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
-          <circle cx="108" cy="45" r="8" fill="none" stroke="#3fb950" stroke-width="1.5"/>
-          <text x="108" y="19" text-anchor="middle" fill="#3fb950" font-size="7">✓</text>
-          <text x="108" y="49" text-anchor="middle" fill="#3fb950" font-size="7">✓</text>
+          <circle cx="108" cy="45" r="8" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <text x="108" y="19" text-anchor="middle" fill="#C2410C" font-size="7">✓</text>
+          <text x="108" y="49" text-anchor="middle" fill="#C2410C" font-size="7">✓</text>
           <!-- Arrow up -->
-          <line x1="175" y1="50" x2="175" y2="12" stroke="#3fb950" stroke-width="2"/>
-          <polyline points="168,20 175,12 182,20" stroke="#3fb950" stroke-width="2" fill="none"/>
-          <text x="175" y="58" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace">+81%</text>
-          <line x1="140" y1="50" x2="260" y2="50" stroke="#3fb950" stroke-width="1" opacity="0.3"/>
+          <line x1="175" y1="50" x2="175" y2="12" stroke="#C2410C" stroke-width="2"/>
+          <polyline points="168,20 175,12 182,20" stroke="#C2410C" stroke-width="2" fill="none"/>
+          <text x="175" y="58" text-anchor="middle" fill="#C2410C" font-size="8" font-family="monospace">+81%</text>
+          <line x1="140" y1="50" x2="260" y2="50" stroke="#C2410C" stroke-width="1" opacity="0.3"/>
         </svg>
       </div>
       <button 
@@ -404,7 +405,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   </section>
 </DemoLayout>
 
-<script>
+<script is:inline>
   // Sample candidate profiles
   const candidateProfiles = {
     'senior-engineer': `Sarah Chen - Senior Full Stack Developer at TechCorp
@@ -485,59 +486,60 @@ const description = "Experience YongAI's proven methodology for candidate outrea
   };
 
   // DOM elements
-  let candidateProfileTextarea: HTMLTextAreaElement;
-  let jobPositionSelect: HTMLSelectElement;
-  let companyInfoInput: HTMLInputElement;
-  let sellingPointsTextarea: HTMLTextAreaElement;
-  let messageChannelSelect: HTMLSelectElement;
-  let generateBtn: HTMLButtonElement;
-  let messageVariantsDiv: HTMLDivElement;
-  let responseRateDiv: HTMLDivElement;
+  var candidateProfileTextarea;
+  var jobPositionSelect;
+  var companyInfoInput;
+  var sellingPointsTextarea;
+  var messageChannelSelect;
+  var generateBtn;
+  var messageVariantsDiv;
+  var responseRateDiv;
 
-  let currentTone = 'professional';
+  var currentTone = 'professional';
 
   // Initialize when page loads
   document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
-    candidateProfileTextarea = document.getElementById('candidateProfile') as HTMLTextAreaElement;
-    jobPositionSelect = document.getElementById('jobPosition') as HTMLSelectElement;
-    companyInfoInput = document.getElementById('companyInfo') as HTMLInputElement;
-    sellingPointsTextarea = document.getElementById('sellingPoints') as HTMLTextAreaElement;
-    messageChannelSelect = document.getElementById('messageChannel') as HTMLSelectElement;
-    generateBtn = document.getElementById('generateBtn') as HTMLButtonElement;
-    messageVariantsDiv = document.getElementById('messageVariants') as HTMLDivElement;
-    responseRateDiv = document.getElementById('responseRate') as HTMLDivElement;
+    candidateProfileTextarea = document.getElementById('candidateProfile');
+    jobPositionSelect = document.getElementById('jobPosition');
+    companyInfoInput = document.getElementById('companyInfo');
+    sellingPointsTextarea = document.getElementById('sellingPoints');
+    messageChannelSelect = document.getElementById('messageChannel');
+    generateBtn = document.getElementById('generateBtn');
+    messageVariantsDiv = document.getElementById('messageVariants');
+    responseRateDiv = document.getElementById('responseRate');
 
     // Preset candidate profile buttons
-    document.querySelectorAll('.preset-btn').forEach(btn => {
+    document.querySelectorAll('.preset-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        const profileType = (this as HTMLButtonElement).dataset.profile!;
+        var profileType = this.dataset.profile;
         candidateProfileTextarea.value = candidateProfiles[profileType];
         
         // Visual feedback
         this.style.background = 'var(--color-success)';
         this.style.color = 'white';
-        setTimeout(() => {
-          this.style.background = '';
-          this.style.color = '';
+        var self = this;
+        setTimeout(function() {
+          self.style.background = '';
+          self.style.color = '';
         }, 200);
       });
     });
 
     // Tone selector
-    document.querySelectorAll('.tone-btn').forEach(btn => {
+    document.querySelectorAll('.tone-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.tone-btn').forEach(b => {
+        document.querySelectorAll('.tone-btn').forEach(function(b) {
           b.classList.remove('active');
         });
         this.classList.add('active');
-        currentTone = (this as HTMLButtonElement).dataset.tone!;
+        currentTone = this.dataset.tone;
       });
     });
 
     // Job position select auto-fill
     jobPositionSelect.addEventListener('change', function() {
-      const selectedJob = jobContexts[this.value];
+      var selectedJob = jobContexts[this.value];
       if (selectedJob) {
         companyInfoInput.value = selectedJob.company;
         sellingPointsTextarea.value = selectedJob.sellingPoints;
@@ -589,7 +591,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
     }, 3000);
   }
 
-  function displayGeneratedMessages(profile: string, position: string, company: string, sellingPoints: string) {
+  function displayGeneratedMessages(profile, position, company, sellingPoints) {
     // Parse candidate info (simplified)
     const candidateName = extractName(profile);
     const candidateSkills = extractSkills(profile);
@@ -625,7 +627,7 @@ const description = "Experience YongAI's proven methodology for candidate outrea
     messageVariantsDiv.innerHTML += generateFollowUpSequence(candidateName, company);
   }
 
-  function generateVariant(angle: string, name: string, skills: string[], achievements: string[], company: string, sellingPoints: string, tone: string) {
+  function generateVariant(angle, name, skills, achievements, company, sellingPoints, tone) {
     const firstName = name.split(' ')[0];
     
     let message = '';
@@ -697,7 +699,7 @@ Senior Technical Recruiter`;
     };
   }
 
-  function generateFollowUpSequence(name: string, company: string) {
+  function generateFollowUpSequence(name, company) {
     const firstName = name.split(' ')[0];
     
     return `
@@ -749,7 +751,7 @@ Senior Technical Recruiter`;
   }
 
   // Utility functions
-  function extractName(profile: string): string {
+  function extractName(profile) {
     const lines = profile.split('\n');
     for (const line of lines) {
       if (line.includes('-') && (line.includes('Developer') || line.includes('Manager') || line.includes('Director'))) {
@@ -759,7 +761,7 @@ Senior Technical Recruiter`;
     return 'Alex Johnson'; // Fallback
   }
 
-  function extractSkills(profile: string): string[] {
+  function extractSkills(profile) {
     const skills = [];
     if (profile.includes('React')) skills.push('React');
     if (profile.includes('Node.js')) skills.push('Node.js');
@@ -772,7 +774,7 @@ Senior Technical Recruiter`;
     return skills.length > 0 ? skills : ['technical expertise', 'leadership', 'innovation'];
   }
 
-  function extractAchievements(profile: string): string[] {
+  function extractAchievements(profile) {
     const achievements = [];
     const lines = profile.split('\n');
     
@@ -788,7 +790,7 @@ Senior Technical Recruiter`;
     ];
   }
 
-  function calculatePersonalizationScore(profile: string, company: string, sellingPoints: string): number {
+  function calculatePersonalizationScore(profile, company, sellingPoints) {
     let score = 0;
     
     // Base score for having profile

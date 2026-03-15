@@ -7,35 +7,22 @@ const description = "See how AI assists contract review — catching missed clau
 
 <DemoLayout title={title} description={description} demoType="contract-reviewer">
   <!-- Hero Section -->
-  <section class="pt-32 pb-16 bg-gradient-to-br from-info/10 via-danger/5 to-transparent relative overflow-hidden">
-    <!-- Animated background -->
-    <div class="absolute inset-0 opacity-30">
-      <div class="absolute inset-0" style="
-        background-image: 
-          repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 2px,
-            rgba(59, 130, 246, 0.02) 2px,
-            rgba(59, 130, 246, 0.02) 4px
-          );
-        animation: float 25s linear infinite;
-      "></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none accent-gradient">
-        AI Contract Clause Reviewer
+  <section class="pt-32 pb-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="section-label mb-4">CONTRACT REVIEW AUTOMATION</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        Manual review takes 15 minutes. <br class="hidden lg:block"/><span class="text-[#C2410C]">AI does it in 30 seconds.</span>
       </h1>
-      <p class="text-xl lg:text-2xl text-text-muted max-w-4xl mx-auto mb-12 leading-relaxed">
-        See how AI assists contract review — catching missed clauses, assessing risk, and helping lawyers save an average of 4 hours per week.
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+        Partners spend 2.5 hours a day on routine contract checks. AI handles the first pass — flagging missing clauses, risky terms, and non-standard language — so lawyers spend their time on what only they can do.
       </p>
+      <p class="text-base text-text-faint mb-8 font-medium">↓ Paste a contract below to see it in action</p>
       <!-- Hero Illustration -->
       <div class="max-w-3xl mx-auto mt-8 px-4">
         <img
-          src="/illustrations/hero-contract-reviewer.jpg"
+          src="/illustrations/hero-contract-reviewer.svg"
           alt="Contract Reviewer illustration"
-          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-white/8"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
           loading="eager"
         />
       </div>
@@ -66,7 +53,8 @@ const description = "See how AI assists contract review — catching missed clau
   <section class="py-24" style="background-image: radial-gradient(circle, rgba(59,130,246,0.05) 1px, transparent 1px); background-size: 26px 26px;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Interactive Contract Analysis</h2>
+        <p class="section-label mb-4 text-center">LIVE DEMO</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Choose a contract type. See what AI catches.</h2>
         <p class="text-xl text-text-muted max-w-3xl mx-auto">
           Select a contract type below to see how AI analyzes clauses, identifies risks, and suggests improvements.
         </p>
@@ -80,7 +68,7 @@ const description = "See how AI assists contract review — catching missed clau
             <div class="contract-option active glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:border-info/30" data-contract="employment">
               <h4 class="text-lg font-semibold mb-2">Employment Agreement</h4>
               <p class="text-text-muted text-sm mb-3">Standard employment contract with non-compete clauses</p>
-              <div class="flex gap-4 text-xs text-text-faint">
+              <div class="flex flex-wrap gap-2 text-xs text-text-faint">
                 <span>• 12 pages</span>
                 <span>• Medium complexity</span>
                 <span>• Canadian law</span>
@@ -90,7 +78,7 @@ const description = "See how AI assists contract review — catching missed clau
             <div class="contract-option glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:border-info/30" data-contract="service">
               <h4 class="text-lg font-semibold mb-2">Service Agreement</h4>
               <p class="text-text-muted text-sm mb-3">Technology consulting service contract</p>
-              <div class="flex gap-4 text-xs text-text-faint">
+              <div class="flex flex-wrap gap-2 text-xs text-text-faint">
                 <span>• 8 pages</span>
                 <span>• Low complexity</span>
                 <span>• Ontario law</span>
@@ -100,7 +88,7 @@ const description = "See how AI assists contract review — catching missed clau
             <div class="contract-option glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:border-info/30" data-contract="lease">
               <h4 class="text-lg font-semibold mb-2">Commercial Lease</h4>
               <p class="text-text-muted text-sm mb-3">Office space rental agreement</p>
-              <div class="flex gap-4 text-xs text-text-faint">
+              <div class="flex flex-wrap gap-2 text-xs text-text-faint">
                 <span>• 15 pages</span>
                 <span>• High complexity</span>
                 <span>• Ontario law</span>
@@ -110,7 +98,7 @@ const description = "See how AI assists contract review — catching missed clau
           
           <button 
             class="w-full mt-8 bg-gradient-to-r from-info to-info-light text-white py-4 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-            onclick="analyzeContract()"
+            onclick="startAnalysis()"
             id="analyzeBtn"
           >
             Analyze Selected Contract
@@ -119,7 +107,7 @@ const description = "See how AI assists contract review — catching missed clau
 
         <!-- Contract Preview -->
         <div class="lg:col-span-2 glassmorphism rounded-2xl max-h-96 overflow-hidden">
-          <div class="p-6 border-b border-white/6 bg-bg-raised">
+          <div class="p-6 border-b border-[rgba(0,0,0,0.06)] bg-bg-raised">
             <div class="flex items-center gap-3">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-info">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -140,21 +128,11 @@ const description = "See how AI assists contract review — catching missed clau
         </div>
       </div>
       
-      <!-- Analyze Button -->
-      <div class="text-center mt-12">
-        <button 
-          class="bg-gradient-to-r from-danger to-warning text-white px-12 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-danger/25 disabled:opacity-70"
-          onclick="startAnalysis()"
-          id="startAnalysisBtn"
-        >
-          Start AI Analysis
-        </button>
-      </div>
     </div>
   </section>
 
   <!-- Loading Animation -->
-  <div id="loadingOverlay" class="fixed inset-0 bg-bg-primary/95 backdrop-blur-md z-50 hidden flex items-center justify-center">
+  <div id="loadingOverlay" class="fixed inset-0 bg-bg-primary/95 backdrop-blur-md z-50 items-center justify-center" style="display: none;">
     <div class="glassmorphism rounded-3xl p-12 text-center min-w-96">
       <div class="w-20 h-20 border-4 border-border-light border-t-info rounded-full animate-spin mx-auto mb-8"></div>
       <h3 class="text-2xl font-bold mb-4">Analyzing Contract</h3>
@@ -166,7 +144,7 @@ const description = "See how AI assists contract review — catching missed clau
   </div>
 
   <!-- Results Section -->
-  <section id="results" class="py-24 bg-bg-raised border-t border-white/6" style="display: none;">
+  <section id="results" class="py-24 bg-bg-raised border-t border-[rgba(0,0,0,0.06)]" style="display: none;">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Results Header -->
       <div class="text-center mb-16">
@@ -213,10 +191,9 @@ const description = "See how AI assists contract review — catching missed clau
   <!-- Comparison Section -->
   <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="glassmorphism rounded-3xl p-12 text-center bg-gradient-to-br from-yong-green/10 to-success/5 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-yong-green/5 to-transparent"></div>
+      <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-12 text-center shadow-sm">
         <div class="relative z-10">
-          <h3 class="text-3xl lg:text-4xl font-bold mb-8">The Time Difference</h3>
+          <h3 class="text-3xl lg:text-4xl font-bold mb-8 text-[#1C1C1E]">This is what 4 hours a week looks like.</h3>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -238,8 +215,9 @@ const description = "See how AI assists contract review — catching missed clau
           </div>
           
           <p class="text-lg text-text-muted mt-8 max-w-2xl mx-auto">
-            AI processes the entire contract in seconds, highlighting risks that might take hours to find manually. ~$100K in additional billable time annually per lawyer.
+            AI handles the first pass — flagging what needs attention so the attorney's time goes to clauses that require actual judgment. At a billing rate of $314/hr, 4 hours saved per week is $65,000 in recoverable billable time annually, per attorney.
           </p>
+          <p class="text-sm text-text-faint mt-4 italic max-w-2xl mx-auto">Important: AI is a first-pass review tool, not a replacement for attorney judgment. Every flag the AI surfaces still requires attorney review before a decision is made.</p>
           <!-- Decorative scanning accent -->
           <div class="flex justify-center mt-12">
             <svg aria-hidden="true" viewBox="0 0 320 72" class="w-72 opacity-55">
@@ -261,8 +239,8 @@ const description = "See how AI assists contract review — catching missed clau
               <!-- Result flags -->
               <rect x="186" y="18" width="50" height="14" rx="4" fill="#ef4444" opacity="0.3" stroke="#ef4444" stroke-width="1"/>
               <text x="211" y="28" text-anchor="middle" fill="#ef4444" font-size="8" font-family="monospace">⚠ Risk</text>
-              <rect x="186" y="38" width="50" height="14" rx="4" fill="#3fb950" opacity="0.2" stroke="#3fb950" stroke-width="1"/>
-              <text x="211" y="48" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace">✓ OK</text>
+              <rect x="186" y="38" width="50" height="14" rx="4" fill="#C2410C" opacity="0.2" stroke="#C2410C" stroke-width="1"/>
+              <text x="211" y="48" text-anchor="middle" fill="#C2410C" font-size="8" font-family="monospace">✓ OK</text>
               <rect x="244" y="28" width="60" height="14" rx="4" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
               <text x="274" y="38" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="monospace">? Review</text>
             </svg>
@@ -270,9 +248,9 @@ const description = "See how AI assists contract review — catching missed clau
           <div class="mt-10">
             <button 
               onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
-              class="bg-gradient-to-r from-info to-blue-400 text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-info/30"
+              class="btn-primary text-lg px-12 py-5"
             >
-              Add AI Review to Your Practice
+              Talk to Gary About Your Firm's Contracts
             </button>
           </div>
         </div>
@@ -281,7 +259,7 @@ const description = "See how AI assists contract review — catching missed clau
   </section>
 </DemoLayout>
 
-<script>
+<script is:inline>
   // Contract data
   const contractData = {
     employment: {
@@ -408,7 +386,7 @@ This agreement commences on February 1, 2024 and continues until completion of s
   function startAnalysis() {
     // Show loading overlay
     const loadingOverlay = document.getElementById('loadingOverlay');
-    loadingOverlay.classList.remove('hidden');
+    loadingOverlay.style.display = 'flex';
     
     const progressSteps = [
       { text: "Parsing document structure...", progress: 20 },
@@ -430,7 +408,7 @@ This agreement commences on February 1, 2024 and continues until completion of s
       } else {
         // Analysis complete
         setTimeout(() => {
-          loadingOverlay.classList.add('hidden');
+          loadingOverlay.style.display = 'none';
           showResults();
         }, 1000);
       }

@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000000" flood-opacity="0.07"/>
+    </filter>
+    <filter id="shadowSm" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000000" flood-opacity="0.06"/>
+    </filter>
+    <filter id="shadowLg" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.09"/>
+    </filter>
+    <linearGradient id="boltGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- LEFT SECTION: Candidate Profile Card -->
+  <g filter="url(#shadowLg)">
+    <rect x="30" y="55" width="240" height="310" rx="14" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+    <!-- LinkedIn-style header bar -->
+    <rect x="30" y="55" width="240" height="8" rx="14" fill="#2563EB" opacity="0.12"/>
+    <rect x="30" y="55" width="240" height="8" fill="#2563EB" opacity="0.12"/>
+    <path d="M30,55 L270,55 L270,63 L30,63 Z" fill="#2563EB" opacity="0.1"/>
+    <rect x="30" y="55" width="240" height="8" rx="0" fill="none"/>
+    <!-- Round top corners only -->
+    <path d="M44,55 L256,55 Q270,55 270,69 L270,63 L30,63 L30,69 Q30,55 44,55 Z" fill="#2563EB" opacity="0.12"/>
+
+    <!-- Avatar circle -->
+    <circle cx="150" cy="110" r="36" fill="#2563EB"/>
+    <text x="150" y="118" text-anchor="middle" fill="#FFFFFF" font-size="22" font-weight="700" font-family="system-ui, sans-serif">JD</text>
+
+    <!-- Online indicator -->
+    <circle cx="178" cy="136" r="7" fill="#FFFFFF"/>
+    <circle cx="178" cy="136" r="5" fill="#059669"/>
+
+    <!-- Name placeholder -->
+    <rect x="90" y="158" width="120" height="14" rx="3" fill="#1C1C1E"/>
+    <text x="150" y="170" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="600" font-family="system-ui, sans-serif">Jane Doe</text>
+
+    <!-- Role placeholder -->
+    <rect x="72" y="180" width="156" height="10" rx="2" fill="#64748B" opacity="0.18"/>
+    <text x="150" y="189" text-anchor="middle" fill="#64748B" font-size="9" font-family="system-ui, sans-serif">Sr. ML Engineer at Acme Corp</text>
+
+    <!-- Divider -->
+    <line x1="50" y1="205" x2="250" y2="205" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+
+    <!-- Section label -->
+    <text x="50" y="225" fill="#64748B" font-size="8" font-weight="600" font-family="system-ui, sans-serif" letter-spacing="0.8">SKILLS</text>
+
+    <!-- Skill tags -->
+    <g filter="url(#shadowSm)">
+      <rect x="50" y="234" width="52" height="22" rx="6" fill="#EFF6FF"/>
+      <text x="76" y="248" text-anchor="middle" fill="#2563EB" font-size="9" font-weight="600" font-family="system-ui, sans-serif">Python</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="108" y="234" width="34" height="22" rx="6" fill="#EFF6FF"/>
+      <text x="125" y="248" text-anchor="middle" fill="#2563EB" font-size="9" font-weight="600" font-family="system-ui, sans-serif">ML</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="148" y="234" width="44" height="22" rx="6" fill="#FFF7ED"/>
+      <text x="170" y="248" text-anchor="middle" fill="#C2410C" font-size="9" font-weight="600" font-family="system-ui, sans-serif">AWS</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="50" y="262" width="58" height="22" rx="6" fill="#ECFDF5"/>
+      <text x="79" y="276" text-anchor="middle" fill="#059669" font-size="9" font-weight="600" font-family="system-ui, sans-serif">PyTorch</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="114" y="262" width="42" height="22" rx="6" fill="#EFF6FF"/>
+      <text x="135" y="276" text-anchor="middle" fill="#2563EB" font-size="9" font-weight="600" font-family="system-ui, sans-serif">NLP</text>
+    </g>
+
+    <!-- Experience section -->
+    <text x="50" y="306" fill="#64748B" font-size="8" font-weight="600" font-family="system-ui, sans-serif" letter-spacing="0.8">EXPERIENCE</text>
+    <rect x="50" y="314" width="140" height="6" rx="2" fill="#1C1C1E" opacity="0.08"/>
+    <rect x="50" y="326" width="110" height="6" rx="2" fill="#1C1C1E" opacity="0.06"/>
+    <rect x="50" y="338" width="160" height="6" rx="2" fill="#1C1C1E" opacity="0.05"/>
+  </g>
+
+  <!-- CENTER SECTION: AI Generation Element -->
+  <g>
+    <!-- Connecting lines from profile to center -->
+    <line x1="270" y1="170" x2="340" y2="165" stroke="#2563EB" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.35"/>
+    <line x1="270" y1="245" x2="340" y2="210" stroke="#C2410C" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.35"/>
+    <line x1="270" y1="190" x2="340" y2="188" stroke="#059669" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.35"/>
+
+    <!-- Personalization tokens floating -->
+    <g filter="url(#shadowSm)">
+      <rect x="320" y="118" width="62" height="22" rx="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+      <text x="351" y="133" text-anchor="middle" fill="#2563EB" font-size="9" font-weight="600" font-family="monospace">{name}</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="306" y="152" width="86" height="22" rx="5" fill="#FFFFFF" stroke="#059669" stroke-width="1.2"/>
+      <text x="349" y="167" text-anchor="middle" fill="#059669" font-size="9" font-weight="600" font-family="monospace">{company}</text>
+    </g>
+    <g filter="url(#shadowSm)">
+      <rect x="316" y="186" width="60" height="22" rx="5" fill="#FFFFFF" stroke="#C2410C" stroke-width="1.2"/>
+      <text x="346" y="201" text-anchor="middle" fill="#C2410C" font-size="9" font-weight="600" font-family="monospace">{skill}</text>
+    </g>
+
+    <!-- Converging lines to AI hub -->
+    <line x1="382" y1="130" x2="432" y2="195" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="392" y1="163" x2="432" y2="200" stroke="#059669" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="376" y1="197" x2="432" y2="208" stroke="#C2410C" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+
+    <!-- Central AI processing circle -->
+    <circle cx="460" cy="210" r="52" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.5" opacity="0.9" filter="url(#shadowLg)"/>
+    <circle cx="460" cy="210" r="38" fill="#FFFFFF" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+
+    <!-- Lightning bolt icon -->
+    <path d="M452,188 L466,188 L458,206 L470,206 L450,236 L456,216 L446,216 Z" fill="url(#boltGrad)"/>
+
+    <!-- AI label -->
+    <text x="460" y="258" text-anchor="middle" fill="#C2410C" font-size="9" font-weight="700" font-family="system-ui, sans-serif" letter-spacing="1">AI ENGINE</text>
+
+    <!-- Sparkle decorations around AI hub -->
+    <circle cx="420" cy="170" r="2" fill="#C2410C" opacity="0.4"/>
+    <circle cx="502" cy="176" r="1.5" fill="#2563EB" opacity="0.35"/>
+    <circle cx="496" cy="248" r="2" fill="#059669" opacity="0.35"/>
+    <circle cx="424" cy="250" r="1.5" fill="#B45309" opacity="0.3"/>
+
+    <!-- Small rotating dots (static representation) -->
+    <circle cx="413" cy="195" r="3" fill="#C2410C" opacity="0.15"/>
+    <circle cx="507" cy="210" r="3" fill="#2563EB" opacity="0.15"/>
+    <circle cx="460" cy="157" r="3" fill="#059669" opacity="0.15"/>
+
+    <!-- Output lines from AI to emails -->
+    <line x1="512" y1="200" x2="600" y2="145" stroke="#C2410C" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.3"/>
+    <line x1="512" y1="210" x2="600" y2="210" stroke="#C2410C" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.3"/>
+    <line x1="512" y1="220" x2="600" y2="275" stroke="#C2410C" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.3"/>
+
+    <!-- "Generating..." text indicator -->
+    <g filter="url(#shadowSm)">
+      <rect x="418" y="276" width="84" height="20" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+      <circle cx="433" cy="286" r="2.5" fill="#C2410C" opacity="0.8"/>
+      <circle cx="441" cy="286" r="2.5" fill="#C2410C" opacity="0.5"/>
+      <circle cx="449" cy="286" r="2.5" fill="#C2410C" opacity="0.25"/>
+      <text x="472" y="290" text-anchor="middle" fill="#64748B" font-size="8" font-family="system-ui, sans-serif">Writing</text>
+    </g>
+  </g>
+
+  <!-- RIGHT SECTION: Email Preview Cards -->
+  <!-- Card 3 (back) -->
+  <g filter="url(#shadow)" transform="rotate(4, 740, 280)">
+    <rect x="625" y="230" width="230" height="140" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+    <rect x="637" y="242" width="140" height="8" rx="2" fill="#1C1C1E" opacity="0.08"/>
+    <rect x="637" y="258" width="206" height="5" rx="1.5" fill="#1C1C1E" opacity="0.05"/>
+    <rect x="637" y="268" width="180" height="5" rx="1.5" fill="#1C1C1E" opacity="0.04"/>
+    <rect x="637" y="278" width="196" height="5" rx="1.5" fill="#1C1C1E" opacity="0.04"/>
+  </g>
+
+  <!-- Card 2 (middle) — Variant B -->
+  <g filter="url(#shadow)" transform="rotate(1.5, 740, 210)">
+    <rect x="618" y="168" width="235" height="150" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+
+    <!-- Email header -->
+    <rect x="630" y="180" width="10" height="10" rx="5" fill="#2563EB" opacity="0.15"/>
+    <rect x="645" y="181" width="80" height="7" rx="2" fill="#1C1C1E" opacity="0.1"/>
+
+    <!-- Subject line -->
+    <rect x="630" y="198" width="150" height="8" rx="2" fill="#1C1C1E" opacity="0.12"/>
+
+    <!-- Personalized opening (highlighted) -->
+    <rect x="630" y="216" width="200" height="7" rx="2" fill="#C2410C" opacity="0.1"/>
+    <text x="632" y="222" fill="#C2410C" font-size="7" font-family="system-ui, sans-serif" opacity="0.7">Hi Jane, your PyTorch work at Acme...</text>
+
+    <!-- Body lines -->
+    <rect x="630" y="232" width="210" height="5" rx="1.5" fill="#1C1C1E" opacity="0.06"/>
+    <rect x="630" y="242" width="185" height="5" rx="1.5" fill="#1C1C1E" opacity="0.05"/>
+    <rect x="630" y="252" width="195" height="5" rx="1.5" fill="#1C1C1E" opacity="0.05"/>
+    <rect x="630" y="262" width="160" height="5" rx="1.5" fill="#1C1C1E" opacity="0.04"/>
+
+    <!-- CTA button placeholder -->
+    <rect x="630" y="278" width="70" height="18" rx="4" fill="#2563EB" opacity="0.08"/>
+    <rect x="644" y="284" width="42" height="5" rx="1.5" fill="#2563EB" opacity="0.2"/>
+
+    <!-- Variant B badge -->
+    <rect x="792" y="180" width="50" height="16" rx="4" fill="#EFF6FF"/>
+    <text x="817" y="191" text-anchor="middle" fill="#2563EB" font-size="7" font-weight="600" font-family="system-ui, sans-serif">Variant B</text>
+  </g>
+
+  <!-- Card 1 (front) — Variant A -->
+  <g filter="url(#shadowLg)">
+    <rect x="610" y="78" width="240" height="160" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+
+    <!-- Email top bar -->
+    <rect x="610" y="78" width="240" height="28" rx="0" fill="#FAFAF8"/>
+    <path d="M610,78 L850,78 L850,106 L610,106 Z" fill="#FAFAF8"/>
+    <path d="M624,78 L836,78 Q850,78 850,92 L850,78 Z" fill="none"/>
+
+    <!-- Window dots -->
+    <circle cx="626" cy="92" r="3.5" fill="#EF4444" opacity="0.6"/>
+    <circle cx="637" cy="92" r="3.5" fill="#F59E0B" opacity="0.6"/>
+    <circle cx="648" cy="92" r="3.5" fill="#22C55E" opacity="0.6"/>
+
+    <!-- Email icon + from -->
+    <rect x="622" y="114" width="12" height="10" rx="2" fill="#2563EB" opacity="0.12"/>
+    <text x="638" y="122" fill="#1C1C1E" font-size="8" font-weight="600" font-family="system-ui, sans-serif" opacity="0.6">To: jane.doe@acme.co</text>
+
+    <!-- Subject line -->
+    <text x="622" y="140" fill="#1C1C1E" font-size="9" font-weight="700" font-family="system-ui, sans-serif">Re: ML Engineering Role — Perfect Fit</text>
+
+    <!-- Personalized opening (highlighted in orange) -->
+    <rect x="622" y="150" width="216" height="14" rx="3" fill="#FFF7ED"/>
+    <text x="624" y="161" fill="#C2410C" font-size="8" font-weight="500" font-family="system-ui, sans-serif">Hi Jane, I saw your NLP pipeline at Acme Corp...</text>
+
+    <!-- Body text lines -->
+    <rect x="622" y="172" width="216" height="5" rx="1.5" fill="#1C1C1E" opacity="0.07"/>
+    <rect x="622" y="182" width="190" height="5" rx="1.5" fill="#1C1C1E" opacity="0.06"/>
+    <rect x="622" y="192" width="200" height="5" rx="1.5" fill="#1C1C1E" opacity="0.06"/>
+    <rect x="622" y="202" width="170" height="5" rx="1.5" fill="#1C1C1E" opacity="0.05"/>
+
+    <!-- CTA button -->
+    <rect x="622" y="214" width="74" height="20" rx="5" fill="#2563EB" opacity="0.1"/>
+    <text x="659" y="227" text-anchor="middle" fill="#2563EB" font-size="8" font-weight="600" font-family="system-ui, sans-serif">Book Time</text>
+
+    <!-- Variant A badge -->
+    <rect x="790" y="114" width="50" height="16" rx="4" fill="#FFF7ED"/>
+    <text x="815" y="125" text-anchor="middle" fill="#C2410C" font-size="7" font-weight="600" font-family="system-ui, sans-serif">Variant A</text>
+  </g>
+
+  <!-- Response rate badge -->
+  <g filter="url(#shadowLg)">
+    <rect x="700" y="342" width="120" height="30" rx="15" fill="#ECFDF5" stroke="#059669" stroke-width="1" opacity="0.95"/>
+    <text x="760" y="361" text-anchor="middle" fill="#059669" font-size="10" font-weight="700" font-family="system-ui, sans-serif">+15% response</text>
+  </g>
+
+  <!-- Decorative floating envelope icons -->
+  <!-- Envelope 1 (top right) -->
+  <g opacity="0.18" transform="translate(560, 60) rotate(-12)">
+    <rect x="0" y="0" width="22" height="16" rx="3" fill="none" stroke="#64748B" stroke-width="1.5"/>
+    <path d="M0,0 L11,9 L22,0" fill="none" stroke="#64748B" stroke-width="1.5"/>
+  </g>
+
+  <!-- Envelope 2 (bottom center-left) -->
+  <g opacity="0.12" transform="translate(340, 340) rotate(8)">
+    <rect x="0" y="0" width="20" height="14" rx="2.5" fill="none" stroke="#C2410C" stroke-width="1.2"/>
+    <path d="M0,0 L10,8 L20,0" fill="none" stroke="#C2410C" stroke-width="1.2"/>
+  </g>
+
+  <!-- Envelope 3 (top left area) -->
+  <g opacity="0.1" transform="translate(160, 30) rotate(-5)">
+    <rect x="0" y="0" width="18" height="13" rx="2" fill="none" stroke="#2563EB" stroke-width="1.2"/>
+    <path d="M0,0 L9,7 L18,0" fill="none" stroke="#2563EB" stroke-width="1.2"/>
+  </g>
+
+  <!-- Envelope 4 (far right) -->
+  <g opacity="0.14" transform="translate(856, 300) rotate(15)">
+    <rect x="0" y="0" width="16" height="12" rx="2" fill="none" stroke="#059669" stroke-width="1.2"/>
+    <path d="M0,0 L8,6 L16,0" fill="none" stroke="#059669" stroke-width="1.2"/>
+  </g>
+
+  <!-- Small paper plane decoration -->
+  <g opacity="0.15" transform="translate(580, 340) rotate(-25)">
+    <path d="M0,8 L16,0 L6,8 L8,16 Z" fill="none" stroke="#64748B" stroke-width="1"/>
+  </g>
+
+  <!-- Scale indicator: "3 variants" label -->
+  <g filter="url(#shadowSm)">
+    <rect x="618" y="52" width="80" height="20" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+    <text x="658" y="66" text-anchor="middle" fill="#64748B" font-size="8" font-weight="600" font-family="system-ui, sans-serif">3 Variants</text>
+  </g>
+
+  <!-- Top label for left card -->
+  <g filter="url(#shadowSm)">
+    <rect x="90" y="32" width="120" height="20" rx="10" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+    <text x="150" y="46" text-anchor="middle" fill="#64748B" font-size="8" font-weight="600" font-family="system-ui, sans-serif">Candidate Profile</text>
+  </g>
+
+  <!-- Bottom flow arrows as dots -->
+  <circle cx="290" cy="395" r="3" fill="#2563EB" opacity="0.2"/>
+  <circle cx="380" cy="395" r="3" fill="#C2410C" opacity="0.25"/>
+  <circle cx="470" cy="395" r="3" fill="#C2410C" opacity="0.3"/>
+  <circle cx="560" cy="395" r="3" fill="#059669" opacity="0.25"/>
+
+  <!-- Connecting line between dots -->
+  <line x1="293" y1="395" x2="377" y2="395" stroke="#1C1C1E" stroke-width="1" opacity="0.06"/>
+  <line x1="383" y1="395" x2="467" y2="395" stroke="#1C1C1E" stroke-width="1" opacity="0.06"/>
+  <line x1="473" y1="395" x2="557" y2="395" stroke="#1C1C1E" stroke-width="1" opacity="0.06"/>
+
+  <!-- Flow labels -->
+  <text x="335" y="410" text-anchor="middle" fill="#64748B" font-size="7" font-family="system-ui, sans-serif" opacity="0.5">Extract</text>
+  <text x="425" y="410" text-anchor="middle" fill="#64748B" font-size="7" font-family="system-ui, sans-serif" opacity="0.5">Generate</text>
+  <text x="515" y="410" text-anchor="middle" fill="#64748B" font-size="7" font-family="system-ui, sans-serif" opacity="0.5">Deliver</text>
+</svg>
