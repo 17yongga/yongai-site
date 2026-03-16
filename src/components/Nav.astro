@@ -6,76 +6,80 @@ export interface Props {
 const { isDemoPage = false } = Astro.props;
 ---
 
-<nav class="fixed top-0 left-0 right-0 h-18 z-50 navbar transition-all duration-300" id="nav">
-  <div class="max-w-7xl mx-auto px-6">
+<nav class="fixed top-0 left-0 right-0 h-16 z-50 navbar" id="nav">
+  <div class="max-w-7xl mx-auto px-6 h-full">
     <div class="flex items-center justify-between h-full">
+
       <!-- Logo -->
-      <a href={isDemoPage ? "/" : "#"} class="flex items-center gap-3 font-bold text-xl group">
-        <span class="text-2xl">⚡</span>
-        <span class="text-text-primary">Yong<span class="text-yong-green">AI</span></span>
+      <a href={isDemoPage ? "/" : "#"} class="flex items-center gap-2.5 font-bold text-lg group">
+        <div class="w-8 h-8 bg-[#C2410C] rounded-lg flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 12 L8 4 L13 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="8" cy="4" r="1.5" fill="white"/>
+          </svg>
+        </div>
+        <span class="text-[#1C1C1E]">Yong<span class="text-[#C2410C]">AI</span></span>
       </a>
-      
-      <!-- Navigation Links (Desktop) -->
+
+      <!-- Desktop nav links -->
       <ul class="hidden md:flex items-center gap-8">
         {isDemoPage ? (
           <>
-            <li><a href="/#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Services</a></li>
-            <li><a href="/#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">About</a></li>
-            <li><a href="/#contact" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Contact</a></li>
+            <li><a href="/#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Services</a></li>
+            <li><a href="/#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">About</a></li>
+            <li><a href="/#contact" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Contact</a></li>
           </>
         ) : (
           <>
-            <li><a href="#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Services</a></li>
-            <li><a href="/demos/resume-screener" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Live Demo</a></li>
-            <li><a href="#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">About</a></li>
-            <li><a href="/responsible-ai" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Trust</a></li>
-            <li><a href="#testimonials" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium">Research</a></li>
+            <li><a href="#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Services</a></li>
+            <li><a href="/demos/resume-screener" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Live Demo</a></li>
+            <li><a href="#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">About</a></li>
+            <li><a href="/responsible-ai" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Trust</a></li>
           </>
         )}
         <li>
-          <button 
-            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
-            class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yong-green/25 btn-animate"
+          <button
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+            class="bg-[#C2410C] hover:bg-[#9A3408] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors duration-200"
           >
             Get Started
           </button>
         </li>
       </ul>
-      
-      <!-- Mobile Menu Button -->
-      <button 
-        class="md:hidden flex flex-col gap-1 p-2 cursor-pointer" 
-        id="burger" 
+
+      <!-- Mobile burger -->
+      <button
+        class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+        id="burger"
         aria-label="Toggle menu"
       >
-        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
-        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
-        <span class="w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
       </button>
     </div>
-    
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden absolute top-full left-0 right-0 glassmorphism border-t border-white/6 p-6" id="mobileMenu">
+
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-[rgba(0,0,0,0.08)] shadow-md p-6" id="mobileMenu">
       <ul class="flex flex-col gap-4">
         {isDemoPage ? (
           <>
-            <li><a href="/#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Services</a></li>
-            <li><a href="/#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">About</a></li>
-            <li><a href="/#contact" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Contact</a></li>
+            <li><a href="/#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Services</a></li>
+            <li><a href="/#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">About</a></li>
+            <li><a href="/#contact" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Contact</a></li>
           </>
         ) : (
           <>
-            <li><a href="#services" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Services</a></li>
-            <li><a href="/demos/resume-screener" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Live Demo</a></li>
-            <li><a href="#about" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">About</a></li>
-            <li><a href="/responsible-ai" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Trust</a></li>
-            <li><a href="#testimonials" class="text-text-muted hover:text-text-primary transition-colors duration-200 font-medium block py-2">Research</a></li>
+            <li><a href="#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Services</a></li>
+            <li><a href="/demos/resume-screener" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Live Demo</a></li>
+            <li><a href="#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">About</a></li>
+            <li><a href="/responsible-ai" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Trust</a></li>
           </>
         )}
         <li>
-          <button 
-            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
-            class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-6 py-3 rounded-lg font-semibold text-sm w-full"
+          <button
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+            class="bg-[#C2410C] text-white px-5 py-3 rounded-lg font-semibold text-sm w-full"
           >
             Get Started
           </button>
@@ -86,72 +90,51 @@ const { isDemoPage = false } = Astro.props;
 </nav>
 
 <script>
-  // Mobile menu toggle functionality
   function initMobileMenu() {
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     const nav = document.getElementById('nav');
-    
     if (!burger || !mobileMenu || !nav) return;
-    
+
     burger.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      
-      // Animate hamburger to X
       const spans = burger.querySelectorAll('span');
-      if (mobileMenu.classList.contains('hidden')) {
-        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
-      } else {
-        spans[0].style.transform = 'rotate(45deg) translateY(6px)';
+      if (!mobileMenu.classList.contains('hidden')) {
+        spans[0].style.transform = 'rotate(45deg) translateY(7px)';
         spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+        spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
       }
     });
-    
-    // Close mobile menu when clicking outside
+
     document.addEventListener('click', (e) => {
       if (!nav.contains(e.target as Node)) {
         mobileMenu.classList.add('hidden');
         const spans = burger.querySelectorAll('span');
-        spans[0].style.transform = 'rotate(0deg) translateY(0px)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0deg) translateY(0px)';
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
       }
     });
 
-    // Add scrolled class to nav on scroll
-    let scrolled = false;
     window.addEventListener('scroll', () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        scrolled = isScrolled;
-        nav.classList.toggle('scrolled', isScrolled);
-        if (isScrolled) {
-          nav.style.background = 'linear-gradient(135deg, rgba(7, 8, 12, 0.8), rgba(13, 15, 20, 0.85))';
-          nav.style.backdropFilter = 'blur(20px)';
-          nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
-          nav.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.1)';
-        } else {
-          nav.style.background = 'transparent';
-          nav.style.backdropFilter = 'none';
-          nav.style.borderBottom = 'none';
-          nav.style.boxShadow = 'none';
-        }
+      if (window.scrollY > 10) {
+        nav.style.background = 'rgba(250, 250, 248, 0.92)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.08)';
+        nav.style.boxShadow = '0 1px 8px rgba(0, 0, 0, 0.06)';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.borderBottom = 'none';
+        nav.style.boxShadow = 'none';
       }
-    });
+    }, { passive: true });
   }
 
-  // Initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', initMobileMenu);
-  
-  // Reinitialize on navigation (for SPAs)
   document.addEventListener('astro:page-load', initMobileMenu);
 </script>
-
-<style>
-  .navbar {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-</style>

@@ -1,195 +1,151 @@
 ---
-// Contact Form component with Formspree integration
+// Contact Form — light theme, Formspree
 ---
 
-<div class="glassmorphism rounded-3xl p-12 max-w-4xl mx-auto relative overflow-hidden">
-  <!-- Glow effect -->
-  <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-yong-green/10 rounded-full filter blur-3xl pointer-events-none"></div>
-  
-  <div class="relative z-10 text-center">
-    <div class="inline-block px-4 py-2 bg-yong-green/10 text-yong-green text-sm font-mono font-semibold rounded-full mb-6">
-      Ready to Start?
+<div class="max-w-4xl mx-auto">
+  <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-10 lg:p-14 shadow-sm">
+
+    <div class="max-w-2xl mb-10">
+      <p class="section-label">Ready to start?</p>
+      <h2 class="text-3xl lg:text-4xl font-black text-[#1C1C1E] mb-3">
+        Let's find what AI can actually do for you.
+      </h2>
+      <p class="text-[#64748B] leading-relaxed">
+        Book a free 30-minute strategy call. No pitch, no pressure — just an honest assessment of where automation fits in your business.
+      </p>
     </div>
-    
-    <h2 class="text-3xl lg:text-4xl font-bold mb-4">
-      Let's find what AI can actually do for you.
-    </h2>
-    
-    <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto">
-      Book a free 30-minute strategy call. No pitch, no pressure — just an honest assessment of where automation fits in your business.
-    </p>
-    
-    <form class="space-y-6" id="contactForm" action="https://formspree.io/f/xwvnkpak" method="POST">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your name"
-            required
-            class="w-full px-6 py-4 bg-bg-raised border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none transition-all duration-300"
-          />
-        </div>
-        <div>
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Work email"
-            required
-            class="w-full px-6 py-4 bg-bg-raised border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none transition-all duration-300"
-          />
-        </div>
-      </div>
-      
-      <div>
-        <input 
-          type="text" 
-          name="company" 
-          placeholder="Company name"
-          class="w-full px-6 py-4 bg-bg-raised border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none transition-all duration-300"
+
+    <form class="space-y-5" id="contactForm" action="https://formspree.io/f/xwvnkpak" method="POST">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Work email"
+          required
+          class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
         />
       </div>
-      
-      <div>
-        <select 
-          name="interest" 
-          required
-          class="w-full px-6 py-4 bg-bg-raised border border-border-light rounded-xl text-text-primary focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none transition-all duration-300"
-        >
-          <option value="" disabled selected>What are you interested in?</option>
-          <option value="audit">AI Readiness Audit — $2,500</option>
-          <option value="implementation">AI Implementation — $5K–$15K</option>
-          <option value="partnership">AI Partnership — $2K–$5K/mo</option>
-          <option value="unsure">Not sure yet — let's talk</option>
-        </select>
-      </div>
-      
-      <div>
-        <textarea 
-          name="message" 
-          rows="4" 
-          placeholder="Tell me about your biggest workflow bottleneck (optional)"
-          class="w-full px-6 py-4 bg-bg-raised border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-yong-green focus:ring-2 focus:ring-yong-green/20 focus:outline-none transition-all duration-300 resize-vertical"
-        ></textarea>
-      </div>
-      
-      <button 
-        type="submit" 
-        class="w-full bg-gradient-to-r from-yong-green to-yong-green-light text-white px-8 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-yong-green/25 btn-animate inline-flex items-center justify-center gap-3"
+
+      <input
+        type="text"
+        name="company"
+        placeholder="Company name"
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+      />
+
+      <select
+        name="interest"
+        required
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+      >
+        <option value="" disabled selected>What are you interested in?</option>
+        <option value="audit">AI Readiness Audit — $2,500</option>
+        <option value="implementation">AI Implementation — $5K–$15K</option>
+        <option value="partnership">AI Partnership — $2K–$5K/mo</option>
+        <option value="unsure">Not sure yet — let's talk</option>
+      </select>
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Tell me about your biggest workflow bottleneck (optional)"
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 resize-vertical text-sm"
+      ></textarea>
+
+      <button
+        type="submit"
         id="submitBtn"
+        class="w-full bg-[#C2410C] hover:bg-[#9A3408] text-white px-8 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center gap-3 shadow-sm"
       >
         <span id="submitText">Book My Free Strategy Call</span>
-        <svg id="submitIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
+        <svg id="submitIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
         </svg>
-        <div id="submitSpinner" class="hidden w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+        <div id="submitSpinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
       </button>
-      
-      <div class="text-center space-y-2">
-        <p class="text-sm text-text-faint">
-          Free 30-minute call · No commitment · Response within 24 hours
-        </p>
-        <p class="text-sm text-text-faint">
-          Or email directly: <a href="mailto:gary.yong@yongai.ca" class="text-yong-green hover:text-yong-green-light transition-colors duration-200">gary.yong@yongai.ca</a>
-        </p>
-      </div>
+
+      <p class="text-center text-xs text-[#94A3B8]">
+        Free 30-minute call · No commitment · Response within 24 hours ·
+        <a href="mailto:gary.yong@yongai.ca" class="text-[#C2410C] hover:underline">gary.yong@yongai.ca</a>
+      </p>
     </form>
-  </div>
-  
-  <!-- Success message (hidden by default) -->
-  <div id="successMessage" class="hidden text-center py-12">
-    <div class="w-20 h-20 mx-auto mb-6 bg-success/10 rounded-full flex items-center justify-center">
-      <svg class="w-10 h-10 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-      </svg>
+
+    <!-- Success state -->
+    <div id="successMessage" class="hidden text-center py-12">
+      <div class="w-16 h-16 mx-auto mb-5 bg-[rgba(5,150,105,0.1)] rounded-full flex items-center justify-center">
+        <svg class="w-8 h-8 text-[#059669]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-[#1C1C1E] mb-3">Thank you!</h3>
+      <p class="text-[#64748B] mb-5">Your message has been sent. I'll get back to you within 24 hours.</p>
+      <button onclick="resetForm()" class="text-[#C2410C] hover:underline text-sm font-medium">Send another message</button>
     </div>
-    <h3 class="text-2xl font-bold mb-4">Thank you!</h3>
-    <p class="text-lg text-text-muted mb-6">
-      Your message has been sent successfully. I'll get back to you within 24 hours.
-    </p>
-    <button 
-      onclick="resetForm()" 
-      class="text-yong-green hover:text-yong-green-light transition-colors duration-200 font-medium"
-    >
-      Send another message
-    </button>
   </div>
 </div>
 
 <script>
   function initContactForm() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
     const submitText = document.getElementById('submitText');
     const submitIcon = document.getElementById('submitIcon');
     const submitSpinner = document.getElementById('submitSpinner');
     const successMessage = document.getElementById('successMessage');
-    
     if (!form || !submitBtn) return;
-    
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // Show loading state
       submitBtn.disabled = true;
-      submitText.textContent = 'Sending...';
-      submitIcon.classList.add('hidden');
-      submitSpinner.classList.remove('hidden');
-      
+      submitText!.textContent = 'Sending...';
+      submitIcon!.classList.add('hidden');
+      submitSpinner!.classList.remove('hidden');
+
       try {
-        const formData = new FormData(form);
         const response = await fetch(form.action, {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
         });
-        
         if (response.ok) {
-          // Show success message
           form.style.display = 'none';
-          successMessage.classList.remove('hidden');
+          successMessage!.classList.remove('hidden');
         } else {
-          throw new Error('Form submission failed');
+          throw new Error('Failed');
         }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('There was an error sending your message. Please try again or email gary.yong@yongai.ca directly.');
-        
-        // Reset button state
+      } catch {
+        alert('Error sending message. Please email gary.yong@yongai.ca directly.');
         submitBtn.disabled = false;
-        submitText.textContent = 'Book My Free Strategy Call';
-        submitIcon.classList.remove('hidden');
-        submitSpinner.classList.add('hidden');
+        submitText!.textContent = 'Book My Free Strategy Call';
+        submitIcon!.classList.remove('hidden');
+        submitSpinner!.classList.add('hidden');
       }
     });
   }
-  
+
   function resetForm() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
     const submitText = document.getElementById('submitText');
     const submitIcon = document.getElementById('submitIcon');
     const submitSpinner = document.getElementById('submitSpinner');
-    const successMessage = document.getElementById('successMessage');
-    
-    // Reset form
     form.reset();
     form.style.display = 'block';
-    successMessage.classList.add('hidden');
-    
-    // Reset button state
+    successMessage!.classList.add('hidden');
     submitBtn.disabled = false;
-    submitText.textContent = 'Book My Free Strategy Call';
-    submitIcon.classList.remove('hidden');
-    submitSpinner.classList.add('hidden');
+    submitText!.textContent = 'Book My Free Strategy Call';
+    submitIcon!.classList.remove('hidden');
+    submitSpinner!.classList.add('hidden');
   }
-  
-  // Initialize form
+
   document.addEventListener('DOMContentLoaded', initContactForm);
-  
-  // Reinitialize on navigation
   document.addEventListener('astro:page-load', initContactForm);
 </script>
