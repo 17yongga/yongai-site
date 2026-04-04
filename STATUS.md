@@ -1,5 +1,5 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-03-15
+> Updated: 2026-03-22
 
 ## What's Live
 - **URL:** https://yongai.ca
@@ -25,11 +25,12 @@
 - **Removed:** Neural network SVG, floating orbs, scroll fade-in on every element, hover:scale on cards, fake "Trusted by" logos bar, gradient buttons, purple accents throughout
 - Partner docs on S3: `partner-agenda.html`, `partner-workshop-guide.html`
 
-## Current State (2026-03-15)
+## Current State (2026-03-17)
 - Homepage fully redesigned and live ✅
 - Light theme applied across all 5 demo pages ✅
 - Demo page bugs fixed and deployed ✅
 - **SVG hero illustrations live on yongai.ca ✅ (2026-03-15 12:08 EDT)** — CloudFront invalidation `I5W5WHELPHTFRWRV0O0Y20SUHF`
+- **Gary reviewed and approved illustrations ✅ (2026-03-17)**
 
 ## Illustrations (2026-03-15)
 All 5 demo pages now have flat-style SVG hero illustrations replacing placeholder JPGs:
@@ -53,9 +54,10 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - **Demo backends:** Demo pages are static/simulated — not wired to real AI backends
 
 ## Next Actions
-- [ ] **Gary: review SVG illustrations live** — check look/feel on yongai.ca demo pages
+- [x] **Refine demo page narratives** — storytelling pass completed 2026-03-22 (3 h1 rewrites: workflow-audit, resume-screener, candidate-outreach)
 - [ ] **Advisory board** — Gary to provide real advisor names/credentials
-- [ ] Refine demo page narratives (storytelling pass)
+- [ ] Client testimonials section
+- [ ] SEO optimization
 
 ## Decisions
 - 2026-03-15: Flat SVG hero illustrations deployed — all 5 demo pages, ~15-21KB each, committed to repo
