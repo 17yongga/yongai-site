@@ -2866,6 +2866,52 @@ body:has(.studio-redesign) {
   background: linear-gradient(135deg, rgba(156, 255, 58, 0.28), rgba(255, 255, 255, 0.05));
 }
 
+.project-case.flowt .project-media {
+  display: grid;
+  place-items: center;
+  min-height: 640px;
+  background:
+    linear-gradient(rgba(17, 17, 15, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 15, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, #1876e9 0%, #2d93eb 46%, #64d6df 100%);
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+.project-case.flowt .project-hero-shot {
+  width: min(68%, 390px);
+  height: auto;
+  align-self: center;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 24px 64px rgba(6, 32, 74, 0.22);
+}
+
+.project-case.flowt .project-hero-shot img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-case.flowt .project-phone-shot {
+  right: clamp(1rem, 4vw, 2.5rem);
+  bottom: clamp(1rem, 4vw, 2.25rem);
+  width: min(30%, 190px);
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 18px 52px rgba(6, 32, 74, 0.28);
+}
+
+.project-case.flowt .project-gallery img {
+  aspect-ratio: 0.5;
+  object-fit: cover;
+  object-position: 50% 50%;
+  background: #1d83ea;
+}
+
 .project-case.pets .project-placeholder {
   background: linear-gradient(135deg, rgba(44, 114, 255, 0.22), rgba(255, 255, 255, 0.05));
 }
@@ -3376,6 +3422,18 @@ body:has(.studio-redesign) {
 
   .project-media {
     min-height: 320px;
+  }
+
+  .project-case.flowt .project-media {
+    min-height: 520px;
+  }
+
+  .project-case.flowt .project-hero-shot {
+    width: min(82%, 310px);
+  }
+
+  .project-case.flowt .project-phone-shot {
+    display: none;
   }
 
   .project-phone-shot {
