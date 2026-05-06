@@ -4,85 +4,48 @@ export interface Props {
 }
 
 const { isDemoPage = false } = Astro.props;
+const base = isDemoPage ? "/" : "";
 ---
 
 <nav class="fixed top-0 left-0 right-0 h-16 z-50 navbar" id="nav">
-  <div class="max-w-7xl mx-auto px-6 h-full">
+  <div class="studio-shell h-full">
     <div class="flex items-center justify-between h-full">
-
-      <!-- Logo -->
-      <a href={isDemoPage ? "/" : "#"} class="flex items-center gap-2.5 font-bold text-lg group">
-        <div class="w-8 h-8 bg-[#C2410C] rounded-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 12 L8 4 L13 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="8" cy="4" r="1.5" fill="white"/>
-          </svg>
+      <a href={isDemoPage ? "/" : "#top"} class="flex items-center gap-2.5 font-black text-lg group" aria-label="YONG Studio home">
+        <div class="w-8 h-8 bg-[#1C1C1E] rounded-lg flex items-center justify-center border border-white/10">
+          <span class="text-[#C2410C] text-sm tracking-tight">Y</span>
         </div>
-        <span class="text-[#1C1C1E]">Yong<span class="text-[#C2410C]">AI</span></span>
+        <span class="nav-brand-text">YONG<span> Studio</span></span>
       </a>
 
-      <!-- Desktop nav links -->
       <ul class="hidden md:flex items-center gap-8">
-        {isDemoPage ? (
-          <>
-            <li><a href="/#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Services</a></li>
-            <li><a href="/#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">About</a></li>
-            <li><a href="/#contact" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Contact</a></li>
-          </>
-        ) : (
-          <>
-            <li><a href="#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Services</a></li>
-            <li><a href="/demos/resume-screener" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Live Demo</a></li>
-            <li><a href="#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">About</a></li>
-            <li><a href="/responsible-ai" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 text-sm font-medium">Trust</a></li>
-          </>
-        )}
+        <li><a href={`${base}#ventures`} class="nav-link">Portfolio</a></li>
+        <li><a href={`${base}#studio-system`} class="nav-link">How We Work</a></li>
+        <li><a href={`${base}#contact`} class="nav-link">Contact</a></li>
+        <li><a href="/responsible-ai" class="nav-link">Trust</a></li>
         <li>
-          <button
-            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
-            class="bg-[#C2410C] hover:bg-[#9A3408] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors duration-200"
-          >
-            Get Started
-          </button>
+          <a href={`${base}#contact`} class="nav-cta">
+            Let's Build
+          </a>
         </li>
       </ul>
 
-      <!-- Mobile burger -->
-      <button
-        class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
-        id="burger"
-        aria-label="Toggle menu"
-      >
+      <button class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer" id="burger" aria-label="Toggle menu">
         <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
         <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
         <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
       </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-[rgba(0,0,0,0.08)] shadow-md p-6" id="mobileMenu">
+    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-[#F8F6F0] border-b border-[rgba(0,0,0,0.08)] shadow-md p-6" id="mobileMenu">
       <ul class="flex flex-col gap-4">
-        {isDemoPage ? (
-          <>
-            <li><a href="/#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Services</a></li>
-            <li><a href="/#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">About</a></li>
-            <li><a href="/#contact" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Contact</a></li>
-          </>
-        ) : (
-          <>
-            <li><a href="#services" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Services</a></li>
-            <li><a href="/demos/resume-screener" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Live Demo</a></li>
-            <li><a href="#about" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">About</a></li>
-            <li><a href="/responsible-ai" class="text-[#64748B] hover:text-[#1C1C1E] transition-colors duration-200 font-medium block py-2">Trust</a></li>
-          </>
-        )}
+        <li><a href={`${base}#ventures`} class="mobile-link">Portfolio</a></li>
+        <li><a href={`${base}#studio-system`} class="mobile-link">How We Work</a></li>
+        <li><a href={`${base}#contact`} class="mobile-link">Contact</a></li>
+        <li><a href="/responsible-ai" class="mobile-link">Trust</a></li>
         <li>
-          <button
-            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
-            class="bg-[#C2410C] text-white px-5 py-3 rounded-lg font-semibold text-sm w-full"
-          >
-            Get Started
-          </button>
+          <a href={`${base}#contact`} class="nav-cta w-full justify-center">
+            Let's Build
+          </a>
         </li>
       </ul>
     </div>
@@ -99,38 +62,29 @@ const { isDemoPage = false } = Astro.props;
     burger.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
       const spans = burger.querySelectorAll('span');
-      if (!mobileMenu.classList.contains('hidden')) {
-        spans[0].style.transform = 'rotate(45deg) translateY(7px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
-      }
+      const open = !mobileMenu.classList.contains('hidden');
+      spans[0].style.transform = open ? 'rotate(45deg) translateY(7px)' : '';
+      spans[1].style.opacity = open ? '0' : '';
+      spans[2].style.transform = open ? 'rotate(-45deg) translateY(-7px)' : '';
     });
 
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target as Node)) {
+    document.addEventListener('click', (event) => {
+      if (!nav.contains(event.target as Node)) {
         mobileMenu.classList.add('hidden');
-        const spans = burger.querySelectorAll('span');
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
       }
     });
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
-        nav.style.background = 'rgba(250, 250, 248, 0.92)';
-        nav.style.backdropFilter = 'blur(12px)';
+        nav.classList.add('scrolled');
+        nav.style.background = 'rgba(248, 246, 240, 0.9)';
+        nav.style.backdropFilter = 'blur(14px)';
         nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.08)';
-        nav.style.boxShadow = '0 1px 8px rgba(0, 0, 0, 0.06)';
       } else {
+        nav.classList.remove('scrolled');
         nav.style.background = 'transparent';
         nav.style.backdropFilter = 'none';
         nav.style.borderBottom = 'none';
-        nav.style.boxShadow = 'none';
       }
     }, { passive: true });
   }
