@@ -51,13 +51,13 @@ const projects = [
     proof: ['Shared household dashboard', 'AI receipt scanner', 'Category charts', 'Settlement flow', 'Flowt Pro paywall'],
     compliance: 'Personal-finance data product. Privacy, secure storage, and App Store review readiness are central risks to de-risk.',
     images: {
-      hero: '/portfolio/flowt/app-store-dashboard.png',
-      mobile: '/portfolio/flowt/app-store-scan.png',
+      hero: '/portfolio/flowt/dashboard.png',
+      mobile: '/portfolio/flowt/receipt-scan.png',
       gallery: [
-        ['/portfolio/flowt/app-store-transactions.png', 'Filtered shared, solo, and household expense list'],
-        ['/portfolio/flowt/app-store-charts.png', 'Shared spending trends and budget pace'],
-        ['/portfolio/flowt/app-store-settle.png', 'One-tap settlement and who-owes-what clarity'],
-        ['/portfolio/flowt/app-store-pro.png', 'Flowt Pro pricing and premium receipt scanning'],
+        ['/portfolio/flowt/dashboard.png', 'Shared household dashboard and monthly budget state'],
+        ['/portfolio/flowt/charts.png', 'Shared spending trends and budget pace'],
+        ['/portfolio/flowt/settlements.png', 'One-tap settlement and who-owes-what clarity'],
+        ['/portfolio/flowt/flowt-pro-upgrade.png', 'Flowt Pro pricing and premium receipt scanning'],
       ],
     },
     className: 'flowt',
@@ -88,7 +88,7 @@ const projects = [
         ['/portfolio/onlypets/store-home.png', 'Nibbles store and reward marketplace'],
         ['/portfolio/onlypets/messages-inbox.png', 'Owner-to-owner messaging and recommendation follow-up'],
         ['/portfolio/onlypets/nibbles-top-up.png', 'Nibbles top-up and monetization surface'],
-        ['/portfolio/onlypets/notifications.png', 'Retention hooks across likes, follows, rewards, and subscriptions'],
+        ['/portfolio/onlypets/profile-wallet-menu.png', 'Profile, wallet, rewards, and account surface'],
       ],
     },
     className: 'pets',
@@ -272,12 +272,50 @@ const collaborationSlots = [
               <div class="project-media">
                 {project.images ? (
                   <>
-                    <figure class="project-hero-shot">
-                      <img src={project.images.hero} alt={`${project.name} lobby hero interface`} loading="lazy" />
+                    {(project.className === 'flowt' || project.className === 'pets') && (
+                      <div class="app-poster-copy">
+                        <span>{project.stage}</span>
+                        <strong>
+                          {project.className === 'flowt'
+                            ? 'Split smarter. Settle faster.'
+                            : 'Built for daily pet discovery.'}
+                        </strong>
+                        <em>
+                          {project.className === 'flowt'
+                            ? 'Shared expenses, receipt scanning, and settlement flow in one app.'
+                            : 'Care posts, profiles, rewards, and community commerce surfaces.'}
+                        </em>
+                      </div>
+                    )}
+                    <figure class={`project-hero-shot ${project.className === 'flowt' || project.className === 'pets' ? 'app-device-frame' : ''}`}>
+                      {project.className === 'flowt' || project.className === 'pets' ? (
+                        <span class="device-screen">
+                          <span class="device-viewport">
+                            <span class="device-status" aria-hidden="true">
+                              <span class="device-time">9:41</span>
+                              <span class="device-icons">
+                                <i class="signal"></i>
+                                <i class="wifi"></i>
+                                <i class="battery"></i>
+                              </span>
+                            </span>
+                            <span class="device-island" aria-hidden="true">
+                              <i></i>
+                            </span>
+                            <span class="device-content">
+                              <img src={project.images.hero} alt={`${project.name} product interface`} loading="lazy" />
+                            </span>
+                          </span>
+                        </span>
+                      ) : (
+                        <img src={project.images.hero} alt={`${project.name} product interface`} loading="lazy" />
+                      )}
                     </figure>
-                    <figure class="project-phone-shot">
-                      <img src={project.images.mobile} alt={`${project.name} mobile lobby interface`} loading="lazy" />
-                    </figure>
+                    {!(project.className === 'flowt' || project.className === 'pets') && (
+                      <figure class="project-phone-shot">
+                        <img src={project.images.mobile} alt={`${project.name} mobile interface`} loading="lazy" />
+                      </figure>
+                    )}
                   </>
                 ) : (
                   <div class="project-placeholder" aria-label={`${project.name} media placeholder`}>
@@ -290,45 +328,75 @@ const collaborationSlots = [
                 )}
               </div>
 
-              <dl class="project-intel">
-                <div>
-                  <dt>Audience</dt>
-                  <dd>{project.audience}</dd>
-                </div>
-                <div>
-                  <dt>Evidence</dt>
-                  <dd>{project.evidence}</dd>
-                </div>
-                <div>
-                  <dt>Model</dt>
-                  <dd>{project.model}</dd>
-                </div>
-                <div>
-                  <dt>Next milestone</dt>
-                  <dd>{project.nextMilestone}</dd>
-                </div>
-              </dl>
+              <details class="project-deep-dive">
+                <summary>
+                  <span>Explore project details</span>
+                  <small>Audience, evidence, model, next milestone, and product screens</small>
+                </summary>
 
-              <div class="project-proof">
-                <div>
-                  <span>{project.proofLabel}</span>
-                  {project.compliance && <strong>{project.compliance}</strong>}
-                </div>
-                <ul>
-                  {project.proof.map((item) => <li>{item}</li>)}
-                </ul>
-              </div>
+                <div class="project-deep-content">
+                  <dl class="project-intel">
+                    <div>
+                      <dt>Audience</dt>
+                      <dd>{project.audience}</dd>
+                    </div>
+                    <div>
+                      <dt>Evidence</dt>
+                      <dd>{project.evidence}</dd>
+                    </div>
+                    <div>
+                      <dt>Model</dt>
+                      <dd>{project.model}</dd>
+                    </div>
+                    <div>
+                      <dt>Next milestone</dt>
+                      <dd>{project.nextMilestone}</dd>
+                    </div>
+                  </dl>
 
-              {project.images && (
-                <div class="project-gallery" aria-label={`${project.name} screenshot gallery`}>
-                  {project.images.gallery.map(([src, caption]) => (
-                    <figure>
-                      <img src={src} alt={`${project.name}: ${caption}`} loading="lazy" />
-                      <figcaption>{caption}</figcaption>
-                    </figure>
-                  ))}
+                  <div class="project-proof">
+                    <div>
+                      <span>{project.proofLabel}</span>
+                      {project.compliance && <strong>{project.compliance}</strong>}
+                    </div>
+                    <ul>
+                      {project.proof.map((item) => <li>{item}</li>)}
+                    </ul>
+                  </div>
+
+                  {project.images && (
+                    <div class="project-gallery" aria-label={`${project.name} screenshot gallery`}>
+                      {project.images.gallery.map(([src, caption]) => (
+                        <figure class={project.className === 'flowt' || project.className === 'pets' ? 'app-gallery-frame' : ''}>
+                          {project.className === 'flowt' || project.className === 'pets' ? (
+                            <span class="device-screen">
+                              <span class="device-viewport">
+                                <span class="device-status" aria-hidden="true">
+                                  <span class="device-time">9:41</span>
+                                  <span class="device-icons">
+                                    <i class="signal"></i>
+                                    <i class="wifi"></i>
+                                    <i class="battery"></i>
+                                  </span>
+                                </span>
+                                <span class="device-island" aria-hidden="true">
+                                  <i></i>
+                                </span>
+                                <span class="device-content">
+                                  <img src={src} alt={`${project.name}: ${caption}`} loading="lazy" />
+                                </span>
+                              </span>
+                            </span>
+                          ) : (
+                            <img src={src} alt={`${project.name}: ${caption}`} loading="lazy" />
+                          )}
+                          <figcaption>{caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+              </details>
             </article>
           ))}
         </div>
