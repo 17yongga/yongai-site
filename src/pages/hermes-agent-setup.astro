@@ -1,0 +1,418 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Hermes Agent Setup — Private AI Operator for Real Workflows | YongAI';
+const pageDescription = 'Done-for-you Hermes Agent setup for consultants, founders, job seekers, creators, and busy professionals. Get a private AI operator in Telegram or Discord with memory, tools, skills, scheduled workflows, and clear approval boundaries.';
+
+const packages = [
+  {
+    tier: 'Quickstart',
+    title: 'Hermes Quickstart Setup',
+    price: 'CAD $299–$499',
+    term: 'same-day setup',
+    description: 'For technical-ish professionals who want Hermes installed correctly without fighting providers, gateways, config files, memory, or cron.',
+    features: [
+      'Hermes install and model/provider setup',
+      'Telegram or Discord gateway configured',
+      'Basic memory/profile and 1–2 starter skills',
+      'One simple scheduled workflow or reminder',
+      'Handoff notes so you know how to use it'
+    ],
+    cta: 'Book a quickstart call',
+    featured: false
+  },
+  {
+    tier: 'Core offer',
+    title: 'Personal Agent Buildout',
+    price: 'CAD $1K–$2.5K',
+    term: '1-week build',
+    description: 'A private AI operator designed around your actual life/workflows — not a generic chatbot and not just a technical install.',
+    features: [
+      '45-minute workflow audit and operating model',
+      '3–5 custom workflows for your recurring work',
+      'Custom skills, memory, approval rules, and safety boundaries',
+      'Tool integrations where feasible: calendar, Gmail, Drive, GitHub, Notion, Sheets, Slack/Discord/Telegram',
+      '7 days of async support after handoff'
+    ],
+    cta: 'Build my AI operator',
+    featured: true
+  },
+  {
+    tier: 'Ongoing',
+    title: 'AI Operations Retainer',
+    price: 'CAD $300–$1.5K',
+    term: 'per month',
+    description: 'For people who start relying on their agent and want it monitored, tuned, expanded, and kept reliable as their workflows change.',
+    features: [
+      'Workflow tuning and new skills/automations',
+      'Recurring cost/token and reliability review',
+      'Debugging broken integrations and scheduled jobs',
+      'Monthly workflow review call',
+      'Privacy, permissions, and safety checkups'
+    ],
+    cta: 'Keep it running',
+    featured: false
+  }
+];
+
+const workflowPacks = [
+  ['Consultant / PM Pack', 'Morning calendar brief, meeting prep, follow-up drafts, weekly status report, stakeholder reminders.'],
+  ['Job Search Pack', 'Job tracker, weekly role discovery, resume tailoring checklist, recruiter follow-up reminders, interview prep dossiers.'],
+  ['Founder Pack', 'Competitor/news monitor, customer feedback digest, GitHub/project summaries, weekly founder report, content idea backlog.'],
+  ['Creator Pack', 'Trend/source monitoring, voice-note-to-outline, newsletter research digest, publishing calendar, sponsor/lead tracker.'],
+  ['Personal Admin Pack', 'Calendar/email digest, reminders, travel planning, gift idea tracker, journal/life-log support.'],
+  ['Custom Workflow Pack', 'One high-friction recurring process mapped, automated, documented, and placed behind the right approval gates.']
+];
+
+const comparisonRows = [
+  ['ChatGPT', 'Great at answering one-off questions, but it forgets the job and waits for you to drive every session.'],
+  ['Zapier / Make / n8n', 'Great for deterministic triggers, weaker when the work needs judgment, memory, and conversational follow-up.'],
+  ['Claude Code', 'Excellent repo-centered coding workflow, but not a personal/business operating layer across messages, tools, memory, and schedules.'],
+  ['Virtual assistant', 'Human judgment is useful, but recurring knowledge work can be expensive, inconsistent, or hard to delegate securely.'],
+  ['Hermes Agent', 'A messaging-native, open-source agent layer with memory, skills, tools, scheduled jobs, and approval boundaries.']
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Nav isDemoPage={true} />
+
+  <main class="bg-[#FAFAF8] text-[#1C1C1E]">
+    <!-- Hero -->
+    <section class="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[rgba(0,0,0,0.06)]">
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div class="absolute top-28 right-[-12rem] w-[34rem] h-[34rem] rounded-full bg-[rgba(194,65,12,0.08)] blur-3xl"></div>
+        <div class="absolute bottom-[-14rem] left-[-12rem] w-[32rem] h-[32rem] rounded-full bg-[rgba(37,99,235,0.06)] blur-3xl"></div>
+        <div class="absolute inset-0 opacity-[0.35]" style="background-image: radial-gradient(rgba(28,28,30,0.11) 1px, transparent 1px); background-size: 28px 28px;"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center">
+          <div>
+            <p class="section-label mb-5">Hermes Agent setup service</p>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-[-0.055em] leading-[0.93] text-[#1C1C1E] mb-7 max-w-4xl">
+              Set up a private AI operator for your real workflows.
+            </h1>
+            <p class="text-xl md:text-2xl text-[#475569] leading-relaxed max-w-2xl mb-8">
+              I configure Hermes Agent to live in Telegram or Discord, connect to your tools, remember your preferences, and handle recurring work like email triage, research, project updates, job tracking, reminders, and personal admin.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 mb-9">
+              <button
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+                class="bg-[#C2410C] hover:bg-[#9A3408] text-white px-7 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-sm"
+              >
+                Book a 20-min Agent Workflow Audit
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+              <a href="#packages" class="border border-[rgba(0,0,0,0.12)] hover:border-[rgba(0,0,0,0.24)] bg-white text-[#1C1C1E] px-7 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center">
+                See packages
+              </a>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-3 max-w-2xl">
+              <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-4">
+                <p class="text-xs uppercase tracking-widest font-bold text-[#94A3B8] mb-1">Interface</p>
+                <p class="font-bold text-[#1C1C1E]">Telegram / Discord</p>
+              </div>
+              <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-4">
+                <p class="text-xs uppercase tracking-widest font-bold text-[#94A3B8] mb-1">Core value</p>
+                <p class="font-bold text-[#1C1C1E]">Memory + workflows</p>
+              </div>
+              <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-4">
+                <p class="text-xs uppercase tracking-widest font-bold text-[#94A3B8] mb-1">Default safety</p>
+                <p class="font-bold text-[#1C1C1E]">Approval gates</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero operator card -->
+          <div class="relative">
+            <div class="bg-[#1C1C1E] rounded-[1.75rem] p-4 shadow-2xl shadow-[rgba(28,28,30,0.18)] border border-[rgba(255,255,255,0.12)]">
+              <div class="bg-[#0F1115] rounded-[1.25rem] overflow-hidden border border-white/10">
+                <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-[#C2410C] flex items-center justify-center text-white font-black">H</div>
+                    <div>
+                      <p class="text-white font-bold leading-tight">Hermes operator</p>
+                      <p class="text-xs text-white/45">Private workflow agent · online</p>
+                    </div>
+                  </div>
+                  <div class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-bold border border-emerald-400/20">RUNNING</div>
+                </div>
+
+                <div class="p-5 space-y-4">
+                  <div class="max-w-[82%] rounded-2xl rounded-tl-sm bg-white/8 border border-white/10 p-4 text-white/90">
+                    <p class="text-sm leading-relaxed">Morning check complete: 3 calendar conflicts, 2 urgent emails, 1 job follow-up due today.</p>
+                  </div>
+                  <div class="ml-auto max-w-[84%] rounded-2xl rounded-tr-sm bg-[#C2410C] p-4 text-white">
+                    <p class="text-sm leading-relaxed">Draft the follow-up, update my tracker, and remind me before lunch.</p>
+                  </div>
+
+                  <div class="bg-white rounded-2xl p-5 text-[#1C1C1E] shadow-lg">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                      <div>
+                        <p class="text-xs uppercase tracking-widest font-black text-[#C2410C] mb-1">Action plan</p>
+                        <h2 class="text-xl font-black tracking-tight">Today’s operator run</h2>
+                      </div>
+                      <div class="w-10 h-10 rounded-xl bg-[rgba(194,65,12,0.1)] flex items-center justify-center text-[#C2410C] font-black">3</div>
+                    </div>
+                    <div class="space-y-3">
+                      <div class="flex gap-3 items-start">
+                        <span class="mt-0.5 w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center font-bold">✓</span>
+                        <div><p class="text-sm font-bold">Checked context</p><p class="text-xs text-[#64748B]">Calendar, inbox, tracker, memory</p></div>
+                      </div>
+                      <div class="flex gap-3 items-start">
+                        <span class="mt-0.5 w-5 h-5 rounded-full bg-[#C2410C] text-white text-xs flex items-center justify-center font-bold">2</span>
+                        <div><p class="text-sm font-bold">Prepared drafts</p><p class="text-xs text-[#64748B]">Nothing sent without approval</p></div>
+                      </div>
+                      <div class="flex gap-3 items-start">
+                        <span class="mt-0.5 w-5 h-5 rounded-full bg-[#F59E0B] text-white text-xs flex items-center justify-center font-bold">!</span>
+                        <div><p class="text-sm font-bold">Needs your decision</p><p class="text-xs text-[#64748B]">Approve follow-up message?</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 ml-auto bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-5 shadow-xl max-w-[22rem]">
+              <p class="text-xs uppercase tracking-widest font-black text-[#94A3B8] mb-1">Positioning</p>
+              <p class="font-black text-[#1C1C1E] leading-snug">ChatGPT answers questions. Your Hermes agent remembers the job and follows up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem / solution -->
+    <section id="why" class="py-24 bg-white border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-start">
+          <div class="sticky top-24">
+            <p class="section-label">The market gap</p>
+            <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-5">Basic setup is cheap. Useful setup is rare.</h2>
+            <p class="text-lg text-[#64748B] leading-relaxed">
+              The demand exists around AI assistants, automation consultants, n8n/Zapier experts, and low-cost agent installers. But the commodity trap is obvious: “install Hermes on a VPS” is not the real job. The real value is workflow discovery, safe permissions, personal context, and implementation discipline.
+            </p>
+          </div>
+
+          <div class="grid gap-4">
+            {comparisonRows.map(([tool, limit]) => (
+              <div class:list={[
+                'rounded-2xl p-6 border shadow-sm',
+                tool === 'Hermes Agent'
+                  ? 'bg-[#FFF7ED] border-[rgba(194,65,12,0.25)] border-l-4 border-l-[#C2410C]'
+                  : 'bg-[#FAFAF8] border-[rgba(0,0,0,0.08)]'
+              ]}>
+                <p class:list={['font-black text-lg mb-2', tool === 'Hermes Agent' ? 'text-[#C2410C]' : 'text-[#1C1C1E]']}>{tool}</p>
+                <p class="text-[#64748B] leading-relaxed">{limit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="py-24 bg-[#FAFAF8] border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-14">
+          <p class="section-label">The offer</p>
+          <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-5">A private AI Chief of Staff, built around how you actually work.</h2>
+          <p class="text-lg text-[#64748B] leading-relaxed">
+            This is for consultants, founders, creators, job seekers, and busy professionals whose work is too context-heavy for generic AI chat. I design the operating workflow, configure Hermes, connect practical tools, and document what the agent can and cannot do.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-7 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-[rgba(194,65,12,0.1)] text-[#C2410C] flex items-center justify-center font-black mb-5">1</div>
+            <h3 class="text-xl font-black mb-3">Workflow audit first</h3>
+            <p class="text-[#64748B] leading-relaxed">We map your recurring work, tools, permissions, and pain points before touching config. The setup follows your operating model, not the other way around.</p>
+          </div>
+          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-7 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-[rgba(194,65,12,0.1)] text-[#C2410C] flex items-center justify-center font-black mb-5">2</div>
+            <h3 class="text-xl font-black mb-3">Agent buildout</h3>
+            <p class="text-[#64748B] leading-relaxed">Hermes gets installed, connected to messaging, loaded with memory and skills, and configured with scheduled workflows that create useful outputs.</p>
+          </div>
+          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-7 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-[rgba(194,65,12,0.1)] text-[#C2410C] flex items-center justify-center font-black mb-5">3</div>
+            <h3 class="text-xl font-black mb-3">Safety + handoff</h3>
+            <p class="text-[#64748B] leading-relaxed">Every setup has explicit green/yellow/red boundaries, handoff notes, and support so the agent remains useful without pretending to be magic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflows -->
+    <section id="workflows" class="py-24 bg-white border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-16 items-start">
+          <div>
+            <p class="section-label">Workflow templates</p>
+            <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-5">Start from repeatable packs, then personalize.</h2>
+            <p class="text-lg text-[#64748B] leading-relaxed mb-7">
+              The first build should be boring and useful: briefings, trackers, reminders, summaries, reports, drafts, research, and follow-ups. Autonomy comes after trust.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 text-[#C2410C] font-bold hover:gap-3 transition-all duration-200">
+              Tell me which pack fits your work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            {workflowPacks.map(([title, body]) => (
+              <div class="bg-[#FAFAF8] border border-[rgba(0,0,0,0.08)] rounded-2xl p-6">
+                <h3 class="font-black text-lg mb-2 text-[#1C1C1E]">{title}</h3>
+                <p class="text-sm text-[#64748B] leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" class="py-24 bg-[#FAFAF8] border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-14">
+          <p class="section-label">Packages</p>
+          <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-5">Productized enough to be clear. Personalized enough to be useful.</h2>
+          <p class="text-lg text-[#64748B] leading-relaxed">
+            Pricing reflects the real job: requirements, implementation, support, workflow design, and safety — not just running an installer.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+          {packages.map((pkg) => (
+            <div class:list={[
+              'relative rounded-2xl p-7 border shadow-sm flex flex-col',
+              pkg.featured
+                ? 'bg-white border-[#C2410C] ring-4 ring-[rgba(194,65,12,0.08)]'
+                : 'bg-white border-[rgba(0,0,0,0.08)]'
+            ]}>
+              {pkg.featured && <div class="absolute -top-3 left-7 bg-[#C2410C] text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">Recommended</div>}
+              <p class="text-xs uppercase tracking-widest font-black text-[#94A3B8] mb-3">{pkg.tier}</p>
+              <h3 class="text-2xl font-black tracking-[-0.02em] mb-3">{pkg.title}</h3>
+              <div class="mb-5">
+                <span class="text-3xl font-black text-[#1C1C1E]">{pkg.price}</span>
+                <span class="text-sm text-[#94A3B8] ml-2">{pkg.term}</span>
+              </div>
+              <p class="text-[#64748B] leading-relaxed mb-6">{pkg.description}</p>
+              <ul class="space-y-3 mb-7 flex-1">
+                {pkg.features.map((feature) => (
+                  <li class="flex gap-3 text-sm text-[#475569] leading-relaxed">
+                    <span class="mt-0.5 w-5 h-5 rounded-full bg-[rgba(5,150,105,0.1)] text-[#059669] flex items-center justify-center text-xs font-black flex-shrink-0">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+                class:list={[
+                  'w-full px-5 py-3.5 rounded-xl font-bold text-sm transition-colors duration-200',
+                  pkg.featured ? 'bg-[#C2410C] hover:bg-[#9A3408] text-white' : 'bg-[#FAFAF8] hover:bg-[#F4F3EF] text-[#1C1C1E] border border-[rgba(0,0,0,0.1)]'
+                ]}
+              >
+                {pkg.cta}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="py-24 bg-white border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-start">
+          <div>
+            <p class="section-label">Safety model</p>
+            <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-5">The agent should be useful before it is autonomous.</h2>
+            <p class="text-lg text-[#64748B] leading-relaxed">
+              Sensitive actions need boring controls. Every build defines what the agent can do automatically, what it can draft for approval, and what it should never touch.
+            </p>
+          </div>
+
+          <div class="grid gap-4">
+            <div class="rounded-2xl p-6 border border-emerald-200 bg-emerald-50">
+              <p class="font-black text-emerald-800 mb-2">Green — automatic</p>
+              <p class="text-emerald-900/75 leading-relaxed">Summarize calendar, search the web, update personal notes, prepare briefings, monitor public sources, create draft reports.</p>
+            </div>
+            <div class="rounded-2xl p-6 border border-amber-200 bg-amber-50">
+              <p class="font-black text-amber-800 mb-2">Yellow — draft, then approve</p>
+              <p class="text-amber-900/75 leading-relaxed">Send emails, message people, apply to jobs, change shared files, make public posts, or interact with client-facing systems.</p>
+            </div>
+            <div class="rounded-2xl p-6 border border-red-200 bg-red-50">
+              <p class="font-black text-red-800 mb-2">Red — never without explicit scope</p>
+              <p class="text-red-900/75 leading-relaxed">Payments, legal commitments, medical decisions, trading, destructive data deletion, or anything regulated/high-risk.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder fit -->
+    <section class="py-24 bg-[#FAFAF8] border-b border-[rgba(0,0,0,0.06)]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-[#1C1C1E] text-white rounded-[2rem] p-8 lg:p-12 overflow-hidden relative">
+          <div class="absolute right-[-8rem] top-[-8rem] w-80 h-80 rounded-full bg-[#C2410C]/20 blur-3xl" aria-hidden="true"></div>
+          <div class="relative grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+            <div>
+              <p class="text-xs uppercase tracking-[0.22em] font-black text-orange-200 mb-4">Why YongAI</p>
+              <h2 class="text-3xl lg:text-5xl font-black tracking-[-0.04em] leading-tight">Implementation discipline, not prompt-bro theater.</h2>
+            </div>
+            <div class="space-y-5 text-white/75 text-lg leading-relaxed">
+              <p>
+                Gary’s edge is process implementation: requirements, workshops, operating models, stakeholder alignment, cutover thinking, and real workflow documentation. That matters because most agent projects fail before the model call — the workflow is unclear, permissions are unsafe, or the user never trusts the output.
+              </p>
+              <p>
+                The goal is not to sell “Hermes installation.” The goal is to design a private AI operator that fits your work, starts with safe recurring wins, and can evolve into deeper automation once it earns trust.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-[#FAFAF8] border border-[rgba(0,0,0,0.08)] rounded-2xl p-8 lg:p-12 shadow-sm">
+          <p class="section-label">Start small</p>
+          <h2 class="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-4">Book a 20-minute Agent Workflow Audit.</h2>
+          <p class="text-lg text-[#64748B] leading-relaxed mb-8">
+            Bring one recurring workflow that wastes time or keeps slipping. We’ll decide whether Hermes is a good fit, what the first safe workflow should be, and what package makes sense — if any.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-8">
+            <button
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+              class="bg-[#C2410C] hover:bg-[#9A3408] text-white px-7 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-sm"
+            >
+              Book the audit
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <a href="mailto:gymoltbot@gmail.com?subject=Hermes%20Agent%20Setup%20Inquiry" class="border border-[rgba(0,0,0,0.12)] hover:border-[rgba(0,0,0,0.24)] bg-white text-[#1C1C1E] px-7 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center">
+              Email Gary
+            </a>
+          </div>
+
+          <form class="grid gap-4" action="https://formspree.io/f/xwvnkpak" method="POST">
+            <input type="hidden" name="source" value="Hermes Agent Setup landing page" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <input required type="text" name="name" placeholder="Your name" class="w-full px-4 py-3.5 bg-white border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm" />
+              <input required type="email" name="email" placeholder="Email" class="w-full px-4 py-3.5 bg-white border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm" />
+            </div>
+            <textarea name="message" rows="4" placeholder="What recurring workflow would you want your agent to handle first?" class="w-full px-4 py-3.5 bg-white border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 resize-vertical text-sm"></textarea>
+            <button type="submit" class="bg-[#1C1C1E] hover:bg-black text-white px-7 py-4 rounded-xl font-bold text-base transition-colors duration-200">Send inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

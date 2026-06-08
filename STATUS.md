@@ -1,5 +1,5 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-03-22
+> Updated: 2026-06-08
 
 ## What's Live
 - **URL:** https://yongai.ca
@@ -13,6 +13,7 @@
 - `/demos/resume-screener` — Demo: AI resume screening
 - `/demos/contract-reviewer` — Demo: Contract review tool ✅ bug fixed Mar 14
 - `/demos/candidate-outreach` — Demo: Candidate outreach automation ✅ bug fixed Mar 14
+- `/hermes-agent-setup` — Landing page for Hermes Agent setup / private AI operator service ✅ live Jun 8
 
 ## Design (Redesigned 2026-03-10)
 - **Theme:** Light mode — warm white (#FAFAF8) background, white cards
@@ -25,12 +26,14 @@
 - **Removed:** Neural network SVG, floating orbs, scroll fade-in on every element, hover:scale on cards, fake "Trusted by" logos bar, gradient buttons, purple accents throughout
 - Partner docs on S3: `partner-agenda.html`, `partner-workshop-guide.html`
 
-## Current State (2026-03-17)
+## Current State (2026-06-08)
 - Homepage fully redesigned and live ✅
 - Light theme applied across all 5 demo pages ✅
 - Demo page bugs fixed and deployed ✅
 - **SVG hero illustrations live on yongai.ca ✅ (2026-03-15 12:08 EDT)** — CloudFront invalidation `I5W5WHELPHTFRWRV0O0Y20SUHF`
 - **Gary reviewed and approved illustrations ✅ (2026-03-17)**
+- **Hermes Agent setup landing page live ✅ (2026-06-08 00:12 EDT)** — `https://yongai.ca/hermes-agent-setup/`, deployed via S3 sync and CloudFront invalidation `I11URI7E2TZ50AP8VTP7YG9XLD`
+- Footer/contact fallback email updated to `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
 
 ## Illustrations (2026-03-15)
 All 5 demo pages now have flat-style SVG hero illustrations replacing placeholder JPGs:
@@ -47,7 +50,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 4. **workflow-audit, client-intake, resume-screener** — Audited, no bugs found.
 
 ## What's Local Only
-- Nothing pending — illustrations committed and deployed
+- Nothing pending — Hermes Agent setup page built and deployed
 
 ## Known Gaps
 - **Advisory board:** Placeholder names — Gary to add real advisors later
@@ -60,6 +63,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - [ ] SEO optimization
 
 ## Decisions
+- 2026-06-08: Added `/hermes-agent-setup` as a productized service landing page for private AI operator / Hermes setup offer; positioning emphasizes workflow discovery, safety boundaries, and implementation discipline over commodity install.
 - 2026-03-15: Flat SVG hero illustrations deployed — all 5 demo pages, ~15-21KB each, committed to repo
 - 2026-03-14: Bug sweep across all 5 demo pages — 3 bugs fixed (contract-reviewer ×2, candidate-outreach ×1)
 - 2026-03-10: Full design overhaul — dark→light, purple→orange, stripped all AI slop patterns (per "Common Mistakes With Vibe Coded Websites" video)
