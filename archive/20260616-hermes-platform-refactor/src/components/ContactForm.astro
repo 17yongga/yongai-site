@@ -1,0 +1,151 @@
+---
+// Contact Form — light theme, Formspree
+---
+
+<div class="max-w-4xl mx-auto">
+  <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-10 lg:p-14 shadow-sm">
+
+    <div class="max-w-2xl mb-10">
+      <p class="section-label">Ready to start?</p>
+      <h2 class="text-3xl lg:text-4xl font-black text-[#1C1C1E] mb-3">
+        Let's find what AI can actually do for you.
+      </h2>
+      <p class="text-[#64748B] leading-relaxed">
+        Book a free 30-minute strategy call. No pitch, no pressure — just an honest assessment of where automation fits in your business.
+      </p>
+    </div>
+
+    <form class="space-y-5" id="contactForm" action="https://formspree.io/f/xwvnkpak" method="POST">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Work email"
+          required
+          class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+        />
+      </div>
+
+      <input
+        type="text"
+        name="company"
+        placeholder="Company name"
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+      />
+
+      <select
+        name="interest"
+        required
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 text-sm"
+      >
+        <option value="" disabled selected>What are you interested in?</option>
+        <option value="audit">AI Readiness Audit — $2,500</option>
+        <option value="implementation">AI Implementation — $5K–$15K</option>
+        <option value="partnership">AI Partnership — $2K–$5K/mo</option>
+        <option value="unsure">Not sure yet — let's talk</option>
+      </select>
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Tell me about your biggest workflow bottleneck (optional)"
+        class="w-full px-4 py-3.5 bg-[#FAFAF8] border border-[rgba(0,0,0,0.1)] rounded-xl text-[#1C1C1E] placeholder:text-[#94A3B8] focus:border-[#C2410C] focus:ring-2 focus:ring-[rgba(194,65,12,0.15)] focus:outline-none transition-all duration-200 resize-vertical text-sm"
+      ></textarea>
+
+      <button
+        type="submit"
+        id="submitBtn"
+        class="w-full bg-[#C2410C] hover:bg-[#9A3408] text-white px-8 py-4 rounded-xl font-bold text-base transition-colors duration-200 inline-flex items-center justify-center gap-3 shadow-sm"
+      >
+        <span id="submitText">Book My Free Strategy Call</span>
+        <svg id="submitIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+        <div id="submitSpinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+      </button>
+
+      <p class="text-center text-xs text-[#94A3B8]">
+        Free 30-minute call · No commitment · Response within 24 hours ·
+        <a href="mailto:gymoltbot@gmail.com" class="text-[#C2410C] hover:underline">gymoltbot@gmail.com</a>
+      </p>
+    </form>
+
+    <!-- Success state -->
+    <div id="successMessage" class="hidden text-center py-12">
+      <div class="w-16 h-16 mx-auto mb-5 bg-[rgba(5,150,105,0.1)] rounded-full flex items-center justify-center">
+        <svg class="w-8 h-8 text-[#059669]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-[#1C1C1E] mb-3">Thank you!</h3>
+      <p class="text-[#64748B] mb-5">Your message has been sent. I'll get back to you within 24 hours.</p>
+      <button onclick="resetForm()" class="text-[#C2410C] hover:underline text-sm font-medium">Send another message</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initContactForm() {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
+    const submitText = document.getElementById('submitText');
+    const submitIcon = document.getElementById('submitIcon');
+    const submitSpinner = document.getElementById('submitSpinner');
+    const successMessage = document.getElementById('successMessage');
+    if (!form || !submitBtn) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitText!.textContent = 'Sending...';
+      submitIcon!.classList.add('hidden');
+      submitSpinner!.classList.remove('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successMessage!.classList.remove('hidden');
+        } else {
+          throw new Error('Failed');
+        }
+      } catch {
+        alert('Error sending message. Please email gymoltbot@gmail.com directly.');
+        submitBtn.disabled = false;
+        submitText!.textContent = 'Book My Free Strategy Call';
+        submitIcon!.classList.remove('hidden');
+        submitSpinner!.classList.add('hidden');
+      }
+    });
+  }
+
+  function resetForm() {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
+    const submitText = document.getElementById('submitText');
+    const submitIcon = document.getElementById('submitIcon');
+    const submitSpinner = document.getElementById('submitSpinner');
+    form.reset();
+    form.style.display = 'block';
+    successMessage!.classList.add('hidden');
+    submitBtn.disabled = false;
+    submitText!.textContent = 'Book My Free Strategy Call';
+    submitIcon!.classList.remove('hidden');
+    submitSpinner!.classList.add('hidden');
+  }
+
+  document.addEventListener('DOMContentLoaded', initContactForm);
+  document.addEventListener('astro:page-load', initContactForm);
+</script>

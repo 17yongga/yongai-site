@@ -1,533 +1,254 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import ContactForm from '../components/ContactForm.astro';
-import PricingCard from '../components/PricingCard.astro';
-import ProcessTimeline from '../components/ProcessTimeline.astro';
 import Footer from '../components/Footer.astro';
+
+const title = 'YongAI — Hermes Agent Service Platform';
+const description = 'YongAI designs and sets up private Hermes Agent operators for founders, consultants, job seekers, creators, and teams that need useful automation with memory, tools, schedules, and approval boundaries.';
+
+const platformPillars = [
+  {
+    label: 'Messaging-native',
+    title: 'Runs where work actually happens',
+    body: 'Your agent can operate from Telegram, Discord, Slack, WhatsApp, email, or the terminal instead of sitting in yet another dashboard.'
+  },
+  {
+    label: 'Persistent context',
+    title: 'Memory and skills compound over time',
+    body: 'Hermes keeps durable preferences, project context, reusable procedures, and operating rules so every session does not start from zero.'
+  },
+  {
+    label: 'Tool-backed execution',
+    title: 'Not just answers — completed work',
+    body: 'The setup can include file access, web research, GitHub, spreadsheets, reminders, scheduled jobs, browsers, and carefully scoped integrations.'
+  },
+  {
+    label: 'Approval boundaries',
+    title: 'Autonomy without cowboy behavior',
+    body: 'We define what the agent can do automatically, what it can draft for approval, and what it should never touch without explicit scope.'
+  }
+];
+
+const setupSteps = [
+  ['01', 'Workflow map', 'We pick the recurring work worth automating: briefings, trackers, research, project updates, reminders, inbox triage, job search, or admin.'],
+  ['02', 'Hermes build', 'Provider, model, gateway, memory, tools, skills, cron jobs, and safety defaults are configured around the workflow.'],
+  ['03', 'Operating handoff', 'You get the rules, examples, prompts, and maintenance notes needed to actually rely on the agent day to day.']
+];
+
+const useCases = [
+  ['Consultants / PMs', 'Meeting prep, stakeholder follow-ups, weekly status reports, research briefs, decision logs.'],
+  ['Founders', 'Competitor monitoring, product changelogs, support digests, investor/update drafts, backlog grooming.'],
+  ['Job seekers', 'Role discovery, tracker updates, tailored resume checklists, recruiter follow-ups, interview prep.'],
+  ['Creators', 'Source monitoring, voice-note outlines, newsletter research, publishing calendars, sponsor lead tracking.'],
+  ['Personal operators', 'Calendar/email digests, travel planning, reminders, gift ideas, life admin, journaling support.'],
+  ['Technical teams', 'Repo summaries, issue triage, release checklists, QA notes, lightweight internal tools.']
+];
+
+const packages = [
+  {
+    name: 'Quickstart',
+    price: 'CAD $299–$499',
+    timeline: 'Same-day setup',
+    summary: 'For people who want Hermes installed correctly and one useful workflow running without fighting config files.',
+    items: ['Install + provider setup', 'Telegram or Discord gateway', 'Basic memory/profile', '1 starter workflow', 'Handoff notes']
+  },
+  {
+    name: 'Operator Buildout',
+    price: 'CAD $1K–$2.5K',
+    timeline: '1-week build',
+    summary: 'A private AI operator built around your actual recurring work, not a generic chatbot demo.',
+    items: ['Workflow audit', '3–5 custom workflows', 'Skills + memory rules', 'Scheduled jobs', '7 days async support'],
+    featured: true
+  },
+  {
+    name: 'Operations Retainer',
+    price: 'CAD $300–$1.5K',
+    timeline: 'Monthly',
+    summary: 'For users who start depending on their agent and want monitoring, tuning, new workflows, and reliability support.',
+    items: ['Workflow tuning', 'New automations', 'Cost/reliability review', 'Broken integration fixes', 'Monthly review']
+  }
+];
 ---
 
-<Layout title="YongAI — AI Automation Consulting">
+<Layout title={title} description={description}>
   <Nav />
-  <Hero />
 
-  <!-- ── Problem Section ── -->
-  <section id="problem" class="py-24 bg-white border-t border-[rgba(0,0,0,0.06)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
+  <main class="site-shell">
+    <section class="hero-section" id="top">
+      <div class="page-container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Hermes Agent setup platform</p>
+          <h1>Private AI operators for real workflows.</h1>
+          <p class="hero-lede">
+            YongAI sets up Hermes Agent as a practical service layer: a messaging-native assistant with memory, tools, skills, scheduled workflows, and clear approval gates.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">
+              Book a workflow audit
+            </button>
+            <a class="btn btn-secondary" href="#how-it-works">See how it works</a>
+          </div>
+          <div class="proof-row" aria-label="Platform highlights">
+            <span>Open-source agent framework</span>
+            <span>Telegram / Discord / Slack</span>
+            <span>Memory + tools + cron</span>
+          </div>
+        </div>
 
-        <!-- Left: copy -->
+        <div class="operator-panel" aria-label="Example Hermes operator run">
+          <div class="panel-topbar">
+            <div>
+              <span class="status-dot"></span>
+              <strong>Hermes operator</strong>
+            </div>
+            <span>08:30 run</span>
+          </div>
+          <div class="message-stack">
+            <div class="chat-line agent">Morning brief is ready: 2 meetings, 1 overdue follow-up, 4 new roles, and a draft status update.</div>
+            <div class="chat-line user">Prepare the follow-up and update the tracker. Don’t send anything yet.</div>
+          </div>
+          <div class="run-card">
+            <div class="run-card-header">
+              <span>Action plan</span>
+              <strong>Needs approval</strong>
+            </div>
+            <ul>
+              <li><span>✓</span> Checked calendar, inbox, tracker, and memory</li>
+              <li><span>✓</span> Drafted follow-up message</li>
+              <li><span>•</span> Waiting for approval before sending</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="platform">
+      <div class="page-container two-column">
         <div>
-          <p class="section-label">The problem</p>
-          <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-6 leading-tight">
-            Your best people are stuck on the wrong work.
-          </h2>
-          <div class="space-y-4 text-lg text-[#64748B] leading-relaxed">
-            <p>
-              Candidate screening. Contract review. Client intake. Document generation. Every hour spent on repetitive tasks is an hour <strong class="text-[#1C1C1E]">not</strong> spent on strategy, client relationships, or growing revenue.
-            </p>
-            <p>
-              Competing firms are automating these workflows — winning clients faster, scaling without adding headcount, and freeing their teams to do work that actually moves the needle.
-            </p>
-          </div>
+          <p class="eyebrow">The platform</p>
+          <h2>Less demo magic. More operating system.</h2>
+          <p class="section-lede">
+            The useful version of an AI agent is not a prompt window. It is a small operating layer around your real work: context, tools, procedures, schedules, and boundaries.
+          </p>
         </div>
-
-        <!-- Right: stat cards -->
-        <div class="space-y-4">
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-6 shadow-sm border-l-4 border-l-[#B45309]">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-[rgba(180,83,9,0.08)] flex items-center justify-center flex-shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" stroke="#B45309" stroke-width="1.5"/>
-                  <line x1="12" y1="7" x2="12" y2="12" stroke="#B45309" stroke-width="1.5" stroke-linecap="round"/>
-                  <line x1="12" y1="12" x2="16" y2="14" stroke="#B45309" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-[#1C1C1E] mb-1">Time you're not getting back</h3>
-                <p class="text-[#64748B] text-sm leading-relaxed">
-                  60% of workers could reclaim 30% of their week with automation — time for strategy, clients, and growth.
-                  <span class="italic text-[#94A3B8]"> — McKinsey, 2023</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-6 shadow-sm border-l-4 border-l-[#DC2626]">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-[rgba(220,38,38,0.08)] flex items-center justify-center flex-shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" stroke="#DC2626" stroke-width="1.5"/>
-                  <line x1="12" y1="8" x2="12" y2="12" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
-                  <circle cx="12" cy="15.5" r="0.75" fill="#DC2626"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-[#1C1C1E] mb-1">Revenue left on the table</h3>
-                <p class="text-[#64748B] text-sm leading-relaxed">
-                  Organizations see up to 30% cost reduction — but the real win is redirecting resources toward revenue-generating work.
-                  <span class="italic text-[#94A3B8]"> — McKinsey Digital</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-6 shadow-sm border-l-4 border-l-[#2563EB]">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-[rgba(37,99,235,0.08)] flex items-center justify-center flex-shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <polyline points="3,18 8,13 13,15 21,6" stroke="#2563EB" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="17,6 21,6 21,10" stroke="#2563EB" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-[#1C1C1E] mb-1">Falling behind</h3>
-                <p class="text-[#64748B] text-sm leading-relaxed">
-                  71% of firms now use generative AI in at least one function — up from 55% last year.
-                  <span class="italic text-[#94A3B8]"> — Deloitte, 2025</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
+        <div class="pillar-grid">
+          {platformPillars.map((pillar) => (
+            <article class="pillar-card">
+              <p>{pillar.label}</p>
+              <h3>{pillar.title}</h3>
+              <span>{pillar.body}</span>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Services & Pricing ── -->
-  <section id="services" class="py-24 bg-[#FAFAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl mb-16">
-        <p class="section-label">Services & Pricing</p>
-        <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-4">Three ways to work together.</h2>
-        <p class="text-lg text-[#64748B]">
-          Every tier is designed around one outcome: more time for the work that actually grows your practice.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-3 gap-6 max-w-6xl">
-        <PricingCard
-          tier="Tier 1"
-          title="AI Readiness Audit"
-          price="$2,500"
-          term="one-time"
-          description="Find out exactly where AI can save your team time, reduce risk, and unlock new revenue — in just 2 weeks."
-          features={[
-            "2-week deep-dive into one business area",
-            "Identify top 3–5 automation opportunities",
-            "ROI projection for each opportunity",
-            "Strategic automation roadmap deliverable"
-          ]}
-          buttonText="Find Your Quick Wins"
-        />
-
-        <PricingCard
-          tier="Tier 2"
-          title="AI Implementation"
-          price="$5K–$15K"
-          term="per project"
-          description="Turn your biggest time sink into a competitive advantage. One process automated, measurable ROI delivered."
-          features={[
-            "Custom AI agent, chatbot, or workflow build",
-            "Integration with your existing tools (CRM, email, DBs)",
-            "Full testing, deployment & handoff docs",
-            "2 weeks of post-launch support included"
-          ]}
-          buttonText="Free Up Your Team"
-          featured={true}
-        />
-
-        <PricingCard
-          tier="Tier 3"
-          title="AI Partnership"
-          price="$2K–$5K"
-          term="per month"
-          description="Ongoing optimization, risk monitoring, and new automations — so your productivity gains compound month over month."
-          features={[
-            "Ongoing AI system monitoring & optimization",
-            "Monthly strategy call + performance reports",
-            "Priority support & troubleshooting",
-            "Fine-tuning and keeping your AI tools up to date"
-          ]}
-          buttonText="Scale Without Headcount"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Methodology ── -->
-  <section class="py-24 bg-white border-t border-[rgba(0,0,0,0.06)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl mb-16">
-        <p class="section-label">How we work</p>
-        <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-4">A process built on consulting fundamentals.</h2>
-        <p class="text-lg text-[#64748B]">
-          No black boxes. Every engagement follows a structured methodology — so you know exactly what's happening and why.
-        </p>
-      </div>
-      <ProcessTimeline />
-    </div>
-  </section>
-
-  <!-- ── Case Studies / Demos ── -->
-  <section class="py-24 bg-[#FAFAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl mb-16">
-        <p class="section-label">Case study previews</p>
-        <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-4">See our methodology in action.</h2>
-        <p class="text-lg text-[#64748B]">
-          Interactive proof-of-concept demos across legal and recruiting — with real process maps, pain point analysis, and projected ROI.
-        </p>
-      </div>
-
-      <!-- Featured: Workflow Audit -->
-      <div class="mb-12">
-        <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-2xl p-8 lg:p-10 shadow-sm border-l-4 border-l-[#C2410C]">
-          <div class="flex items-start gap-6">
-            <div class="w-12 h-12 bg-[rgba(194,65,12,0.08)] rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-              </svg>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs font-bold uppercase tracking-widest text-[#94A3B8] mb-2">All Industries</p>
-              <h3 class="text-2xl font-bold text-[#1C1C1E] mb-3">Interactive Workflow Audit</h3>
-              <p class="text-[#64748B] leading-relaxed mb-6 max-w-2xl">
-                Explore our end-to-end consulting methodology across Legal, Recruiting, and Financial Services — with process mapping, pain point analysis, AI solution recommendations, and projected ROI backed by industry research.
-              </p>
-              <a href="/demos/workflow-audit" class="inline-flex items-center gap-2 text-[#C2410C] font-semibold hover:gap-3 transition-all duration-200">
-                Explore the Full Audit
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+    <section class="section" id="how-it-works">
+      <div class="page-container">
+        <div class="section-heading narrow">
+          <p class="eyebrow">How the setup works</p>
+          <h2>Start with boring, useful workflows. Earn autonomy later.</h2>
+          <p class="section-lede">The first version should save time without creating risk. Once the agent proves itself, deeper automation becomes much easier to trust.</p>
+        </div>
+        <div class="steps-grid">
+          {setupSteps.map(([number, heading, body]) => (
+            <article class="step-card">
+              <span>{number}</span>
+              <h3>{heading}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
         </div>
       </div>
+    </section>
 
-      <!-- Industry grid -->
-      <div class="grid lg:grid-cols-2 gap-8">
-
-        <!-- Legal -->
+    <section class="section white" id="use-cases">
+      <div class="page-container split-heading">
         <div>
-          <h3 class="text-xl font-bold text-[#1C1C1E] mb-5 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-[rgba(37,99,235,0.08)] flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 2L12 20M6 6L18 6M3 10C3 16 21 16 21 10M5 20L19 20"/>
-              </svg>
-            </div>
-            Legal Industry
-          </h3>
-          <div class="space-y-4">
-            <a href="/demos/contract-reviewer" class="block bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(37,99,235,0.2)] transition-all duration-200 group">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-[rgba(37,99,235,0.08)] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1C1C1E] mb-1 group-hover:text-[#2563EB] transition-colors">AI Contract Reviewer</h4>
-                  <p class="text-sm text-[#64748B] leading-relaxed mb-3">Watch AI analyze contract clauses for risk, flag missing provisions, and generate redline suggestions.</p>
-                  <span class="text-xs font-semibold text-[#2563EB]">Lawyers save up to 4 hrs/week — Thomson Reuters, 2024</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/demos/client-intake" class="block bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(37,99,235,0.2)] transition-all duration-200 group">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-[rgba(37,99,235,0.08)] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1C1C1E] mb-1 group-hover:text-[#2563EB] transition-colors">AI Client Intake Bot</h4>
-                  <p class="text-sm text-[#64748B] leading-relaxed mb-3">24/7 AI chatbot that handles consultations, routes to the right attorney, and books meetings.</p>
-                  <span class="text-xs font-semibold text-[#2563EB]">Capture 100% of after-hours inquiries</span>
-                </div>
-              </div>
-            </a>
-          </div>
+          <p class="eyebrow">Workflow examples</p>
+          <h2>Built for people with context-heavy work.</h2>
         </div>
+        <p class="section-lede">These are starting points, not templates pretending every business is the same. The setup is customized after the workflow audit.</p>
+      </div>
+      <div class="page-container use-case-grid">
+        {useCases.map(([title, body]) => (
+          <article class="use-case-card">
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
 
-        <!-- Recruiting -->
+    <section class="section" id="safety">
+      <div class="page-container safety-band">
         <div>
-          <h3 class="text-xl font-bold text-[#1C1C1E] mb-5 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-[rgba(5,150,105,0.08)] flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" aria-hidden="true">
-                <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                <path d="M16 11l2 2 4-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            Recruiting Industry
-          </h3>
-          <div class="space-y-4">
-            <a href="/demos/resume-screener" class="block bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(5,150,105,0.2)] transition-all duration-200 group">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-[rgba(5,150,105,0.08)] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1C1C1E] mb-1 group-hover:text-[#059669] transition-colors">AI Resume Screener</h4>
-                  <p class="text-sm text-[#64748B] leading-relaxed mb-3">See how AI ranks candidates against job requirements, extracts skills with confidence scores, and detects bias.</p>
-                  <span class="text-xs font-semibold text-[#059669]">10+ hours saved per open role — SHRM</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/demos/candidate-outreach" class="block bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(5,150,105,0.2)] transition-all duration-200 group">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-[rgba(5,150,105,0.08)] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-bold text-[#1C1C1E] mb-1 group-hover:text-[#059669] transition-colors">AI Candidate Outreach</h4>
-                  <p class="text-sm text-[#64748B] leading-relaxed mb-3">Generate hyper-personalized outreach with A/B variants, follow-up sequences, and engagement tracking.</p>
-                  <span class="text-xs font-semibold text-[#059669]">Personalized outreach: 15%+ better response rates — LinkedIn</span>
-                </div>
-              </div>
-            </a>
-          </div>
+          <p class="eyebrow">Safety model</p>
+          <h2>Useful does not mean reckless.</h2>
+          <p>Every build gets explicit operating boundaries so the agent knows when to act, when to draft, and when to stop.</p>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── About / Team ── -->
-  <section id="about" class="py-24 bg-white border-t border-[rgba(0,0,0,0.06)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl mb-16">
-        <p class="section-label">The team</p>
-        <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-4">Built by practitioners, not theorists.</h2>
-        <p class="text-lg text-[#64748B]">
-          Enterprise experience. Every engagement is hands-on — you work directly with me, backed by domain advisors.
-        </p>
-      </div>
-
-      <!-- Gary card -->
-      <div class="max-w-4xl mb-16">
-        <div class="bg-white border border-[rgba(194,65,12,0.2)] rounded-2xl p-8 lg:p-10 shadow-sm border-l-4 border-l-[#C2410C]">
-          <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-            <!-- Avatar -->
-            <div class="relative flex-shrink-0">
-              <div class="w-24 h-24 rounded-full bg-[#FFF7ED] border-2 border-[rgba(194,65,12,0.3)] flex items-center justify-center">
-                <span class="text-3xl font-black text-[#C2410C]">GY</span>
-              </div>
-              <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-[#C2410C] rounded-full flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-            </div>
-            <!-- Bio -->
-            <div class="text-center lg:text-left flex-1">
-              <h3 class="text-2xl font-bold text-[#1C1C1E] mb-1">Gary Yong</h3>
-              <p class="text-[#C2410C] font-semibold text-sm mb-4">Founder & Lead Consultant</p>
-              <div class="space-y-3 text-[#64748B] leading-relaxed">
-                <p>
-                  Toronto-based tech consultant with <strong class="text-[#1C1C1E]">6+ years</strong> in enterprise consulting and AI implementation. Former Capco consultant who's seen how large organizations adopt AI — the politics, the failed POCs, and the tools that sit unused.
-                </p>
-                <p>
-                  Started YongAI to bring enterprise-grade thinking to growing firms — <strong class="text-[#1C1C1E]">without the enterprise-grade bureaucracy.</strong> Every engagement is hands-on. You work directly with me.
-                </p>
-              </div>
-              <div class="flex flex-wrap gap-2 mt-5 justify-center lg:justify-start">
-                <span class="px-3 py-1.5 bg-[#FAFAF8] text-[#64748B] text-xs font-medium rounded-lg border border-[rgba(0,0,0,0.08)]">AI & LLM Specialist</span>
-                <span class="px-3 py-1.5 bg-[#FAFAF8] text-[#64748B] text-xs font-medium rounded-lg border border-[rgba(0,0,0,0.08)]">Enterprise Background</span>
-                <span class="px-3 py-1.5 bg-[#FFF7ED] text-[#C2410C] text-xs font-medium rounded-lg border border-[rgba(194,65,12,0.2)]">Toronto, Canada</span>
-                <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" target="_blank" class="px-3 py-1.5 bg-[#FAFAF8] text-[#2563EB] text-xs font-medium rounded-lg border border-[rgba(37,99,235,0.2)] hover:bg-[rgba(37,99,235,0.05)] transition-colors inline-flex items-center gap-1.5">
-                  LinkedIn
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="boundary-list">
+          <div><strong>Green</strong><span>Summaries, research, reminders, notes, briefings, draft reports.</span></div>
+          <div><strong>Yellow</strong><span>Emails, shared files, public messages, applications, client-facing actions.</span></div>
+          <div><strong>Red</strong><span>Payments, legal commitments, destructive deletion, regulated or high-risk decisions.</span></div>
         </div>
       </div>
+    </section>
 
-      <!-- Advisory Board -->
-      <div>
-        <h3 class="text-xl font-bold text-[#1C1C1E] mb-2">Advisory Board</h3>
-        <p class="text-[#64748B] mb-8">Domain experts who advise on specific engagements — legal, recruiting, AI/ML, and finance.</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(37,99,235,0.2)] transition-all duration-200">
-            <div class="w-12 h-12 rounded-full bg-[rgba(37,99,235,0.08)] flex items-center justify-center mb-3">
-              <span class="text-sm font-bold text-[#2563EB]">SC</span>
-            </div>
-            <h4 class="font-bold text-[#1C1C1E] mb-0.5">Sarah Chen, J.D.</h4>
-            <p class="text-xs font-semibold text-[#2563EB] mb-2">Legal — AI Governance</p>
-            <p class="text-xs text-[#64748B] leading-relaxed">Senior Partner, 15+ years corporate law and AI governance. Regulatory compliance for emerging tech.</p>
-          </div>
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(5,150,105,0.2)] transition-all duration-200">
-            <div class="w-12 h-12 rounded-full bg-[rgba(5,150,105,0.08)] flex items-center justify-center mb-3">
-              <span class="text-sm font-bold text-[#059669]">MT</span>
-            </div>
-            <h4 class="font-bold text-[#1C1C1E] mb-0.5">Michael Torres</h4>
-            <p class="text-xs font-semibold text-[#059669] mb-2">Recruiting — HR Tech</p>
-            <p class="text-xs text-[#64748B] leading-relaxed">VP Talent Acquisition, 12+ years enterprise recruiting and HR technology transformations.</p>
-          </div>
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(194,65,12,0.2)] transition-all duration-200">
-            <div class="w-12 h-12 rounded-full bg-[rgba(194,65,12,0.08)] flex items-center justify-center mb-3">
-              <span class="text-sm font-bold text-[#C2410C]">PS</span>
-            </div>
-            <h4 class="font-bold text-[#1C1C1E] mb-0.5">Dr. Priya Sharma</h4>
-            <p class="text-xs font-semibold text-[#C2410C] mb-2">AI/ML — Research</p>
-            <p class="text-xs text-[#64748B] leading-relaxed">ML Research Lead, PhD in AI/ML. Published researcher in NLP and responsible AI systems.</p>
-          </div>
-
-          <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-5 shadow-sm hover:shadow-md hover:border-[rgba(180,83,9,0.2)] transition-all duration-200">
-            <div class="w-12 h-12 rounded-full bg-[rgba(180,83,9,0.08)] flex items-center justify-center mb-3">
-              <span class="text-sm font-bold text-[#B45309]">JP</span>
-            </div>
-            <h4 class="font-bold text-[#1C1C1E] mb-0.5">James Park, CPA</h4>
-            <p class="text-xs font-semibold text-[#B45309] mb-2">Finance — Compliance</p>
-            <p class="text-xs text-[#64748B] leading-relaxed">Risk & Compliance Director, 10+ years financial services. AI audit frameworks and regulatory risk.</p>
-          </div>
-
+    <section class="section white" id="packages">
+      <div class="page-container">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Packages</p>
+          <h2>Clear enough to buy. Custom enough to matter.</h2>
+          <p class="section-lede">The pricing reflects the real work: workflow discovery, implementation, documentation, and support — not just running an installer.</p>
+        </div>
+        <div class="package-grid">
+          {packages.map((pkg) => (
+            <article class:list={['package-card', pkg.featured && 'featured']}>
+              {pkg.featured && <p class="recommended">Recommended</p>}
+              <h3>{pkg.name}</h3>
+              <div class="price-line"><strong>{pkg.price}</strong><span>{pkg.timeline}</span></div>
+              <p>{pkg.summary}</p>
+              <ul>
+                {pkg.items.map((item) => <li>{item}</li>)}
+              </ul>
+              <button class="btn btn-secondary package-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">Discuss this package</button>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Industry Research ── -->
-  <section id="research" class="py-24 bg-[#FAFAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl mb-16">
-        <p class="section-label">Industry research</p>
-        <h2 class="text-4xl lg:text-5xl font-black text-[#1C1C1E] mb-4">What the data says.</h2>
-        <p class="text-lg text-[#64748B]">
-          Published findings from leading research firms — not our claims, their numbers.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-3 gap-6">
-
-        <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-7 shadow-sm">
-          <blockquote class="text-[#64748B] italic leading-relaxed mb-5 text-sm">
-            "AI is projected to save legal professionals an average of 4 hours per week — equivalent to ~$100,000 in additional billable time annually per US lawyer."
-          </blockquote>
-          <div class="pt-4 border-t border-[rgba(0,0,0,0.06)]">
-            <div class="font-semibold text-[#1C1C1E] text-sm">Thomson Reuters</div>
-            <div class="text-xs text-[#94A3B8]">Future of Professionals Report, 2024</div>
+    <section class="section final-cta" id="contact">
+      <div class="page-container final-grid">
+        <div>
+          <p class="eyebrow">Start small</p>
+          <h2>Bring one workflow that keeps slipping.</h2>
+          <p class="section-lede">We will decide whether Hermes is the right tool, what the first safe workflow should be, and what setup path makes sense.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">Book the audit</button>
+            <a class="btn btn-secondary" href="mailto:gymoltbot@gmail.com?subject=Hermes%20Agent%20Setup%20Inquiry">Email Gary</a>
           </div>
         </div>
-
-        <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-7 shadow-sm">
-          <blockquote class="text-[#64748B] italic leading-relaxed mb-5 text-sm">
-            "The average cost per hire in the US rose to $4,700 in 2023 — a 14% increase from 2019. AI screening tools can save 10+ hours per open role in recruiter evaluation time."
-          </blockquote>
-          <div class="pt-4 border-t border-[rgba(0,0,0,0.06)]">
-            <div class="font-semibold text-[#1C1C1E] text-sm">SHRM</div>
-            <div class="text-xs text-[#94A3B8]">Human Capital Benchmarking Report, 2023</div>
-          </div>
-        </div>
-
-        <div class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl p-7 shadow-sm">
-          <blockquote class="text-[#64748B] italic leading-relaxed mb-5 text-sm">
-            "65% of organizations now use generative AI regularly — double the previous year's rate. Top performers report 20%+ ROI, with up to 30% cost reduction through automation."
-          </blockquote>
-          <div class="pt-4 border-t border-[rgba(0,0,0,0.06)]">
-            <div class="font-semibold text-[#1C1C1E] text-sm">McKinsey & Company</div>
-            <div class="text-xs text-[#94A3B8]">The State of AI, 2024–2025</div>
-          </div>
-        </div>
-
+        <form class="contact-card" action="https://formspree.io/f/xwvnkpak" method="POST">
+          <input type="hidden" name="source" value="YongAI Hermes platform landing page" />
+          <label>
+            <span>Name</span>
+            <input required type="text" name="name" placeholder="Your name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input required type="email" name="email" placeholder="you@example.com" />
+          </label>
+          <label>
+            <span>Workflow</span>
+            <textarea name="message" rows="4" placeholder="What would you want the agent to handle first?"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send inquiry</button>
+        </form>
       </div>
-    </div>
-  </section>
-
-  <!-- ── FAQ ── -->
-  <section class="py-24 bg-white border-t border-[rgba(0,0,0,0.06)]">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="mb-12">
-        <p class="section-label">FAQ</p>
-        <h2 class="text-4xl font-black text-[#1C1C1E]">Common questions.</h2>
-      </div>
-
-      <div class="space-y-3" id="faq-list">
-
-        <details class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl overflow-hidden group">
-          <summary class="font-semibold text-[#1C1C1E] cursor-pointer flex items-center justify-between p-5 hover:bg-[#FAFAF8] transition-colors list-none">
-            What kind of businesses do you work with?
-            <svg class="w-5 h-5 text-[#94A3B8] transition-transform duration-200 group-open:rotate-45 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </summary>
-          <div class="px-5 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-[rgba(0,0,0,0.06)] pt-4">
-            Primarily law firms and recruiting agencies in the GTA and beyond. If your team has repeatable processes — intake, screening, document generation, client comms — and growth ambitions, we're a good fit.
-          </div>
-        </details>
-
-        <details class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl overflow-hidden group">
-          <summary class="font-semibold text-[#1C1C1E] cursor-pointer flex items-center justify-between p-5 hover:bg-[#FAFAF8] transition-colors list-none">
-            How fast can you deliver results?
-            <svg class="w-5 h-5 text-[#94A3B8] transition-transform duration-200 group-open:rotate-45 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </summary>
-          <div class="px-5 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-[rgba(0,0,0,0.06)] pt-4">
-            The AI Readiness Audit takes 2 weeks. Implementation projects typically run 3–6 weeks depending on complexity. Most automations start delivering measurable value within the first quarter.
-          </div>
-        </details>
-
-        <details class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl overflow-hidden group">
-          <summary class="font-semibold text-[#1C1C1E] cursor-pointer flex items-center justify-between p-5 hover:bg-[#FAFAF8] transition-colors list-none">
-            What tools and platforms do you work with?
-            <svg class="w-5 h-5 text-[#94A3B8] transition-transform duration-200 group-open:rotate-45 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </summary>
-          <div class="px-5 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-[rgba(0,0,0,0.06)] pt-4">
-            I'm platform-agnostic. Common integrations include OpenAI/Anthropic APIs, LangChain, Salesforce, HubSpot, Slack, Notion, Zapier, Make, and custom Python/Node.js builds. If you use it, I can integrate with it.
-          </div>
-        </details>
-
-        <details class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl overflow-hidden group">
-          <summary class="font-semibold text-[#1C1C1E] cursor-pointer flex items-center justify-between p-5 hover:bg-[#FAFAF8] transition-colors list-none">
-            Do I own what you build?
-            <svg class="w-5 h-5 text-[#94A3B8] transition-transform duration-200 group-open:rotate-45 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </summary>
-          <div class="px-5 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-[rgba(0,0,0,0.06)] pt-4">
-            100%. Every agent, workflow, and integration I build is yours — full IP ownership, source code, and documentation. No lock-in.
-          </div>
-        </details>
-
-        <details class="bg-white border border-[rgba(0,0,0,0.08)] rounded-xl overflow-hidden group">
-          <summary class="font-semibold text-[#1C1C1E] cursor-pointer flex items-center justify-between p-5 hover:bg-[#FAFAF8] transition-colors list-none">
-            What if I'm not sure where to start?
-            <svg class="w-5 h-5 text-[#94A3B8] transition-transform duration-200 group-open:rotate-45 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </summary>
-          <div class="px-5 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-[rgba(0,0,0,0.06)] pt-4">
-            That's exactly what the free strategy call is for. We'll talk through your current workflows and I'll give you an honest assessment — even if the answer is "you don't need AI for this yet."
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact ── -->
-  <section id="contact" class="py-24 bg-[#FAFAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-      <ContactForm />
-    </div>
-  </section>
+    </section>
+  </main>
 
   <Footer />
 </Layout>
-
-<script>
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-</script>

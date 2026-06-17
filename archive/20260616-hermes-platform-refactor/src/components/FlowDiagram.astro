@@ -1,0 +1,325 @@
+---
+// Enhanced SVG Flow Diagram component with rich phase illustrations
+interface Props {
+  steps: {
+    id: string;
+    title: string;
+    description: string;
+    icon: string;
+    color: string;
+  }[];
+  orientation?: 'horizontal' | 'vertical';
+  showConnections?: boolean;
+}
+
+const { steps, orientation = 'horizontal', showConnections = true } = Astro.props;
+
+const colorMap: Record<string, string> = {
+  'yong-green': '#3fb950',
+  'purple-500': '#8b5cf6',
+  'blue-500': '#3b82f6',
+  'purple-400': '#a78bfa',
+};
+---
+
+<div class="process-flow-enhanced" aria-hidden="true">
+  <!-- Desktop: horizontal flow -->
+  <svg 
+    class="flow-svg-desktop hidden lg:block" 
+    viewBox="0 0 1100 220"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <defs>
+      <linearGradient id="flowConnGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%" stop-color="#3fb950" stop-opacity="0.5"/>
+        <stop offset="33%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+        <stop offset="66%" stop-color="#3b82f6" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.5"/>
+      </linearGradient>
+      <filter id="flowNodeGlow">
+        <feGaussianBlur stdDeviation="6" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="flowIconGlow">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    
+    <!-- Connection path (animated dashed) -->
+    <path 
+      d="M 150 110 C 250 110, 250 110, 370 110 C 470 110, 470 110, 550 110 C 630 110, 630 110, 730 110 C 830 110, 830 110, 950 110"
+      stroke="url(#flowConnGrad)" 
+      stroke-width="2" 
+      fill="none" 
+      stroke-dasharray="8 6"
+      class="flow-connection-line"
+    />
+    
+    <!-- Traveling pulse on path -->
+    <circle r="4" fill="#3fb950" opacity="0.8" filter="url(#flowIconGlow)">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 150 110 C 250 110, 250 110, 370 110 C 470 110, 470 110, 550 110 C 630 110, 630 110, 730 110 C 830 110, 830 110, 950 110"/>
+    </circle>
+    <circle r="3" fill="#8b5cf6" opacity="0.6">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 150 110 C 250 110, 250 110, 370 110 C 470 110, 470 110, 550 110 C 630 110, 630 110, 730 110 C 830 110, 830 110, 950 110" begin="2s"/>
+    </circle>
+
+    <!-- Arrow heads between nodes -->
+    {[290, 470, 660, 850].map((x, i) => (
+      <polygon 
+        points={`${x},104 ${x+14},110 ${x},116`} 
+        fill={Object.values(colorMap)[i]} 
+        opacity="0.5"
+        class="flow-arrow"
+        style={`animation-delay: ${i * 0.2}s`}
+      />
+    ))}
+
+    <!-- Phase 1: Discovery - Magnifying Glass -->
+    <g class="flow-phase-node" style="animation-delay: 0s">
+      <circle cx="150" cy="110" r="55" fill="#3fb950" opacity="0.08" class="flow-node-outer-ring"/>
+      <circle cx="150" cy="110" r="42" fill="#07080C" stroke="#3fb950" stroke-width="2" opacity="0.9"/>
+      <circle cx="150" cy="110" r="42" fill="#3fb950" opacity="0.1"/>
+      <!-- Magnifying glass icon -->
+      <g transform="translate(150, 110) scale(0.9)" filter="url(#flowIconGlow)">
+        <circle cx="-4" cy="-4" r="12" fill="none" stroke="#3fb950" stroke-width="2.5"/>
+        <line x1="5" y1="5" x2="14" y2="14" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Sparkle inside lens -->
+        <circle cx="-7" cy="-7" r="1.5" fill="#3fb950" opacity="0.6" class="flow-sparkle"/>
+      </g>
+      <text x="150" y="175" text-anchor="middle" fill="#3fb950" font-size="13" font-weight="700" font-family="Inter, sans-serif">Discovery</text>
+      <!-- Step number -->
+      <circle cx="180" cy="75" r="11" fill="#3fb950"/>
+      <text x="180" y="79" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="Inter, sans-serif">1</text>
+    </g>
+
+    <!-- Phase 2: Assessment - Bar Chart -->
+    <g class="flow-phase-node" style="animation-delay: 0.2s">
+      <circle cx="410" cy="110" r="55" fill="#8b5cf6" opacity="0.08" class="flow-node-outer-ring"/>
+      <circle cx="410" cy="110" r="42" fill="#07080C" stroke="#8b5cf6" stroke-width="2" opacity="0.9"/>
+      <circle cx="410" cy="110" r="42" fill="#8b5cf6" opacity="0.1"/>
+      <!-- Bar chart icon -->
+      <g transform="translate(410, 110) scale(0.9)" filter="url(#flowIconGlow)">
+        <rect x="-14" y="2" width="6" height="12" rx="1" fill="#8b5cf6" opacity="0.7" class="flow-bar flow-bar-1"/>
+        <rect x="-5" y="-5" width="6" height="19" rx="1" fill="#8b5cf6" opacity="0.85" class="flow-bar flow-bar-2"/>
+        <rect x="4" y="-12" width="6" height="26" rx="1" fill="#8b5cf6" class="flow-bar flow-bar-3"/>
+        <!-- Trend line -->
+        <polyline points="-11,-4 -2,-10 7,-16" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </g>
+      <text x="410" y="175" text-anchor="middle" fill="#8b5cf6" font-size="13" font-weight="700" font-family="Inter, sans-serif">Assessment</text>
+      <circle cx="440" cy="75" r="11" fill="#8b5cf6"/>
+      <text x="440" y="79" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="Inter, sans-serif">2</text>
+    </g>
+
+    <!-- Phase 3: Implementation - Gears -->
+    <g class="flow-phase-node" style="animation-delay: 0.4s">
+      <circle cx="670" cy="110" r="55" fill="#3b82f6" opacity="0.08" class="flow-node-outer-ring"/>
+      <circle cx="670" cy="110" r="42" fill="#07080C" stroke="#3b82f6" stroke-width="2" opacity="0.9"/>
+      <circle cx="670" cy="110" r="42" fill="#3b82f6" opacity="0.1"/>
+      <!-- Gear icon -->
+      <g transform="translate(670, 110)" filter="url(#flowIconGlow)">
+        <!-- Large gear -->
+        <g class="flow-gear-spin">
+          <circle cx="-3" cy="-2" r="7" fill="none" stroke="#3b82f6" stroke-width="2"/>
+          <circle cx="-3" cy="-2" r="3" fill="#3b82f6" opacity="0.4"/>
+          <!-- Gear teeth -->
+          <rect x="-5" y="-14" width="4" height="5" rx="1" fill="#3b82f6"/>
+          <rect x="-5" y="5" width="4" height="5" rx="1" fill="#3b82f6"/>
+          <rect x="-14" y="-4" width="5" height="4" rx="1" fill="#3b82f6"/>
+          <rect x="5" y="-4" width="5" height="4" rx="1" fill="#3b82f6"/>
+          <!-- Diagonal teeth -->
+          <rect x="-12" y="-11" width="4" height="4" rx="1" fill="#3b82f6" transform="rotate(45 -10 -9)"/>
+          <rect x="4" y="5" width="4" height="4" rx="1" fill="#3b82f6" transform="rotate(45 6 7)"/>
+          <rect x="4" y="-11" width="4" height="4" rx="1" fill="#3b82f6" transform="rotate(45 6 -9)"/>
+          <rect x="-12" y="5" width="4" height="4" rx="1" fill="#3b82f6" transform="rotate(45 -10 7)"/>
+        </g>
+        <!-- Small gear -->
+        <g class="flow-gear-spin-reverse">
+          <circle cx="10" cy="8" r="5" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+          <circle cx="10" cy="8" r="2" fill="#60a5fa" opacity="0.4"/>
+          <rect x="9" y="0" width="2" height="3" rx="0.5" fill="#60a5fa"/>
+          <rect x="9" y="13" width="2" height="3" rx="0.5" fill="#60a5fa"/>
+          <rect x="3" y="7" width="3" height="2" rx="0.5" fill="#60a5fa"/>
+          <rect x="14" y="7" width="3" height="2" rx="0.5" fill="#60a5fa"/>
+        </g>
+      </g>
+      <text x="670" y="175" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700" font-family="Inter, sans-serif">Implementation</text>
+      <circle cx="700" cy="75" r="11" fill="#3b82f6"/>
+      <text x="700" y="79" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="Inter, sans-serif">3</text>
+    </g>
+
+    <!-- Phase 4: Optimization - Rocket -->
+    <g class="flow-phase-node" style="animation-delay: 0.6s">
+      <circle cx="930" cy="110" r="55" fill="#a78bfa" opacity="0.08" class="flow-node-outer-ring"/>
+      <circle cx="930" cy="110" r="42" fill="#07080C" stroke="#a78bfa" stroke-width="2" opacity="0.9"/>
+      <circle cx="930" cy="110" r="42" fill="#a78bfa" opacity="0.1"/>
+      <!-- Rocket icon -->
+      <g transform="translate(930, 110) scale(0.85)" filter="url(#flowIconGlow)">
+        <!-- Rocket body -->
+        <path d="M 0 -18 C 6 -14, 8 -4, 7 4 L 3 8 L -3 8 L -7 4 C -8 -4, -6 -14, 0 -18 Z" fill="#a78bfa" opacity="0.9"/>
+        <!-- Nose cone highlight -->
+        <path d="M 0 -18 C 3 -14, 4 -8, 3 -2 L 0 -2 Z" fill="#c4b5fd" opacity="0.4"/>
+        <!-- Window -->
+        <circle cx="0" cy="-4" r="3" fill="#07080C" stroke="#c4b5fd" stroke-width="1"/>
+        <circle cx="0" cy="-4" r="1.5" fill="#a78bfa" opacity="0.3"/>
+        <!-- Fins -->
+        <path d="M -7 2 L -12 8 L -7 6 Z" fill="#8b5cf6"/>
+        <path d="M 7 2 L 12 8 L 7 6 Z" fill="#8b5cf6"/>
+        <!-- Exhaust flames -->
+        <path d="M -2 8 L 0 16 L 2 8" fill="#f59e0b" opacity="0.8" class="flow-flame">
+          <animate attributeName="d" values="M -2 8 L 0 16 L 2 8;M -3 8 L 0 14 L 3 8;M -2 8 L 0 16 L 2 8" dur="0.3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M -1 8 L 0 12 L 1 8" fill="#fbbf24" opacity="0.6">
+          <animate attributeName="d" values="M -1 8 L 0 12 L 1 8;M -1.5 8 L 0 11 L 1.5 8;M -1 8 L 0 12 L 1 8" dur="0.2s" repeatCount="indefinite"/>
+        </path>
+        <!-- Speed lines -->
+        <line x1="-10" y1="10" x2="-10" y2="16" stroke="#a78bfa" stroke-width="1" opacity="0.4" class="flow-speed-line"/>
+        <line x1="10" y1="10" x2="10" y2="16" stroke="#a78bfa" stroke-width="1" opacity="0.4" class="flow-speed-line" style="animation-delay: 0.1s"/>
+      </g>
+      <text x="930" y="175" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="700" font-family="Inter, sans-serif">Optimization</text>
+      <circle cx="960" cy="75" r="11" fill="#a78bfa"/>
+      <text x="960" y="79" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="Inter, sans-serif">4</text>
+    </g>
+  </svg>
+
+  <!-- Mobile: vertical flow -->
+  <svg 
+    class="flow-svg-mobile lg:hidden mx-auto" 
+    viewBox="0 0 200 700"
+    preserveAspectRatio="xMidYMid meet"
+    style="max-width: 200px;"
+  >
+    <defs>
+      <linearGradient id="flowConnGradV" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" stop-color="#3fb950" stop-opacity="0.5"/>
+        <stop offset="33%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+        <stop offset="66%" stop-color="#3b82f6" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    
+    <!-- Vertical connection line -->
+    <line x1="100" y1="80" x2="100" y2="620" stroke="url(#flowConnGradV)" stroke-width="2" stroke-dasharray="6 4" class="flow-connection-line"/>
+    
+    <!-- Traveling pulse -->
+    <circle r="3" fill="#3fb950" opacity="0.8">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M 100 80 L 100 620"/>
+    </circle>
+    
+    <!-- Phase nodes (vertical) -->
+    {[
+      { cy: 80, color: '#3fb950', label: 'Discovery', num: '1' },
+      { cy: 260, color: '#8b5cf6', label: 'Assessment', num: '2' },
+      { cy: 440, color: '#3b82f6', label: 'Implementation', num: '3' },
+      { cy: 620, color: '#a78bfa', label: 'Optimization', num: '4' },
+    ].map((phase) => (
+      <g class="flow-phase-node">
+        <circle cx="100" cy={phase.cy} r="35" fill={phase.color} opacity="0.08"/>
+        <circle cx="100" cy={phase.cy} r="26" fill="#07080C" stroke={phase.color} stroke-width="2"/>
+        <circle cx="100" cy={phase.cy} r="26" fill={phase.color} opacity="0.1"/>
+        <text x="100" y={phase.cy + 5} text-anchor="middle" fill={phase.color} font-size="18" font-weight="700" font-family="Inter, sans-serif">{phase.num}</text>
+        <text x="100" y={phase.cy + 50} text-anchor="middle" fill={phase.color} font-size="12" font-weight="600" font-family="Inter, sans-serif">{phase.label}</text>
+      </g>
+    ))}
+  </svg>
+</div>
+
+<style>
+  .process-flow-enhanced {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .flow-svg-desktop, .flow-svg-mobile {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Connection line animation */
+  .flow-connection-line {
+    animation: flowDash 2s linear infinite;
+  }
+  @keyframes flowDash {
+    to { stroke-dashoffset: -24; }
+  }
+
+  /* Phase node entrance */
+  .flow-phase-node {
+    opacity: 0;
+    animation: flowNodeIn 0.7s ease-out forwards;
+  }
+  @keyframes flowNodeIn {
+    0% { opacity: 0; transform: scale(0.7); }
+    60% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Outer ring pulse */
+  .flow-node-outer-ring {
+    animation: flowRingPulse 3s ease-in-out infinite;
+  }
+  @keyframes flowRingPulse {
+    0%, 100% { r: 50; opacity: 0.06; }
+    50% { r: 58; opacity: 0.12; }
+  }
+
+  /* Sparkle in magnifying glass */
+  .flow-sparkle {
+    animation: flowSparkle 2s ease-in-out infinite;
+  }
+  @keyframes flowSparkle {
+    0%, 100% { opacity: 0.3; r: 1; }
+    50% { opacity: 0.8; r: 2; }
+  }
+
+  /* Bar chart animation */
+  .flow-bar-1 { animation: flowBarGrow1 2s ease-in-out infinite; }
+  .flow-bar-2 { animation: flowBarGrow2 2s ease-in-out infinite 0.2s; }
+  .flow-bar-3 { animation: flowBarGrow3 2s ease-in-out infinite 0.4s; }
+  @keyframes flowBarGrow1 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.15); }
+  }
+  @keyframes flowBarGrow2 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.1); }
+  }
+  @keyframes flowBarGrow3 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.08); }
+  }
+
+  /* Gear rotation */
+  .flow-gear-spin {
+    animation: flowGearSpin 8s linear infinite;
+    transform-origin: -3px -2px;
+  }
+  .flow-gear-spin-reverse {
+    animation: flowGearSpinReverse 6s linear infinite;
+    transform-origin: 10px 8px;
+  }
+  @keyframes flowGearSpin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes flowGearSpinReverse {
+    to { transform: rotate(-360deg); }
+  }
+
+  /* Speed lines on rocket */
+  .flow-speed-line {
+    animation: flowSpeedLine 0.8s ease-in-out infinite alternate;
+  }
+  @keyframes flowSpeedLine {
+    0% { opacity: 0.2; transform: translateY(0); }
+    100% { opacity: 0.6; transform: translateY(3px); }
+  }
+
+  /* Arrow pulse */
+  .flow-arrow {
+    animation: flowArrowPulse 2s ease-in-out infinite;
+  }
+  @keyframes flowArrowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+</style>

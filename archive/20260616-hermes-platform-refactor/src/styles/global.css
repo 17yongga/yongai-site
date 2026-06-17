@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+@theme {
+  /* YongAI Brand Colors — Light Theme + Dark Orange Accent */
+  --color-accent:       #C2410C;   /* dark orange primary */
+  --color-accent-light: #EA580C;   /* orange-600 for hover */
+  --color-accent-dark:  #9A3408;   /* orange-800 for pressed */
+  --color-accent-bg:    rgba(194, 65, 12, 0.08);
+  --color-accent-border: rgba(194, 65, 12, 0.2);
+
+  /* Legacy alias so old green references compile */
+  --color-yong-green:       #C2410C;
+  --color-yong-green-light: #EA580C;
+  --color-yong-green-dark:  #9A3408;
+  --color-yong-green-glow:  rgba(194, 65, 12, 0.25);
+
+  /* Surfaces */
+  --color-bg-primary:    #EDECEA;
+  --color-bg-raised:     #E5E3DE;
+  --color-bg-card:       #F3F2EE;
+  --color-bg-card-hover: #EEEDE9;
+
+  /* Borders */
+  --color-border:        rgba(0, 0, 0, 0.08);
+  --color-border-light:  rgba(0, 0, 0, 0.05);
+
+  /* Text */
+  --color-text-primary: #1C1C1E;
+  --color-text-muted:   #64748B;
+  --color-text-faint:   #94A3B8;
+
+  /* Status */
+  --color-success:    #059669;
+  --color-success-bg: rgba(5, 150, 105, 0.08);
+  --color-warning:    #B45309;
+  --color-warning-bg: rgba(180, 83, 9, 0.08);
+  --color-danger:     #DC2626;
+  --color-danger-bg:  rgba(220, 38, 38, 0.08);
+  --color-info:       #2563EB;
+  --color-info-bg:    rgba(37, 99, 235, 0.08);
+}
+
+/* ────────────── Base ────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-raised); }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ────────────── Cards (replace glassmorphism) ────────────── */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Legacy alias so old glassmorphism references still work */
+.glassmorphism {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ────────────── Reveal (subtle, minimal) ────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ────────────── Accent utility ────────────── */
+.accent-text {
+  color: var(--color-accent);
+}
+
+/* Replaced gradient headline — just use accent colour */
+.accent-gradient {
+  color: var(--color-accent);
+  -webkit-text-fill-color: var(--color-accent);
+}
+
+/* ────────────── Buttons ────────────── */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  box-shadow: 0 4px 16px rgba(194, 65, 12, 0.28);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: var(--color-bg-raised);
+}
+
+/* ────────────── Nav ────────────── */
+.navbar {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ────────────── Floating animation for hero frame ────────────── */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.float-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* ────────────── Hero frame item animations ────────────── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes checkAppear {
+  0%   { opacity: 0; transform: scale(0.5); }
+  60%  { transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes counterUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Stagger for hero frame items */
+.frame-item-1 {
+  opacity: 0;
+  animation: fadeSlideIn 0.45s ease forwards;
+  animation-delay: 0.6s;
+}
+.frame-item-2 {
+  opacity: 0;
+  animation: fadeSlideIn 0.45s ease forwards;
+  animation-delay: 1.3s;
+}
+.frame-item-3 {
+  opacity: 0;
+  animation: fadeSlideIn 0.45s ease forwards;
+  animation-delay: 2.0s;
+}
+.frame-footer-reveal {
+  opacity: 0;
+  animation: counterUp 0.5s ease forwards;
+  animation-delay: 2.9s;
+}
+.frame-badge-reveal {
+  opacity: 0;
+  animation: counterUp 0.5s ease forwards;
+  animation-delay: 3.6s;
+}
+
+.frame-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #fff;
+  font-size: 10px;
+  flex-shrink: 0;
+  animation: checkAppear 0.35s ease forwards;
+}
+
+.frame-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,0.12);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ────────────── Section labels (no pill badges) ────────────── */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ────────────── Accent border-left cards ────────────── */
+.accent-card {
+  border-left: 3px solid var(--color-accent);
+}
+
+/* ────────────── Pulse dot ────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ────────────── Stagger cards ────────────── */
+.stagger-card:nth-child(1) { transition-delay: 0s; }
+.stagger-card:nth-child(2) { transition-delay: 0.1s; }
+.stagger-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* ────────────── Btn animate (keep for backwards compat) ────────────── */
+.btn-animate {
+  transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}

@@ -1,5 +1,5 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-06-16
+> Updated: 2026-06-08
 
 ## What's Live
 - **URL:** https://yongai.ca
@@ -7,28 +7,33 @@
 - **CloudFront:** `EMKYCPGH3MJHV`
 
 ## Pages
-- `/` — Hermes Agent service platform landing page ✅ live Jun 16
-- Old YongAI consulting pages/demos removed from active routes and archived locally at `archive/20260616-hermes-platform-refactor/`
-- Partner docs remain on S3: `/partner-agenda.html`, `/partner-workshop-guide.html`
+- `/` — Homepage (redesigned Mar 10)
+- `/demos/workflow-audit` — Demo: AI workflow audit tool
+- `/demos/client-intake` — Demo: Client intake automation
+- `/demos/resume-screener` — Demo: AI resume screening
+- `/demos/contract-reviewer` — Demo: Contract review tool ✅ bug fixed Mar 14
+- `/demos/candidate-outreach` — Demo: Candidate outreach automation ✅ bug fixed Mar 14
+- `/hermes-agent-setup` — Landing page for Hermes Agent setup / private AI operator service ✅ live Jun 8
 
-## Design (Redesigned 2026-06-16)
-- **Theme:** Light, calm, editorial SaaS style — warm off-white backgrounds with white cards
-- **Accent:** Deep teal (`#0f766e`) + charcoal (`#1f2937`); no purple
-- **Typography:** Inter + IBM Plex Mono labels; oversized blunt headlines; no gradient text
-- **Cards:** Clean borders, restrained radius, minimal shadows
-- **Animations:** No GSAP/runtime page animations; only simple hover transitions and nav menu JS
-- **Hero:** Split layout — service copy left, compact Hermes operator mockup right
-- **Sections:** Platform pillars, setup process, use cases, safety model, packages, contact form
-- **Removed from active site:** old consulting homepage sections, live demo routes, responsible AI page, `/hermes-agent-setup/` duplicate route
+## Design (Redesigned 2026-03-10)
+- **Theme:** Light mode — warm white (#FAFAF8) background, white cards
+- **Accent:** Dark orange (#C2410C) — replaces old purple/green dark theme
+- **Typography:** Inter, heavy weights for headlines, no gradient text
+- **Cards:** Clean white with subtle borders/shadows — glassmorphism aliased to light card style
+- **Animations:** Minimal — CSS-only hero frame animation, removed GSAP dependency for homepage
+- **Hero:** Split layout — headline left, animated AI Workflow Audit demo frame right
+- **Sections:** Clean text labels — no pill badges, no section dividers
+- **Removed:** Neural network SVG, floating orbs, scroll fade-in on every element, hover:scale on cards, fake "Trusted by" logos bar, gradient buttons, purple accents throughout
+- Partner docs on S3: `partner-agenda.html`, `partner-workshop-guide.html`
 
-## Current State (2026-06-16)
-- Root `https://yongai.ca/` is now the Hermes Agent service platform landing page ✅
-- Old site source/assets/build output archived at `archive/20260616-hermes-platform-refactor/` ✅
-- Old demo/responsible/Hermes duplicate routes intentionally removed from active Astro build ✅
-- Partner docs restored after deploy and verified live ✅
-- Live verification: root 200 with new title/copy; partner docs 200; old routes 404; browser console clean
-- CloudFront invalidations: `I6UY2I3YXVUUP4SZSGPCTGLHCX` (full revamp), `I2T4KN0FR76DCKVKP5UFEVAUG4` (root + partner docs restore)
-- Footer/contact fallback email remains `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
+## Current State (2026-06-08)
+- Homepage fully redesigned and live ✅
+- Light theme applied across all 5 demo pages ✅
+- Demo page bugs fixed and deployed ✅
+- **SVG hero illustrations live on yongai.ca ✅ (2026-03-15 12:08 EDT)** — CloudFront invalidation `I5W5WHELPHTFRWRV0O0Y20SUHF`
+- **Gary reviewed and approved illustrations ✅ (2026-03-17)**
+- **Hermes Agent setup landing page live ✅ (2026-06-08 00:12 EDT)** — `https://yongai.ca/hermes-agent-setup/`, deployed via S3 sync and CloudFront invalidation `I11URI7E2TZ50AP8VTP7YG9XLD`
+- Footer/contact fallback email updated to `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
 
 ## Illustrations (2026-03-15)
 All 5 demo pages now have flat-style SVG hero illustrations replacing placeholder JPGs:
@@ -45,20 +50,19 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 4. **workflow-audit, client-intake, resume-screener** — Audited, no bugs found.
 
 ## What's Local Only
-- Archive snapshot of pre-refactor site: `archive/20260616-hermes-platform-refactor/`
+- Nothing pending — Hermes Agent setup page built and deployed
 
 ## Known Gaps
-- No testimonials/case-study proof on the new Hermes platform page yet
-- Pricing/package language is first-pass and should be refined after Gary's feedback
-- Partner docs are legacy S3-only pages and not part of the current Astro build
+- **Advisory board:** Placeholder names — Gary to add real advisors later
+- **Demo backends:** Demo pages are static/simulated — not wired to real AI backends
 
 ## Next Actions
-- [ ] Gary review/refinement pass: tone, package names/pricing, exact target audience
-- [ ] Add proof: pilot testimonials, screenshots, or concrete Hermes setup examples when available
-- [ ] SEO/OG polish for Hermes setup keywords
+- [x] **Refine demo page narratives** — storytelling pass completed 2026-03-22 (3 h1 rewrites: workflow-audit, resume-screener, candidate-outreach)
+- [ ] **Advisory board** — Gary to provide real advisor names/credentials
+- [ ] Client testimonials section
+- [ ] SEO optimization
 
 ## Decisions
-- 2026-06-16: Root `yongai.ca` repositioned as the Hermes Agent service platform landing page. Previous YongAI consulting pages/assets/build output archived at `archive/20260616-hermes-platform-refactor/`; old active demo routes removed; partner docs kept live on S3.
 - 2026-06-08: Added `/hermes-agent-setup` as a productized service landing page for private AI operator / Hermes setup offer; positioning emphasizes workflow discovery, safety boundaries, and implementation discipline over commodity install.
 - 2026-03-15: Flat SVG hero illustrations deployed — all 5 demo pages, ~15-21KB each, committed to repo
 - 2026-03-14: Bug sweep across all 5 demo pages — 3 bugs fixed (contract-reviewer ×2, candidate-outreach ×1)
