@@ -1,5 +1,5 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-06-16
+> Updated: 2026-06-20
 
 ## What's Live
 - **URL:** https://yongai.ca
@@ -21,12 +21,14 @@
 - **Sections:** Platform pillars, setup process, use cases, safety model, packages, contact form
 - **Removed from active site:** old consulting homepage sections, live demo routes, responsible AI page, `/hermes-agent-setup/` duplicate route
 
-## Current State (2026-06-16)
+## Current State (2026-06-20)
 - Root `https://yongai.ca/` is now the Hermes Agent service platform landing page ✅
 - Old site source/assets/build output archived at `archive/20260616-hermes-platform-refactor/` ✅
 - Old demo/responsible/Hermes duplicate routes intentionally removed from active Astro build ✅
 - Partner docs restored after deploy and verified live ✅
-- Live verification: root 200 with new title/copy; partner docs 200; old routes 404; browser console clean
+- 2026-06-20 local content revamp complete: root page now tells a tighter top-to-bottom story around an **AI Workflow Setup Sprint**, using the Ben/CubeOne setup trail as the concrete example pattern (discovery → use case → setup package → operating model).
+- Local verification: `npm run build` passed (1 page built); local browser render at `http://127.0.0.1:4321/` passed with no console errors; desktop visual QA showed no obvious clipping or broken layout.
+- Not deployed yet as of 2026-06-20 — public copy change is ready for Gary review/deploy approval.
 - CloudFront invalidations: `I6UY2I3YXVUUP4SZSGPCTGLHCX` (full revamp), `I2T4KN0FR76DCKVKP5UFEVAUG4` (root + partner docs restore)
 - Footer/contact fallback email remains `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
 
@@ -48,12 +50,12 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - Archive snapshot of pre-refactor site: `archive/20260616-hermes-platform-refactor/`
 
 ## Known Gaps
-- No testimonials/case-study proof on the new Hermes platform page yet
-- Pricing/package language is first-pass and should be refined after Gary's feedback
+- No testimonial/result claims yet; Ben/CubeOne is used only as an honest setup-pattern example, not a fabricated case study.
+- Pricing/package language still needs Gary approval before public deployment.
 - Partner docs are legacy S3-only pages and not part of the current Astro build
 
 ## Next Actions
-- [ ] Gary review/refinement pass: tone, package names/pricing, exact target audience
+- [ ] Gary review/refinement pass: approve the new copy/story, package names/pricing, and whether to deploy to `yongai.ca`
 - [ ] Add proof: pilot testimonials, screenshots, or concrete Hermes setup examples when available
 - [ ] SEO/OG polish for Hermes setup keywords
 

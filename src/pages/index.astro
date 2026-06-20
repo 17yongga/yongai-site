@@ -3,69 +3,76 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const title = 'YongAI — Hermes Agent Service Platform';
-const description = 'YongAI designs and sets up private Hermes Agent operators for founders, consultants, job seekers, creators, and teams that need useful automation with memory, tools, schedules, and approval boundaries.';
+const title = 'YongAI — AI Workflow Setup Sprint';
+const description = 'YongAI helps founders and operators turn Hermes Agent into a private AI operator: workflow discovery, setup, custom skills, verification loops, and approval boundaries.';
 
-const platformPillars = [
+const storyPillars = [
   {
-    label: 'Messaging-native',
-    title: 'Runs where work actually happens',
-    body: 'Your agent can operate from Telegram, Discord, Slack, WhatsApp, email, or the terminal instead of sitting in yet another dashboard.'
+    label: 'The problem',
+    title: 'AI tools still make you manage the work',
+    body: 'Most assistants can answer a prompt, but they do not remember the operating context, watch recurring work, verify outputs, or know when a human must approve the next step.'
   },
   {
-    label: 'Persistent context',
-    title: 'Memory and skills compound over time',
-    body: 'Hermes keeps durable preferences, project context, reusable procedures, and operating rules so every session does not start from zero.'
+    label: 'The service',
+    title: 'We design the workflow, then set up the agent',
+    body: 'The valuable part is not “install Hermes.” It is mapping the job-to-be-done, configuring memory/tools/skills, and turning scattered work into a repeatable operating flow.'
   },
   {
-    label: 'Tool-backed execution',
-    title: 'Not just answers — completed work',
-    body: 'The setup can include file access, web research, GitHub, spreadsheets, reminders, scheduled jobs, browsers, and carefully scoped integrations.'
+    label: 'The outcome',
+    title: 'A private AI operator you can actually use',
+    body: 'You get a working Hermes setup, custom workflow procedures, scheduled checks where useful, evidence-backed handoffs, and clear rules for what the agent can and cannot do.'
   },
   {
-    label: 'Approval boundaries',
-    title: 'Autonomy without cowboy behavior',
-    body: 'We define what the agent can do automatically, what it can draft for approval, and what it should never touch without explicit scope.'
+    label: 'The boundary',
+    title: 'Autonomy earns trust step by step',
+    body: 'The first version focuses on low-risk internal work: summaries, briefs, trackers, drafts, QA, and decision support. External actions stay approval-gated.'
   }
 ];
 
-const setupSteps = [
-  ['01', 'Workflow map', 'We pick the recurring work worth automating: briefings, trackers, research, project updates, reminders, inbox triage, job search, or admin.'],
-  ['02', 'Hermes build', 'Provider, model, gateway, memory, tools, skills, cron jobs, and safety defaults are configured around the workflow.'],
-  ['03', 'Operating handoff', 'You get the rules, examples, prompts, and maintenance notes needed to actually rely on the agent day to day.']
+const benTrail = [
+  ['01', 'Discovery', 'A founder had tried to run Claude Code like a 24/7 development agent, but the flow broke when production-level testing still required manual follow-through.'],
+  ['02', 'Use case', 'The real job was not “use an agent.” It was: describe a CubeOne feature or bug from chat, let the agent inspect the repo/app, verify in browser, run checks, and prepare a PR/review-ready handoff.'],
+  ['03', 'Setup package', 'We prepared a dedicated Hermes workspace: AGENTS/USER/MEMORY/TOOLS files, a development protocol, custom CubeOne skills, browser QA rules, setup prompts, and a local command-center dashboard.'],
+  ['04', 'Operating model', 'The initial scope stayed practical: work with the existing Vercel/Supabase/Cloudflare stack, keep Obsidian as phase two, preserve human final review, and avoid risky production changes.']
 ];
 
-const useCases = [
-  ['Consultants / PMs', 'Meeting prep, stakeholder follow-ups, weekly status reports, research briefs, decision logs.'],
-  ['Founders', 'Competitor monitoring, product changelogs, support digests, investor/update drafts, backlog grooming.'],
-  ['Job seekers', 'Role discovery, tracker updates, tailored resume checklists, recruiter follow-ups, interview prep.'],
-  ['Creators', 'Source monitoring, voice-note outlines, newsletter research, publishing calendars, sponsor lead tracking.'],
-  ['Personal operators', 'Calendar/email digests, travel planning, reminders, gift ideas, life admin, journaling support.'],
-  ['Technical teams', 'Repo summaries, issue triage, release checklists, QA notes, lightweight internal tools.']
+const setupSteps = [
+  ['01', 'Audit the real job', 'We identify where work gets scattered: customer feedback, product tasks, research, follow-ups, job search, meeting prep, QA, reporting, or recurring monitoring.'],
+  ['02', 'Build the operator', 'Hermes is configured around that workflow: model/provider, messaging, memory, tools, skills, prompts, schedules, and least-privilege access.'],
+  ['03', 'Verify and hand off', 'The workflow is tested with realistic inputs. You receive usage examples, safety rules, troubleshooting notes, and a clear next-step plan.']
+];
+
+const workflowExamples = [
+  ['Founder / product command center', 'Turn feature ideas, bugs, customer notes, and release concerns into implementation plans, test cases, review checklists, and status updates.'],
+  ['Customer feedback to product action', 'Convert messy call notes, demo feedback, or support messages into themes, priorities, follow-up questions, and backlog-ready actions.'],
+  ['Development QA operator', 'For technical teams: reproduce a visible issue, make or coordinate a narrow fix, browser-check it, run build/test commands, and hand off evidence.'],
+  ['Weekly operating brief', 'Summarize what changed, what is blocked, which decisions are needed, and what the next few actions should be.'],
+  ['AI trend-to-action monitor', 'Filter relevant AI/tooling updates into practical experiments instead of dumping another newsletter into your inbox.'],
+  ['Personal or career operator', 'Calendar/email digests, role discovery, trackers, follow-ups, interview prep, reminders, journaling, and life-admin workflows.']
 ];
 
 const packages = [
   {
-    name: 'Quickstart',
+    name: 'Workflow Audit',
     price: 'CAD $299–$499',
-    timeline: 'Same-day setup',
-    summary: 'For people who want Hermes installed correctly and one useful workflow running without fighting config files.',
-    items: ['Install + provider setup', 'Telegram or Discord gateway', 'Basic memory/profile', '1 starter workflow', 'Handoff notes']
+    timeline: 'Same-day / single session',
+    summary: 'For people who want a concrete automation plan before committing to a full build.',
+    items: ['Workflow discovery call', 'Use-case prioritization', 'Risk/access map', 'Recommended first workflow', 'Setup path + estimate']
   },
   {
-    name: 'Operator Buildout',
+    name: 'AI Workflow Setup Sprint',
     price: 'CAD $1K–$2.5K',
-    timeline: '1-week build',
-    summary: 'A private AI operator built around your actual recurring work, not a generic chatbot demo.',
-    items: ['Workflow audit', '3–5 custom workflows', 'Skills + memory rules', 'Scheduled jobs', '7 days async support'],
+    timeline: 'Few days to 1 week',
+    summary: 'A private Hermes operator built around one to three real workflows, with documentation and proof that the loop works.',
+    items: ['Hermes setup/configuration', '1–3 implemented workflows', 'Custom skills + memory rules', 'Verification + handoff docs', 'Short async support window'],
     featured: true
   },
   {
-    name: 'Operations Retainer',
+    name: 'Ops Retainer',
     price: 'CAD $300–$1.5K',
     timeline: 'Monthly',
-    summary: 'For users who start depending on their agent and want monitoring, tuning, new workflows, and reliability support.',
-    items: ['Workflow tuning', 'New automations', 'Cost/reliability review', 'Broken integration fixes', 'Monthly review']
+    summary: 'For clients who start depending on the agent and want new workflows, tuning, fixes, and reliability support.',
+    items: ['Workflow tuning', 'New skills/automations', 'Scheduled-job maintenance', 'Integration troubleshooting', 'Monthly review']
   }
 ];
 ---
@@ -77,21 +84,22 @@ const packages = [
     <section class="hero-section" id="top">
       <div class="page-container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Hermes Agent setup platform</p>
-          <h1>Private AI operators for real workflows.</h1>
+          <p class="eyebrow">AI Workflow Setup Sprint</p>
+          <h1>Turn agent technology into workflows that actually move work forward.</h1>
           <p class="hero-lede">
-            YongAI sets up Hermes Agent as a practical service layer: a messaging-native assistant with memory, tools, skills, scheduled workflows, and clear approval gates.
+            YongAI helps founders, consultants, and operators set up Hermes Agent as a private AI operator: one that understands your context, uses approved tools, verifies its work, and knows when to ask before acting.
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">
               Book a workflow audit
             </button>
-            <a class="btn btn-secondary" href="#how-it-works">See how it works</a>
+            <a class="btn btn-secondary" href="#example">See the example flow</a>
           </div>
-          <div class="proof-row" aria-label="Platform highlights">
-            <span>Open-source agent framework</span>
-            <span>Telegram / Discord / Slack</span>
-            <span>Memory + tools + cron</span>
+          <div class="proof-row" aria-label="Service highlights">
+            <span>Workflow discovery</span>
+            <span>Hermes setup</span>
+            <span>Skills + memory</span>
+            <span>Verified handoff</span>
           </div>
         </div>
 
@@ -99,23 +107,24 @@ const packages = [
           <div class="panel-topbar">
             <div>
               <span class="status-dot"></span>
-              <strong>Hermes operator</strong>
+              <strong>Private AI operator</strong>
             </div>
-            <span>08:30 run</span>
+            <span>Review-ready</span>
           </div>
           <div class="message-stack">
-            <div class="chat-line agent">Morning brief is ready: 2 meetings, 1 overdue follow-up, 4 new roles, and a draft status update.</div>
-            <div class="chat-line user">Prepare the follow-up and update the tracker. Don’t send anything yet.</div>
+            <div class="chat-line user">A customer says onboarding breaks after email verification. Turn this into a product action plan.</div>
+            <div class="chat-line agent">I’ll classify the feedback, draft requirements, identify risks, and prepare test cases. External customer messages stay approval-only.</div>
           </div>
           <div class="run-card">
             <div class="run-card-header">
-              <span>Action plan</span>
-              <strong>Needs approval</strong>
+              <span>Workflow loop</span>
+              <strong>Human-gated</strong>
             </div>
             <ul>
-              <li><span>✓</span> Checked calendar, inbox, tracker, and memory</li>
-              <li><span>✓</span> Drafted follow-up message</li>
-              <li><span>•</span> Waiting for approval before sending</li>
+              <li><span>✓</span> Captured messy input</li>
+              <li><span>✓</span> Used project context and operating rules</li>
+              <li><span>✓</span> Prepared actions, tests, and handoff</li>
+              <li><span>•</span> Waits before sending, deploying, or committing externally</li>
             </ul>
           </div>
         </div>
@@ -125,14 +134,14 @@ const packages = [
     <section class="section white" id="platform">
       <div class="page-container two-column">
         <div>
-          <p class="eyebrow">The platform</p>
-          <h2>Less demo magic. More operating system.</h2>
+          <p class="eyebrow">What you are buying</p>
+          <h2>Not another chatbot. A designed operating layer.</h2>
           <p class="section-lede">
-            The useful version of an AI agent is not a prompt window. It is a small operating layer around your real work: context, tools, procedures, schedules, and boundaries.
+            The best use of Hermes is not asking it random questions. It is giving it a defined job, the right context, the right tools, and a safe path to produce useful outputs again and again.
           </p>
         </div>
         <div class="pillar-grid">
-          {platformPillars.map((pillar) => (
+          {storyPillars.map((pillar) => (
             <article class="pillar-card">
               <p>{pillar.label}</p>
               <h3>{pillar.title}</h3>
@@ -143,12 +152,35 @@ const packages = [
       </div>
     </section>
 
-    <section class="section" id="how-it-works">
+    <section class="section" id="example">
       <div class="page-container">
         <div class="section-heading narrow">
-          <p class="eyebrow">How the setup works</p>
-          <h2>Start with boring, useful workflows. Earn autonomy later.</h2>
-          <p class="section-lede">The first version should save time without creating risk. Once the agent proves itself, deeper automation becomes much easier to trust.</p>
+          <p class="eyebrow">Real setup pattern</p>
+          <h2>Example: turning a founder’s agent idea into a usable workflow.</h2>
+          <p class="section-lede">
+            A recent founder conversation made the service clear: the client did not need a generic AI assistant. He needed an agent that could close a specific work loop without forcing him back to his laptop for every step.
+          </p>
+        </div>
+        <div class="use-case-grid">
+          {benTrail.map(([number, heading, body]) => (
+            <article class="step-card">
+              <span>{number}</span>
+              <h3>{heading}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="how-it-works">
+      <div class="page-container">
+        <div class="section-heading narrow">
+          <p class="eyebrow">How the sprint works</p>
+          <h2>Start with one valuable workflow. Earn more autonomy later.</h2>
+          <p class="section-lede">
+            The first build should create a narrow win: something useful enough to trust, simple enough to verify, and safe enough to run without anxiety.
+          </p>
         </div>
         <div class="steps-grid">
           {setupSteps.map(([number, heading, body]) => (
@@ -162,16 +194,18 @@ const packages = [
       </div>
     </section>
 
-    <section class="section white" id="use-cases">
+    <section class="section" id="use-cases">
       <div class="page-container split-heading">
         <div>
-          <p class="eyebrow">Workflow examples</p>
-          <h2>Built for people with context-heavy work.</h2>
+          <p class="eyebrow">Workflow menu</p>
+          <h2>The service fits context-heavy work.</h2>
         </div>
-        <p class="section-lede">These are starting points, not templates pretending every business is the same. The setup is customized after the workflow audit.</p>
+        <p class="section-lede">
+          These are examples, not rigid templates. The workflow audit decides what is worth building first.
+        </p>
       </div>
       <div class="page-container use-case-grid">
-        {useCases.map(([title, body]) => (
+        {workflowExamples.map(([title, body]) => (
           <article class="use-case-card">
             <h3>{title}</h3>
             <p>{body}</p>
@@ -180,17 +214,17 @@ const packages = [
       </div>
     </section>
 
-    <section class="section" id="safety">
+    <section class="section white" id="safety">
       <div class="page-container safety-band">
         <div>
           <p class="eyebrow">Safety model</p>
           <h2>Useful does not mean reckless.</h2>
-          <p>Every build gets explicit operating boundaries so the agent knows when to act, when to draft, and when to stop.</p>
+          <p>Every setup gets a simple operating boundary so the agent knows when to act, when to draft, and when to stop.</p>
         </div>
         <div class="boundary-list">
-          <div><strong>Green</strong><span>Summaries, research, reminders, notes, briefings, draft reports.</span></div>
-          <div><strong>Yellow</strong><span>Emails, shared files, public messages, applications, client-facing actions.</span></div>
-          <div><strong>Red</strong><span>Payments, legal commitments, destructive deletion, regulated or high-risk decisions.</span></div>
+          <div><strong>Green</strong><span>Internal summaries, research, trackers, drafts, QA notes, reminders, briefs.</span></div>
+          <div><strong>Yellow</strong><span>Emails, public posts, customer replies, shared files, PRs, applications, deployments.</span></div>
+          <div><strong>Red</strong><span>Payments, legal commitments, credential exposure, destructive deletion, regulated decisions.</span></div>
         </div>
       </div>
     </section>
@@ -200,7 +234,9 @@ const packages = [
         <div class="section-heading narrow">
           <p class="eyebrow">Packages</p>
           <h2>Clear enough to buy. Custom enough to matter.</h2>
-          <p class="section-lede">The pricing reflects the real work: workflow discovery, implementation, documentation, and support — not just running an installer.</p>
+          <p class="section-lede">
+            The pricing reflects the actual work: workflow discovery, Hermes configuration, custom procedures, verification, documentation, and support — not just running an installer.
+          </p>
         </div>
         <div class="package-grid">
           {packages.map((pkg) => (
@@ -222,16 +258,18 @@ const packages = [
     <section class="section final-cta" id="contact">
       <div class="page-container final-grid">
         <div>
-          <p class="eyebrow">Start small</p>
+          <p class="eyebrow">Next step</p>
           <h2>Bring one workflow that keeps slipping.</h2>
-          <p class="section-lede">We will decide whether Hermes is the right tool, what the first safe workflow should be, and what setup path makes sense.</p>
+          <p class="section-lede">
+            We will decide whether Hermes is the right tool, what the first safe workflow should be, and what setup path makes sense.
+          </p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">Book the audit</button>
             <a class="btn btn-secondary" href="mailto:gymoltbot@gmail.com?subject=Hermes%20Agent%20Setup%20Inquiry">Email Gary</a>
           </div>
         </div>
         <form class="contact-card" action="https://formspree.io/f/xwvnkpak" method="POST">
-          <input type="hidden" name="source" value="YongAI Hermes platform landing page" />
+          <input type="hidden" name="source" value="YongAI Hermes workflow setup landing page" />
           <label>
             <span>Name</span>
             <input required type="text" name="name" placeholder="Your name" />
@@ -242,7 +280,7 @@ const packages = [
           </label>
           <label>
             <span>Workflow</span>
-            <textarea name="message" rows="4" placeholder="What would you want the agent to handle first?"></textarea>
+            <textarea name="message" rows="4" placeholder="What work would you want an AI operator to handle first?"></textarea>
           </label>
           <button type="submit" class="btn btn-primary">Send inquiry</button>
         </form>
