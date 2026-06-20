@@ -26,10 +26,9 @@
 - Old site source/assets/build output archived at `archive/20260616-hermes-platform-refactor/` ✅
 - Old demo/responsible/Hermes duplicate routes intentionally removed from active Astro build ✅
 - Partner docs restored after deploy and verified live ✅
-- 2026-06-20 local content revamp complete: root page now tells a tighter top-to-bottom story around an **AI Workflow Setup Sprint**, using the Ben/CubeOne setup trail as the concrete example pattern (discovery → use case → setup package → operating model).
-- Local verification: `npm run build` passed (1 page built); local browser render at `http://127.0.0.1:4321/` passed with no console errors; desktop visual QA showed no obvious clipping or broken layout.
-- Not deployed yet as of 2026-06-20 — public copy change is ready for Gary review/deploy approval.
-- CloudFront invalidations: `I6UY2I3YXVUUP4SZSGPCTGLHCX` (full revamp), `I2T4KN0FR76DCKVKP5UFEVAUG4` (root + partner docs restore)
+- 2026-06-20 content revamp deployed: root page now tells a tighter top-to-bottom story around an **AI Workflow Setup Sprint**, using the Ben/CubeOne setup trail as the concrete example pattern (discovery → use case → setup package → operating model).
+- Verification: `npm run build` passed (1 page built); S3 sync completed; partner docs restored after `--delete` sync; live `https://yongai.ca/`, `/index.html`, `/partner-agenda.html`, and `/partner-workshop-guide.html` all return 200; live browser render shows new title/headline and console clean.
+- CloudFront invalidations: `I6UY2I3YXVUUP4SZSGPCTGLHCX` (full revamp), `I2T4KN0FR76DCKVKP5UFEVAUG4` (root + partner docs restore), `I58AB2890Z3DF8QPUEMMRRXGR7` (2026-06-20 deploy), `IAIIW9LTK9YZMY5DBSABI6J0P3` (partner docs restore + root refresh)
 - Footer/contact fallback email remains `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
 
 ## Illustrations (2026-03-15)
@@ -55,7 +54,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - Partner docs are legacy S3-only pages and not part of the current Astro build
 
 ## Next Actions
-- [ ] Gary review/refinement pass: approve the new copy/story, package names/pricing, and whether to deploy to `yongai.ca`
+- [ ] Gary review/refinement pass after live deployment: copy/story, package names/pricing, exact CTA language
 - [ ] Add proof: pilot testimonials, screenshots, or concrete Hermes setup examples when available
 - [ ] SEO/OG polish for Hermes setup keywords
 
