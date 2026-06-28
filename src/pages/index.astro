@@ -29,28 +29,6 @@ const buyerQuestions = [
   }
 ];
 
-const benTrail = [
-  ['01', 'Initial ask', '“I want an agent that can keep working from chat.”'],
-  ['02', 'Real use case', 'Feature or bug → repo/app inspection → browser QA → review-ready handoff.'],
-  ['03', 'What got prepared', 'Workspace files, memory rules, custom skills, dev protocol, QA checklist, command dashboard.'],
-  ['04', 'Safety line', 'Agent prepares the work. Human approves external actions, PRs, deploys, and production changes.']
-];
-
-const setupSteps = [
-  ['01', 'Pick the loop', 'Find the one workflow worth automating first.'],
-  ['02', 'Build the operator', 'Configure Hermes, tools, memory, skills, prompts, and permissions.'],
-  ['03', 'Prove it works', 'Run real examples, fix gaps, and hand over the operating guide.']
-];
-
-const workflowExamples = [
-  ['Product command center', 'Ideas, bugs, notes → plans, tests, status updates.'],
-  ['Customer feedback', 'Calls/support/demo notes → themes, priorities, next actions.'],
-  ['Development QA', 'Issue → reproduce → fix path → browser/test evidence.'],
-  ['Weekly ops brief', 'Changes, blockers, decisions, and next steps.'],
-  ['AI radar', 'Relevant updates → practical experiments, not newsletter noise.'],
-  ['Career / life admin', 'Trackers, follow-ups, reminders, prep, journaling.']
-];
-
 const packages = [
   {
     name: 'Workflow Audit',
@@ -93,7 +71,7 @@ const packages = [
             <button class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;">
               Book a workflow audit
             </button>
-            <a class="btn btn-secondary" href="#example">See a real setup pattern</a>
+            <a class="btn btn-secondary" href="#platform">See a real setup pattern</a>
           </div>
           <div class="proof-row" aria-label="Service highlights">
             <span>Workflow map</span>
@@ -145,73 +123,6 @@ const packages = [
               <span>{pillar.body}</span>
             </article>
           ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="example">
-      <div class="page-container">
-        <div class="section-heading narrow">
-          <p class="eyebrow">Example setup pattern</p>
-          <h2>Ben’s setup pattern.</h2>
-        </div>
-        <div class="use-case-grid">
-          {benTrail.map(([number, heading, body]) => (
-            <article class="step-card">
-              <span>{number}</span>
-              <h3>{heading}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section white" id="how-it-works">
-      <div class="page-container">
-        <div class="section-heading narrow">
-          <p class="eyebrow">How it works</p>
-          <h2>One useful loop first.</h2>
-        </div>
-        <div class="steps-grid">
-          {setupSteps.map(([number, heading, body]) => (
-            <article class="step-card">
-              <span>{number}</span>
-              <h3>{heading}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="use-cases">
-      <div class="page-container split-heading">
-        <div>
-          <p class="eyebrow">Good first workflows</p>
-          <h2>Context-heavy work you repeat.</h2>
-        </div>
-      </div>
-      <div class="page-container use-case-grid">
-        {workflowExamples.map(([title, body]) => (
-          <article class="use-case-card">
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section white" id="safety">
-      <div class="page-container safety-band">
-        <div>
-          <p class="eyebrow">Safety model</p>
-          <h2>Autonomy with boundaries.</h2>
-        </div>
-        <div class="boundary-list">
-          <div><strong>Green</strong><span>Summaries, research, trackers, drafts, QA notes, briefs.</span></div>
-          <div><strong>Yellow</strong><span>Emails, public posts, files, PRs, applications, deployments.</span></div>
-          <div><strong>Red</strong><span>Payments, legal commitments, secrets, destructive deletion.</span></div>
         </div>
       </div>
     </section>
