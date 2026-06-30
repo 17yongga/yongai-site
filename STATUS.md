@@ -20,13 +20,21 @@
 - Partner docs remain on S3: `/partner-agenda.html`, `/partner-workshop-guide.html`
 
 ## Design
-- **YongAI:** Venture studio / portfolio homepage — warm editorial style with cards for Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning.
+- **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
-## Current State (2026-06-30)
+## Current State (2026-06-30 — Classic Portfolio Restore)
+- Gary rejected the first rebuilt venture homepage as worse than the previous design and asked to restore the original.
+- S3 version-history permissions were re-tested and now work, but `yongai.ca` bucket/object history only shows `VersionId: null`; older `index.html` versions were not preserved because bucket versioning was not active for the overwritten files.
+- Web archive/search and local image-cache/source searches did not recover the exact prior design artifact.
+- Replaced the rejected editorial rebuild with a more conservative classic venture-portfolio layout: large bold hero, right-side portfolio summary, bento-style venture cards, and operating approach section.
+- Deployed homepage plus all generated `_astro` CSS/JS assets; invalidation `I2KFGCGADFZ90VF2FSL24TV92A` completed.
+- Verification: live `https://yongai.ca/?v=classic-portfolio` returns 200, references `/_astro/index.CplLGu-V.css` and `/_astro/candidate-outreach.D5drE0qi.css` with `200 text/css`, contains Flowt/OnlyPets/NEON 777 Casino/YourHermes, does not contain rejected headline `Building practical products, not pitch decks.`, browser overflow is `0`, and `/hermes-agent-setup/` remains `301 Location: https://urhermes.com/`.
+
+## Current State (2026-06-30 — Venture Rebuild Attempt)
 - Gary flagged that the 2026-06-29 restoration was the wrong YongAI version: it restored the older AI automation consulting site, not the venture portfolio listing active projects.
 - Searched local source, backups, git history, public cache/search, memory/session history, and S3 current objects. The exact old venture-source snapshot was not found locally/publicly.
-- Attempted S3 version-history recovery, but `s3:ListBucketVersions` / object-version listing is still denied for `arn:aws:iam::628063714079:user/Dr.Molt`, so older deployed `index.html` versions could not be inspected.
+- Initially attempted S3 version-history recovery, but `s3:ListBucketVersions` / object-version listing was denied for `arn:aws:iam::628063714079:user/Dr.Molt`. Gary later granted it; re-check showed no historical object versions preserved.
 - Rebuilt the root homepage from project source-of-truth files as a clean YongAI venture portfolio with Flowt, OnlyPets, NEON 777 Casino, and YourHermes.
 - Deployed only `dist/index.html` to S3 and invalidated `/` + `/index.html` — no broad `--delete` sync. Partner docs, demo pages, and `/hermes-agent-setup/` redirect were not overwritten.
 - Verification: `npm run build` passed; live `https://yongai.ca/?v=venture-restore` returns 200 and contains `Flowt`, `OnlyPets`, `NEON 777 Casino`, `YourHermes`, and `Building practical products`; old consulting headline `Your best people deserve better work` is absent. Browser title: `YongAI — Ventures by Gary Yong`; horizontal overflow: `0`. `/hermes-agent-setup/` still returns `301 Location: https://urhermes.com/`.
