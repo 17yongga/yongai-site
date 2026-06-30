@@ -1,0 +1,20 @@
+---
+const target = 'https://urhermes.com/';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>YourHermes has moved</title>
+    <script is:inline>
+      window.location.replace('https://urhermes.com/');
+    </script>
+  </head>
+  <body>
+    <p>YourHermes has moved to <a href="https://urhermes.com/">https://urhermes.com/</a>.</p>
+  </body>
+</html>

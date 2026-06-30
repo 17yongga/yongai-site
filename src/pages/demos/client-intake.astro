@@ -1,0 +1,698 @@
+---
+import DemoLayout from '../../layouts/DemoLayout.astro';
+
+const title = "AI Client Intake Bot Demo — YongAI";
+const description = "Experience YongAI's AI-powered client intake system for law firms. See how we automate consultations, route cases, and capture leads 24/7.";
+---
+
+<DemoLayout title={title} description={description} demoType="client-intake">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="section-label mb-4">CLIENT INTAKE — LAW FIRMS</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        Your firm misses leads every night. <br class="hidden lg:block"/><span class="text-[#C2410C]">AI fixes that.</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+        30–40% of client inquiries come in after hours. Most go unanswered until the next morning. This demo shows how AI handles intake 24/7 — routing clients to the right attorney, checking conflicts, and booking consultations automatically.
+      </p>
+      <p class="text-base text-text-faint mb-8 font-medium">↓ Try the intake bot below</p>
+      <!-- Hero Illustration -->
+      <div class="max-w-3xl mx-auto mt-8 px-4">
+        <img
+          src="/illustrations/hero-client-intake.svg"
+          alt="Client Intake illustration"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Context Banner -->
+  <div class="max-w-7xl mx-auto px-6 mb-16">
+    <div class="bg-[rgba(194,65,12,0.05)] border border-[rgba(194,65,12,0.15)] rounded-2xl p-6">
+      <div class="flex flex-wrap items-start gap-6">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#C2410C] mb-1">EXAMPLE ENGAGEMENT</p>
+          <p class="text-xl font-bold text-[#1C1C1E]">A law firm like yours</p>
+          <p class="text-text-muted text-sm">8–15 attorneys · Professional services · 6-week engagement</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-1">WHAT WE TYPICALLY FIND</p>
+          <p class="text-[#1C1C1E] font-medium">30–40% of client inquiries arrive after hours and go unanswered — a pattern we see across nearly every firm we audit</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-1">WHAT THIS DEMO SHOWS</p>
+          <p class="text-[#1C1C1E] font-medium">The intake system we'd build as a Week 3 deliverable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How We Got Here -->
+  <section class="py-16 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="section-label mb-2 text-center">HOW A YONGAI ENGAGEMENT WORKS</p>
+      <p class="text-center text-text-muted mb-10 max-w-2xl mx-auto">Before we build anything, we spend two weeks understanding how your firm actually operates. This demo is what Week 3 looks like.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-black flex items-center justify-center flex-shrink-0 text-sm">1</div>
+          <div>
+            <p class="font-bold text-[#1C1C1E] mb-1">Week 1–2: Discovery</p>
+            <p class="text-text-muted text-sm">Stakeholder interviews with attorneys, paralegals, and front desk. We map the full client intake journey — not from documentation, from observation.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-black flex items-center justify-center flex-shrink-0 text-sm">2</div>
+          <div>
+            <p class="font-bold text-[#1C1C1E] mb-1">Week 2–3: Analysis</p>
+            <p class="text-text-muted text-sm">We identify where time is lost, where revenue leaks, and which processes are worth automating. In most law firms, after-hours intake is the first thing we flag.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 opacity-100">
+          <div class="w-10 h-10 rounded-full bg-[rgba(194,65,12,0.2)] text-[#C2410C] font-black flex items-center justify-center flex-shrink-0 ring-2 ring-[#C2410C] text-sm">3</div>
+          <div>
+            <p class="font-bold text-[#1C1C1E] mb-1">Week 3: This deliverable ←</p>
+            <p class="text-text-muted text-sm">A 24/7 intake system built around your firm's specific practice areas, routing logic, and case management setup. What you're seeing below is the result.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/demos/workflow-audit" class="text-[#C2410C] text-sm font-semibold hover:underline">← See the full process audit that started this engagement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-12 items-start">
+        <!-- Chat Interface -->
+        <div class="lg:col-span-2">
+          <div class="glassmorphism rounded-3xl overflow-hidden">
+            <!-- Chat Header -->
+            <div class="flex items-center gap-4 p-6 border-b border-[rgba(0,0,0,0.06)] bg-gradient-to-r from-bg-raised to-bg-card">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-lg">
+                AI
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Law Firm AI Intake</h3>
+                <div class="flex items-center gap-2 text-sm text-success">
+                  <div class="w-2 h-2 bg-success rounded-full pulse-dot"></div>
+                  Online • Responds in under 5 seconds
+                </div>
+              </div>
+            </div>
+            
+            <!-- Messages Container -->
+            <div class="h-96 lg:h-[500px] overflow-y-auto p-6 bg-gradient-to-b from-bg-primary to-bg-raised" id="chatMessages">
+              <!-- Messages will be populated by JavaScript -->
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="p-6 border-t border-[rgba(0,0,0,0.06)] bg-bg-raised">
+              <div class="flex gap-3">
+                <input 
+                  type="text" 
+                  class="flex-1 px-4 py-3 bg-bg-primary border border-border-light rounded-xl text-text-primary placeholder:text-text-faint focus:border-info focus:ring-2 focus:ring-info/20 focus:outline-none disabled:opacity-50" 
+                  placeholder="Type your message..."
+                  id="chatInput" 
+                  disabled
+                />
+                <button 
+                  type="button" 
+                  class="bg-gradient-to-r from-info to-info-light text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100" 
+                  id="sendBtn" 
+                  disabled
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo Information -->
+        <div class="space-y-6">
+          <div class="glassmorphism rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-2">What a real implementation does</h3>
+            <p class="text-sm text-text-muted mb-6">This demo is simplified — here's what the system actually handles in production.</p>
+            <ul class="space-y-5">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded bg-[rgba(0,0,0,0.06)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-[#1C1C1E] text-xs font-bold">→</span>
+                </div>
+                <div>
+                  <span class="text-[#1C1C1E] font-medium text-sm">Routes by practice area and urgency</span>
+                  <p class="text-text-faint text-xs mt-0.5">Family law at 11pm gets a different path than a business formation question at 9am.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded bg-[rgba(0,0,0,0.06)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-[#1C1C1E] text-xs font-bold">→</span>
+                </div>
+                <div>
+                  <span class="text-[#1C1C1E] font-medium text-sm">Pre-screens for conflicts before attorney time is spent</span>
+                  <p class="text-text-faint text-xs mt-0.5">Reduces the risk of time invested in a matter you can't take.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded bg-[rgba(0,0,0,0.06)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-[#1C1C1E] text-xs font-bold">→</span>
+                </div>
+                <div>
+                  <span class="text-[#1C1C1E] font-medium text-sm">Never gives legal advice</span>
+                  <p class="text-text-faint text-xs mt-0.5">The bot asks qualifying questions and books the consultation. Advice starts when the attorney does.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded bg-[rgba(0,0,0,0.06)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-[#1C1C1E] text-xs font-bold">→</span>
+                </div>
+                <div>
+                  <span class="text-[#1C1C1E] font-medium text-sm">Feeds directly into your case management system</span>
+                  <p class="text-text-faint text-xs mt-0.5">Clio, MyCase, or custom systems. No retyping intake forms.</p>
+                </div>
+              </li>
+            </ul>
+
+            <button 
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+              class="w-full mt-8 btn-primary justify-center py-4"
+            >
+              Set Up 24/7 Client Intake
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Dashboard -->
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
+          WHAT CHANGES
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">What happens when intake runs 24/7.</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto mb-4">
+          Every metric below comes from a single change: never making a potential client wait.
+        </p>
+        <p class="text-text-faint italic">
+          Projected improvements based on industry research. Actual results depend on implementation and firm size.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-success mb-4">5s</div>
+          <div class="text-xl font-semibold mb-2">Average Response Time</div>
+          <div class="text-text-muted">24/7 availability — no after-hours gaps</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-info mb-4">24/7</div>
+          <div class="text-xl font-semibold mb-2">Availability</div>
+          <div class="text-text-muted">Capture after-hours inquiries (30-40% of total)</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-warning mb-4">90%</div>
+          <div class="text-xl font-semibold mb-2">Questions Auto-Resolved</div>
+          <div class="text-text-muted">Reduced staff time on routine intake</div>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <div class="text-5xl font-black text-purple-400 mb-4">3x</div>
+          <div class="text-xl font-semibold mb-2">More Consultations</div>
+          <div class="text-text-muted">Faster response times improve conversion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-warning/10 text-warning text-sm font-mono font-semibold rounded-full mb-6">
+          THE DIFFERENCE
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Manual intake vs. AI intake.</h2>
+        <p class="text-xl text-text-muted max-w-3xl mx-auto">
+          One has gaps. The other doesn't.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-danger relative">
+          <h3 class="text-2xl font-bold mb-2">Without AI intake</h3>
+          <p class="text-text-muted text-sm mb-6">The real problems aren't dramatic — they're invisible.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">–</span>
+              <span class="text-text-muted">Intake quality varies depending on who answers and when — a tired paralegal at 4:55pm gathers different information than your best assistant at 10am</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">–</span>
+              <span class="text-text-muted">Potential clients who reach out after 5pm often choose another firm before you call back the next morning</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">–</span>
+              <span class="text-text-muted">Conflict checking happens at the consultation — after an attorney has already invested time in the matter</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">–</span>
+              <span class="text-text-muted">Intake data gets re-entered manually into your case management system — a task that adds no value and introduces errors</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-danger font-bold mt-1">–</span>
+              <span class="text-text-muted">A client's first impression of your firm is a hold queue and a voicemail</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="glassmorphism rounded-2xl p-8 border-l-4 border-l-success relative">
+          <h3 class="text-2xl font-bold mb-2">With AI intake</h3>
+          <p class="text-text-muted text-sm mb-6">The same intake process — standardized, running continuously.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span class="text-text-muted">Every inquiry gets the same structured questions regardless of time, day, or volume — consistent information, every time</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span class="text-text-muted">After-hours inquiries are captured and responded to immediately — the consultation gets booked before the client considers alternatives</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span class="text-text-muted">Conflict pre-screening happens in the chat before any attorney time is committed</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span class="text-text-muted">Intake data flows directly to Clio, MyCase, or your existing system — no transcription, no data entry</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span>Instant conflict checking</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">✓</span>
+              <span class="text-text-muted">Routed to the right attorney — by practice area, availability, and case complexity — before the consultation is even scheduled</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-success font-bold mt-1">+</span>
+              <span class="text-text-muted">A potential client's first impression of your firm is a responsive, professional conversation — not a hold queue</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Statistics -->
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-[#1C1C1E]">The math on being second.</h2>
+      <p class="text-lg text-text-muted max-w-2xl mx-auto mb-12">These numbers don't require a large firm to matter. A solo practitioner or 5-attorney firm capturing two additional clients per month from after-hours inquiries changes the economics of intake entirely.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="glassmorphism rounded-2xl p-8 text-center">
+          <div class="text-5xl font-black text-[#C2410C] mb-3">35%</div>
+          <div class="text-base font-semibold text-[#1C1C1E] mb-1">First response wins</div>
+          <div class="text-sm text-text-muted">of clients retain the first firm that responds to their inquiry — not the best-reviewed one</div>
+        </div>
+        <div class="glassmorphism rounded-2xl p-8 text-center">
+          <div class="text-5xl font-black text-warning mb-3">30–40%</div>
+          <div class="text-base font-semibold text-[#1C1C1E] mb-1">Inquiries arrive after hours</div>
+          <div class="text-sm text-text-muted">of all law firm inquiries come in outside of business hours — and most aren't answered until the next morning</div>
+        </div>
+        <div class="glassmorphism rounded-2xl p-8 text-center">
+          <div class="text-5xl font-black text-info mb-3">80%</div>
+          <div class="text-base font-semibold text-[#1C1C1E] mb-1">Intake is automatable</div>
+          <div class="text-sm text-text-muted">of the questions asked in a standard intake call are the same every time — qualifying, routing, scheduling</div>
+        </div>
+      </div>
+      <p class="text-base text-text-faint italic mb-12">
+        Sources: Thomson Reuters (2024), MyCase Guide to Using AI in Law (2025), Clio Legal Trends Report (2024)
+      </p>
+      <!-- Decorative accent -->
+      <div class="flex justify-center mb-10">
+        <svg aria-hidden="true" viewBox="0 0 280 60" class="w-64 opacity-50">
+          <circle cx="20" cy="30" r="6" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="26" y1="30" x2="60" y2="30" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="70" cy="30" r="10" fill="none" stroke="#C2410C" stroke-width="2"/>
+          <text x="70" y="34" text-anchor="middle" fill="#C2410C" font-size="9" font-family="monospace" font-weight="700">AI</text>
+          <line x1="80" y1="30" x2="140" y2="30" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 3"/>
+          <!-- starburst -->
+          <circle cx="160" cy="30" r="14" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="160" y1="16" x2="160" y2="8" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="172" y1="18" x2="176" y2="13" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="174" y1="30" x2="180" y2="30" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="172" y1="42" x2="176" y2="47" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="160" y1="44" x2="160" y2="52" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="148" y1="42" x2="144" y2="47" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="146" y1="30" x2="140" y2="30" stroke="#C2410C" stroke-width="1.5"/>
+          <line x1="148" y1="18" x2="144" y2="13" stroke="#C2410C" stroke-width="1.5"/>
+          <circle cx="160" cy="30" r="5" fill="#C2410C" opacity="0.8"/>
+          <line x1="175" y1="30" x2="260" y2="30" stroke="#C2410C" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="265" cy="30" r="6" fill="#C2410C" opacity="0.7"/>
+        </svg>
+      </div>
+      <button 
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+        class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/30"
+      >
+        Set Up 24/7 Client Intake
+      </button>
+    </div>
+  </section>
+
+  <!-- More from this engagement -->
+  <section class="py-16 border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="section-label mb-2">WHAT ELSE WE TACKLE IN THIS TYPE OF ENGAGEMENT</p>
+      <p class="text-text-muted mb-8 max-w-2xl">Intake automation is typically the first win. Once it's running, we move to the next biggest time sink.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/demos/contract-reviewer" class="glassmorphism rounded-2xl p-6 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-2">WEEK 5 DELIVERABLE</p>
+          <h3 class="text-xl font-bold text-[#1C1C1E] mb-2 group-hover:text-[#C2410C] transition-colors">Contract Review Automation →</h3>
+          <p class="text-text-muted text-sm">After solving intake, the next target is typically partners spending 2–3 hours daily on routine contract checking. Here's what we build for that.</p>
+        </a>
+        <a href="/demos/workflow-audit" class="glassmorphism rounded-2xl p-6 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-2">HOW IT ALL STARTS</p>
+          <h3 class="text-xl font-bold text-[#1C1C1E] mb-2 group-hover:text-[#C2410C] transition-colors">The Process Audit →</h3>
+          <p class="text-text-muted text-sm">Every engagement begins with a workflow audit. This is how we figure out which problems are worth solving first.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</DemoLayout>
+
+<script is:inline>
+  // Chat functionality
+  let currentStep = 0;
+  let clientData = {};
+  
+  const chatFlow = [
+    {
+      type: 'bot',
+      message: "Hi! I'm the AI intake assistant for this law firm. I'm here to help you get connected with the right attorney for your legal needs. What brings you here today?",
+      options: [
+        "Family law matter",
+        "Real estate issue", 
+        "Immigration question",
+        "Business legal needs",
+        "Not sure - need guidance"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "I understand you have a family law matter. To connect you with the best attorney, could you tell me more about your specific situation?",
+      options: [
+        "Divorce/separation",
+        "Child custody",
+        "Adoption",
+        "Domestic violence",
+        "Property division"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Thank you for that information. How would you rate the urgency of your situation?",
+      options: [
+        "Emergency - need help immediately",
+        "Urgent - within a few days",
+        "Important - within 1-2 weeks", 
+        "General inquiry - flexible timing"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "I'd like to collect some basic information to ensure we can serve you effectively. What's your preferred name?",
+      input: true,
+      field: 'name'
+    },
+    {
+      type: 'bot',
+      message: "And the best phone number to reach you?",
+      input: true,
+      field: 'phone'
+    },
+    {
+      type: 'bot',
+      message: "Perfect! I'm running a quick conflict check to ensure we can represent you... ✓ No conflicts found. Based on your family law needs, I'm matching you with our available attorneys.",
+      delay: 2000
+    },
+    {
+      type: 'attorney_match',
+      message: "Great news! I've found the perfect match for your case:",
+      attorney: {
+        name: "Sarah Chen",
+        title: "Senior Family Law Partner",
+        experience: "12 years specializing in high-conflict custody cases",
+        availability: "Available for consultation this week"
+      }
+    },
+    {
+      type: 'bot',
+      message: "Would you like to schedule a consultation with Sarah? I can book you in for a 30-minute initial consultation.",
+      options: [
+        "Yes, schedule consultation",
+        "I have more questions first",
+        "I need to think about it"
+      ]
+    },
+    {
+      type: 'scheduling',
+      message: "Perfect! Here are Sarah's available consultation times:",
+      times: [
+        "Tomorrow at 2:00 PM",
+        "Friday at 10:00 AM", 
+        "Monday at 3:30 PM"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Excellent! Your consultation is booked for tomorrow at 2:00 PM with Sarah Chen. You'll receive a confirmation email with:\n\n• Meeting details and location\n• What to bring to your consultation\n• Intake forms to complete beforehand\n\nIs there anything else I can help you with today?",
+      options: [
+        "What should I prepare?",
+        "Can I upload documents now?",
+        "No, that's everything"
+      ]
+    },
+    {
+      type: 'bot',
+      message: "Perfect! Here's what to prepare for your consultation:\n\n**Documents to bring:**\n• Any relevant court papers\n• Financial documents\n• Communication records\n\n**What to expect:**\n• 30-minute initial consultation\n• Case assessment and strategy discussion\n• Clear next steps and fee structure\n\nWe're here 24/7 if you have any questions before your meeting. Have a great day!",
+      final: true
+    }
+  ];
+
+  function initializeChat() {
+    const messagesContainer = document.getElementById('chatMessages');
+    showTypingIndicator();
+    
+    setTimeout(() => {
+      hideTypingIndicator();
+      addMessage(chatFlow[currentStep]);
+      currentStep++;
+    }, 1500);
+  }
+
+  function addMessage(step) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `mb-6 flex gap-3 ${step.type === 'user' ? 'justify-end' : ''} fade-in`;
+
+    if (step.type === 'attorney_match') {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="mb-4">${step.message}</p>
+          <div class="bg-success/10 border border-success/20 rounded-xl p-4">
+            <div class="font-semibold text-success mb-2">${step.attorney.name}</div>
+            <div class="text-sm text-text-muted mb-1">${step.attorney.title}</div>
+            <div class="text-sm text-text-muted mb-1">${step.attorney.experience}</div>
+            <div class="text-sm text-success">✓ ${step.attorney.availability}</div>
+          </div>
+        </div>
+      `;
+    } else if (step.type === 'scheduling') {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="mb-4">${step.message}</p>
+          <div class="space-y-2">
+            ${step.times.map(time => `
+              <button class="w-full text-left px-4 py-3 bg-info/10 hover:bg-info/20 border border-info/20 hover:border-info/40 rounded-xl text-info transition-all duration-200" onclick="selectSchedule('${time}')">
+                ${time}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else if (step.type === 'user') {
+      messageDiv.innerHTML = `
+        <div class="max-w-sm glassmorphism rounded-2xl p-4 bg-info text-white">
+          ${step.message}
+        </div>
+        <div class="w-10 h-10 rounded-full bg-text-muted text-bg-primary font-bold flex items-center justify-center text-sm flex-shrink-0">
+          U
+        </div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+          AI
+        </div>
+        <div class="max-w-sm glassmorphism rounded-2xl p-4">
+          <p class="whitespace-pre-line">${step.message}</p>
+          ${step.options ? `
+            <div class="grid grid-cols-1 gap-2 mt-4">
+              ${step.options.map(option => `
+                <button class="text-left px-4 py-3 bg-yong-green/10 hover:bg-yong-green/20 border border-yong-green/20 hover:border-yong-green/40 rounded-xl text-yong-green transition-all duration-200" onclick="selectOption('${option}')">
+                  ${option}
+                </button>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    if (step.input) {
+      enableInput(step.field);
+    }
+
+    if (step.final) {
+      document.getElementById('chatInput').placeholder = "Chat completed - Thank you!";
+    }
+  }
+
+  function selectOption(option) {
+    addUserMessage(option);
+    
+    if (currentStep < chatFlow.length) {
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        hideTypingIndicator();
+        addMessage(chatFlow[currentStep]);
+        currentStep++;
+      }, 1200);
+    }
+  }
+
+  function selectSchedule(time) {
+    addUserMessage(time);
+    
+    if (currentStep < chatFlow.length) {
+      showTypingIndicator();
+      
+      setTimeout(() => {
+        hideTypingIndicator();
+        addMessage(chatFlow[currentStep]);
+        currentStep++;
+      }, 1500);
+    }
+  }
+
+  function addUserMessage(message) {
+    addMessage({ type: 'user', message });
+  }
+
+  function enableInput(field) {
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+    
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+    input.placeholder = field === 'name' ? 'Enter your name...' : 'Enter your phone number...';
+    
+    // Set up enter key handler
+    input.onkeypress = function(e) {
+      if (e.key === 'Enter') {
+        sendMessage(field);
+      }
+    };
+    
+    // Update send button click handler
+    sendBtn.onclick = () => sendMessage(field);
+  }
+
+  function sendMessage(field) {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    if (message) {
+      clientData[field] = message;
+      addUserMessage(message);
+      
+      input.value = '';
+      input.disabled = true;
+      document.getElementById('sendBtn').disabled = true;
+      
+      if (currentStep < chatFlow.length) {
+        showTypingIndicator();
+        
+        setTimeout(() => {
+          hideTypingIndicator();
+          addMessage(chatFlow[currentStep]);
+          currentStep++;
+        }, 1200);
+      }
+    }
+  }
+
+  function showTypingIndicator() {
+    const messagesContainer = document.getElementById('chatMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'mb-6 flex gap-3';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-info to-info-light text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+        AI
+      </div>
+      <div class="glassmorphism rounded-2xl p-4">
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    `;
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  function hideTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  // Initialize the chat when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeChat, 1000);
+  });
+</script>
+
+<style>
+  .info-light {
+    color: #60A5FA;
+  }
+  
+  .bg-info-light {
+    background-color: #60A5FA;
+  }
+</style>

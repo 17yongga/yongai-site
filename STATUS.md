@@ -1,38 +1,35 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-06-28
+> Updated: 2026-06-29
 
 ## What's Live
-- **URL:** https://yongai.ca
+- **YongAI business site:** https://yongai.ca ✅ restored from archived pre-Hermes business-site snapshot on 2026-06-29
+- **YourHermes service landing page:** https://urhermes.com ✅ launched 2026-06-29
 - **Stack:** Astro + Tailwind CSS v4 → static HTML → S3/CloudFront
-- **CloudFront:** `EMKYCPGH3MJHV`
+- **YongAI CloudFront:** `EMKYCPGH3MJHV`
+- **YourHermes CloudFront:** `E1ZFW2O41LK67T` (`d17al3s5n5mih8.cloudfront.net`)
 
 ## Pages
-- `/` — Hermes Agent service platform landing page ✅ live Jun 16
-- Old YongAI consulting pages/demos removed from active routes and archived locally at `archive/20260616-hermes-platform-refactor/`
+- `https://yongai.ca/` — YongAI business venture homepage ✅ restored
+- `https://yongai.ca/demos/workflow-audit/` — Demo: AI workflow audit tool ✅ restored
+- `https://yongai.ca/demos/client-intake/` — Demo: Client intake automation ✅ restored
+- `https://yongai.ca/demos/resume-screener/` — Demo: AI resume screening ✅ restored
+- `https://yongai.ca/demos/contract-reviewer/` — Demo: Contract review tool ✅ restored
+- `https://yongai.ca/demos/candidate-outreach/` — Demo: Candidate outreach automation ✅ restored
+- `https://yongai.ca/responsible-ai/` — Responsible AI page ✅ restored
+- `https://yongai.ca/hermes-agent-setup/` — 301 redirects to `https://urhermes.com/`
 - Partner docs remain on S3: `/partner-agenda.html`, `/partner-workshop-guide.html`
 
-## Design (Redesigned 2026-06-16)
-- **Theme:** Light, calm, editorial SaaS style — warm off-white backgrounds with white cards
-- **Accent:** Deep teal (`#0f766e`) + charcoal (`#1f2937`); no purple
-- **Typography:** Inter + IBM Plex Mono labels; oversized blunt headlines; no gradient text
-- **Cards:** Clean borders, restrained radius, minimal shadows
-- **Animations:** No GSAP/runtime page animations; only simple hover transitions and nav menu JS
-- **Hero:** Split layout — service copy left, compact Hermes operator mockup right
-- **Sections:** Platform pillars, setup process, use cases, safety model, packages, contact form
-- **Removed from active site:** old consulting homepage sections, live demo routes, responsible AI page, `/hermes-agent-setup/` duplicate route
+## Design
+- **YongAI:** Restored archived business venture site design — light theme, dark orange accent, consulting-service positioning, demos, process, trust/data, and contact sections.
+- **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
-## Current State (2026-06-20)
-- Root `https://yongai.ca/` is now the Hermes Agent service platform landing page ✅
-- Old site source/assets/build output archived at `archive/20260616-hermes-platform-refactor/` ✅
-- Old demo/responsible/Hermes duplicate routes intentionally removed from active Astro build ✅
-- Partner docs restored after deploy and verified live ✅
-- 2026-06-20 content revamp deployed: root page tells a tighter top-to-bottom story around an **AI Workflow Setup Sprint**, using the Ben/CubeOne setup trail as the concrete example pattern (discovery → use case → setup package → operating model).
-- 2026-06-20 concise copy pass deployed after Gary feedback: shortened hero to “Your private AI operator.”, removed section lead paragraphs, converted sections into scan-friendly buyer questions, short cards, package bullets, and direct CTAs.
-- Verification: `npm run build` passed (1 page built); S3 sync completed; partner docs restored after `--delete` sync; live `https://yongai.ca/`, `/index.html`, `/partner-agenda.html`, and `/partner-workshop-guide.html` all return 200; live browser render shows new title/headline and console clean.
-- 2026-06-28 section cut deployed after Gary screenshot direction: root page now keeps only the requested sections — hero, two-minute version/cards, packages, contact form, and footer. Removed Example setup pattern, How it works, Good first workflows, and Safety model from the active Astro page. Nav now shows What it is / Packages / Contact.
-- Verification: `npm run build` passed (1 page built); local preview at `http://127.0.0.1:4325/` showed exactly 4 `<main>` sections (`top`, `platform`, `packages`, `contact`) with no horizontal overflow; deployed to S3/CloudFront and partner docs restored after `--delete` sync.
-- CloudFront invalidations: `I6UY2I3YXVUUP4SZSGPCTGLHCX` (full revamp), `I2T4KN0FR76DCKVKP5UFEVAUG4` (root + partner docs restore), `I58AB2890Z3DF8QPUEMMRRXGR7` (2026-06-20 deploy), `IAIIW9LTK9YZMY5DBSABI6J0P3` (partner docs restore + root refresh), `IBC363L42OWXCOH7OJTVX234NE` (concise copy pass deploy), `I5QREMJ4VGWMFHUFORQKKXTEP7` (partner docs restore + root refresh), `I2OT05830ZVPIZGCUVPQDP1G1L` (2026-06-28 exact-section cut)
-- Footer/contact fallback email remains `gymoltbot@gmail.com` per cancelled `gary.yong@yongai.ca` decision.
+## Current State (2026-06-29)
+- `urhermes.com` launched as the only YourHermes service domain. It is served by CloudFront distribution `E1ZFW2O41LK67T` using ACM cert `732fc5f7-9f4d-4d51-9b2d-3c5bbf85cf2a`; Route 53 aliases `A`/`AAAA` point to `d17al3s5n5mih8.cloudfront.net`.
+- Because IAM has an explicit deny on `s3:CreateBucket`, YourHermes static files are deployed under the existing `yongai.ca` S3 bucket prefix `s3://yongai.ca/urhermes/`, with a dedicated CloudFront distribution and `urhermes.com` alias.
+- `yongai.ca` restored from `archive/20260616-hermes-platform-refactor/` to the business venture website. Old demos and responsible AI page are live again.
+- `https://yongai.ca/hermes-agent-setup/` now returns a real `301` S3 website redirect to `https://urhermes.com/`.
+- Partner docs restored after `--delete` sync and verified live.
+- Verification: `npm run build` passed for both `urhermes-site` (1 page) and restored `yongai-site` (8 pages). Live curl/browser checks returned 200 for `urhermes.com`, `yongai.ca`, demo/responsible pages, and partner docs; `/hermes-agent-setup/` returns `301 Location: https://urhermes.com/`.
 
 ## Illustrations (2026-03-15)
 All 5 demo pages now have flat-style SVG hero illustrations replacing placeholder JPGs:
@@ -49,19 +46,23 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 4. **workflow-audit, client-intake, resume-screener** — Audited, no bugs found.
 
 ## What's Local Only
-- Archive snapshot of pre-refactor site: `archive/20260616-hermes-platform-refactor/`
+- `~/clawd/urhermes-site/` — local source/build workspace for the YourHermes landing page deployed at `urhermes.com`.
+- Archive snapshot of pre-refactor YongAI business site remains at `archive/20260616-hermes-platform-refactor/`.
 
 ## Known Gaps
-- No testimonial/result claims yet; Ben/CubeOne is used only as an honest setup-pattern example, not a fabricated case study.
-- Pricing/package language still needs Gary approval before public deployment.
-- Partner docs are legacy S3-only pages and not part of the current Astro build
+- YongAI business site still contains older/static simulated demo pages and advisor/testimonial placeholders from the restored archive.
+- YourHermes still uses `gymoltbot@gmail.com`/existing Formspree while Gary sets up Google Workspace separately.
+- YourHermes uses the existing `yongai.ca` bucket prefix because `s3:CreateBucket` is explicitly denied for this IAM user; a standalone bucket can be created later from the console if desired.
+- Partner docs are legacy S3-only pages and not part of the current Astro build.
 
 ## Next Actions
-- [ ] Gary review live 2026-06-28 exact-section landing-page cut at `https://yongai.ca/`
-- [ ] Add proof: pilot testimonials, screenshots, or concrete Hermes setup examples when available
-- [ ] SEO/OG polish for Hermes setup keywords
+- [ ] Gary review restored YongAI business site at `https://yongai.ca/`
+- [ ] Gary review YourHermes service landing page at `https://urhermes.com/`
+- [ ] If desired, create a dedicated `urhermes.com` S3 bucket manually in AWS console later and migrate off the `yongai.ca/urhermes/` prefix.
+- [ ] Set up Google Workspace for `gary.yong@yongai.ca` separately.
 
 ## Decisions
+- 2026-06-29: YourHermes split out to `urhermes.com` as a YongAI subset service; `yongai.ca` restored to the archived business venture website; `/hermes-agent-setup/` redirects to `https://urhermes.com/`.
 - 2026-06-16: Root `yongai.ca` repositioned as the Hermes Agent service platform landing page. Previous YongAI consulting pages/assets/build output archived at `archive/20260616-hermes-platform-refactor/`; old active demo routes removed; partner docs kept live on S3.
 - 2026-06-08: Added `/hermes-agent-setup` as a productized service landing page for private AI operator / Hermes setup offer; positioning emphasizes workflow discovery, safety boundaries, and implementation discipline over commodity install.
 - 2026-03-15: Flat SVG hero illustrations deployed — all 5 demo pages, ~15-21KB each, committed to repo
@@ -77,4 +78,10 @@ cd /Users/moltbot/clawd/yongai-site
 npm run build
 aws s3 sync dist/ s3://yongai.ca/ --delete --profile clawdbot-deploy
 aws cloudfront create-invalidation --distribution-id EMKYCPGH3MJHV --paths "/*" --profile clawdbot-deploy
+
+# YourHermes landing page source lives at /Users/moltbot/clawd/urhermes-site
+cd /Users/moltbot/clawd/urhermes-site
+npm run build
+aws s3 sync dist/ s3://yongai.ca/urhermes/ --delete --profile clawdbot-deploy
+aws cloudfront create-invalidation --distribution-id E1ZFW2O41LK67T --paths "/*" --profile clawdbot-deploy
 ```

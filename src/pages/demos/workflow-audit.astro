@@ -1,0 +1,1703 @@
+---
+import DemoLayout from '../../layouts/DemoLayout.astro';
+import FlowDiagram from '../../components/FlowDiagram.astro';
+
+const title = "AI Workflow Consulting | YongAI";
+const description = "Interactive workflow audit demo across Legal, Recruiting, and Financial Services. See our end-to-end consulting methodology with process mapping, pain point analysis, and AI solution recommendations.";
+---
+
+<DemoLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="section-label mb-4">AI WORKFLOW CONSULTING</p>
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-none text-[#1C1C1E]">
+        You already know which processes are broken. <br class="hidden lg:block"/>We find out <span class="text-[#C2410C]">exactly how much they're costing you.</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-text-muted max-w-3xl mx-auto mb-12 leading-relaxed">
+        Most AI projects fail because they automate the wrong things first. We run a structured process audit before touching any technology — mapping how your team actually works, identifying the biggest drains, and building only what solves those specific problems. The demo below is a real deliverable from a real engagement.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <a href="#analysis" class="btn-primary text-lg px-10 py-4">
+          See What's Possible
+        </a>
+        <button 
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;" 
+          class="btn-secondary text-lg px-10 py-4"
+        >
+          Book a Discovery Session
+        </button>
+      </div>
+      <!-- Hero Illustration -->
+      <div class="max-w-3xl mx-auto mt-8 px-4">
+        <img
+          src="/illustrations/hero-workflow-audit.svg"
+          alt="Workflow Audit illustration"
+          class="w-full rounded-2xl shadow-2xl shadow-black/50 border border-[rgba(0,0,0,0.08)]"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach Section -->
+  <section id="approach" class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <p class="section-label mb-4">THE METHODOLOGY</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">We don't start with AI. We start with a map.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Most AI projects fail not because the technology doesn't work — but because they automate the wrong things first. Before recommending anything, we need to understand how your team actually works.</p>
+      </div>
+      
+      <!-- Process Flow Diagram -->
+      <FlowDiagram 
+        steps={[
+          {
+            id: "discover",
+            title: "Discover",
+            description: "Map how your team works today",
+            icon: "🔍",
+            color: "yong-green"
+          },
+          {
+            id: "analyze", 
+            title: "Analyze",
+            description: "Identify pain points & bottlenecks",
+            icon: "📊",
+            color: "purple-500"
+          },
+          {
+            id: "prioritize",
+            title: "Prioritize", 
+            description: "Rank opportunities by impact & effort",
+            icon: "🎯",
+            color: "blue-500"
+          },
+          {
+            id: "implement",
+            title: "Implement",
+            description: "Deploy targeted AI solutions", 
+            icon: "⚙️",
+            color: "info"
+          },
+          {
+            id: "optimize",
+            title: "Optimize",
+            description: "Monitor, measure & iterate",
+            icon: "📈", 
+            color: "purple-400"
+          }
+        ]}
+        orientation="horizontal"
+      />
+    </div>
+  </section>
+
+  <!-- Interactive Industry Analysis -->
+  <section id="analysis" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <p class="section-label mb-4">INDUSTRY BENCHMARKS</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">Here's what your competitors are already automating.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Select your industry to see the specific workflows where AI creates the biggest impact — with real data on time saved, cost reduced, and ROI timeline.</p>
+      </div>
+      
+      <!-- Industry Tabs -->
+      <div class="flex justify-center mb-12 px-4">
+        <div class="glassmorphism rounded-2xl p-2 flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <button 
+            class="industry-tab active px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            data-industry="legal"
+          >
+            Legal Services
+          </button>
+          <button 
+            class="industry-tab px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            data-industry="recruiting"
+          >
+            Recruiting
+          </button>
+          <button 
+            class="industry-tab px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-sm uppercase tracking-wider transition-all duration-300"
+            data-industry="financial"
+          >
+            Financial Services
+          </button>
+        </div>
+      </div>
+      
+      <!-- Workflow Content -->
+      <div class="workflow-content active" id="legal-content">
+        <div class="space-y-6">
+          <!-- Legal Workflow Steps -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-info/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info font-bold">1</div>
+                <div>
+                  <h3 class="text-xl font-bold">Client Intake & Onboarding</h3>
+                  <p class="text-text-muted">Initial client setup and conflict checking</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-info">4 hrs/wk</div>
+                  <div class="text-sm text-text-muted">Avg. Time Saved with AI</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Lawyers spend an avg. 15 minutes just searching for contract starting points
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Conflict checking requires 20 minutes per case
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Fee estimation based on lawyer experience varies 30-40%
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Document Processing Automation</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI reads and pulls key info from your intake forms automatically</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">65% of users save 1-5 hrs/week</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: MyCase, 2025</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Conflict Checking</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI searches firm database + public records for conflicts</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Faster conflict checks</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Reduced manual effort</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Sources: Thomson Reuters (2025), MyCase Guide to Using AI in Law (2025)</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Legal Research -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-info/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info font-bold">2</div>
+                <div>
+                  <h3 class="text-xl font-bold">Legal Research</h3>
+                  <p class="text-text-muted">Case law search and precedent analysis</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-info">32.5 days</div>
+                  <div class="text-sm text-text-muted">Annual Days Saved per Lawyer</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Legal professionals could save up to 12 hours per week by 2029
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      20% of knowledge worker time is spent searching for information
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Average blended law firm billing rate: $314/hour
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Legal Research</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Search for cases by asking questions in plain English</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Up to 32.5 days/year saved</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: Everlaw, 2025</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Case Precedent Analysis</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI identifies similar cases and outcome patterns</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">~$100K billable time recovered</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: Thomson Reuters, 2024</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Sources: Everlaw Ediscovery Innovation Report (2025), Thomson Reuters Future of Professionals (2024)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Drafting -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-info/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info font-bold">3</div>
+                <div>
+                  <h3 class="text-xl font-bold">Document Drafting</h3>
+                  <p class="text-text-muted">Contract and legal document creation</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-info">1-5 hrs</div>
+                  <div class="text-sm text-text-muted">Weekly Time Saved per Lawyer</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Contract drafting averages 3.2 hours per document
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Template inconsistencies lead to 15% revision rate
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Junior lawyers spend 4 hours/day on routine drafting
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Document Assembly</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Generate contracts from client parameters and case requirements</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">1-5 hrs saved weekly</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: MyCase, 2025</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Clause Optimization</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI suggests best clauses based on case outcomes</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Consistent clause selection</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Reduced revision cycles</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Sources: MyCase (2025), Deloitte Legal Operations Survey (2024)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Review -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-info/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info font-bold">4</div>
+                <div>
+                  <h3 class="text-xl font-bold">Document Review</h3>
+                  <p class="text-text-muted">Discovery and contract analysis</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-info">~$100K</div>
+                  <div class="text-sm text-text-muted">Annual Value per Lawyer (AI-enabled)</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Discovery review costs $1-3 per document reviewed
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Partners spend 2.5 hours/day on document review
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Error rates in manual review reach 8-12%
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Document Review</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI sorts documents by importance, so lawyers focus on what matters</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Significant cost reduction</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">AI-assisted review</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Contract Analysis</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI identifies risks and non-standard terms automatically</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Hours freed for high-value work</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">~$100K billable value/yr</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Thomson Reuters Future of Professionals Report (2024)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Time Tracking & Billing -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-info/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info font-bold">5</div>
+                <div>
+                  <h3 class="text-xl font-bold">Time Tracking & Billing</h3>
+                  <p class="text-text-muted">Revenue capture and client billing</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-info">15%</div>
+                  <div class="text-sm text-text-muted">Revenue Typically Lost to Underbilling</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Lawyers capture only 85% of billable time
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Time entry takes 15 minutes daily per lawyer
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Billing adjustments average 8% of total fees
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Time Capture</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI tracks activities and suggests time entries</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Improved time capture</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Less revenue leakage</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Predictive Billing</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI forecasts case costs based on similar matters</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Better cost estimates</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: Industry data</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Thomson Reuters (2024)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recruiting Content -->
+      <div class="workflow-content" id="recruiting-content" style="display: none;">
+        <div class="space-y-6">
+          <!-- Candidate Sourcing -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-success/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center text-success font-bold">1</div>
+                <div>
+                  <h3 class="text-xl font-bold">Candidate Sourcing</h3>
+                  <p class="text-text-muted">Finding and attracting qualified candidates</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-success">10+</div>
+                  <div class="text-sm text-text-muted">Hours Saved per Open Role</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Recruiters spend just 7 seconds on an initial resume scan
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Average 73 applications per position, 85% unqualified
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Time-to-fill averages 42 days across industries
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Resume Screening</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Automated qualification scoring and ranking</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">10+ hrs saved per role</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Source: Industry benchmarks</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Passive Candidate Discovery</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI searches social/professional networks</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Broader candidate reach</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Better matching</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Sources: Ladders Inc. Eye-Tracking Study (2018), SHRM Benchmarking (2023)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Initial Screening -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-success/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center text-success font-bold">2</div>
+                <div>
+                  <h3 class="text-xl font-bold">Initial Screening</h3>
+                  <p class="text-text-muted">First-stage candidate evaluation</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-success">$4,700</div>
+                  <div class="text-sm text-text-muted">Avg. Cost per Hire (SHRM, 2023)</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Phone screens take 30 minutes per candidate
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      50% of screened candidates don't proceed
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Scheduling coordination adds 2-3 days to process
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Video Interviews</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Automated initial screening with natural language processing</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Projected savings</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">24/7 availability</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Scheduling</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI coordinates availability and books interviews</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Automated scheduling</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Faster coordination</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: SHRM Human Capital Benchmarking Report (2023)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Assessment -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-success/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center text-success font-bold">3</div>
+                <div>
+                  <h3 class="text-xl font-bold">Skills Assessment</h3>
+                  <p class="text-text-muted">Technical and competency evaluation</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-success">AI-Assisted</div>
+                  <div class="text-sm text-text-muted">Evaluation & Grading</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Technical assessments take 2-4 hours to evaluate
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Subjective scoring leads to 25% inconsistency
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      40% of assessments don't predict job performance
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Code Review</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Automated technical assessment scoring</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Automated scoring</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Faster turnaround</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Predictive Success Modeling</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI predicts job success probability</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">More consistent evaluation</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Better candidate-role fit</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry best practices</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interview Process -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-success/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center text-success font-bold">4</div>
+                <div>
+                  <h3 class="text-xl font-bold">Interview Process</h3>
+                  <p class="text-text-muted">Candidate evaluation and decision making</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-success">15%</div>
+                  <div class="text-sm text-text-muted">Personalized InMail Advantage (LinkedIn)</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Each interview round requires 3-5 hours of coordination
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Interview feedback collection takes 2-3 days
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Unconscious bias is a recognized challenge in hiring decisions
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Interview Analysis</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI evaluates candidates' responses during interviews</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Structured evaluation</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Real-time insights</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Note-Taking</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI transcribes and summarizes interviews</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Near-complete capture</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Time saved per interview</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: LinkedIn Talent Blog</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer & Onboarding -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-success/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center text-success font-bold">5</div>
+                <div>
+                  <h3 class="text-xl font-bold">Offer & Onboarding</h3>
+                  <p class="text-text-muted">Closing candidates and integration</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-success">95%</div>
+                  <div class="text-sm text-text-muted">Target Offer Acceptance</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Offer negotiation extends process by 5-7 days
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Onboarding paperwork takes 3-4 hours HR time
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      22% of new hires quit within first 45 days
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Dynamic Offer Optimization</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI suggests competitive compensation packages</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Higher acceptance rates</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Faster offers</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Personalized Onboarding</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI creates custom onboarding paths</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Faster onboarding</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Better retention</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: SHRM Onboarding Research (2023)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Financial Content -->
+      <div class="workflow-content" id="financial-content" style="display: none;">
+        <div class="bg-info/5 border border-info/20 rounded-xl p-6 mb-8">
+          <p class="font-semibold">Financial services analysis available — contact us for industry-specific benchmarks</p>
+        </div>
+        <div class="space-y-6">
+          <!-- KYC & Onboarding -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-warning/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center text-warning font-bold">1</div>
+                <div>
+                  <h3 class="text-xl font-bold">KYC & Onboarding</h3>
+                  <p class="text-text-muted">Client verification and account opening</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-warning">75%</div>
+                  <div class="text-sm text-text-muted">Time Reduction Potential</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      KYC processing takes 15-20 business days on average
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Manual document verification requires 3-4 hours per client
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      False alarms in compliance checks reach 95%
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Document Verification</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Automated ID and document authenticity checks</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">75% time reduction</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">99.2% accuracy rate</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Risk Assessment Automation</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI checks client backgrounds and flags potential issues</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">85% faster processing</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">90% false positive reduction</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry benchmarks</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transaction Processing -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-warning/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center text-warning font-bold">2</div>
+                <div>
+                  <h3 class="text-xl font-bold">Transaction Processing</h3>
+                  <p class="text-text-muted">Payment processing and reconciliation</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-warning">99.8%</div>
+                  <div class="text-sm text-text-muted">Fraud Detection Rate</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Transaction processing mistakes occur in 0.5% of transactions
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Manual reconciliation takes 4-6 hours daily
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      International payments require 2-5 business days
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Real-time Fraud Detection</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI monitors transaction patterns for anomalies</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">99.8% fraud detection</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">60% false positive reduction</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Reconciliation</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI matches transactions across systems</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">95% automation rate</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">80% time savings</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry benchmarks</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Investment Advisory -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-warning/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center text-warning font-bold">3</div>
+                <div>
+                  <h3 class="text-xl font-bold">Investment Advisory</h3>
+                  <p class="text-text-muted">Portfolio management and client advice</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-warning">24/7</div>
+                  <div class="text-sm text-text-muted">Portfolio Monitoring</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Portfolio analysis requires 2-3 hours per client monthly
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Market research aggregation takes 4 hours daily
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Client communication frequency drops 40% during busy periods
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Robo-Advisory Services</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI-driven portfolio optimization and rebalancing</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">24/7 monitoring</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">15% cost reduction</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Market Intelligence</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI aggregates and analyzes market data in real-time</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">70% faster insights</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Enhanced accuracy</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry benchmarks</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regulatory Compliance -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-warning/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center text-warning font-bold">4</div>
+                <div>
+                  <h3 class="text-xl font-bold">Regulatory Compliance</h3>
+                  <p class="text-text-muted">Reporting and audit preparation</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-warning">85%</div>
+                  <div class="text-sm text-text-muted">Reporting Automation</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Compliance reporting requires 40+ hours monthly
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Regulatory changes tracking is manual and error-prone
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Audit preparation takes 3-4 weeks of dedicated effort
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Automated Reporting</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI generates regulatory reports from transactional data</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">85% automation rate</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">70% time reduction</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Regulatory Change Monitoring</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI tracks and interprets new regulations</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">Real-time alerts</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">100% coverage</span>
+                      </div>
+                      <span class="text-xs bg-danger/20 text-danger px-2 py-1 rounded uppercase font-medium">High Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry benchmarks</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Support -->
+          <div class="workflow-step glassmorphism rounded-2xl overflow-hidden transition-all duration-300 hover:border-warning/30">
+            <div class="step-header flex items-center justify-between p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center text-warning font-bold">5</div>
+                <div>
+                  <h3 class="text-xl font-bold">Customer Support</h3>
+                  <p class="text-text-muted">Client service and issue resolution</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div class="text-right hidden sm:block">
+                  <div class="text-2xl font-bold text-warning">75%</div>
+                  <div class="text-sm text-text-muted">Query Resolution Rate</div>
+                </div>
+                <div class="step-expand text-text-muted">▼</div>
+              </div>
+            </div>
+            <div class="step-content hidden p-6 pt-0 border-t border-[rgba(0,0,0,0.06)]">
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="flex items-center gap-3 text-danger font-bold mb-6 bg-danger/10 px-4 py-3 rounded-xl">
+                    Where time is being lost
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Average call resolution time is 8.5 minutes
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      30% of inquiries require escalation to specialists
+                    </div>
+                    <div class="border-l-4 border-l-danger bg-danger/5 p-4 rounded-lg">
+                      Support costs average $12 per interaction
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-3 text-yong-green font-bold mb-6 bg-yong-green/10 px-4 py-3 rounded-xl">
+                    Where AI creates the most value
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">AI Chatbots</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">Handle routine inquiries and account questions</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">75% query resolution</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">60% cost reduction</span>
+                      </div>
+                      <span class="text-xs bg-yong-green/20 text-yong-green px-2 py-1 rounded uppercase font-medium">Low Complexity</span>
+                    </div>
+                    <div class="glassmorphism border-l-4 border-l-yong-green p-4 rounded-lg">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span>✨</span>
+                        <span class="font-bold text-yong-green">Predictive Customer Service</span>
+                      </div>
+                      <p class="text-text-muted text-sm mb-3">AI identifies issues before customers call</p>
+                      <div class="flex gap-2 flex-wrap mb-2">
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">40% proactive resolution</span>
+                        <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded">25% satisfaction increase</span>
+                      </div>
+                      <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded uppercase font-medium">Medium Complexity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-info/5 border border-info/20 rounded-lg">
+                <p class="text-sm italic text-text-faint">Source: Industry benchmarks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What a Process Audit Produces -->
+  <section class="py-24 bg-white border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <p class="section-label mb-4">ENGAGEMENT EXAMPLES</p>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">What a process audit actually produces.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Every engagement starts with discovery. Here are examples of what firms like yours receive after their initial audit — and what it leads to.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-16">
+        <!-- Law Firm Example -->
+        <div class="bg-[rgba(194,65,12,0.05)] border border-[rgba(194,65,12,0.15)] rounded-2xl p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#C2410C] mb-2">EXAMPLE: A LAW FIRM ENGAGEMENT</p>
+          <h3 class="text-2xl font-bold text-[#1C1C1E] mb-1">A law firm like yours</h3>
+          <p class="text-text-muted text-sm mb-6">8–15 attorneys · Professional services · 6-week engagement</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Process Map</p>
+                <p class="text-text-muted text-sm">Full client intake journey mapped across 5 roles — from first inquiry to consultation booked.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Pain Point Matrix</p>
+                <p class="text-text-muted text-sm">30-40% of leads typically arrive after hours and go unanswered. Partners spending 2-3 hrs/day on routine contract review.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">3</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Automation Roadmap</p>
+                <p class="text-text-muted text-sm">12+ opportunities ranked by impact and effort. Top two become Week 3 and Week 5 deliverables.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-3">THIS TYPE OF AUDIT LEADS TO:</p>
+          <div class="space-y-3">
+            <a href="/demos/client-intake" class="block glassmorphism rounded-xl p-4 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+              <p class="text-xs text-text-faint mb-1">WEEK 3 DELIVERABLE</p>
+              <p class="font-semibold text-[#1C1C1E] group-hover:text-[#C2410C] transition-colors">24/7 AI Client Intake System →</p>
+            </a>
+            <a href="/demos/contract-reviewer" class="block glassmorphism rounded-xl p-4 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+              <p class="text-xs text-text-faint mb-1">WEEK 5 DELIVERABLE</p>
+              <p class="font-semibold text-[#1C1C1E] group-hover:text-[#C2410C] transition-colors">Contract Review Automation →</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Recruiting Agency Example -->
+        <div class="bg-[rgba(194,65,12,0.05)] border border-[rgba(194,65,12,0.15)] rounded-2xl p-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#C2410C] mb-2">EXAMPLE: A RECRUITING AGENCY ENGAGEMENT</p>
+          <h3 class="text-2xl font-bold text-[#1C1C1E] mb-1">A recruiting agency like yours</h3>
+          <p class="text-text-muted text-sm mb-6">20–50 recruiters · Talent acquisition · 6-week engagement</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">1</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Process Map</p>
+                <p class="text-text-muted text-sm">End-to-end recruiting workflow mapped — from job requisition to offer letter, across 4 team functions.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">2</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Pain Point Matrix</p>
+                <p class="text-text-muted text-sm">Recruiters typically spend 50+ hrs/role on manual screening. Cold outreach response rates below 10%.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[rgba(194,65,12,0.1)] text-[#C2410C] font-bold flex items-center justify-center flex-shrink-0 text-sm">3</div>
+              <div>
+                <p class="font-semibold text-[#1C1C1E] text-sm">Automation Roadmap</p>
+                <p class="text-text-muted text-sm">9+ opportunities identified. Resume screening and outreach personalization selected as highest-impact first moves.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-3">THIS TYPE OF AUDIT LEADS TO:</p>
+          <div class="space-y-3">
+            <a href="/demos/resume-screener" class="block glassmorphism rounded-xl p-4 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+              <p class="text-xs text-text-faint mb-1">WEEK 3 DELIVERABLE</p>
+              <p class="font-semibold text-[#1C1C1E] group-hover:text-[#C2410C] transition-colors">AI Resume Screening System →</p>
+            </a>
+            <a href="/demos/candidate-outreach" class="block glassmorphism rounded-xl p-4 hover:border-[rgba(194,65,12,0.3)] transition-all duration-300 group">
+              <p class="text-xs text-text-faint mb-1">WEEK 5 DELIVERABLE</p>
+              <p class="font-semibold text-[#1C1C1E] group-hover:text-[#C2410C] transition-colors">Personalized Outreach Methodology →</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Dashboard -->
+  <section id="impact" class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block px-4 py-2 bg-success/10 text-success text-sm font-mono font-semibold rounded-full mb-6">
+          PROJECTED IMPACT
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">What this looks like for your bottom line.</h2>
+      </div>
+      
+      <!-- Stats Dashboard -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-yong-green" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+          <div class="text-4xl font-black text-yong-green mb-2" id="annual-savings" data-counter="100">$0K</div>
+          <div class="text-text-muted">Annual Savings</div>
+        </div>
+        <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-info" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="text-4xl font-black text-info mb-2" id="time-reduction" data-counter="20">0%</div>
+          <div class="text-text-muted">Time Reduction</div>
+        </div>
+        <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-warning" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <div class="text-4xl font-black text-warning mb-2" id="months-to-roi" data-counter="12">0</div>
+          <div class="text-text-muted">Months to ROI</div>
+        </div>
+        <div class="glassmorphism rounded-2xl p-6 text-center stagger-card transition-all duration-300 hover:scale-[1.02]">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" class="mx-auto mb-2 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="text-4xl font-black text-[#2563EB] mb-2" id="quick-wins" data-counter="3">0</div>
+          <div class="text-text-muted">Quick Wins</div>
+        </div>
+      </div>
+      
+      <!-- Chart Container -->
+      <div class="glassmorphism rounded-2xl p-8">
+        <h3 class="text-xl font-bold mb-6 text-center">Estimated Savings Distribution by Process Area</h3>
+        <div class="flex items-end justify-center gap-4 h-32 mb-4" id="savings-chart">
+          <!-- Chart bars will be dynamically generated -->
+        </div>
+        <p class="text-center text-sm text-text-faint italic">
+          Based on published industry benchmarks. Actual results vary based on organization size and current processes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block px-4 py-2 bg-[rgba(194,65,12,0.08)] text-[#C2410C] text-sm font-mono font-semibold rounded-full mb-6">
+          WHAT YOU GET
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">A 4-week engagement. A permanent roadmap.</h2>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto">Not a deck of recommendations you'll never act on. A working plan, vetted against your actual systems, with a clear sequence for implementation.</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-yong-green/30">
+          <div class="w-12 h-12 rounded-xl bg-yong-green/10 flex items-center justify-center text-yong-green text-lg font-bold mb-6">01</div>
+          <h3 class="text-2xl font-bold mb-3">Current-State Process Map</h3>
+          <p class="text-text-muted leading-relaxed">A visual map of how work actually moves through your organization — where information flows, where decisions get made, and where things quietly break down. Built from observation and interviews, not assumptions.</p>
+        </div>
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-[rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-xl bg-[rgba(37,99,235,0.08)] flex items-center justify-center text-[#2563EB] text-lg font-bold mb-6">02</div>
+          <h3 class="text-2xl font-bold mb-3">Stakeholder Interviews (5–8 sessions)</h3>
+          <p class="text-text-muted leading-relaxed">The friction that causes the most waste rarely shows up in documentation. We run structured interviews with the people doing the work — not just leadership — to surface what's really slowing things down.</p>
+        </div>
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-[rgba(37,99,235,0.2)]">
+          <div class="w-12 h-12 rounded-xl bg-[rgba(37,99,235,0.08)] flex items-center justify-center text-[#2563EB] text-lg font-bold mb-6">03</div>
+          <h3 class="text-2xl font-bold mb-3">Prioritized Automation Roadmap</h3>
+          <p class="text-text-muted leading-relaxed">A sequenced plan of 8–15 automation opportunities, ranked by implementation effort and expected ROI. Each includes a time-savings estimate, rough cost, and realistic timeline — so you know exactly what to build first and what to defer.</p>
+        </div>
+        <div class="glassmorphism rounded-2xl p-8 stagger-card transition-all duration-300 hover:scale-[1.02] hover:border-info/30">
+          <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center text-info text-lg font-bold mb-6">04</div>
+          <h3 class="text-2xl font-bold mb-3">Implementation Partnership (optional)</h3>
+          <p class="text-text-muted leading-relaxed">If you want to go further than the roadmap, we stay involved — helping spec requirements, evaluate vendors, and build the automations directly. No handoff to a team that wasn't in the room when the decisions were made.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-24 bg-[#F4F3EF] border-t border-[rgba(0,0,0,0.06)]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="section-label mb-4">WHO DOES THIS WORK</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-[#1C1C1E]">This work comes from six years inside the problem.</h2>
+      <p class="text-xl text-text-muted leading-relaxed mb-6">
+        Gary Yong spent six years as a technology consultant at Capco, running digital transformation engagements for tier-1 banks and wealth management firms. He's facilitated 30+ stakeholder workshops, built process maps for some of Canada's largest financial institutions, and automated reconciliation workflows that saved over 5,000 hours annually.
+      </p>
+      <p class="text-xl text-text-muted leading-relaxed mb-12">
+        That experience — knowing what process analysis actually looks like at scale, what makes stakeholders resistant, and what separates useful AI from expensive experiments — is what YongAI brings to every engagement. Not AI for its own sake. Process thinking, with AI as the tool.
+      </p>
+      <!-- Decorative CTA accent SVG -->
+      <div class="relative flex justify-center mb-10">
+        <svg aria-hidden="true" viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-sm opacity-60">
+          <line x1="0" y1="40" x2="130" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4"/>
+          <circle cx="140" cy="40" r="8" fill="none" stroke="#C2410C" stroke-width="1.5"/>
+          <circle cx="140" cy="40" r="3" fill="#C2410C"/>
+          <polygon points="140,10 148,26 156,10 164,40 172,10 180,40" fill="none" stroke="#C2410C" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="180" cy="40" r="3" fill="#C2410C"/>
+          <line x1="180" y1="40" x2="220" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4"/>
+          <!-- Arrow up -->
+          <line x1="220" y1="40" x2="220" y2="12" stroke="#C2410C" stroke-width="2"/>
+          <polyline points="213,20 220,12 227,20" stroke="#C2410C" stroke-width="2" fill="none"/>
+          <line x1="220" y1="40" x2="360" y2="40" stroke="#C2410C" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+        </svg>
+      </div>
+      <button 
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gary-yong-yongai/30min'});return false;"
+        class="bg-gradient-to-r from-yong-green to-yong-green-light text-white px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yong-green/30"
+      >
+        Talk to Gary — Free Discovery Session
+      </button>
+    </div>
+  </section>
+</DemoLayout>
+
+<script is:inline>
+  // Industry workflow data
+  const workflowData = {
+    legal: {
+      name: 'Legal Services',
+      totalSavings: 100,  // $100K
+      timeReduction: 20,
+      roiMonths: 12,
+      quickWins: 3,
+      chartData: [25, 30, 20, 30, 15]
+    },
+    recruiting: {
+      name: 'Recruiting',
+      totalSavings: 50,   // $50K
+      timeReduction: 30,
+      roiMonths: 6,
+      quickWins: 4,
+      chartData: [20, 15, 10, 8, 12]
+    },
+    financial: {
+      name: 'Financial Services',
+      totalSavings: 200,  // $200K
+      timeReduction: 25,
+      roiMonths: 12,
+      quickWins: 2,
+      chartData: [40, 50, 35, 25, 20]
+    }
+  };
+
+  let currentIndustry = 'legal';
+
+  function initializeIndustryTabs() {
+    const tabs = document.querySelectorAll('.industry-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const industry = this.dataset.industry;
+        switchIndustry(industry);
+      });
+    });
+  }
+
+  function switchIndustry(industry) {
+    currentIndustry = industry;
+
+    // Update tabs
+    document.querySelectorAll('.industry-tab').forEach(tab => {
+      const isActive = tab.dataset.industry === industry;
+      tab.classList.toggle('active', isActive);
+      
+      if (isActive) {
+        tab.style.background = 'linear-gradient(135deg, var(--color-yong-green), var(--color-yong-green-light))';
+        tab.style.color = 'white';
+        tab.style.transform = 'translateY(-2px)';
+        tab.style.boxShadow = '0 4px 16px rgba(194, 65, 12, 0.4)';
+      } else {
+        tab.style.background = 'transparent';
+        tab.style.color = 'var(--color-text-muted)';
+        tab.style.transform = 'translateY(0)';
+        tab.style.boxShadow = 'none';
+      }
+    });
+
+    // Update content
+    document.querySelectorAll('.workflow-content').forEach(content => {
+      const isActive = content.id === `${industry}-content`;
+      content.classList.toggle('active', isActive);
+      content.style.display = isActive ? 'block' : 'none';
+      
+      if (isActive) {
+        content.style.animation = 'fadeIn 0.5s ease-out';
+      }
+    });
+
+    // Update dashboard
+    updateDashboard(industry);
+    updateChart(industry);
+  }
+
+  function initializeWorkflowSteps() {
+    const steps = document.querySelectorAll('.workflow-step');
+    steps.forEach(step => {
+      const header = step.querySelector('.step-header');
+      const expandIcon = step.querySelector('.step-expand');
+      const content = step.querySelector('.step-content');
+      
+      header.addEventListener('click', function() {
+        const isExpanded = step.classList.contains('expanded');
+        
+        // Close all other steps
+        steps.forEach(otherStep => {
+          if (otherStep !== step) {
+            otherStep.classList.remove('expanded');
+            const otherContent = otherStep.querySelector('.step-content');
+            const otherIcon = otherStep.querySelector('.step-expand');
+            otherContent.style.display = 'none';
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current step
+        step.classList.toggle('expanded');
+        
+        if (step.classList.contains('expanded')) {
+          content.style.display = 'block';
+          content.style.animation = 'slideDown 0.3s ease-out';
+          expandIcon.style.transform = 'rotate(180deg)';
+        } else {
+          content.style.display = 'none';
+          expandIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  }
+
+  function updateDashboard(industry) {
+    const data = workflowData[industry];
+    
+    // Animate counters
+    animateCounter('annual-savings', 0, data.totalSavings, '$', 'K');
+    animateCounter('time-reduction', 0, data.timeReduction, '', '%');
+    animateCounter('months-to-roi', 0, data.roiMonths, '', '');
+    animateCounter('quick-wins', 0, data.quickWins, '', '');
+  }
+
+  function updateChart(industry) {
+    const data = workflowData[industry];
+    const maxValue = Math.max(...data.chartData);
+    const chartContainer = document.getElementById('savings-chart');
+    
+    chartContainer.innerHTML = data.chartData.map((value, index) => {
+      const height = (value / maxValue) * 80; // Max height 80px
+      return `
+        <div style="
+          height: ${height}px; 
+          width: 40px; 
+          background: linear-gradient(to top, var(--color-yong-green), var(--color-yong-green-light));
+          border-radius: 6px 6px 0 0;
+          position: relative;
+          transition: height 0.8s ease;
+        ">
+          <div style="
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: var(--color-text-muted);
+          ">Step ${index + 1}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function animateCounter(elementId, start, end, prefix = '', suffix = '') {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const duration = 2000;
+    const startTime = performance.now();
+    
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const current = start + (end - start) * easeOutCubic;
+      
+      if (elementId === 'annual-savings') {
+        element.textContent = prefix + Math.round(current) + suffix;
+      } else {
+        element.textContent = prefix + Math.round(current) + suffix;
+      }
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    }
+    
+    requestAnimationFrame(updateCounter);
+  }
+
+  // Initialize everything when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    initializeIndustryTabs();
+    initializeWorkflowSteps();
+    updateDashboard(currentIndustry);
+    updateChart(currentIndustry);
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 1000px; }
+  }
+
+  .industry-tab.active {
+    background: linear-gradient(135deg, var(--color-yong-green), var(--color-yong-green-light));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(194, 65, 12, 0.4);
+  }
+
+  .industry-tab:hover:not(.active) {
+    background: rgba(194, 65, 12, 0.1);
+    color: var(--color-text-primary);
+    transform: translateY(-1px);
+  }
+</style>
