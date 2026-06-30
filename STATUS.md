@@ -1,8 +1,8 @@
 # YongAI Site — STATUS.md
-> Updated: 2026-06-29
+> Updated: 2026-06-30
 
 ## What's Live
-- **YongAI business site:** https://yongai.ca ✅ restored from archived pre-Hermes business-site snapshot on 2026-06-29
+- **YongAI venture portfolio:** https://yongai.ca ✅ restored/rebuilt as the venture homepage on 2026-06-30
 - **YourHermes service landing page:** https://urhermes.com ✅ launched 2026-06-29
 - **Stack:** Astro + Tailwind CSS v4 → static HTML → S3/CloudFront
 - **YongAI CloudFront:** `EMKYCPGH3MJHV`
@@ -20,8 +20,16 @@
 - Partner docs remain on S3: `/partner-agenda.html`, `/partner-workshop-guide.html`
 
 ## Design
-- **YongAI:** Restored archived business venture site design — light theme, dark orange accent, consulting-service positioning, demos, process, trust/data, and contact sections.
+- **YongAI:** Venture studio / portfolio homepage — warm editorial style with cards for Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
+
+## Current State (2026-06-30)
+- Gary flagged that the 2026-06-29 restoration was the wrong YongAI version: it restored the older AI automation consulting site, not the venture portfolio listing active projects.
+- Searched local source, backups, git history, public cache/search, memory/session history, and S3 current objects. The exact old venture-source snapshot was not found locally/publicly.
+- Attempted S3 version-history recovery, but `s3:ListBucketVersions` / object-version listing is still denied for `arn:aws:iam::628063714079:user/Dr.Molt`, so older deployed `index.html` versions could not be inspected.
+- Rebuilt the root homepage from project source-of-truth files as a clean YongAI venture portfolio with Flowt, OnlyPets, NEON 777 Casino, and YourHermes.
+- Deployed only `dist/index.html` to S3 and invalidated `/` + `/index.html` — no broad `--delete` sync. Partner docs, demo pages, and `/hermes-agent-setup/` redirect were not overwritten.
+- Verification: `npm run build` passed; live `https://yongai.ca/?v=venture-restore` returns 200 and contains `Flowt`, `OnlyPets`, `NEON 777 Casino`, `YourHermes`, and `Building practical products`; old consulting headline `Your best people deserve better work` is absent. Browser title: `YongAI — Ventures by Gary Yong`; horizontal overflow: `0`. `/hermes-agent-setup/` still returns `301 Location: https://urhermes.com/`.
 
 ## Current State (2026-06-29)
 - `urhermes.com` launched as the only YourHermes service domain. It is served by CloudFront distribution `E1ZFW2O41LK67T` using ACM cert `732fc5f7-9f4d-4d51-9b2d-3c5bbf85cf2a`; Route 53 aliases `A`/`AAAA` point to `d17al3s5n5mih8.cloudfront.net`.
