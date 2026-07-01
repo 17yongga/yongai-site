@@ -23,6 +23,14 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-01 — Logo restraint + responsive layout cleanup)
+- Gary reviewed the logo-led revamp and flagged that logo assets were being used as decoration across the page, making the landing page feel messy.
+- Removed decorative logo usage from the hero identity panel, operating-method visual, and footer; the visible logo now appears only in the primary nav. Footer uses plain text instead of another logo asset.
+- Added a cropped header SVG/PDF (`YongAI_header_cropped.svg/pdf`) so the nav logo renders at an appropriate visible size instead of inheriting excess source-canvas whitespace.
+- Tightened hero/layout spacing and replaced logo panels with structured portfolio/method cards that express the brand through typography, spacing, and content rather than repeated marks.
+- Deployed via `aws s3 sync dist/ s3://yongai.ca/` without `--delete`; CloudFront invalidation `I5PP76TRCKDPXYV8HV2OBFE9M6` completed.
+- Verification: `npm run build` passed; live `https://yongai.ca/?v=logo-restraint-fix` returns 200; only one visible image is present on the landing page (`/brand/YongAI_header_cropped.svg`); desktop console has 0 JS errors; desktop overflow is non-positive; mobile/tablet/desktop programmatic viewport checks showed 0 overflow/offenders and nav logo sizes of ~164×59 mobile, ~168×61 tablet, ~188×68 desktop; partner docs remain 200.
+
 ## Current State (2026-07-01 — Logo-led brand guide + landing revamp)
 - Created `BRAND_GUIDE.md` plus live brand guide exports at `/brand/YongAI_brand_guide.html` and `/brand/YongAI_brand_guide.pdf` from the supplied `YongAI_logo_package_v2.zip`.
 - Generated SVG/PDF vector-style masters under `/brand/` for the website header, monogram, and vertical lockup. Note: these are bitmap-traced reconstructions from PNG source, not original designer-authored vector files.

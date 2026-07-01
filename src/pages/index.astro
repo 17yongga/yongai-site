@@ -61,7 +61,7 @@ const standards = [
   <main class="brand-page">
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="/" class="brand-link" aria-label="YongAI home">
-        <img src="/brand/YongAI_website_header_master.svg" alt="YongAI" />
+        <img src="/brand/YongAI_header_cropped.svg" alt="YongAI" />
       </a>
       <div class="nav-links">
         <a href="#portfolio">Portfolio</a>
@@ -84,13 +84,16 @@ const standards = [
         </div>
       </div>
 
-      <aside class="identity-panel" aria-label="YongAI identity system">
-        <div class="panel-surface">
-          <img src="/brand/YongAI_primary_vertical_black_transparent_4000w.png" alt="YongAI primary logo" />
+      <aside class="portfolio-panel" aria-label="YongAI portfolio summary">
+        <div class="panel-card panel-card-main">
+          <span class="panel-label">Portfolio system</span>
+          <strong>Working products, reviewed like live operations.</strong>
+          <p>Four active ventures across finance, consumer social, gaming, and private AI operators.</p>
         </div>
-        <div class="panel-caption">
-          <span>Brand system v1</span>
-          <strong>Monochrome, precise, practical.</strong>
+        <div class="panel-card-grid">
+          <div><span>01</span><strong>Ship</strong><small>usable systems</small></div>
+          <div><span>02</span><strong>Verify</strong><small>real workflows</small></div>
+          <div><span>03</span><strong>Package</strong><small>repeatable offers</small></div>
         </div>
       </aside>
     </section>
@@ -147,7 +150,15 @@ const standards = [
 
     <section id="method" class="method-section">
       <div class="method-visual" aria-hidden="true">
-        <img src="/brand/YongAI_monogram_black_transparent_3000w.png" alt="" />
+        <div class="method-map">
+          <span>Workflow</span>
+          <i></i>
+          <span>Prototype</span>
+          <i></i>
+          <span>Proof</span>
+          <i></i>
+          <span>Playbook</span>
+        </div>
       </div>
       <div class="method-copy">
         <p class="eyebrow">Operating method</p>
@@ -187,7 +198,7 @@ const standards = [
       </div>
       <div class="cta-actions">
         <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" class="button primary">Connect with Gary</a>
-        <a href="/brand/YongAI_website_header_master.svg" class="button secondary">View logo master</a>
+        <a href="/brand/YongAI_brand_guide.html" class="button secondary">View brand guide</a>
       </div>
     </section>
   </main>
@@ -226,7 +237,7 @@ const standards = [
     position: sticky;
     top: 0;
     z-index: 20;
-    min-height: 76px;
+    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -237,7 +248,7 @@ const standards = [
   .brand-link {
     display: inline-flex;
     align-items: center;
-    width: 150px;
+    width: clamp(168px, 14vw, 188px);
     text-decoration: none;
   }
 
@@ -264,12 +275,12 @@ const standards = [
   .nav-links a:hover { color: #0b0b0a; }
 
   .hero-section {
-    min-height: calc(100vh - 76px);
+    min-height: calc(100vh - 84px);
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(360px, .7fr);
+    grid-template-columns: minmax(0, 1.02fr) minmax(340px, .68fr);
     align-items: center;
-    gap: 58px;
-    padding-block: 52px 78px;
+    gap: clamp(36px, 5vw, 64px);
+    padding-block: 56px 86px;
   }
 
   .eyebrow {
@@ -340,53 +351,99 @@ const standards = [
     border: 1px solid rgba(11, 11, 10, .13);
   }
 
-  .identity-panel {
+  .portfolio-panel {
     display: grid;
     gap: 16px;
+    align-self: center;
   }
 
-  .panel-surface {
-    min-height: 440px;
-    display: grid;
-    place-items: center;
-    padding: 42px;
+  .panel-card,
+  .panel-card-grid div {
     border: 1px solid rgba(11, 11, 10, .11);
+    background: rgba(255, 253, 248, .72);
+    box-shadow: 0 24px 60px rgba(36, 30, 23, .08);
+  }
+
+  .panel-card-main {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 32px;
     border-radius: 34px;
     background:
-      linear-gradient(135deg, rgba(255,255,255,.82), rgba(245,241,232,.72)),
-      repeating-linear-gradient(90deg, rgba(11,11,10,.035) 0 1px, transparent 1px 42px);
-    box-shadow: 0 34px 80px rgba(36, 30, 23, .10);
+      linear-gradient(135deg, rgba(255, 253, 248, .9), rgba(245, 241, 232, .78)),
+      repeating-linear-gradient(90deg, rgba(11,11,10,.04) 0 1px, transparent 1px 44px),
+      repeating-linear-gradient(0deg, rgba(11,11,10,.03) 0 1px, transparent 1px 44px);
   }
 
-  .panel-surface img {
-    width: min(78%, 360px);
-    height: auto;
-    display: block;
-  }
-
-  .panel-caption {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
-    padding: 16px 18px;
+  .panel-label {
+    width: fit-content;
+    margin-bottom: auto;
+    padding: 8px 10px;
     border: 1px solid rgba(11, 11, 10, .10);
-    border-radius: 20px;
-    background: rgba(255, 253, 248, .65);
-  }
-
-  .panel-caption span {
-    color: #7b7366;
-    font-size: 12px;
-    font-weight: 820;
-    letter-spacing: .13em;
+    border-radius: 999px;
+    color: #746b5d;
+    background: rgba(255,253,248,.68);
+    font-size: 11px;
+    font-weight: 860;
+    letter-spacing: .14em;
     text-transform: uppercase;
   }
 
-  .panel-caption strong {
+  .panel-card-main strong {
+    max-width: 360px;
+    margin-bottom: 16px;
     color: #0b0b0a;
-    font-size: 14px;
-    text-align: right;
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: .98;
+    letter-spacing: -.055em;
+  }
+
+  .panel-card-main p {
+    max-width: 390px;
+    margin-bottom: 0;
+    color: #5c554b;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .panel-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .panel-card-grid div {
+    min-height: 128px;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .panel-card-grid span,
+  .panel-card-grid strong,
+  .panel-card-grid small { display: block; }
+
+  .panel-card-grid span {
+    margin-bottom: 22px;
+    color: #b88a3d;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .14em;
+  }
+
+  .panel-card-grid strong {
+    margin-bottom: 4px;
+    color: #0b0b0a;
+    font-size: 18px;
+    letter-spacing: -.035em;
+  }
+
+  .panel-card-grid small {
+    color: #746b5d;
+    font-size: 12px;
+    font-weight: 720;
   }
 
   .proof-strip {
@@ -621,15 +678,36 @@ const standards = [
     display: grid;
     place-items: center;
     overflow: hidden;
+    padding: 36px;
     background:
-      repeating-linear-gradient(135deg, rgba(11,11,10,.055) 0 1px, transparent 1px 36px),
+      radial-gradient(circle at 30% 20%, rgba(63,185,80,.18), transparent 18rem),
+      repeating-linear-gradient(135deg, rgba(255,253,248,.07) 0 1px, transparent 1px 36px),
       #0b0b0a;
   }
 
-  .method-visual img {
-    width: min(62%, 290px);
-    filter: invert(1);
-    opacity: .94;
+  .method-map {
+    width: min(100%, 360px);
+    display: grid;
+    gap: 14px;
+  }
+
+  .method-map span {
+    display: block;
+    padding: 18px 20px;
+    border: 1px solid rgba(255,253,248,.16);
+    border-radius: 18px;
+    color: #fffdf8;
+    background: rgba(255,253,248,.08);
+    font-size: 15px;
+    font-weight: 850;
+    letter-spacing: -.02em;
+  }
+
+  .method-map i {
+    width: 1px;
+    height: 26px;
+    margin-left: 22px;
+    background: rgba(255,253,248,.24);
   }
 
   .method-copy {
@@ -735,7 +813,7 @@ const standards = [
     .cta-section {
       grid-template-columns: 1fr;
     }
-    .hero-section { min-height: 0; }
+    .hero-section { min-height: 0; padding-block: 44px 72px; }
     .proof-strip { grid-template-columns: repeat(2, 1fr); }
     .proof-strip div:nth-child(2) { border-right: 0; }
     .proof-strip div:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 253, 248, .14); }
@@ -757,20 +835,18 @@ const standards = [
     .cta-section {
       width: min(100% - 32px, 1180px);
     }
-    .brand-link { width: 128px; }
+    .brand-link { width: 164px; }
+    .site-nav { min-height: 78px; }
     h1 {
       font-size: clamp(42px, 12.6vw, 54px);
       line-height: .94;
       letter-spacing: -.065em;
     }
     .hero-sub { font-size: 18px; }
-    .panel-surface { min-height: 320px; padding: 28px; }
-    .panel-caption {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .panel-caption strong { text-align: left; }
+    .panel-card-main { min-height: 300px; padding: 24px; }
+    .panel-card-grid { grid-template-columns: 1fr; }
+    .panel-card-grid div { min-height: 96px; }
+    .panel-card-grid span { margin-bottom: 14px; }
     .proof-strip { grid-template-columns: 1fr; }
     .proof-strip div { border-right: 0; border-bottom: 1px solid rgba(255,253,248,.14); }
     .proof-strip div:last-child { border-bottom: 0; }

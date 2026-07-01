@@ -65,6 +65,7 @@ Keep at least **one monogram stroke-width** of empty space around the logo. When
 - Don’t add glow, bevel, drop-shadow, or colored outlines.
 - Don’t place the black logo on busy dark imagery.
 - Don’t stretch the wordmark.
+- Don’t repeat logo assets as decorative filler across a website. Use the logo once in primary navigation, optionally once in a footer or formal cover, then let typography/layout carry the brand.
 - Don’t replace the monogram with a generic “Y” tile.
 - Don’t pair it with robot/brain/circuit icons.
 
