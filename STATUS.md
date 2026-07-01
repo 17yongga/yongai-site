@@ -23,6 +23,13 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-01 — Logo-led brand guide + landing revamp)
+- Created `BRAND_GUIDE.md` plus live brand guide exports at `/brand/YongAI_brand_guide.html` and `/brand/YongAI_brand_guide.pdf` from the supplied `YongAI_logo_package_v2.zip`.
+- Generated SVG/PDF vector-style masters under `/brand/` for the website header, monogram, and vertical lockup. Note: these are bitmap-traced reconstructions from PNG source, not original designer-authored vector files.
+- Revamped `https://yongai.ca/` into a premium monochrome/warm-neutral venture portfolio using the new logo system: editorial hero, logo identity panel, proof strip, bento-style venture board, operating method, brand standards, and CTA.
+- Deployed via `aws s3 sync dist/ s3://yongai.ca/` without `--delete` to avoid removing legacy partner docs; CloudFront invalidation `I547RUQOJQOLZPJW5BFWOMUCG9` completed.
+- Verification: `npm run build` passed; live `https://yongai.ca/?v=brand-guide-revamp` returns 200, title is `YongAI — Practical ventures, built with operator discipline`, console has 0 JS errors, desktop overflow is non-positive, brand guide PDF/SVG return 200, and legacy `/partner-agenda.html` + `/partner-workshop-guide.html` remain 200.
+
 ## Current State (2026-06-30 — Classic Portfolio Restore)
 - Gary rejected the first rebuilt venture homepage as worse than the previous design and asked to restore the original.
 - S3 version-history permissions were re-tested and now work, but `yongai.ca` bucket/object history only shows `VersionId: null`; older `index.html` versions were not preserved because bucket versioning was not active for the overwritten files.

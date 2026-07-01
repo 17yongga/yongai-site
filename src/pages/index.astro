@@ -5,132 +5,189 @@ import Footer from '../components/Footer.astro';
 const ventures = [
   {
     name: 'Flowt',
-    status: 'Live / mobile release path',
-    category: 'Shared finance app',
+    status: 'Live product',
+    category: 'Shared finance',
     url: 'https://useflowt.app/',
-    accent: '#2563EB',
-    description: 'Shared budgeting for couples, roommates, trips, and households. Track expenses, split fairly, understand spending, and settle up clearly.',
-    details: ['Budget Spaces', 'Group settlement', 'Receipt scan', 'AI assistant'],
-    metric: 'iOS + Android'
+    accent: '#3A5C77',
+    description: 'Shared budgeting for couples, roommates, trips, and households — built around clear balances, receipt capture, and settlement that people can actually trust.',
+    proof: ['Budget Spaces', 'Group settlement', 'Receipt scan', 'AI assistant'],
+    signal: 'iOS + Android path'
   },
   {
     name: 'OnlyPets',
-    status: 'TestFlight + production API',
-    category: 'Pet social platform',
+    status: 'Production API',
+    category: 'Consumer social',
     url: 'https://api.gary-yong.com/pets/health',
-    accent: '#BC552A',
-    description: 'A pet-focused social app with profiles, posts, friends, messaging, store/economy, and production demo content.',
-    details: ['Social feed', 'Owner + pet DMs', 'Nibbles economy', 'Digital store'],
-    metric: 'TestFlight'
+    accent: '#B88A3D',
+    description: 'A pet-focused social platform with profiles, posts, friends, messaging, a digital store, and a playful in-app economy.',
+    proof: ['Social feed', 'Owner + pet DMs', 'Nibbles economy', 'Digital store'],
+    signal: 'TestFlight track'
   },
   {
-    name: 'NEON 777 Casino',
+    name: 'NEON 777',
     status: 'Live web platform',
-    category: 'Gaming / multiplayer',
+    category: 'Gaming systems',
     url: 'https://gary-yong.com/casino.html',
-    accent: '#A855F7',
-    description: 'A browser gaming platform with seven live games, credits, achievements, leaderboards, poker, and CS2 betting.',
-    details: ['7 games', 'Socket.io poker', 'CS2 betting', 'Bet history'],
-    metric: 'Live'
+    accent: '#7C3AED',
+    description: 'A browser gaming platform with casino games, poker, achievements, leaderboards, CS2 betting, and account-level history.',
+    proof: ['7 games', 'Socket.io poker', 'CS2 betting', 'Bet history'],
+    signal: 'Live on web'
   },
   {
     name: 'YourHermes',
-    status: 'New venture',
-    category: 'Agent setup service',
+    status: 'Service venture',
+    category: 'Private AI operators',
     url: 'https://urhermes.com/',
-    accent: '#0F766E',
+    accent: '#3FB950',
     description: 'A productized setup service for private AI operators: workflow discovery, Hermes configuration, approval gates, memory, and handoff.',
-    details: ['Workflow audit', 'Hermes setup', 'Approval gates', 'Private operator'],
-    metric: 'urhermes.com'
+    proof: ['Workflow audit', 'Hermes setup', 'Approval gates', 'Private operator'],
+    signal: 'urhermes.com'
   }
+];
+
+const standards = [
+  ['01', 'Working systems first', 'YongAI starts with usable products and real workflows, then turns repeated patterns into sharper ventures or services.'],
+  ['02', 'Operator discipline', 'Every project is treated like a live system: clear scope, deployment hygiene, verification, and maintainable handoff.'],
+  ['03', 'AI without theatre', 'AI is used where it improves the workflow. No robot mascots, vague magic, or “future of everything” copy.'],
+  ['04', 'Trust as design material', 'Privacy, approval gates, source-grounded outputs, and calm UX are part of the product — not an afterthought.']
 ];
 ---
 
 <Layout
-  title="YongAI — Venture Portfolio"
-  description="YongAI is Gary Yong’s venture portfolio for practical products and services: Flowt, OnlyPets, NEON 777 Casino, and YourHermes."
+  title="YongAI — Practical ventures, built with operator discipline"
+  description="YongAI is Gary Yong’s venture portfolio and applied AI studio: shipping practical products, validating workflow ideas, and turning useful patterns into services and companies."
+  ogImage="https://yongai.ca/brand/YongAI_website_header_black_on_light_2400x600.png"
 >
-  <main class="portfolio-page">
-    <nav class="portfolio-nav">
-      <a href="/" class="brand" aria-label="YongAI home">
-        <span class="brand-mark">Y</span>
-        <span>Yong<span>AI</span></span>
+  <main class="brand-page">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="/" class="brand-link" aria-label="YongAI home">
+        <img src="/brand/YongAI_website_header_master.svg" alt="YongAI" />
       </a>
       <div class="nav-links">
-        <a href="#ventures">Ventures</a>
-        <a href="#approach">Approach</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#method">Method</a>
+        <a href="#standards">Standards</a>
         <a href="https://urhermes.com/">YourHermes</a>
       </div>
     </nav>
 
     <section class="hero-section">
       <div class="hero-copy">
-        <p class="eyebrow">Gary Yong’s venture portfolio</p>
-        <h1>Practical products with real usage behind them.</h1>
+        <p class="eyebrow">YongAI / venture portfolio</p>
+        <h1><span>Practical</span><span>ventures.</span><span>Operator discipline.</span></h1>
         <p class="hero-sub">
-          YongAI collects the active products, experiments, and services I’m building — from shared finance and pet social to gaming platforms and private AI operator setup.
+          A portfolio of working products, applied AI experiments, and service playbooks — built from real workflows rather than pitch-deck abstractions.
         </p>
         <div class="hero-actions">
-          <a href="#ventures" class="button primary">View portfolio</a>
-          <a href="https://urhermes.com/" class="button secondary">Open YourHermes</a>
+          <a href="#portfolio" class="button primary">View the portfolio</a>
+          <a href="https://urhermes.com/" class="button secondary">Explore YourHermes</a>
         </div>
       </div>
 
-      <aside class="hero-panel" aria-label="Portfolio summary">
-        <div class="panel-top">
-          <p>Portfolio</p>
-          <strong>4 active ventures</strong>
+      <aside class="identity-panel" aria-label="YongAI identity system">
+        <div class="panel-surface">
+          <img src="/brand/YongAI_primary_vertical_black_transparent_4000w.png" alt="YongAI primary logo" />
         </div>
-        <div class="mini-grid">
-          {ventures.map((venture) => (
-            <a href={venture.url} class="mini-card" style={`--accent:${venture.accent}`}>
-              <span></span>
-              <strong>{venture.name}</strong>
-              <small>{venture.metric}</small>
-            </a>
-          ))}
+        <div class="panel-caption">
+          <span>Brand system v1</span>
+          <strong>Monochrome, precise, practical.</strong>
         </div>
       </aside>
     </section>
 
-    <section id="ventures" class="ventures-section">
-      <div class="section-heading">
-        <p class="eyebrow">Current ventures</p>
-        <h2>What’s live, shipping, or being validated.</h2>
+    <section class="proof-strip" aria-label="Portfolio summary">
+      <div>
+        <strong>4</strong>
+        <span>active ventures</span>
+      </div>
+      <div>
+        <strong>Live</strong>
+        <span>web + mobile systems</span>
+      </div>
+      <div>
+        <strong>Toronto</strong>
+        <span>operator-led studio</span>
+      </div>
+      <div>
+        <strong>AI</strong>
+        <span>where workflow value is real</span>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-kicker">
+        <p class="eyebrow">Current portfolio</p>
+        <h2>Products, services, and experiments with usage behind them.</h2>
       </div>
 
-      <div class="venture-grid">
+      <div class="venture-board">
         {ventures.map((venture, index) => (
-          <article class={`venture-card venture-${index + 1}`} style={`--accent:${venture.accent}`}>
-            <div class="card-header">
-              <div>
-                <p class="category">{venture.category}</p>
-                <h3>{venture.name}</h3>
+          <article class={`venture-card card-${index + 1}`} style={`--accent:${venture.accent}`}>
+            <div class="card-index">0{index + 1}</div>
+            <div class="card-main">
+              <div class="card-topline">
+                <span>{venture.category}</span>
+                <em>{venture.status}</em>
               </div>
-              <span class="status">{venture.status}</span>
+              <h3>{venture.name}</h3>
+              <p>{venture.description}</p>
             </div>
-            <p class="description">{venture.description}</p>
-            <div class="detail-list">
-              {venture.details.map((detail) => <span>{detail}</span>)}
+            <div class="card-footer">
+              <div class="proof-tags">
+                {venture.proof.map((item) => <span>{item}</span>)}
+              </div>
+              <a href={venture.url}>Open project →</a>
             </div>
-            <a href={venture.url} class="card-link">Open project →</a>
+            <div class="signal-dot" aria-hidden="true"></div>
+            <small>{venture.signal}</small>
           </article>
         ))}
       </div>
     </section>
 
-    <section id="approach" class="approach-section">
-      <div class="approach-card">
-        <p class="eyebrow">Operating approach</p>
-        <h2>Build the proof first.</h2>
-        <p>
-          The portfolio is intentionally practical: ship working systems, learn from real usage, tighten the product, and only then turn the pattern into a clearer business or service offer.
-        </p>
+    <section id="method" class="method-section">
+      <div class="method-visual" aria-hidden="true">
+        <img src="/brand/YongAI_monogram_black_transparent_3000w.png" alt="" />
       </div>
-      <div class="principles">
-        <div><strong>01</strong><span>Real workflows over pitch-deck ideas.</span></div>
-        <div><strong>02</strong><span>Visual, usable products before abstract strategy.</span></div>
-        <div><strong>03</strong><span>Trust, safety, and handoff matter for AI services.</span></div>
+      <div class="method-copy">
+        <p class="eyebrow">Operating method</p>
+        <h2>Build the proof. Extract the playbook. Ship the next version.</h2>
+        <p>
+          YongAI is intentionally not a generic AI shop. The work starts with concrete products and workflow problems, then sharpens into repeatable systems: apps, automations, demos, private operators, and venture experiments.
+        </p>
+        <div class="method-steps">
+          <div><span>Discover</span><strong>Find the workflow that is actually painful.</strong></div>
+          <div><span>Prototype</span><strong>Build a usable system, not a slide.</strong></div>
+          <div><span>Verify</span><strong>Test locally, deploy carefully, measure the result.</strong></div>
+          <div><span>Package</span><strong>Turn repeated wins into a product or service.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="standards" class="standards-section">
+      <div class="section-kicker compact">
+        <p class="eyebrow">Brand standards</p>
+        <h2>Calm, useful, and credible.</h2>
+      </div>
+      <div class="standards-grid">
+        {standards.map(([number, title, body]) => (
+          <article>
+            <span>{number}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <p class="eyebrow">Next venture</p>
+        <h2>Useful systems beat loud promises.</h2>
+      </div>
+      <div class="cta-actions">
+        <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" class="button primary">Connect with Gary</a>
+        <a href="/brand/YongAI_website_header_master.svg" class="button secondary">View logo master</a>
       </div>
     </section>
   </main>
@@ -139,118 +196,118 @@ const ventures = [
 
 <style>
   :global(body) {
-    background: #f4f1ea;
+    margin: 0;
+    background: #f5f1e8;
   }
 
-  .portfolio-page {
+  :global(*) { box-sizing: border-box; }
+
+  .brand-page {
     min-height: 100vh;
-    color: #161616;
+    overflow-x: hidden;
+    color: #0b0b0a;
     background:
-      radial-gradient(circle at top right, rgba(194, 65, 12, 0.11), transparent 34rem),
-      linear-gradient(180deg, #f8f5ee 0%, #f2eee6 48%, #ebe6dc 100%);
+      radial-gradient(circle at 75% 12%, rgba(184, 138, 61, 0.14), transparent 34rem),
+      linear-gradient(180deg, #fffdf8 0%, #f5f1e8 42%, #eee7db 100%);
   }
 
-  .portfolio-nav {
+  .site-nav,
+  .hero-section,
+  .proof-strip,
+  .portfolio-section,
+  .method-section,
+  .standards-section,
+  .cta-section {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .site-nav {
     position: sticky;
     top: 0;
-    z-index: 40;
-    height: 72px;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 24px;
+    z-index: 20;
+    min-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    backdrop-filter: blur(18px);
+    gap: 24px;
+    backdrop-filter: blur(22px);
   }
 
-  .brand {
+  .brand-link {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    font-weight: 900;
-    color: #161616;
+    width: 150px;
     text-decoration: none;
-    letter-spacing: -0.03em;
   }
 
-  .brand span span { color: #c2410c; }
-
-  .brand-mark {
-    width: 34px;
-    height: 34px;
-    border-radius: 11px;
-    display: grid;
-    place-items: center;
-    color: white;
-    background: #161616;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+  .brand-link img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
     gap: 26px;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 760;
+    letter-spacing: -.01em;
   }
 
   .nav-links a {
-    color: #686156;
+    color: #625d54;
     text-decoration: none;
   }
 
-  .nav-links a:hover { color: #161616; }
-
-  .hero-section,
-  .ventures-section,
-  .approach-section {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+  .nav-links a:hover { color: #0b0b0a; }
 
   .hero-section {
-    min-height: calc(100vh - 72px);
+    min-height: calc(100vh - 76px);
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.72fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, .7fr);
     align-items: center;
-    gap: 48px;
-    padding-top: 56px;
-    padding-bottom: 84px;
+    gap: 58px;
+    padding-block: 52px 78px;
   }
 
   .eyebrow {
     margin: 0 0 18px;
-    color: #9a3412;
+    color: #746b5d;
     font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.19em;
+    font-weight: 850;
+    letter-spacing: .18em;
     text-transform: uppercase;
   }
 
   h1, h2, h3, p { margin-top: 0; }
 
   h1 {
-    max-width: 760px;
-    margin-bottom: 26px;
-    color: #161616;
-    font-size: clamp(54px, 8vw, 104px);
-    line-height: 0.91;
-    font-weight: 950;
-    letter-spacing: -0.075em;
+    max-width: 820px;
+    margin-bottom: 24px;
+    color: #0b0b0a;
+    font-size: clamp(58px, 8.5vw, 112px);
+    line-height: .88;
+    font-weight: 900;
+    letter-spacing: -.082em;
   }
+
+  h1 span { display: block; }
+
+  .hero-copy { min-width: 0; }
 
   .hero-sub {
-    max-width: 650px;
+    max-width: min(680px, 100%);
     margin-bottom: 34px;
-    color: #5f584f;
-    font-size: 20px;
-    line-height: 1.7;
+    color: #4f4a43;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.62;
+    overflow-wrap: break-word;
   }
 
-  .hero-actions {
+  .hero-actions,
+  .cta-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -261,7 +318,7 @@ const ventures = [
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    padding: 0 22px;
+    padding: 0 21px;
     border-radius: 999px;
     font-size: 14px;
     font-weight: 850;
@@ -272,313 +329,456 @@ const ventures = [
   .button:hover { transform: translateY(-2px); }
 
   .button.primary {
-    color: white;
-    background: #161616;
-    box-shadow: 0 18px 34px rgba(0,0,0,.14);
+    color: #fffdf8;
+    background: #0b0b0a;
+    box-shadow: 0 18px 38px rgba(11, 11, 10, .16);
   }
 
   .button.secondary {
-    color: #161616;
-    background: rgba(255,255,255,.64);
-    border: 1px solid rgba(0,0,0,.1);
+    color: #0b0b0a;
+    background: rgba(255, 253, 248, .64);
+    border: 1px solid rgba(11, 11, 10, .13);
   }
 
-  .hero-panel {
-    border: 1px solid rgba(0,0,0,.10);
+  .identity-panel {
+    display: grid;
+    gap: 16px;
+  }
+
+  .panel-surface {
+    min-height: 440px;
+    display: grid;
+    place-items: center;
+    padding: 42px;
+    border: 1px solid rgba(11, 11, 10, .11);
     border-radius: 34px;
-    padding: 20px;
-    background: rgba(255,255,255,.66);
-    box-shadow: 0 30px 70px rgba(35, 27, 18, .11);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.82), rgba(245,241,232,.72)),
+      repeating-linear-gradient(90deg, rgba(11,11,10,.035) 0 1px, transparent 1px 42px);
+    box-shadow: 0 34px 80px rgba(36, 30, 23, .10);
   }
 
-  .panel-top {
-    padding: 24px;
-    border-radius: 24px;
-    color: white;
-    background: #161616;
+  .panel-surface img {
+    width: min(78%, 360px);
+    height: auto;
+    display: block;
   }
 
-  .panel-top p {
-    margin-bottom: 8px;
-    color: rgba(255,255,255,.52);
+  .panel-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 18px;
+    border: 1px solid rgba(11, 11, 10, .10);
+    border-radius: 20px;
+    background: rgba(255, 253, 248, .65);
+  }
+
+  .panel-caption span {
+    color: #7b7366;
     font-size: 12px;
-    font-weight: 900;
-    letter-spacing: .18em;
+    font-weight: 820;
+    letter-spacing: .13em;
     text-transform: uppercase;
   }
 
-  .panel-top strong {
-    font-size: 36px;
-    line-height: 1;
-    letter-spacing: -.04em;
+  .panel-caption strong {
+    color: #0b0b0a;
+    font-size: 14px;
+    text-align: right;
   }
 
-  .mini-grid {
+  .proof-strip {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 14px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid rgba(11, 11, 10, .12);
+    border-radius: 28px;
+    overflow: hidden;
+    background: #0b0b0a;
   }
 
-  .mini-card {
-    min-height: 126px;
-    padding: 18px;
-    border: 1px solid rgba(0,0,0,.08);
-    border-radius: 22px;
-    background: white;
-    color: #161616;
-    text-decoration: none;
-    transition: transform .18s ease, box-shadow .18s ease;
+  .proof-strip div {
+    min-height: 128px;
+    padding: 24px;
+    border-right: 1px solid rgba(255, 253, 248, .14);
   }
 
-  .mini-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 30px rgba(0,0,0,.08);
-  }
+  .proof-strip div:last-child { border-right: 0; }
 
-  .mini-card span {
-    display: block;
-    width: 40px;
-    height: 5px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-    background: var(--accent);
-  }
+  .proof-strip strong,
+  .proof-strip span { display: block; }
 
-  .mini-card strong,
-  .mini-card small { display: block; }
-
-  .mini-card strong {
-    margin-bottom: 6px;
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: -.04em;
-  }
-
-  .mini-card small {
-    color: #8a8176;
-    font-weight: 750;
-  }
-
-  .ventures-section {
-    padding-top: 86px;
-    padding-bottom: 90px;
-  }
-
-  .section-heading {
-    display: grid;
-    grid-template-columns: .78fr 1fr;
-    gap: 42px;
-    align-items: end;
-    margin-bottom: 32px;
-  }
-
-  .section-heading h2,
-  .approach-card h2 {
-    margin: 0;
-    color: #161616;
-    font-size: clamp(34px, 5vw, 58px);
-    line-height: .98;
-    font-weight: 950;
+  .proof-strip strong {
+    margin-bottom: 10px;
+    color: #fffdf8;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: .95;
     letter-spacing: -.055em;
   }
 
-  .venture-grid {
+  .proof-strip span {
+    color: rgba(255, 253, 248, .58);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .portfolio-section,
+  .standards-section { padding-block: 100px; }
+
+  .section-kicker {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: .66fr 1fr;
+    gap: 44px;
+    align-items: end;
+    margin-bottom: 34px;
+  }
+
+  .section-kicker.compact {
+    max-width: 780px;
+    display: block;
+  }
+
+  .section-kicker h2,
+  .method-copy h2,
+  .cta-section h2 {
+    margin: 0;
+    color: #0b0b0a;
+    font-size: clamp(38px, 5.8vw, 68px);
+    line-height: .94;
+    font-weight: 900;
+    letter-spacing: -.065em;
+  }
+
+  .venture-board {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 18px;
   }
 
   .venture-card {
     position: relative;
-    min-height: 380px;
-    padding: 28px;
+    min-height: 430px;
+    grid-column: span 6;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,.10);
+    padding: 28px;
+    border: 1px solid rgba(11, 11, 10, .12);
     border-radius: 30px;
-    background: rgba(255,255,255,.74);
-    box-shadow: 0 18px 42px rgba(42, 35, 27, .06);
+    background: rgba(255, 253, 248, .74);
+    box-shadow: 0 20px 50px rgba(36, 30, 23, .06);
   }
 
-  .venture-card::after {
+  .venture-card.card-1 { grid-column: span 7; }
+  .venture-card.card-2 { grid-column: span 5; }
+  .venture-card.card-3 { grid-column: span 5; }
+  .venture-card.card-4 { grid-column: span 7; background: #11110f; color: #fffdf8; }
+
+  .venture-card::before {
     content: '';
     position: absolute;
-    right: -44px;
-    top: -44px;
-    width: 180px;
-    height: 180px;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    inset: auto -40px -70px auto;
+    width: 260px;
+    height: 260px;
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+    transform: rotate(24deg);
+    opacity: .42;
   }
 
-  .card-header {
-    position: relative;
-    z-index: 1;
+  .card-index {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    color: #fffdf8;
+    background: #0b0b0a;
+    font-weight: 850;
+    letter-spacing: -.04em;
+  }
+
+  .card-4 .card-index { background: #fffdf8; color: #0b0b0a; }
+
+  .card-main { margin-top: 54px; position: relative; z-index: 1; }
+
+  .card-topline {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 34px;
+    gap: 18px;
+    margin-bottom: 18px;
   }
 
-  .category,
-  .status {
-    color: #756d63;
+  .card-topline span,
+  .card-topline em,
+  .venture-card small {
+    color: #82796b;
     font-size: 11px;
-    font-weight: 900;
-    letter-spacing: .16em;
+    font-style: normal;
+    font-weight: 860;
+    letter-spacing: .14em;
     text-transform: uppercase;
   }
 
+  .card-4 .card-topline span,
+  .card-4 .card-topline em,
+  .card-4 small { color: rgba(255,253,248,.56); }
+
   .venture-card h3 {
-    margin: 8px 0 0;
-    color: #161616;
-    font-size: clamp(28px, 4vw, 48px);
-    line-height: 1;
-    font-weight: 950;
-    letter-spacing: -.06em;
+    margin: 0 0 18px;
+    color: inherit;
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: .92;
+    font-weight: 900;
+    letter-spacing: -.07em;
   }
 
-  .status {
-    height: fit-content;
-    max-width: 190px;
-    padding: 8px 10px;
-    border-radius: 999px;
-    text-align: right;
-    background: rgba(255,255,255,.68);
-    border: 1px solid rgba(0,0,0,.08);
+  .venture-card p {
+    max-width: 620px;
+    margin-bottom: 0;
+    color: #4b463e;
+    font-size: 17px;
+    line-height: 1.62;
   }
 
-  .description {
-    position: relative;
-    z-index: 1;
-    max-width: 580px;
-    color: #4f4942;
-    font-size: 18px;
-    line-height: 1.65;
-  }
+  .card-4 p { color: rgba(255,253,248,.68); }
 
-  .detail-list {
+  .card-footer {
     position: relative;
     z-index: 1;
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 34px;
+  }
+
+  .proof-tags {
+    display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto;
-    padding-top: 28px;
   }
 
-  .detail-list span {
-    padding: 8px 11px;
+  .proof-tags span {
+    padding: 8px 10px;
+    border: 1px solid rgba(11, 11, 10, .10);
     border-radius: 999px;
-    color: #332f2b;
-    background: rgba(255,255,255,.70);
-    border: 1px solid rgba(0,0,0,.08);
+    color: #312d28;
+    background: rgba(255, 253, 248, .72);
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 760;
   }
 
-  .card-link {
-    position: relative;
-    z-index: 1;
-    width: fit-content;
-    margin-top: 24px;
-    color: #161616;
-    font-weight: 900;
+  .card-4 .proof-tags span {
+    color: rgba(255,253,248,.88);
+    border-color: rgba(255,253,248,.14);
+    background: rgba(255,253,248,.08);
+  }
+
+  .card-footer a {
+    flex: 0 0 auto;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 860;
     text-decoration: none;
   }
 
-  .card-link:hover { color: var(--accent); }
+  .card-footer a:hover { color: var(--accent); }
 
-  .approach-section {
+  .signal-dot {
+    position: absolute;
+    right: 26px;
+    top: 26px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 16%, transparent);
+  }
+
+  .venture-card small {
+    display: none;
+  }
+
+  .method-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .75fr 1fr;
     gap: 18px;
-    padding-bottom: 96px;
+    padding-bottom: 100px;
   }
 
-  .approach-card,
-  .principles {
-    border: 1px solid rgba(0,0,0,.10);
+  .method-visual,
+  .method-copy {
+    border: 1px solid rgba(11, 11, 10, .12);
     border-radius: 30px;
-    background: #161616;
-    color: white;
+    background: rgba(255,253,248,.68);
   }
 
-  .approach-card { padding: 34px; }
-
-  .approach-card .eyebrow { color: rgba(255,255,255,.44); }
-
-  .approach-card h2 { color: white; }
-
-  .approach-card p {
-    max-width: 640px;
-    margin-top: 22px;
-    color: rgba(255,255,255,.66);
-    font-size: 18px;
-    line-height: 1.7;
-  }
-
-  .principles {
+  .method-visual {
+    min-height: 560px;
     display: grid;
-    background: rgba(255,255,255,.72);
-    color: #161616;
+    place-items: center;
     overflow: hidden;
+    background:
+      repeating-linear-gradient(135deg, rgba(11,11,10,.055) 0 1px, transparent 1px 36px),
+      #0b0b0a;
   }
 
-  .principles div {
+  .method-visual img {
+    width: min(62%, 290px);
+    filter: invert(1);
+    opacity: .94;
+  }
+
+  .method-copy {
+    padding: 42px;
+  }
+
+  .method-copy p {
+    max-width: 680px;
+    margin: 24px 0 34px;
+    color: #4f4a43;
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .method-steps {
     display: grid;
-    grid-template-columns: 58px 1fr;
+    gap: 10px;
+  }
+
+  .method-steps div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
     gap: 18px;
     align-items: center;
-    padding: 24px 28px;
-    border-bottom: 1px solid rgba(0,0,0,.08);
+    padding: 16px 0;
+    border-top: 1px solid rgba(11, 11, 10, .10);
   }
 
-  .principles div:last-child { border-bottom: 0; }
+  .method-steps span {
+    color: #82796b;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
 
-  .principles strong {
-    color: #c2410c;
-    font-size: 13px;
+  .method-steps strong {
+    color: #0b0b0a;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -.025em;
+  }
+
+  .standards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .standards-grid article {
+    min-height: 280px;
+    padding: 24px;
+    border: 1px solid rgba(11, 11, 10, .12);
+    border-radius: 26px;
+    background: rgba(255,253,248,.64);
+  }
+
+  .standards-grid span {
+    display: block;
+    margin-bottom: 52px;
+    color: #b88a3d;
+    font-size: 12px;
+    font-weight: 900;
     letter-spacing: .16em;
   }
 
-  .principles span {
-    color: #2e2924;
-    font-size: 18px;
-    font-weight: 850;
-    line-height: 1.35;
-    letter-spacing: -.02em;
+  .standards-grid h3 {
+    margin-bottom: 16px;
+    color: #0b0b0a;
+    font-size: 24px;
+    line-height: 1.02;
+    letter-spacing: -.04em;
   }
 
-  @media (max-width: 880px) {
+  .standards-grid p {
+    color: #5c554b;
+    font-size: 15px;
+    line-height: 1.58;
+  }
+
+  .cta-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 34px;
+    border-radius: 30px;
+    color: #fffdf8;
+    background: #0b0b0a;
+  }
+
+  .cta-section .eyebrow { color: rgba(255,253,248,.48); }
+  .cta-section h2 { color: #fffdf8; max-width: 760px; }
+  .cta-section .button.primary { color: #0b0b0a; background: #fffdf8; }
+  .cta-section .button.secondary { color: #fffdf8; background: rgba(255,253,248,.08); border-color: rgba(255,253,248,.16); }
+
+  @media (max-width: 920px) {
     .nav-links { display: none; }
     .hero-section,
-    .section-heading,
-    .approach-section {
+    .section-kicker,
+    .method-section,
+    .cta-section {
       grid-template-columns: 1fr;
     }
-    .hero-section {
-      min-height: 0;
-      padding-top: 42px;
-    }
-    .venture-grid { grid-template-columns: 1fr; }
-    h1 { font-size: clamp(50px, 15vw, 78px); }
+    .hero-section { min-height: 0; }
+    .proof-strip { grid-template-columns: repeat(2, 1fr); }
+    .proof-strip div:nth-child(2) { border-right: 0; }
+    .proof-strip div:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 253, 248, .14); }
+    .venture-card,
+    .venture-card.card-1,
+    .venture-card.card-2,
+    .venture-card.card-3,
+    .venture-card.card-4 { grid-column: 1 / -1; }
+    .standards-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (max-width: 520px) {
-    .portfolio-nav,
+  @media (max-width: 560px) {
+    .site-nav,
     .hero-section,
-    .ventures-section,
-    .approach-section {
-      padding-left: 18px;
-      padding-right: 18px;
+    .proof-strip,
+    .portfolio-section,
+    .method-section,
+    .standards-section,
+    .cta-section {
+      width: min(100% - 32px, 1180px);
     }
-    .mini-grid { grid-template-columns: 1fr; }
-    .card-header {
+    .brand-link { width: 128px; }
+    h1 {
+      font-size: clamp(42px, 12.6vw, 54px);
+      line-height: .94;
+      letter-spacing: -.065em;
+    }
+    .hero-sub { font-size: 18px; }
+    .panel-surface { min-height: 320px; padding: 28px; }
+    .panel-caption {
+      align-items: flex-start;
       flex-direction: column;
+      gap: 6px;
     }
-    .status { text-align: left; }
+    .panel-caption strong { text-align: left; }
+    .proof-strip { grid-template-columns: 1fr; }
+    .proof-strip div { border-right: 0; border-bottom: 1px solid rgba(255,253,248,.14); }
+    .proof-strip div:last-child { border-bottom: 0; }
+    .card-footer { align-items: flex-start; flex-direction: column; }
+    .venture-card small { position: static; margin-top: 18px; }
+    .method-copy { padding: 28px; }
+    .method-steps div { grid-template-columns: 1fr; gap: 8px; }
+    .standards-grid { grid-template-columns: 1fr; }
+    .cta-section { padding: 26px; }
   }
 </style>
