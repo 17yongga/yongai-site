@@ -84,15 +84,17 @@ The logo suggests a disciplined black-and-white system. Color should support hie
 | Stone | `#8B8578` | Secondary text |
 | Hairline | `#DDD4C4` | Borders on warm surfaces |
 
-### Accent palette
+### Accent discipline
+
+YongAI should stay fundamentally black, white, and warm-neutral on the landing page.
 
 | Token | Hex | Use |
 |---|---:|---|
-| Signal Green | `#3FB950` | Tiny active indicators, proof dots, hover states |
-| Brass | `#B88A3D` | Premium divider/accent, limited use |
-| Slate Blue | `#3A5C77` | Quiet data/product accent |
+| Ink Accent | `#0B0B0A` | Active indicators, buttons, proof dots, section emphasis |
+| Stone Accent | `#625D54` | Secondary labels, muted dividers, supporting text |
+| Hairline Accent | `#DDD4C4` | Borders and subtle structure |
 
-**Rule:** use one accent per section. Most of the page should remain monochrome/warm neutral.
+**Rule:** avoid green, purple, blue, neon, or multi-color venture accents on the main YongAI landing page. Let hierarchy, spacing, typography, and black/white contrast carry the brand.
 
 ## 4. Typography
 
@@ -124,7 +126,7 @@ Use:
 - Monochrome logo-led nav
 - Bento/cards for ventures
 - Thin borders and precise spacing
-- Sparse proof indicators
+- Sparse monochrome proof indicators
 - Asymmetric hero with one strong visual panel
 
 Avoid:

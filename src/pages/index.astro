@@ -8,7 +8,7 @@ const ventures = [
     status: 'Live product',
     category: 'Shared finance',
     url: 'https://useflowt.app/',
-    accent: '#3A5C77',
+    accent: '#0B0B0A',
     description: 'Shared budgeting for couples, roommates, trips, and households — built around clear balances, receipt capture, and settlement that people can actually trust.',
     proof: ['Budget Spaces', 'Group settlement', 'Receipt scan', 'AI assistant'],
     signal: 'iOS + Android path'
@@ -18,7 +18,7 @@ const ventures = [
     status: 'Production API',
     category: 'Consumer social',
     url: 'https://api.gary-yong.com/pets/health',
-    accent: '#B88A3D',
+    accent: '#0B0B0A',
     description: 'A pet-focused social platform with profiles, posts, friends, messaging, a digital store, and a playful in-app economy.',
     proof: ['Social feed', 'Owner + pet DMs', 'Nibbles economy', 'Digital store'],
     signal: 'TestFlight track'
@@ -28,7 +28,7 @@ const ventures = [
     status: 'Live web platform',
     category: 'Gaming systems',
     url: 'https://gary-yong.com/casino.html',
-    accent: '#7C3AED',
+    accent: '#0B0B0A',
     description: 'A browser gaming platform with casino games, poker, achievements, leaderboards, CS2 betting, and account-level history.',
     proof: ['7 games', 'Socket.io poker', 'CS2 betting', 'Bet history'],
     signal: 'Live on web'
@@ -38,7 +38,7 @@ const ventures = [
     status: 'Service venture',
     category: 'Private AI operators',
     url: 'https://urhermes.com/',
-    accent: '#3FB950',
+    accent: '#0B0B0A',
     description: 'A productized setup service for private AI operators: workflow discovery, Hermes configuration, approval gates, memory, and handoff.',
     proof: ['Workflow audit', 'Hermes setup', 'Approval gates', 'Private operator'],
     signal: 'urhermes.com'
@@ -69,6 +69,19 @@ const standards = [
         <a href="#standards">Standards</a>
         <a href="https://urhermes.com/">YourHermes</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </summary>
+        <div class="mobile-menu-panel">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#method">Method</a>
+          <a href="#standards">Standards</a>
+          <a href="https://urhermes.com/">YourHermes</a>
+        </div>
+      </details>
     </nav>
 
     <section class="hero-section">
@@ -218,7 +231,7 @@ const standards = [
     overflow-x: hidden;
     color: #0b0b0a;
     background:
-      radial-gradient(circle at 75% 12%, rgba(184, 138, 61, 0.14), transparent 34rem),
+      radial-gradient(circle at 72% 10%, rgba(11, 11, 10, 0.045), transparent 34rem),
       linear-gradient(180deg, #fffdf8 0%, #f5f1e8 42%, #eee7db 100%);
   }
 
@@ -273,6 +286,58 @@ const standards = [
   }
 
   .nav-links a:hover { color: #0b0b0a; }
+
+  .mobile-menu {
+    display: none;
+    position: relative;
+  }
+
+  .mobile-menu summary {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    border: 1px solid rgba(11, 11, 10, .14);
+    border-radius: 999px;
+    background: rgba(255, 253, 248, .74);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu summary::-webkit-details-marker { display: none; }
+
+  .mobile-menu summary span {
+    width: 18px;
+    height: 2px;
+    display: block;
+    border-radius: 999px;
+    background: #0b0b0a;
+  }
+
+  .mobile-menu-panel {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 220px;
+    padding: 10px;
+    border: 1px solid rgba(11, 11, 10, .12);
+    border-radius: 20px;
+    background: rgba(255, 253, 248, .96);
+    box-shadow: 0 24px 60px rgba(11, 11, 10, .12);
+  }
+
+  .mobile-menu-panel a {
+    display: block;
+    padding: 13px 14px;
+    border-radius: 12px;
+    color: #0b0b0a;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 820;
+  }
+
+  .mobile-menu-panel a:hover { background: rgba(11, 11, 10, .055); }
 
   .hero-section {
     min-height: calc(100vh - 84px);
@@ -427,7 +492,7 @@ const standards = [
 
   .panel-card-grid span {
     margin-bottom: 22px;
-    color: #b88a3d;
+    color: #0b0b0a;
     font-size: 11px;
     font-weight: 900;
     letter-spacing: .14em;
@@ -538,7 +603,7 @@ const standards = [
     inset: auto -40px -70px auto;
     width: 260px;
     height: 260px;
-    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+    border: 1px solid rgba(11, 11, 10, .14);
     transform: rotate(24deg);
     opacity: .42;
   }
@@ -642,7 +707,7 @@ const standards = [
     text-decoration: none;
   }
 
-  .card-footer a:hover { color: var(--accent); }
+  .card-footer a:hover { color: #5c554b; }
 
   .signal-dot {
     position: absolute;
@@ -651,8 +716,8 @@ const standards = [
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 16%, transparent);
+    background: #0b0b0a;
+    box-shadow: 0 0 0 8px rgba(11, 11, 10, .08);
   }
 
   .venture-card small {
@@ -680,7 +745,6 @@ const standards = [
     overflow: hidden;
     padding: 36px;
     background:
-      radial-gradient(circle at 30% 20%, rgba(63,185,80,.18), transparent 18rem),
       repeating-linear-gradient(135deg, rgba(255,253,248,.07) 0 1px, transparent 1px 36px),
       #0b0b0a;
   }
@@ -768,7 +832,7 @@ const standards = [
   .standards-grid span {
     display: block;
     margin-bottom: 52px;
-    color: #b88a3d;
+    color: #0b0b0a;
     font-size: 12px;
     font-weight: 900;
     letter-spacing: .16em;
@@ -807,6 +871,7 @@ const standards = [
 
   @media (max-width: 920px) {
     .nav-links { display: none; }
+    .mobile-menu { display: block; }
     .hero-section,
     .section-kicker,
     .method-section,
@@ -835,8 +900,8 @@ const standards = [
     .cta-section {
       width: min(100% - 32px, 1180px);
     }
-    .brand-link { width: 164px; }
-    .site-nav { min-height: 78px; }
+    .brand-link { width: 158px; }
+    .site-nav { min-height: 82px; }
     h1 {
       font-size: clamp(42px, 12.6vw, 54px);
       line-height: .94;

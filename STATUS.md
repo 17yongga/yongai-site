@@ -23,6 +23,13 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-03 — Mobile hamburger + monochrome cleanup)
+- Added a mobile hamburger menu in the top-right nav with links to Portfolio, Method, Standards, and YourHermes; desktop nav remains unchanged.
+- Removed off-brand green/blue/purple/brass accents from the landing page and updated the brand guide to define YongAI as black/white/warm-neutral only for the main site.
+- Neutralized venture card accents, proof dots, hover states, and the method visual so page elements align with the logo-led monochrome guideline.
+- Deployed via `aws s3 sync dist/ s3://yongai.ca/` without `--delete`; CloudFront invalidation `I1LC58IG3KYK5ZJ43E7004SLFR` completed.
+- Verification: `npm run build` passed; live `https://yongai.ca/?v=hamburger-neutral` returns 200; desktop console has 0 JS errors; desktop overflow is non-positive; live mobile Playwright check shows hamburger visible, desktop links hidden, menu opens with all 4 links, nav logo ~158×57, 0 overflow, and 0 occurrences of old green/blue/purple/brass tokens; partner docs remain 200.
+
 ## Current State (2026-07-01 — Logo restraint + responsive layout cleanup)
 - Gary reviewed the logo-led revamp and flagged that logo assets were being used as decoration across the page, making the landing page feel messy.
 - Removed decorative logo usage from the hero identity panel, operating-method visual, and footer; the visible logo now appears only in the primary nav. Footer uses plain text instead of another logo asset.
