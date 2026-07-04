@@ -10,6 +10,7 @@
 
 ## Pages
 - `https://yongai.ca/` — YongAI business venture homepage ✅ restored
+- `https://yongai.ca/onlypets/` — OnlyPets app overview / TestFlight product page ✅ added 2026-07-04
 - `https://yongai.ca/demos/workflow-audit/` — Demo: AI workflow audit tool ✅ restored
 - `https://yongai.ca/demos/client-intake/` — Demo: Client intake automation ✅ restored
 - `https://yongai.ca/demos/resume-screener/` — Demo: AI resume screening ✅ restored
@@ -22,6 +23,15 @@
 ## Design
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
+
+## Current State (2026-07-04 — Homepage de-duplication + OnlyPets page)
+- Visually inspected the live homepage and confirmed the old layout repeated the same portfolio/proof language across hero side panel, proof strip, portfolio cards, method, and evaluation sections, with large vertical gaps.
+- Rebuilt `src/pages/index.astro` into a shorter homepage: concise hero, compact `At a glance` portfolio snapshot, no duplicated proof strip, compact portfolio grid, single `Approach` section, and shorter CTA.
+- Fixed all `Open project →` buttons to a consistent `156×44` base size; hover still enlarges/highlights them, and OnlyPets now links to `/onlypets/`.
+- Corrected OnlyPets status from `Production API` to `TestFlight testing`, based on `/Users/moltbot/projects/onlypets/STATUS.md` showing TestFlight build 9 live/submitted and App Store public release not done.
+- Added `src/pages/onlypets.astro` at `https://yongai.ca/onlypets/`: a fun app overview with OnlyPets screenshots, what it is for, why it exists, how people use it, and current TestFlight/testing status.
+- Deployed to `https://yongai.ca/?v=concise-onlypets` and `https://yongai.ca/onlypets/?v=concise-onlypets`; CloudFront invalidation `I8OMAZWS3KAGTMCEPD3OBJRE0U` completed.
+- Verification: `npm run build` passed with 9 pages; local Playwright confirmed homepage and OnlyPets page have 0 desktop/mobile overflow, 0 console errors, and homepage Open Project buttons are uniformly `156×44` (`165×47` on hover); live checks confirmed homepage + `/onlypets/` return 200, OnlyPets page contains `TestFlight`, does not contain `Production API`, and partner docs remain 200.
 
 ## Current State (2026-07-04 — v3 logo brand alignment)
 - Extracted `YongAI_logo_package_v3_with_svg_pdf.zip`, read `README.txt` and `manifest.json`, and copied selected v3 assets into `public/brand/v3/` for future use.

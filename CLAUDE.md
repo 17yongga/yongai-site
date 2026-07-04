@@ -27,6 +27,7 @@
 ```
 src/pages/
 ├── index.astro             — Homepage
+├── onlypets.astro          — OnlyPets product overview
 ├── responsible-ai.astro    — Responsible AI page
 └── demos/
     ├── workflow-audit.astro
