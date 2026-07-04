@@ -23,6 +23,14 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-04 — Landing copy + hierarchy refinement)
+- Refined Gary’s landing-page feedback: replaced hero headline with `Build what proves it.`, rewrote the hero subtitle to explain YongAI directly, made the right-side portfolio panel more useful, and changed the proof strip labels to clearer signals.
+- Reduced heavy headline weights/sizes across hero, section headings, venture cards, evaluation model, and CTA for a more elegant feel.
+- Reworked `Current portfolio` to `Four venture tracks.`, replaced fluffy Brand Standards with a concrete `Evaluation model`, and removed the public Brand Guide CTA from the final section.
+- Added project-card hover behavior so the `Open project →` button enlarges/highlights when each card is hovered.
+- Deployed to `https://yongai.ca/?v=copy-refine`; CloudFront invalidation `IEZPLEX609Y0P2PGHISD65K9YD` completed.
+- Verification: `npm run build` passed; local Playwright confirmed hover CTA scale/color change, 0 desktop/mobile overflow, mobile hamburger visible, 0 Brand Guide links; live homepage returns 200, title is `YongAI — Build what proves it`, 0 JS console errors, and partner docs remain 200.
+
 ## Current State (2026-07-04 — GitHub reconciliation)
 - Reconciled the local deployed YongAI work with GitHub `origin/main` after the branch diverged.
 - Created safety branch `backup/pre-github-reconcile-20260704-164819` before merging.
