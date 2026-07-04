@@ -23,6 +23,12 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-04 — Canonical YongAI work email)
+- Gary confirmed `gary.yong@yongai.ca` is registered and should be the go-to email for YongAI references.
+- Updated active source fallback contact copy in `src/components/ContactForm.astro` from `gymoltbot@gmail.com` to `gary.yong@yongai.ca`.
+- Updated project status to reverse the older cancelled-email note and document that `info@`, `hello@`, `contact@`, and old personal fallbacks should not be used for YongAI public contact copy.
+- Verification: searched active `src/` for `gymoltbot@gmail.com`, `info@yongai.ca`, `hello@yongai.ca`, and `contact@yongai.ca` — 0 matches; `npm run build` passed; generated `dist/` has 0 old email matches.
+
 ## Current State (2026-07-03 — Mobile hamburger + monochrome cleanup)
 - Added a mobile hamburger menu in the top-right nav with links to Portfolio, Method, Standards, and YourHermes; desktop nav remains unchanged.
 - Removed off-brand green/blue/purple/brass accents from the landing page and updated the brand guide to define YongAI as black/white/warm-neutral only for the main site.
@@ -89,7 +95,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 
 ## Known Gaps
 - YongAI business site still contains older/static simulated demo pages and advisor/testimonial placeholders from the restored archive.
-- YourHermes still uses `gymoltbot@gmail.com`/existing Formspree while Gary sets up Google Workspace separately.
+- YongAI public contact references should use `gary.yong@yongai.ca` as the go-to work email; avoid `info@`, `hello@`, `contact@`, or `gymoltbot@gmail.com` for YongAI site contact copy.
 - YourHermes uses the existing `yongai.ca` bucket prefix because `s3:CreateBucket` is explicitly denied for this IAM user; a standalone bucket can be created later from the console if desired.
 - Partner docs are legacy S3-only pages and not part of the current Astro build.
 
@@ -97,7 +103,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - [ ] Gary review restored YongAI business site at `https://yongai.ca/`
 - [ ] Gary review YourHermes service landing page at `https://urhermes.com/`
 - [ ] If desired, create a dedicated `urhermes.com` S3 bucket manually in AWS console later and migrate off the `yongai.ca/urhermes/` prefix.
-- [ ] Set up Google Workspace for `gary.yong@yongai.ca` separately.
+- [x] Use `gary.yong@yongai.ca` as the canonical YongAI work email for public `yongai.ca` contact references.
 
 ## Decisions
 - 2026-06-29: YourHermes split out to `urhermes.com` as a YongAI subset service; `yongai.ca` restored to the archived business venture website; `/hermes-agent-setup/` redirects to `https://urhermes.com/`.
@@ -108,7 +114,7 @@ All 5 demo pages now have flat-style SVG hero illustrations replacing placeholde
 - 2026-03-10: Full design overhaul — dark→light, purple→orange, stripped all AI slop patterns (per "Common Mistakes With Vibe Coded Websites" video)
 - 2026-02-21: Astro chosen for fast static builds
 - 2026-02-20: Nano Banana API exhausted — Gary doesn't want pay-per-use
-- gary.yong@yongai.ca CANCELLED (Feb 21) — use gymoltbot@gmail.com for all comms
+- 2026-07-04: Gary confirmed `gary.yong@yongai.ca` is registered and should be the only go-to email for YongAI references; do not use `info@`, `hello@`, `contact@`, or old personal fallback emails in public YongAI contact copy.
 
 ## Deploy
 ```bash

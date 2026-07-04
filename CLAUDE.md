@@ -60,6 +60,7 @@ YongAI is Gary's AI automation consulting business. Copy/messaging must position
 - Key differentiator: combines consulting methodology with hands-on AI
 - Calendly: https://calendly.com/gary-yong-yongai/30min
 - Formspree: https://formspree.io/f/xwvnkpak
+- Canonical YongAI work email for public references: `gary.yong@yongai.ca` (do not use `info@`, `hello@`, `contact@`, or old personal fallback emails for YongAI contact copy)
 
 ## After Changes
 1. `git add -A && git commit -m "..."` in `~/clawd/yongai-site/`
