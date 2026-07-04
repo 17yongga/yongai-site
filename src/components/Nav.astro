@@ -10,11 +10,8 @@ const base = isDemoPage ? "/" : "";
 <nav class="fixed top-0 left-0 right-0 h-16 z-50 navbar" id="nav">
   <div class="studio-shell h-full">
     <div class="flex items-center justify-between h-full">
-      <a href={isDemoPage ? "/" : "#top"} class="flex items-center gap-2.5 font-black text-lg group" aria-label="YONG Studio home">
-        <div class="w-8 h-8 bg-[#1C1C1E] rounded-lg flex items-center justify-center border border-white/10">
-          <span class="text-[#C2410C] text-sm tracking-tight">Y</span>
-        </div>
-        <span class="nav-brand-text">YONG<span> Studio</span></span>
+      <a href={isDemoPage ? "/" : "#top"} class="flex items-center gap-2.5 group" aria-label="YongAI home">
+        <img src="/brand/v3/YongAI_horizontal_black_transparent.svg" alt="YongAI" class="h-9 w-auto" />
       </a>
 
       <ul class="hidden md:flex items-center gap-8">
@@ -30,13 +27,13 @@ const base = isDemoPage ? "/" : "";
       </ul>
 
       <button class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer" id="burger" aria-label="Toggle menu">
-        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
-        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
-        <span class="w-5 h-0.5 bg-[#1C1C1E] transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-[#000000] transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-[#000000] transition-all duration-300 block"></span>
+        <span class="w-5 h-0.5 bg-[#000000] transition-all duration-300 block"></span>
       </button>
     </div>
 
-    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-[#F8F6F0] border-b border-[rgba(0,0,0,0.08)] shadow-md p-6" id="mobileMenu">
+    <div class="hidden md:hidden absolute top-full left-0 right-0 bg-[#FAF8F2] border-b border-[rgba(0,0,0,0.08)] shadow-md p-6" id="mobileMenu">
       <ul class="flex flex-col gap-4">
         <li><a href={`${base}#ventures`} class="mobile-link">Portfolio</a></li>
         <li><a href={`${base}#studio-system`} class="mobile-link">How We Work</a></li>

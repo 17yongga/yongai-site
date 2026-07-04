@@ -1,212 +1,139 @@
 # YongAI Brand Guide
 
-> Version 1.0 — built from `YongAI_logo_package_v2` and the current YongAI venture-portfolio direction.
+> Version 3.0 — aligned to `YongAI_logo_package_v3_with_svg_pdf.zip`.
 
 ## 1. Brand idea
 
-**YongAI is a quiet operator brand for practical ventures.**
+**YongAI is a disciplined venture/operator brand: focused software ventures, AI-enabled workflows, and working proof before scale.**
 
-The logo points toward a premium, restrained system: architectural geometry, confident spacing, black-and-white authority, and no generic AI tropes. The brand should feel like a modern venture studio / consulting operator — serious enough for enterprise conversations, clear enough for product launches.
+The v3 identity is intentionally restrained. The abstract serif-like **Y** mark gives the brand an advisory, law-firm, and institutional feel. The split diagonal cut suggests a controlled workflow path and decision gate; the separated upper-right stroke implies an AI-assisted branch that remains governed by the core operator workflow.
 
-### Positioning line
+### Current page line
 
-**Practical ventures, built with operator discipline.**
+**Build what proves it.**
 
 ### Short description
 
-YongAI is Gary Yong’s venture portfolio and applied AI studio: shipping real products, validating workflow ideas, and turning useful patterns into services and companies.
+YongAI builds focused software ventures and AI-enabled workflows with small-team speed, product discipline, and a bias toward moving from idea to working proof fast.
 
 ### Personality
 
 | Trait | Meaning | Avoid |
 |---|---|---|
-| Precise | Short, intentional copy; clear hierarchy | Vague “future of AI” language |
-| Premium | Monochrome base, generous whitespace, editorial rhythm | Neon cyberpunk, gradients everywhere |
-| Practical | Show live ventures, workflows, outcomes | Pitch-deck abstraction |
-| Calm | Confident tone, no hype | Exclamation-heavy startup copy |
-| Technical but human | Builder/operator credibility | Robot/brain imagery, AI slop |
+| Restrained | Let spacing, type, and contrast carry the brand | Decorative logo scatter |
+| Institutional | Advisory / law-firm confidence | Neon SaaS styling |
+| Practical | Working proof over pitch language | Vague “future of AI” claims |
+| Precise | Short sections with clear decision criteria | Fluffy standards |
+| Operator-led | Scope, verification, handoff, and next proof point | Magic-agent copy |
 
 ## 2. Logo system
 
-### Primary logo
+### Primary website logo
 
-Use the **YongAI horizontal website header** when space is wide: site nav, deck covers, proposals, letterheads.
+Use the v3 horizontal transparent lockup in navigation where vertical space is limited:
 
-- Preferred on dark: `public/brand/YongAI_website_header_white_on_dark_2400x600.png`
-- Preferred on light: `public/brand/YongAI_website_header_black_on_light_2400x600.png`
-- Vector-style master: `public/brand/YongAI_website_header_master.svg` / `.pdf`
+- Light nav: `public/brand/v3/YongAI_horizontal_black_transparent.svg`
+- Dark nav: `public/brand/v3/YongAI_horizontal_white_transparent.svg`
+
+The v3 web/header lockups use the selected tighter spacing option, where the YONGAI wordmark sits closer to the monogram.
 
 ### Monogram
 
-Use the monogram for compact placements: favicon, avatar, social icon, watermark, card stamp.
+Use the monogram only for favicon/app icon/profile/small placements:
 
-- Source PNG: `public/brand/YongAI_monogram_black_transparent_3000w.png`
-- Vector-style master: `public/brand/YongAI_monogram_master.svg` / `.pdf`
+- Light: `public/brand/v3/YongAI_monogram_black_transparent.svg`
+- Dark: `public/brand/v3/YongAI_monogram_white_transparent.svg`
+- ICO: `public/brand/v3/YongAI_favicon.ico`
 
 ### Vertical lockup
 
-Use the vertical primary mark for square or formal placements: cover pages, brand sheets, large cards, merch mockups.
+Use the primary vertical lockup for formal covers, presentation title pages, and high-touch brand moments — not as repeated page decoration:
 
-- Source PNG: `public/brand/YongAI_primary_vertical_black_transparent_4000w.png`
-- Vector-style master: `public/brand/YongAI_logo_primary_vertical_master.svg` / `.pdf`
+- `public/brand/v3/YongAI_primary_vertical_black_transparent.svg`
 
-### Clear space
+### Logo restraint
 
-Keep at least **one monogram stroke-width** of empty space around the logo. When in doubt, give it more room. The logo loses its premium feel when crowded.
+- Primary visible site usage: top-left nav.
+- Optional small favicon/icon usage is fine.
+- Do not repeat the logo in hero cards, background panels, section headers, or footers as filler.
+- Do not use generic “Y” tiles now that the real v3 mark exists.
+- Do not add glow, bevel, drop-shadow, color outlines, gradients, or AI/cyber decorations.
 
-### Minimum sizes
+## 3. Color system
 
-- Header wordmark: **140px wide** minimum on web
-- Monogram: **28px** minimum in UI, **18px** only for favicon-style use
-- Vertical lockup: **120px wide** minimum
-
-### Don’ts
-
-- Don’t add glow, bevel, drop-shadow, or colored outlines.
-- Don’t place the black logo on busy dark imagery.
-- Don’t stretch the wordmark.
-- Don’t repeat logo assets as decorative filler across a website. Use the logo once in primary navigation, optionally once in a footer or formal cover, then let typography/layout carry the brand.
-- Don’t replace the monogram with a generic “Y” tile.
-- Don’t pair it with robot/brain/circuit icons.
-
-## 3. Color
-
-The logo suggests a disciplined black-and-white system. Color should support hierarchy, not become the brand.
-
-### Core palette
+The v3 package defines a strict monochrome/warm-ivory system:
 
 | Token | Hex | Use |
 |---|---:|---|
-| Ink | `#0B0B0A` | Primary backgrounds, headings |
-| Charcoal | `#171715` | Cards, nav, deep surfaces |
-| Bone | `#F5F1E8` | Warm page background |
-| Porcelain | `#FFFDF8` | Elevated cards |
-| Stone | `#8B8578` | Secondary text |
-| Hairline | `#DDD4C4` | Borders on warm surfaces |
+| Black | `#000000` | Primary text, CTAs, active states, proof marks |
+| White | `#FFFFFF` | Elevated surfaces, dark-surface text |
+| Dark charcoal | `#0B0C0E` | Deep panels, dark CTA blocks |
+| Warm ivory | `#FAF8F2` | Page background and soft surfaces |
 
-### Accent discipline
+### Rules
 
-YongAI should stay fundamentally black, white, and warm-neutral on the landing page.
-
-| Token | Hex | Use |
-|---|---:|---|
-| Ink Accent | `#0B0B0A` | Active indicators, buttons, proof dots, section emphasis |
-| Stone Accent | `#625D54` | Secondary labels, muted dividers, supporting text |
-| Hairline Accent | `#DDD4C4` | Borders and subtle structure |
-
-**Rule:** avoid green, purple, blue, neon, or multi-color venture accents on the main YongAI landing page. Let hierarchy, spacing, typography, and black/white contrast carry the brand.
+- No green, purple, blue, brass, orange, or neon accents on YongAI public surfaces.
+- Legacy demo/status colors should be mapped to monochrome or neutral treatment.
+- Do not use gradients as brand identity. If a gradient is needed for depth, keep it ivory/white/black only and extremely subtle.
+- Use borders, spacing, typography, and contrast instead of color-coding.
 
 ## 4. Typography
 
-### Primary type
+The v3 logo combines a heavy serif-like institutional mark with a widely spaced wordmark. The site should echo that:
 
-**Inter** is acceptable for the current web stack: clean, readable, reliable.
+- Display headings: refined serif stack, e.g. `Cormorant Garamond`, Georgia, Times.
+- Body/UI: Inter or system sans for clarity.
+- Labels: uppercase, wide tracking, modest weight.
+- Headline weights should feel editorial, not startup-bold.
+- Avoid over-tight letter spacing with serif display type.
 
-Recommended weights:
-- Display: 800–900
-- Headings: 750–850
-- Body: 400–500
-- Labels: 700–800 with letter spacing
+## 5. Layout language
 
-### Type style
+Use an institutional portfolio-board language:
 
-- Headlines should be short and architectural.
-- Use tight display tracking, but don’t crush readability.
-- Labels can be uppercase with wide tracking.
-- Body copy should be concise; avoid long paragraphs.
-
-## 5. Layout system
-
-### Composition
-
-YongAI should feel like a **portfolio board / venture archive**, not a generic SaaS landing page.
-
-Use:
-- Large editorial hero
-- Monochrome logo-led nav
-- Bento/cards for ventures
-- Thin borders and precise spacing
-- Sparse monochrome proof indicators
-- Asymmetric hero with one strong visual panel
+- Large editorial hero.
+- Restrained top navigation with real v3 horizontal logo.
+- Thin black/charcoal hairline borders.
+- Warm ivory page base, white cards, charcoal panels.
+- Modest radii, not bubbly SaaS corners.
+- Card grids and decision/evaluation sections that communicate proof, traction, and next step.
 
 Avoid:
-- Busy illustration scenes
-- Gradient blobs as the main identity
-- “AI automation” cliché sections
-- Too many CTA buttons
 
-### Shape language
+- Random logo placements.
+- Glowing diagrams.
+- Green/purple/blue venture accents.
+- Generic AI illustrations, robot heads, brains, circuit textures.
+- Fluffy brand-standard copy without operational meaning.
 
-The logo has sharp architectural geometry. Pair it with:
-- modest radius cards: 18–28px
-- square-ish panels
-- fine hairline borders
-- crisp dividers
+## 6. Web application checklist
 
-Avoid overly bubbly SaaS shapes.
+For `yongai.ca`:
 
-## 6. Imagery and iconography
+1. Use `/brand/v3/YongAI_horizontal_black_transparent.svg` in nav.
+2. Use v3 favicon assets.
+3. Keep the public page color system to black / white / charcoal / warm ivory.
+4. Keep the brand guide internal; do not surface it as a public CTA.
+5. Make every section earn its space with concrete portfolio/proof language.
+6. Preserve mobile hamburger navigation.
+7. Preserve legacy partner docs during deployment.
 
-### Use
-
-- Real screenshots and product cards
-- Simple line diagrams
-- Abstract black/white geometry derived from the logo angles
-- High-contrast editorial crops
-
-### Avoid
-
-- Robot heads
-- Brain icons
-- Circuit-board textures
-- Generic AI orb/glow imagery
-- Stock photos of people pointing at glass boards
-
-## 7. Voice and copy
-
-### Tone
-
-Clear, restrained, operator-led.
-
-### Copy examples
-
-Good:
-- “A venture portfolio of working products.”
-- “Built from live workflows, not pitch-deck abstractions.”
-- “Products, experiments, and services with real usage behind them.”
-- “AI where it improves the workflow; software discipline everywhere else.”
-
-Avoid:
-- “Revolutionizing the future of AI.”
-- “Unlock limitless innovation.”
-- “Powered by cutting-edge AI magic.”
-- “Transform your business overnight.”
-
-## 8. Web application
-
-The landing page should use the dark wordmark in the nav and a more editorial portfolio layout:
-
-1. **Hero:** YongAI as a venture portfolio / applied AI studio.
-2. **Portfolio board:** Flowt, OnlyPets, NEON 777 Casino, YourHermes.
-3. **Method:** working products → real workflows → repeatable playbooks.
-4. **Standards:** privacy, practical UX, operator discipline.
-5. **CTA:** simple LinkedIn / YourHermes / portfolio links.
-
-## 9. Asset inventory
+## 7. Asset inventory
 
 | Asset | Path |
 |---|---|
-| White header PNG | `public/brand/YongAI_website_header_white_on_dark_2400x600.png` |
-| Black header PNG | `public/brand/YongAI_website_header_black_on_light_2400x600.png` |
-| Header SVG master | `public/brand/YongAI_website_header_master.svg` |
-| Header PDF master | `public/brand/YongAI_website_header_master.pdf` |
-| Monogram PNG | `public/brand/YongAI_monogram_black_transparent_3000w.png` |
-| Monogram SVG master | `public/brand/YongAI_monogram_master.svg` |
-| Monogram PDF master | `public/brand/YongAI_monogram_master.pdf` |
-| Vertical PNG | `public/brand/YongAI_primary_vertical_black_transparent_4000w.png` |
-| Vertical SVG master | `public/brand/YongAI_logo_primary_vertical_master.svg` |
-| Vertical PDF master | `public/brand/YongAI_logo_primary_vertical_master.pdf` |
+| Horizontal black SVG | `public/brand/v3/YongAI_horizontal_black_transparent.svg` |
+| Horizontal white SVG | `public/brand/v3/YongAI_horizontal_white_transparent.svg` |
+| Monogram black SVG | `public/brand/v3/YongAI_monogram_black_transparent.svg` |
+| Monogram white SVG | `public/brand/v3/YongAI_monogram_white_transparent.svg` |
+| Wordmark black SVG | `public/brand/v3/YongAI_wordmark_black_transparent.svg` |
+| Vertical black SVG | `public/brand/v3/YongAI_primary_vertical_black_transparent.svg` |
+| Web header black PNG | `public/brand/v3/YongAI_website_header_black_on_light_2400x600.png` |
+| Favicon ICO | `public/brand/v3/YongAI_favicon.ico` |
+| Apple touch icon | `public/brand/v3/YongAI_favicon_black_transparent_180.png` |
+| Package README | `public/brand/v3/README.txt` |
+| Package manifest | `public/brand/v3/manifest.json` |
 
-## 10. Notes on vector masters
+## 8. Vector note
 
-The supplied package only included PNGs, so the SVG/PDF masters generated here are **bitmap-traced vector reconstructions**, not original designer-authored source files. They are useful for web, decks, and general brand operations, but if the original design tool file exists, that should remain the canonical master.
+The package includes SVG and PDF files, but the README states they are vector-traced from an approved high-resolution PNG source, not native designer-authored source files. Use SVG/PDF for scalable web/print placement and PNG files when exact pixel parity is required.

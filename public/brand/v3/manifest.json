@@ -1,0 +1,73 @@
+{
+  "brand": "YongAI",
+  "source_file": "/mnt/data/a_clean_minimalist_logo_graphic_on_a_white_backgro.png",
+  "colors": {
+    "black": "#000000",
+    "white": "#FFFFFF",
+    "dark_charcoal": "#0B0C0E",
+    "warm_ivory": "#FAF8F2"
+  },
+  "bboxes_source_pixels": {
+    "full": [
+      288,
+      222,
+      980,
+      950
+    ],
+    "monogram": [
+      350,
+      227,
+      924,
+      795
+    ],
+    "wordmark": [
+      313,
+      792,
+      955,
+      925
+    ]
+  },
+  "notes": "SVG/PDF files are vector-traced from approved high-resolution PNG assets. Web/header assets use the selected tighter spacing.",
+  "version": "v3_svg_pdf",
+  "selected_web_header": "variation_1_text_closer_to_logo",
+  "added_svg_files": [
+    "SVG/transparent/YongAI_primary_vertical_black_transparent.svg",
+    "SVG/transparent/YongAI_primary_vertical_white_transparent.svg",
+    "SVG/transparent/YongAI_monogram_black_transparent.svg",
+    "SVG/transparent/YongAI_monogram_white_transparent.svg",
+    "SVG/transparent/YongAI_wordmark_black_transparent.svg",
+    "SVG/transparent/YongAI_wordmark_white_transparent.svg",
+    "SVG/transparent/YongAI_horizontal_black_transparent.svg",
+    "SVG/transparent/YongAI_horizontal_white_transparent.svg",
+    "SVG/background/YongAI_primary_vertical_black_on_white.svg",
+    "SVG/background/YongAI_primary_vertical_white_on_dark.svg",
+    "SVG/background/YongAI_primary_vertical_black_on_ivory.svg",
+    "SVG/background/YongAI_monogram_black_on_white.svg",
+    "SVG/background/YongAI_monogram_white_on_dark.svg",
+    "SVG/background/YongAI_monogram_black_on_ivory.svg",
+    "SVG/web/YongAI_website_header_black_on_white.svg",
+    "SVG/web/YongAI_website_header_white_on_dark.svg",
+    "SVG/web/YongAI_linkedin_banner_black_on_white.svg",
+    "SVG/web/YongAI_linkedin_banner_white_on_dark.svg"
+  ],
+  "added_pdf_files": [
+    "PDF/transparent/YongAI_primary_vertical_black_transparent.pdf",
+    "PDF/transparent/YongAI_primary_vertical_white_transparent.pdf",
+    "PDF/transparent/YongAI_monogram_black_transparent.pdf",
+    "PDF/transparent/YongAI_monogram_white_transparent.pdf",
+    "PDF/transparent/YongAI_wordmark_black_transparent.pdf",
+    "PDF/transparent/YongAI_wordmark_white_transparent.pdf",
+    "PDF/transparent/YongAI_horizontal_black_transparent.pdf",
+    "PDF/transparent/YongAI_horizontal_white_transparent.pdf",
+    "PDF/background/YongAI_primary_vertical_black_on_white.pdf",
+    "PDF/background/YongAI_primary_vertical_white_on_dark.pdf",
+    "PDF/background/YongAI_primary_vertical_black_on_ivory.pdf",
+    "PDF/background/YongAI_monogram_black_on_white.pdf",
+    "PDF/background/YongAI_monogram_white_on_dark.pdf",
+    "PDF/background/YongAI_monogram_black_on_ivory.pdf",
+    "PDF/web/YongAI_website_header_black_on_white.pdf",
+    "PDF/web/YongAI_website_header_white_on_dark.pdf",
+    "PDF/web/YongAI_linkedin_banner_black_on_white.pdf",
+    "PDF/web/YongAI_linkedin_banner_white_on_dark.pdf"
+  ]
+}

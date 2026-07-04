@@ -23,6 +23,15 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-04 — v3 logo brand alignment)
+- Extracted `YongAI_logo_package_v3_with_svg_pdf.zip`, read `README.txt` and `manifest.json`, and copied selected v3 assets into `public/brand/v3/` for future use.
+- Applied v3 identity across the site: nav/favicons now use v3 assets, display typography uses institutional serif styling, body/UI remains Inter, and colors are aligned to package tokens black `#000000`, white `#FFFFFF`, charcoal `#0B0C0E`, warm ivory `#FAF8F2`.
+- Updated global brand tokens and legacy demo overrides so old green/orange/blue/purple utility classes render as monochrome/neutral instead of off-brand accents.
+- Updated `BRAND_GUIDE.md` to v3 and kept it internal; removed public `/brand/YongAI_brand_guide.html` and `/brand/YongAI_brand_guide.pdf` from S3 so the brand guide is no longer audience-facing.
+- Updated `CLAUDE.md` to remove stale green/glassmorphism guidance and document v3 logo/color/type rules plus safe deploy behavior.
+- Deployed to `https://yongai.ca/?v=v3brand`; CloudFront invalidation `IF1O6DIJRMAI9RJOLH0EW46J8W` completed.
+- Verification: `npm run build` passed; local Playwright checked homepage, Responsible AI, and all 5 demo pages for 0 desktop/mobile overflow and no non-neutral computed color samples; live homepage returns 200, uses `/brand/v3/YongAI_horizontal_black_transparent.svg`, has Cormorant Garamond display headings, 0 JS console errors, 0 Brand Guide links, partner docs remain 200, and public brand guide URL now returns 404.
+
 ## Current State (2026-07-04 — Landing copy + hierarchy refinement)
 - Refined Gary’s landing-page feedback: replaced hero headline with `Build what proves it.`, rewrote the hero subtitle to explain YongAI directly, made the right-side portfolio panel more useful, and changed the proof strip labels to clearer signals.
 - Reduced heavy headline weights/sizes across hero, section headings, venture cards, evaluation model, and CTA for a more elegant feel.
