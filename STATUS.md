@@ -23,6 +23,13 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-04 — GitHub reconciliation)
+- Reconciled the local deployed YongAI work with GitHub `origin/main` after the branch diverged.
+- Created safety branch `backup/pre-github-reconcile-20260704-164819` before merging.
+- Merged GitHub commits through `6bc1aca feat: refine venture portfolio presentation` into local `main`, preserving the live YongAI logo-led landing page files where conflicts existed while retaining GitHub-side package updates and newly added portfolio/studio image assets.
+- Verification: `npm run build` passed after merge; source search found 0 old email references (`gymoltbot@gmail.com`, `info@`, `hello@`, `contact@`) and 3 canonical `gary.yong@yongai.ca` references.
+- Pushed reconciled `main` to GitHub: `1513e74 Merge GitHub venture portfolio updates`.
+
 ## Current State (2026-07-04 — Canonical YongAI work email)
 - Gary confirmed `gary.yong@yongai.ca` is registered and should be the go-to email for YongAI references.
 - Updated active source fallback contact copy in `src/components/ContactForm.astro` from `gymoltbot@gmail.com` to `gary.yong@yongai.ca`.
