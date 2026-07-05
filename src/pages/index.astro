@@ -5,49 +5,55 @@ import Footer from '../components/Footer.astro';
 const ventures = [
   {
     name: 'Flowt',
-    status: 'Live product',
+    status: 'LIVE PRODUCT · SHARED FINANCE',
     category: 'Shared finance',
     url: 'https://useflowt.app/',
-    description: 'Shared budgeting for couples, roommates, trips, and households — with balances, receipts, and settlement built for trust.',
+    description: 'Shared budgeting for couples, roommates, trips, and households — balances, receipts, and settlement in one trusted workspace.',
     proof: ['Budget Spaces', 'Receipt scan', 'Settlement', 'AI assistant'],
   },
   {
     name: 'OnlyPets',
-    status: 'TestFlight testing',
+    status: 'IN TESTFLIGHT · PET SOCIAL',
     category: 'Pet social app',
     url: '/onlypets/',
-    description: 'A playful mobile community for pet owners to post, message, discover products, and earn an in-app Nibbles economy.',
+    description: 'A pet-owner community for profiles, posts, messages, product discovery, and a playful in-app Nibbles economy.',
     proof: ['Feed', 'Pet profiles', 'Messages', 'Pet Store'],
   },
   {
     name: 'NEON 777',
-    status: 'Live web platform',
+    status: 'LIVE WEB PLATFORM · GAMING',
     category: 'Gaming systems',
     url: 'https://gary-yong.com/casino.html',
-    description: 'A browser gaming platform with casino games, poker, achievements, leaderboards, CS2 betting, and account history.',
+    description: 'Browser-based gaming with casino titles, poker, achievements, leaderboards, CS2 betting, and account-level history.',
     proof: ['7 games', 'Poker', 'CS2 betting', 'Bet history'],
   },
   {
     name: 'YourHermes',
-    status: 'Service venture',
+    status: 'SERVICE VENTURE · AI OPERATORS',
     category: 'Private AI operators',
     url: 'https://urhermes.com/',
-    description: 'A productized setup service for private AI operators: workflow discovery, Hermes configuration, approval gates, memory, and handoff.',
+    description: 'A productized setup service for private AI operators — discovery, Hermes configuration, approval gates, memory, and handoff.',
     proof: ['Workflow audit', 'Hermes setup', 'Approval gates', 'Handoff'],
     dark: true,
   },
 ];
 
+const metrics = [
+  ['4', 'venture tracks in active portfolio'],
+  ['2', 'live products already in market'],
+  ['1', 'TestFlight product in active testing'],
+];
+
 const approach = [
-  ['01', 'Pick one real workflow', 'Start with a repeated pain point, user behavior, or market wedge — not a vague AI idea.'],
-  ['02', 'Ship a visible proof', 'Build a product surface, demo, or service playbook that people can actually try.'],
-  ['03', 'Decide the next move', 'Use traction, feedback, usage, or support load to decide whether to keep, cut, or scale.'],
+  ['01', 'Start with a narrow use case', 'Define the user, the job, and the smallest surface that can prove demand.'],
+  ['02', 'Build with AI-assisted execution', 'Use agentic development where it speeds up implementation, testing, and iteration — not as marketing theatre.'],
+  ['03', 'Ship, test, and decide', 'Move quickly to a working product, then use real feedback to continue, reposition, or stop.'],
 ];
 ---
 
 <Layout
-  title="YongAI — Build what proves it"
-  description="YongAI builds focused software ventures and AI-enabled workflows with small-team speed, product discipline, and a bias toward working proof."
+  title="YongAI — Useful software, built fast"
+  description="YongAI builds focused software ventures and AI-enabled workflows using small-team execution, applied AI tooling, and testing discipline."
   ogImage="https://yongai.ca/brand/v3/YongAI_website_header_black_on_light_2400x600.png"
 >
   <main class="brand-page">
@@ -76,10 +82,10 @@ const approach = [
 
     <section class="hero-section">
       <div class="hero-copy">
-        <p class="eyebrow">YongAI / venture portfolio</p>
-        <h1>Build what proves it.</h1>
+        <p class="eyebrow">Venture product studio</p>
+        <h1>We build useful software fast.</h1>
         <p class="hero-sub">
-          YongAI builds focused software ventures and AI-enabled workflows with small-team speed, product discipline, and a bias toward working proof.
+          YongAI builds focused software ventures and AI-enabled workflows using small-team execution, applied AI tooling, and testing discipline. We move from idea to usable proof without long roadmap cycles.
         </p>
         <div class="hero-actions">
           <a href="#portfolio" class="button primary">View portfolio</a>
@@ -87,15 +93,15 @@ const approach = [
         </div>
       </div>
 
-      <aside class="snapshot-card" aria-label="Portfolio snapshot">
-        <p class="eyebrow">At a glance</p>
-        <h2>Four active tracks.</h2>
-        <div class="snapshot-list">
-          {ventures.map((venture) => (
-            <a href={venture.url}>
-              <span>{venture.name}</span>
-              <em>{venture.status}</em>
-            </a>
+      <aside class="snapshot-card" aria-label="YongAI by the numbers">
+        <p class="eyebrow">By the numbers</p>
+        <h2>Small portfolio. Real surfaces.</h2>
+        <div class="snapshot-list metric-list">
+          {metrics.map(([value, label]) => (
+            <div>
+              <strong>{value}</strong>
+              <span>{label}</span>
+            </div>
           ))}
         </div>
       </aside>
@@ -103,8 +109,8 @@ const approach = [
 
     <section id="portfolio" class="portfolio-section">
       <div class="section-header">
-        <p class="eyebrow">Current portfolio</p>
-        <h2>Working products, tested in public.</h2>
+        <p class="eyebrow">Featured ventures</p>
+        <h2>Products with a clear job to do.</h2>
       </div>
 
       <div class="venture-board">
@@ -128,8 +134,8 @@ const approach = [
 
     <section id="method" class="method-section">
       <div class="section-header narrow">
-        <p class="eyebrow">Approach</p>
-        <h2>One cycle: find demand, ship proof, decide honestly.</h2>
+        <p class="eyebrow">How we build</p>
+        <h2>AI-assisted development, operator-grade discipline.</h2>
       </div>
       <div class="approach-grid">
         {approach.map(([number, title, body]) => (
@@ -144,8 +150,8 @@ const approach = [
 
     <section class="cta-section">
       <div>
-        <p class="eyebrow">Work with YongAI</p>
-        <h2>Have a workflow or market worth proving?</h2>
+        <p class="eyebrow">Contact</p>
+        <h2>Have a focused product or workflow worth proving?</h2>
       </div>
       <div class="cta-actions">
         <a href="https://www.linkedin.com/in/gary-yong-66a9ba164" class="button primary">Connect with Gary</a>
@@ -240,9 +246,12 @@ const approach = [
   }
   .snapshot-card h2 { margin: 0 0 22px; font-size: clamp(30px, 3vw, 42px); line-height: 1.05; font-weight: 650; }
   .snapshot-list { display: grid; gap: 0; border-top: 1px solid rgba(0,0,0,.1); }
-  .snapshot-list a { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,.1); color: #000; text-decoration: none; }
+  .snapshot-list a,
+  .metric-list div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,.1); color: #000; text-decoration: none; }
   .snapshot-list span { font-weight: 850; }
   .snapshot-list em { color: #555; font-size: 12px; font-style: normal; font-weight: 780; text-transform: uppercase; letter-spacing: .11em; text-align: right; }
+  .metric-list strong { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 42px; line-height: .9; }
+  .metric-list span { max-width: 230px; color: #555; font-size: 13px; font-weight: 760; line-height: 1.3; text-align: right; }
 
   .portfolio-section, .method-section { padding-block: 64px; }
   .section-header { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 24px; }

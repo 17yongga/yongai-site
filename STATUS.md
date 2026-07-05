@@ -24,6 +24,14 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-05 — Anchovy-style copy reference)
+- Used `https://anchovylabs.ai/index.html` as a copy/layout reference while preserving YongAI’s existing v3 brand system and overall design.
+- Updated homepage wording to mirror the reference’s clearer structure: `Venture product studio` hero label, `We build useful software fast.` headline, a concise studio description, `By the numbers` snapshot, `Featured ventures`, and `How we build` section.
+- Reworded venture card status labels and descriptions to be more direct and product-oriented: Flowt, OnlyPets, NEON 777, and YourHermes now use Anchovy-style status/category lines without changing YongAI visual language.
+- Updated page title to `YongAI — Useful software, built fast`.
+- Deployed to `https://yongai.ca/?v=anchovy-copy`; CloudFront invalidation `IAJ9JLW9VCC7DJUL21H1Z8NJPO` completed.
+- Verification: `npm run build` passed with 9 pages; Playwright confirmed homepage desktop/mobile overflow `0`, no horizontal offenders, uniform `Open project →` buttons at `156×44`, no old copy strings (`Build what proves it.`, `Four active tracks.`, `Working products, tested in public.`), and live homepage has 0 JS console errors; live curl confirms new copy and partner docs remain 200.
+
 ## Current State (2026-07-04 — Homepage de-duplication + OnlyPets page)
 - Visually inspected the live homepage and confirmed the old layout repeated the same portfolio/proof language across hero side panel, proof strip, portfolio cards, method, and evaluation sections, with large vertical gaps.
 - Rebuilt `src/pages/index.astro` into a shorter homepage: concise hero, compact `At a glance` portfolio snapshot, no duplicated proof strip, compact portfolio grid, single `Approach` section, and shorter CTA.
