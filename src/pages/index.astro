@@ -8,6 +8,8 @@ const ventures = [
     status: 'LIVE PRODUCT · SHARED FINANCE',
     category: 'Shared finance',
     url: 'https://useflowt.app/',
+    logo: '/portfolio/logos/flowt.svg',
+    logoAlt: 'Flowt app icon',
     description: 'Shared budgeting for couples, roommates, trips, and households — balances, receipts, and settlement in one trusted workspace.',
     proof: ['Budget Spaces', 'Receipt scan', 'Settlement', 'AI assistant'],
   },
@@ -16,14 +18,28 @@ const ventures = [
     status: 'IN TESTFLIGHT · PET SOCIAL',
     category: 'Pet social app',
     url: '/onlypets/',
+    logo: '/portfolio/logos/onlypets.png',
+    logoAlt: 'OnlyPets app icon',
     description: 'A pet-owner community for profiles, posts, messages, product discovery, and a playful in-app Nibbles economy.',
     proof: ['Feed', 'Pet profiles', 'Messages', 'Pet Store'],
+  },
+  {
+    name: 'Cue',
+    status: 'LOCAL PROTOTYPE · VOICE AI',
+    category: 'Meeting assistant',
+    url: '/cue/',
+    logo: '/portfolio/logos/cue.png',
+    logoAlt: 'Cue app icon',
+    description: 'A Gary-first voice meeting assistant for recording conversations, generating debriefs, and turning context into next moves.',
+    proof: ['Voice capture', 'Meeting debrief', 'Ask assistant', 'Local-first'],
   },
   {
     name: 'NEON 777',
     status: 'LIVE WEB PLATFORM · GAMING',
     category: 'Gaming systems',
     url: 'https://gary-yong.com/casino.html',
+    logo: '/portfolio/logos/neon777.svg',
+    logoAlt: 'NEON 777 logo',
     description: 'Browser-based gaming with casino titles, poker, achievements, leaderboards, CS2 betting, and account-level history.',
     proof: ['7 games', 'Poker', 'CS2 betting', 'Bet history'],
   },
@@ -32,6 +48,8 @@ const ventures = [
     status: 'SERVICE VENTURE · AI OPERATORS',
     category: 'Private AI operators',
     url: 'https://urhermes.com/',
+    logo: '/portfolio/logos/yourhermes.png',
+    logoAlt: 'YourHermes icon',
     description: 'A productized setup service for private AI operators — discovery, Hermes configuration, approval gates, memory, and handoff.',
     proof: ['Workflow audit', 'Hermes setup', 'Approval gates', 'Handoff'],
     dark: true,
@@ -39,7 +57,7 @@ const ventures = [
 ];
 
 const metrics = [
-  ['4', 'venture tracks in active portfolio'],
+  ['5', 'venture tracks in active portfolio'],
   ['2', 'live products already in market'],
   ['1', 'TestFlight product in active testing'],
 ];
@@ -65,6 +83,7 @@ const approach = [
         <a href="#portfolio">Portfolio</a>
         <a href="#method">Approach</a>
         <a href="/onlypets/">OnlyPets</a>
+        <a href="/cue/">Cue</a>
         <a href="https://urhermes.com/">YourHermes</a>
       </div>
       <details class="mobile-menu">
@@ -75,6 +94,7 @@ const approach = [
           <a href="#portfolio">Portfolio</a>
           <a href="#method">Approach</a>
           <a href="/onlypets/">OnlyPets</a>
+          <a href="/cue/">Cue</a>
           <a href="https://urhermes.com/">YourHermes</a>
         </div>
       </details>
@@ -117,7 +137,9 @@ const approach = [
         {ventures.map((venture, index) => (
           <article class={`venture-card ${venture.dark ? 'dark' : ''}`}>
             <div class="card-head">
-              <span>0{index + 1}</span>
+              <div class="venture-logo" aria-label={`${venture.name} logo`}>
+                <img src={venture.logo} alt={venture.logoAlt} loading="lazy" />
+              </div>
               <em>{venture.status}</em>
             </div>
             <p class="card-category">{venture.category}</p>
@@ -272,10 +294,11 @@ const approach = [
   }
   .venture-card:hover { transform: translateY(-4px); border-color: rgba(0,0,0,.24); box-shadow: 0 28px 70px rgba(36,30,23,.12); }
   .venture-card.dark { color: #fff; background: #0B0C0E; }
-  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 46px; }
-  .card-head span { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 12px; color: #fff; background: #000; font-weight: 850; }
-  .dark .card-head span { color: #000; background: #fff; }
-  .card-head em, .card-category { color: #555; font-size: 11px; font-style: normal; font-weight: 860; letter-spacing: .14em; text-transform: uppercase; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 42px; }
+  .venture-logo { width: 64px; height: 64px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid rgba(0,0,0,.10); border-radius: 18px; background: #fff; box-shadow: 0 12px 30px rgba(36,30,23,.08); overflow: hidden; }
+  .venture-card .venture-logo img { width: 100% !important; height: 100% !important; min-height: 0 !important; max-width: 100%; max-height: 100%; object-fit: contain !important; filter: none !important; display: block; }
+  .dark .venture-logo { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.08); }
+  .card-head em, .card-category { color: #555; font-size: 11px; font-style: normal; font-weight: 860; letter-spacing: .14em; text-transform: uppercase; text-align: right; }
   .dark .card-head em, .dark .card-category { color: rgba(255,255,255,.56); }
   .card-category { margin-bottom: 14px; }
   .venture-card h3 { margin: 0 0 14px; font-size: clamp(34px, 4vw, 50px); line-height: 1.02; font-weight: 710; letter-spacing: -.018em; }

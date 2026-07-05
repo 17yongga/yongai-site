@@ -28,6 +28,7 @@
 src/pages/
 ├── index.astro             — Homepage
 ├── onlypets.astro          — OnlyPets product overview
+├── cue.astro               — Cue voice meeting assistant overview
 ├── responsible-ai.astro    — Responsible AI page
 └── demos/
     ├── workflow-audit.astro

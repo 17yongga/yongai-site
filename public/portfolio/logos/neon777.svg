@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="NEON 777">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#12040F"/>
+      <stop offset="1" stop-color="#0A0A12"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <rect x="34" y="34" width="444" height="444" rx="92" fill="none" stroke="#ff2db2" stroke-opacity=".42" stroke-width="10"/>
+  <text x="256" y="230" text-anchor="middle" font-family="Monoton, Bungee, Arial Black, sans-serif" font-size="84" fill="#fff" letter-spacing="5">NEON</text>
+  <text x="256" y="335" text-anchor="middle" font-family="Bungee, Arial Black, sans-serif" font-size="116" fill="#ff2db2" letter-spacing="8">777</text>
+  <text x="256" y="380" text-anchor="middle" font-family="Space Mono, monospace" font-size="20" fill="#ffffff" opacity=".72" letter-spacing="5">CASINO</text>
+</svg>

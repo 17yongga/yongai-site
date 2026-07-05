@@ -11,6 +11,7 @@
 ## Pages
 - `https://yongai.ca/` — YongAI business venture homepage ✅ restored
 - `https://yongai.ca/onlypets/` — OnlyPets app overview / TestFlight product page ✅ added 2026-07-04
+- `https://yongai.ca/cue/` — Cue voice meeting assistant overview / local prototype page ✅ added 2026-07-05
 - `https://yongai.ca/demos/workflow-audit/` — Demo: AI workflow audit tool ✅ restored
 - `https://yongai.ca/demos/client-intake/` — Demo: Client intake automation ✅ restored
 - `https://yongai.ca/demos/resume-screener/` — Demo: AI resume screening ✅ restored
@@ -23,6 +24,15 @@
 ## Design
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
+
+## Current State (2026-07-05 — Cue + venture logos)
+- Added Cue to the YongAI homepage portfolio as `LOCAL PROTOTYPE · VOICE AI` with copy grounded in the Cue product docs/status: Gary-first voice meeting assistant for recording conversations, generating debriefs, and turning context into next moves.
+- Added a lightweight `https://yongai.ca/cue/` overview page so the Cue project card opens to a useful page rather than a dead/placeholder link.
+- Added project-card logo assets for all five ventures under `public/portfolio/logos/`: Flowt, OnlyPets, Cue, NEON 777, and YourHermes.
+- Placed each logo in the top-left of its project card with a consistent `64×64` logo container and fixed the local CSS conflict with legacy `.venture-card img { min-height: 330px; }` using a scoped override.
+- Updated metrics from `4` to `5` venture tracks and added Cue to the homepage nav/mobile menu/footer.
+- Deployed to `https://yongai.ca/?v=cue-logos` and `https://yongai.ca/cue/?v=cue-logos`; CloudFront invalidation `I5Z7B2PSL681P0ZBTK518IHRH8` completed.
+- Verification: `npm run build` passed with 10 pages; local/live browser checks confirmed 5 portfolio cards, 5 logos, uniform `Open project →` buttons at `156×44`, homepage overflow non-positive, Cue page overflow non-positive, 0 live JS console errors, and partner docs remain 200.
 
 ## Current State (2026-07-05 — Anchovy-style copy reference)
 - Used `https://anchovylabs.ai/index.html` as a copy/layout reference while preserving YongAI’s existing v3 brand system and overall design.
