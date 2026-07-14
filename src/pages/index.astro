@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import SiteNav from '../components/SiteNav.astro';
 
 const ventures = [
   {
@@ -75,30 +76,7 @@ const approach = [
   ogImage="https://yongai.ca/brand/v3/YongAI_website_header_black_on_light_2400x600.png"
 >
   <main class="brand-page">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="/" class="brand-link" aria-label="YongAI home">
-        <img src="/brand/v3/YongAI_horizontal_black_transparent.svg" alt="YongAI" />
-      </a>
-      <div class="nav-links">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#method">Approach</a>
-        <a href="/onlypets/">OnlyPets</a>
-        <a href="/cue/">Cue</a>
-        <a href="https://urhermes.com/">YourHermes</a>
-      </div>
-      <details class="mobile-menu">
-        <summary aria-label="Open navigation menu">
-          <span></span><span></span><span></span>
-        </summary>
-        <div class="mobile-menu-panel">
-          <a href="#portfolio">Portfolio</a>
-          <a href="#method">Approach</a>
-          <a href="/onlypets/">OnlyPets</a>
-          <a href="/cue/">Cue</a>
-          <a href="https://urhermes.com/">YourHermes</a>
-        </div>
-      </details>
-    </nav>
+    <SiteNav />
 
     <section class="hero-section">
       <div class="hero-copy">
@@ -196,43 +174,10 @@ const approach = [
     background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 42%, #FAF8F2 100%);
   }
 
-  .site-nav, .hero-section, .portfolio-section, .method-section, .cta-section {
+  .hero-section, .portfolio-section, .method-section, .cta-section {
     width: min(1180px, calc(100% - 48px));
     margin-inline: auto;
   }
-
-  .site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    backdrop-filter: blur(20px);
-  }
-
-  .brand-link { width: clamp(160px, 14vw, 186px); display: inline-flex; }
-  .brand-link img { width: 100%; height: auto; display: block; }
-
-  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 13px; font-weight: 760; }
-  .nav-links a { color: #3B3B3B; text-decoration: none; }
-  .nav-links a:hover { color: #000; }
-
-  .mobile-menu { display: none; position: relative; }
-  .mobile-menu summary {
-    width: 46px; height: 46px; display: grid; place-content: center; gap: 5px;
-    border: 1px solid rgba(0,0,0,.14); border-radius: 999px; background: rgba(255,255,255,.72); cursor: pointer; list-style: none;
-  }
-  .mobile-menu summary::-webkit-details-marker { display: none; }
-  .mobile-menu summary span { width: 18px; height: 2px; border-radius: 999px; background: #000; display: block; }
-  .mobile-menu-panel {
-    position: absolute; right: 0; top: calc(100% + 12px); min-width: 220px; padding: 10px;
-    border: 1px solid rgba(0,0,0,.12); border-radius: 14px; background: rgba(255,255,255,.96); box-shadow: 0 24px 60px rgba(0,0,0,.12);
-  }
-  .mobile-menu-panel a { display: block; padding: 13px 14px; border-radius: 12px; color: #000; text-decoration: none; font-size: 15px; font-weight: 820; }
-  .mobile-menu-panel a:hover { background: rgba(0,0,0,.055); }
 
   h1, h2, h3, p { margin-top: 0; }
   h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
@@ -346,7 +291,7 @@ const approach = [
   }
 
   @media (max-width: 560px) {
-    .site-nav, .hero-section, .portfolio-section, .method-section, .cta-section { width: min(100% - 32px, 1180px); }
+    .hero-section, .portfolio-section, .method-section, .cta-section { width: min(100% - 32px, 1180px); }
     .brand-link { width: 154px; }
     h1 { font-size: clamp(48px, 14vw, 64px); line-height: .98; }
     .portfolio-section, .method-section { padding-block: 44px; }

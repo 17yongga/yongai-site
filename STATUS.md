@@ -25,6 +25,14 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-14 — Navigation standardization + Flowt logo fix)
+- Standardized navigation across homepage, OnlyPets, and Cue by adding shared `src/components/SiteNav.astro` and replacing each page-specific nav.
+- Chose a cleaner site information architecture: global nav now only includes `Portfolio`, `Approach`, `YourHermes`, and `Contact`; project subpages like OnlyPets/Cue remain accessible from portfolio cards and page CTAs, not top-level menu items.
+- Updated footer to match the same high-level navigation model and removed project subpage links from the footer.
+- Replaced the incorrect Flowt card logo with the official Flowt two-wave icon (`flowt-logo-FINAL.svg`) at `public/portfolio/logos/flowt.svg`.
+- Deployed to `https://yongai.ca/?v=nav-standardized`; CloudFront invalidation `I7PA959AMYNC42V0DSBMSWAG6V` completed.
+- Verification: `npm run build` passed with 10 pages; local browser QA checked homepage/OnlyPets/Cue desktop and mobile; live checks confirm homepage/OnlyPets/Cue 200, top nav excludes OnlyPets/Cue, Flowt logo renders at `/portfolio/logos/flowt.svg` with natural size `300×300`, all project buttons remain `156×44`, no live JS console errors, and partner docs remain 200.
+
 ## Current State (2026-07-05 — Cue + venture logos)
 - Added Cue to the YongAI homepage portfolio as `LOCAL PROTOTYPE · VOICE AI` with copy grounded in the Cue product docs/status: Gary-first voice meeting assistant for recording conversations, generating debriefs, and turning context into next moves.
 - Added a lightweight `https://yongai.ca/cue/` overview page so the Cue project card opens to a useful page rather than a dead/placeholder link.

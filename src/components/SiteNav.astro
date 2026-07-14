@@ -1,0 +1,125 @@
+---
+const navItems = [
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Approach', href: '/#method' },
+  { label: 'YourHermes', href: 'https://urhermes.com/' },
+  { label: 'Contact', href: 'mailto:gary.yong@yongai.ca' },
+];
+---
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <a href="/" class="brand-link" aria-label="YongAI home">
+    <img src="/brand/v3/YongAI_horizontal_black_transparent.svg" alt="YongAI" />
+  </a>
+  <div class="nav-links">
+    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+  </div>
+  <details class="mobile-menu">
+    <summary aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </summary>
+    <div class="mobile-menu-panel">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+  </details>
+</nav>
+
+<style>
+  .site-nav {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    backdrop-filter: blur(20px);
+  }
+
+  .brand-link {
+    width: clamp(160px, 14vw, 186px);
+    display: inline-flex;
+  }
+  .brand-link img {
+    width: 100%;
+    height: auto;
+    min-height: 0 !important;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    font-size: 13px;
+    font-weight: 760;
+  }
+  .nav-links a {
+    color: #3B3B3B;
+    text-decoration: none;
+  }
+  .nav-links a:hover {
+    color: #000;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: relative;
+  }
+  .mobile-menu summary {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    border: 1px solid rgba(0,0,0,.14);
+    border-radius: 999px;
+    background: rgba(255,255,255,.72);
+    cursor: pointer;
+    list-style: none;
+  }
+  .mobile-menu summary::-webkit-details-marker { display: none; }
+  .mobile-menu summary span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: #000;
+    display: block;
+  }
+  .mobile-menu-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    min-width: 220px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 24px 60px rgba(0,0,0,.12);
+  }
+  .mobile-menu-panel a {
+    display: block;
+    padding: 13px 14px;
+    border-radius: 12px;
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 820;
+  }
+  .mobile-menu-panel a:hover {
+    background: rgba(0,0,0,.055);
+  }
+
+  @media (max-width: 920px) {
+    .nav-links { display: none; }
+    .mobile-menu { display: block; }
+  }
+
+  @media (max-width: 560px) {
+    .site-nav { width: min(100% - 32px, 1180px); }
+    .brand-link { width: 154px; }
+  }
+</style>

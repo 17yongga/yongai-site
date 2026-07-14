@@ -60,7 +60,7 @@ aws cloudfront create-invalidation --distribution-id EMKYCPGH3MJHV --paths "/*" 
 YongAI is Gary's venture portfolio and applied AI studio. Copy/messaging must position Gary/YongAI as:
 - Builder/operator of focused software ventures and AI-enabled workflows
 - Practical, disciplined, proof-first, and institutional rather than hype-heavy
-- Portfolio currently includes Flowt, OnlyPets, NEON 777, and YourHermes
+- Portfolio currently includes Flowt, OnlyPets, Cue, NEON 777, and YourHermes
 - Canonical YongAI work email: `gary.yong@yongai.ca` (do not use `info@`, `hello@`, `contact@`, or old personal fallback emails for YongAI contact copy)
 - Calendly: https://calendly.com/gary-yong-yongai/30min
 - Formspree: https://formspree.io/f/xwvnkpak

@@ -1,42 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1D4ED8"/>
-      <stop offset="50%" stop-color="#0EA5E9"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
-    </linearGradient>
-    <linearGradient id="dropWhite" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#E0F2FE" stop-opacity="0.95"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-  </defs>
-
-  <!-- iOS rounded square background -->
-  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#bgGrad)"/>
-
-  <!-- Subtle radial glow in background -->
-  <radialGradient id="centerGlow" cx="50%" cy="40%" r="50%">
-    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
-    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-  </radialGradient>
-  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#centerGlow)"/>
-
-  <!-- Water droplet (white) centered -->
-  <path d="M512 140 C512 140 285 400 285 540 C285 660 389 748 512 748 C635 748 739 660 739 540 C739 400 512 140 512 140Z"
-        fill="url(#dropWhite)"/>
-
-  <!-- Flow wave 1 (blue, darker) inside drop -->
-  <path d="M360 556 Q512 465 664 556"
-        stroke="#1D4ED8" stroke-width="28" fill="none" stroke-linecap="round" opacity="0.85"/>
-
-  <!-- Flow wave 2 (lighter blue) -->
-  <path d="M388 640 Q512 555 636 640"
-        stroke="#0EA5E9" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.70"/>
-
-  <!-- Highlight sparkle at drop tip -->
-  <circle cx="512" cy="195" r="22" fill="rgba(255,255,255,0.45)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- FLOWT — Official App Icon v1.0 (2026-03-16) -->
+  <!-- Two-wave mark: deep blue + sky blue on dark navy -->
+  <rect width="300" height="300" rx="58" fill="#0F172A"/>
+  <path d="M 58 118 C 106 96, 194 140, 242 118"
+        stroke="#2563EB" stroke-width="28" fill="none" stroke-linecap="round"/>
+  <path d="M 58 182 C 106 160, 194 204, 242 182"
+        stroke="#60A5FA" stroke-width="28" fill="none" stroke-linecap="round"/>
 </svg>
