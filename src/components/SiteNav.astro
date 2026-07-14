@@ -51,7 +51,7 @@ const navItems = [
       window.clearTimeout(closeTimer);
       closeTimer = window.setTimeout(() => {
         menu.open = false;
-      }, reducedMotion ? 0 : 260);
+      }, reducedMotion ? 0 : 430);
     };
 
     summary?.addEventListener('click', (event) => {
@@ -191,9 +191,9 @@ const navItems = [
     transform: translate3d(0, -8px, 0) scale(.985);
     transform-origin: top right;
     transition:
-      opacity 220ms ease,
-      transform 260ms var(--motion-ease),
-      visibility 0s linear 260ms;
+      opacity 340ms ease,
+      transform 420ms var(--motion-ease),
+      visibility 0s linear 430ms;
   }
   .mobile-menu.is-open .mobile-menu-panel {
     opacity: 1;

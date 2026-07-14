@@ -25,6 +25,16 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-14 — Cue story + mobile refinement)
+- Reframed `/cue/` around a short, grounded story: useful conversations lose decisions in scattered notes, and Cue keeps the next move visible.
+- Replaced the oversized technical logo panel with a compact debrief preview that demonstrates the product outcome without pretending to be a full app screenshot.
+- Added a clean transparent-corner Cue web mark (`public/portfolio/logos/cue-web.png`) and applied it to both the Cue page and homepage card; the black corner artifact is gone.
+- Removed stale local-only and overly technical public copy. Cue is now accurately presented as a private TestFlight prototype with working recording, long-call transcription, structured debrief, and Ask flows.
+- Condensed the page into four beats: origin, intent, three-step flow, and honest current status. Added warm tonal depth while preserving YongAI's strict neutral v3 palette.
+- Slowed mobile reveal motion to `900ms` with a smaller `12px` travel distance and calmer delay; slowed mobile-menu transitions to `340–430ms`. Desktop reveals are `680ms`; reduced-motion remains immediate.
+- Deployed to `https://yongai.ca/cue/?v=story-refine`; CloudFront invalidation `I4JB9N66V3HC2F07VW4IVSCX1G` completed.
+- Verification: build passed with 10 pages; 320/375/390/430/820/1440px checks showed zero horizontal overflow and zero console errors; all buttons remain 48px tall; reduced-motion has zero active animations or hidden reveals; live Cue page, cleaned icon, and both partner docs return 200.
+
 ## Current State (2026-07-14 — Premium motion + interaction polish)
 - Added a restrained shared motion system with fast/base/slow timing tokens, a premium easing curve, lightweight IntersectionObserver + Web Animations API reveals, short stagger delays, and compositor-friendly opacity/translate animation.
 - Added `prefers-reduced-motion` handling: reveals render immediately, transitions/animations collapse, and smooth scrolling is disabled for users requesting less motion.
