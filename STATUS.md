@@ -25,6 +25,16 @@
 - **YongAI:** Venture portfolio homepage — classic bento/project-card layout with Flowt, OnlyPets, NEON 777 Casino, and YourHermes. Root page no longer shows the old AI automation consulting/law-firm/recruiting positioning or the rejected "Building practical products, not pitch decks" rebuild.
 - **YourHermes:** Separate subset service page on `urhermes.com` — light editorial SaaS style, private AI operator positioning, exact screenshot sections only.
 
+## Current State (2026-07-14 — Premium motion + interaction polish)
+- Added a restrained shared motion system with fast/base/slow timing tokens, a premium easing curve, lightweight IntersectionObserver + Web Animations API reveals, short stagger delays, and compositor-friendly opacity/translate animation.
+- Added `prefers-reduced-motion` handling: reveals render immediately, transitions/animations collapse, and smooth scrolling is disabled for users requesting less motion.
+- Animated the shared mobile hamburger naturally in both directions: icon morph, panel fade/translate/scale, delayed close for exit motion, click-outside close, Escape close, focus return, and synchronized `aria-expanded`.
+- Extended card-style interaction feedback across homepage, OnlyPets, and Cue: subtle lift, border/shadow refinement, gentle screenshot scale, consistent button hover/focus/active states, and keyboard `:focus-visible` feedback.
+- Disabled lift effects on non-hover/touch devices to avoid sticky hover artifacts and kept all motion within small 1–4px movement ranges.
+- Removed a stale broken Inter font preload that returned 404; Google Fonts stylesheet remains responsible for loading the actual font asset.
+- Deployed to `https://yongai.ca/?v=premium-motion`; CloudFront invalidation `I317WLWAGOA0LO9V15RR8KL5QD` completed.
+- Verification: `npm run build` passed with 10 pages; local QA confirmed all reveal targets become visible on scroll, card hover retains smooth transform/shadow and project-button feedback, animated menu opens/closes with correct ARIA/focus behavior, reduced-motion has 0 active reveal animations, homepage/OnlyPets/Cue have 0 overflow, and no local/live JS console errors; live homepage/OnlyPets/Cue and both partner docs return 200.
+
 ## Current State (2026-07-14 — Navigation standardization + Flowt logo fix)
 - Standardized navigation across homepage, OnlyPets, and Cue by adding shared `src/components/SiteNav.astro` and replacing each page-specific nav.
 - Chose a cleaner site information architecture: global nav now only includes `Portfolio`, `Approach`, `YourHermes`, and `Contact`; project subpages like OnlyPets/Cue remain accessible from portfolio cards and page CTAs, not top-level menu items.

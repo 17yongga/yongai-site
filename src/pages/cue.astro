@@ -19,7 +19,7 @@ const steps = [
     <SiteNav />
 
     <section class="hero">
-      <div>
+      <div data-reveal>
         <p class="eyebrow">Cue / local prototype</p>
         <h1>A voice meeting assistant that remembers the next move.</h1>
         <p class="lead">
@@ -30,13 +30,13 @@ const steps = [
           <a href="mailto:gary.yong@yongai.ca" class="button secondary">Ask about Cue</a>
         </div>
       </div>
-      <aside class="logo-card" aria-label="Cue app icon">
+      <aside class="logo-card" aria-label="Cue app icon" data-reveal style="--reveal-delay: 90ms">
         <img src="/portfolio/logos/cue.png" alt="Cue app icon" />
         <p>Local-first prototype • Groq STT/LLM/TTS path tested behind approval gates</p>
       </aside>
     </section>
 
-    <section class="why">
+    <section class="why" data-reveal>
       <p class="eyebrow">Why it exists</p>
       <h2>Meetings create decisions. Cue keeps the useful parts.</h2>
       <p>
@@ -45,8 +45,8 @@ const steps = [
     </section>
 
     <section class="steps">
-      {steps.map(([number, title, body]) => (
-        <article>
+      {steps.map(([number, title, body], index) => (
+        <article data-reveal style={`--reveal-delay: ${index * 70}ms`}>
           <span>{number}</span>
           <h3>{title}</h3>
           <p>{body}</p>
@@ -54,7 +54,7 @@ const steps = [
       ))}
     </section>
 
-    <section class="status">
+    <section class="status" data-reveal>
       <p class="eyebrow">Current status</p>
       <h2>Prototype, not public launch.</h2>
       <p>
@@ -76,21 +76,26 @@ const steps = [
   h1 { max-width: 760px; margin-bottom: 20px; font-size: clamp(54px, 6.4vw, 88px); line-height: .97; letter-spacing: -.025em; }
   .lead { max-width: 650px; margin: 0 0 28px; color: #2F2F2F; font-size: clamp(18px, 2vw, 22px); line-height: 1.58; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .button { min-height: 48px; padding: 0 21px; display: inline-flex; align-items: center; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 850; transition: transform .18s ease; }
-  .button:hover { transform: translateY(-2px); }
+  .button { min-height: 48px; padding: 0 21px; display: inline-flex; align-items: center; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 850; transition: transform var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease), background-color var(--motion-fast) ease; }
+  .button:hover, .button:focus-visible { transform: translateY(-2px); }
+  .button:active { transform: translateY(0) scale(.985); }
   .button.primary { color: #fff; background: #000; }
   .button.secondary { color: #000; background: rgba(255,255,255,.68); border: 1px solid rgba(0,0,0,.13); }
-  .logo-card { padding: 28px; border: 1px solid rgba(0,0,0,.12); border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 24px 70px rgba(36,30,23,.08); }
+  .logo-card { padding: 28px; border: 1px solid rgba(0,0,0,.12); border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 24px 70px rgba(36,30,23,.08); transition: transform var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease, box-shadow var(--motion-base) var(--motion-ease); }
+  .logo-card:hover { transform: translateY(-3px); border-color: rgba(0,0,0,.22); box-shadow: 0 30px 78px rgba(36,30,23,.12); }
   .logo-card img { width: 100%; border-radius: 28px; display: block; box-shadow: 0 18px 46px rgba(0,0,0,.08); }
   .logo-card p { margin: 22px 0 0; color: #3B3B3B; line-height: 1.5; }
-  .why, .status { padding-block: 60px; border-top: 1px solid rgba(0,0,0,.1); }
+  .why, .status { padding-block: 60px; border-top: 1px solid rgba(0,0,0,.1); transition: border-color var(--motion-fast) ease; }
+  .why:hover, .status:hover { border-color: rgba(0,0,0,.25); }
   .why h2, .status h2 { max-width: 760px; margin-bottom: 16px; font-size: clamp(34px, 4vw, 56px); line-height: 1.04; }
   .why p:last-child, .status p:last-child { max-width: 760px; color: #3B3B3B; font-size: 17px; line-height: 1.62; }
   .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; padding-block: 20px 62px; }
-  .steps article { min-height: 230px; padding: 24px; border: 1px solid rgba(0,0,0,.12); border-radius: 20px; background: rgba(255,255,255,.66); }
+  .steps article { min-height: 230px; padding: 24px; border: 1px solid rgba(0,0,0,.12); border-radius: 20px; background: rgba(255,255,255,.66); transition: transform var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease, box-shadow var(--motion-base) var(--motion-ease), background-color var(--motion-fast) ease; }
+  .steps article:hover { transform: translateY(-3px); border-color: rgba(0,0,0,.22); background: rgba(255,255,255,.9); box-shadow: 0 20px 52px rgba(36,30,23,.08); }
   .steps span { display: block; margin-bottom: 42px; font-size: 12px; font-weight: 820; letter-spacing: .16em; }
   .steps h3 { margin-bottom: 14px; font-size: 27px; line-height: 1.08; }
   .steps p { color: #3B3B3B; line-height: 1.55; }
   @media (max-width: 820px) { .hero, .steps { grid-template-columns: 1fr; } .hero { min-height: 0; } .logo-card { max-width: 360px; } }
   @media (max-width: 560px) { .hero, .why, .steps, .status { width: min(100% - 32px, 1120px); } h1 { font-size: clamp(46px, 13vw, 62px); } }
+  @media (hover: none) { .logo-card:hover, .steps article:hover { transform: none; } }
 </style>

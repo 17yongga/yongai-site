@@ -1,30 +1,49 @@
-// Minimal animations — only what's actually needed
-// No GSAP dependency for the main page; CSS handles most transitions
+// Lightweight, CSS-first motion for public YongAI pages.
+// IntersectionObserver only toggles state; transforms stay compositor-friendly.
 
 export function initAnimations() {
-  // Lightweight reveal on scroll using IntersectionObserver
-  // (Replaces the heavy GSAP ScrollTrigger approach)
-  const revealElements = document.querySelectorAll('.reveal');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealElements = document.querySelectorAll<HTMLElement>('.reveal, [data-reveal]');
 
   if (revealElements.length === 0) return;
+
+  document.documentElement.classList.add('motion-ready');
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach((element) => {
+      element.classList.add('visible', 'is-visible');
+    });
+    return;
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          (entry.target as HTMLElement).classList.add('visible');
+          const element = entry.target as HTMLElement;
+          const delay = Number.parseFloat(
+            getComputedStyle(element).getPropertyValue('--reveal-delay')
+          ) || 0;
+
+          element.classList.add('visible', 'is-visible');
+          element.animate(
+            [
+              { opacity: 0, translate: '0 14px' },
+              { opacity: 1, translate: '0 0' },
+            ],
+            {
+              duration: 620,
+              delay,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              fill: 'backwards',
+            }
+          );
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
   );
 
   revealElements.forEach((el) => observer.observe(el));
-}
-
-// Initialize when DOM is ready
-if (typeof window !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', initAnimations);
-  document.addEventListener('astro:page-load', initAnimations);
 }

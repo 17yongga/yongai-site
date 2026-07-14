@@ -79,7 +79,7 @@ const approach = [
     <SiteNav />
 
     <section class="hero-section">
-      <div class="hero-copy">
+      <div class="hero-copy" data-reveal>
         <p class="eyebrow">Venture product studio</p>
         <h1>We build useful software fast.</h1>
         <p class="hero-sub">
@@ -91,7 +91,7 @@ const approach = [
         </div>
       </div>
 
-      <aside class="snapshot-card" aria-label="YongAI by the numbers">
+      <aside class="snapshot-card" aria-label="YongAI by the numbers" data-reveal style="--reveal-delay: 90ms">
         <p class="eyebrow">By the numbers</p>
         <h2>Small portfolio. Real surfaces.</h2>
         <div class="snapshot-list metric-list">
@@ -106,14 +106,14 @@ const approach = [
     </section>
 
     <section id="portfolio" class="portfolio-section">
-      <div class="section-header">
+      <div class="section-header" data-reveal>
         <p class="eyebrow">Featured ventures</p>
         <h2>Products with a clear job to do.</h2>
       </div>
 
       <div class="venture-board">
         {ventures.map((venture, index) => (
-          <article class={`venture-card ${venture.dark ? 'dark' : ''}`}>
+          <article class={`venture-card ${venture.dark ? 'dark' : ''}`} data-reveal style={`--reveal-delay: ${(index % 2) * 70}ms`}>
             <div class="card-head">
               <div class="venture-logo" aria-label={`${venture.name} logo`}>
                 <img src={venture.logo} alt={venture.logoAlt} loading="lazy" />
@@ -133,13 +133,13 @@ const approach = [
     </section>
 
     <section id="method" class="method-section">
-      <div class="section-header narrow">
+      <div class="section-header narrow" data-reveal>
         <p class="eyebrow">How we build</p>
         <h2>AI-assisted development, operator-grade discipline.</h2>
       </div>
       <div class="approach-grid">
-        {approach.map(([number, title, body]) => (
-          <article>
+        {approach.map(([number, title, body], index) => (
+          <article data-reveal style={`--reveal-delay: ${index * 70}ms`}>
             <span>{number}</span>
             <h3>{title}</h3>
             <p>{body}</p>
@@ -148,7 +148,7 @@ const approach = [
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" data-reveal>
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Have a focused product or workflow worth proving?</h2>
@@ -196,12 +196,13 @@ const approach = [
   .hero-sub { max-width: 640px; margin-bottom: 28px; color: #2F2F2F; font-size: clamp(18px, 2vw, 22px); line-height: 1.58; }
 
   .button, .project-link {
-    display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; text-decoration: none; font-weight: 850; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; text-decoration: none; font-weight: 850; transition: transform var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease), background var(--motion-fast) ease, color var(--motion-fast) ease, border-color var(--motion-fast) ease;
   }
   .button { min-height: 48px; padding: 0 21px; font-size: 14px; }
   .button.primary { color: #fff; background: #000; box-shadow: 0 18px 38px rgba(0,0,0,.16); }
   .button.secondary { color: #000; background: rgba(255,255,255,.64); border: 1px solid rgba(0,0,0,.13); }
-  .button:hover, .project-link:hover { transform: translateY(-2px); }
+  .button:hover, .button:focus-visible, .project-link:hover, .project-link:focus-visible { transform: translateY(-2px); }
+  .button:active, .project-link:active { transform: translateY(0) scale(.985); }
   .hero-actions, .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
   .snapshot-card {
@@ -210,7 +211,9 @@ const approach = [
     border-radius: 22px;
     background: rgba(255,255,255,.72);
     box-shadow: 0 24px 70px rgba(36,30,23,.08);
+    transition: transform var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease, box-shadow var(--motion-base) var(--motion-ease);
   }
+  .snapshot-card:hover { transform: translateY(-3px); border-color: rgba(0,0,0,.2); box-shadow: 0 30px 78px rgba(36,30,23,.11); }
   .snapshot-card h2 { margin: 0 0 22px; font-size: clamp(30px, 3vw, 42px); line-height: 1.05; font-weight: 650; }
   .snapshot-list { display: grid; gap: 0; border-top: 1px solid rgba(0,0,0,.1); }
   .snapshot-list a,
@@ -235,9 +238,9 @@ const approach = [
     border-radius: 22px;
     background: rgba(255,255,255,.72);
     box-shadow: 0 18px 46px rgba(36,30,23,.055);
-    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    transition: transform var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease, box-shadow var(--motion-base) var(--motion-ease);
   }
-  .venture-card:hover { transform: translateY(-4px); border-color: rgba(0,0,0,.24); box-shadow: 0 28px 70px rgba(36,30,23,.12); }
+  .venture-card:hover, .venture-card:focus-within { transform: translateY(-4px); border-color: rgba(0,0,0,.24); box-shadow: 0 28px 70px rgba(36,30,23,.12); }
   .venture-card.dark { color: #fff; background: #0B0C0E; }
   .card-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 42px; }
   .venture-logo { width: 64px; height: 64px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid rgba(0,0,0,.10); border-radius: 18px; background: #fff; box-shadow: 0 12px 30px rgba(36,30,23,.08); overflow: hidden; }
@@ -264,12 +267,13 @@ const approach = [
     line-height: 1;
     white-space: nowrap;
   }
-  .venture-card:hover .project-link { transform: scale(1.06); color: #fff; background: #000; box-shadow: 0 14px 32px rgba(0,0,0,.16); }
+  .venture-card:hover .project-link, .venture-card:focus-within .project-link { transform: scale(1.06); color: #fff; background: #000; box-shadow: 0 14px 32px rgba(0,0,0,.16); }
   .dark .project-link { color: #fff; border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08); }
-  .dark:hover .project-link { color: #000; background: #fff; }
+  .dark:hover .project-link, .dark:focus-within .project-link { color: #000; background: #fff; }
 
   .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .approach-grid article { min-height: 230px; padding: 24px; border: 1px solid rgba(0,0,0,.12); border-radius: 18px; background: rgba(255,255,255,.66); }
+  .approach-grid article { min-height: 230px; padding: 24px; border: 1px solid rgba(0,0,0,.12); border-radius: 18px; background: rgba(255,255,255,.66); transition: transform var(--motion-base) var(--motion-ease), border-color var(--motion-fast) ease, box-shadow var(--motion-base) var(--motion-ease), background-color var(--motion-fast) ease; }
+  .approach-grid article:hover { transform: translateY(-3px); border-color: rgba(0,0,0,.21); background: rgba(255,255,255,.9); box-shadow: 0 18px 46px rgba(36,30,23,.07); }
   .approach-grid span { display: block; margin-bottom: 42px; font-size: 12px; font-weight: 820; letter-spacing: .16em; }
   .approach-grid h3 { margin-bottom: 14px; font-size: 25px; line-height: 1.08; font-weight: 720; }
   .approach-grid p { color: #3B3B3B; font-size: 15px; line-height: 1.55; }
@@ -297,5 +301,9 @@ const approach = [
     .portfolio-section, .method-section { padding-block: 44px; }
     .venture-card { min-height: 0; padding: 22px; }
     .cta-section { margin-bottom: 64px; padding: 26px; }
+  }
+
+  @media (hover: none) {
+    .snapshot-card:hover, .venture-card:hover, .approach-grid article:hover { transform: none; }
   }
 </style>
