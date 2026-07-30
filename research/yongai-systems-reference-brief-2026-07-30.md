@@ -21,6 +21,8 @@ This brief records first-party homepage and product-page observations. Customer 
 - Primary conversion is repeated consistently: `Book a free audit`.
 - Proof appears through a customer-logo strip and four testimonials.
 - Visual system uses a dark red mountain hero, large editorial serif type, warm off-white sections, oversized spacing, and a staged ascent metaphor.
+- The inspected site is a single-page funnel: hero → four offers → logo wall → four-step process → testimonials → closing CTA. It does not provide linked service details, case studies, founder biographies, pricing, or security documentation.
+- Its primary CTA is repeated heavily but contains a terminology mismatch: the site calls it a `free audit`, the process describes a free 30-minute call, and the destination is titled `30 min meeting`.
 
 ### Transferable principles
 
@@ -50,6 +52,8 @@ This brief records first-party homepage and product-page observations. Customer 
 - Solarium acts as a signature diagnostic product: employee interviews → operational map → prioritized AI opportunities → implementation roadmap.
 - The homepage continues with process, blog/editorial authority, lead magnet, and repeated call booking.
 - Visual system uses a clean white and green institutional palette, sans-serif typography, sparse line-based diagrams, and an ASCII-style founder portrait.
+- A dedicated security page names concrete controls and data-handling claims instead of relying on `enterprise-grade` shorthand. These remain the company's claims, not evidence of YongAI's posture.
+- Its strongest case-study structure includes named buyer context, engagement scope, concrete outputs, an attributed quotation, and explicit caveats that some work is still early.
 
 ### Transferable principles
 
@@ -121,6 +125,20 @@ Do not claim yet:
 - Fixed package pricing, free audits, or delivery timelines.
 - Proprietary diagnostic software comparable to Solarium.
 - General enterprise AI expertise beyond Gary's supportable implementation and operator evidence.
+
+## Production-readiness trust layer
+
+Before promoting YongAI Systems from a reviewed concept into a public B2B acquisition page, add evidence in this order:
+
+1. **Service boundary:** Define what the Workflow Audit includes, its buyer-owned deliverables, approximate duration, dependencies, and what it explicitly does not include.
+2. **Booking consistency:** Give the fit call one name and one duration across CTA text, surrounding copy, and the Calendly event.
+3. **Security and data handling:** Publish a factual page covering data flow, storage, subprocessors, model-provider use, retention, access, deletion, regional handling, incident contact, and whether client data is used for training. Claim only controls YongAI itself can verify.
+4. **Permissioned case study:** Use one named client when available. Show context, workflow, scope, artifacts left behind, measured outcomes with methodology, attribution, and honest maturity caveats.
+5. **Delivery artifact:** Show a redacted example operational map, opportunity register, approval design, or pilot handoff package so proof is not testimonial-only.
+6. **Lower-intent conversion:** Add a useful governance or workflow-scoping resource only after it genuinely exists; do not launch with a generic newsletter or copied AI-policy template.
+7. **Vertical authority:** If the initial market narrows to financial services or operational teams, publish specific field notes tied to actual domain problems rather than broad AI commentary.
+
+Until these exist, the current page should continue using operator background, explicit process, concrete use cases, and honest claim restraint as its trust model.
 
 ## Creative direction — Operating Blueprint
 
