@@ -6,13 +6,15 @@ export interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: URL;
+  robots?: string;
 }
 
 const { 
   title = "YongAI — AI Automation Consulting",
   description = "AI automation consulting for law firms and recruiting agencies. YongAI delivers enterprise-grade AI solutions — from strategic audits to full implementation and ongoing partnership. Based in Toronto.",
   ogImage = "https://yongai.ca/og-image.svg",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site)
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  robots
 } = Astro.props;
 ---
 
@@ -23,6 +25,7 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {robots && <meta name="robots" content={robots} />}
   
   <!-- Canonical URL -->
   <link rel="canonical" href={canonicalURL} />
